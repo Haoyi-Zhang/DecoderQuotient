@@ -1,0 +1,583 @@
+{
+  "actual_transition_charge": 14994,
+  "conservative_transition_charge": 30012,
+  "rejected": 96,
+  "rows": [
+    {
+      "fault": "claimed-stage",
+      "id": "case-001",
+      "reason": "stage classification",
+      "rejected": true
+    },
+    {
+      "fault": "decision",
+      "id": "case-001",
+      "reason": "decode conclusion",
+      "rejected": true
+    },
+    {
+      "fault": "input-domain-binding",
+      "id": "case-001",
+      "reason": "certificate not bound to supplied specification",
+      "rejected": true
+    },
+    {
+      "fault": "initial-carry",
+      "id": "case-001",
+      "reason": "initial state",
+      "rejected": true
+    },
+    {
+      "fault": "drop-final-layer",
+      "id": "case-001",
+      "reason": "layer count",
+      "rejected": true
+    },
+    {
+      "fault": "flip-bad-state",
+      "id": "case-001",
+      "reason": "transition closure or minimal-prefix label",
+      "rejected": true
+    },
+    {
+      "fault": "witness",
+      "id": "case-001",
+      "reason": "counterexample claim",
+      "rejected": true
+    },
+    {
+      "fault": "transition-count",
+      "id": "case-001",
+      "reason": "transition count",
+      "rejected": true
+    },
+    {
+      "fault": "duplicate-state",
+      "id": "case-001",
+      "reason": "duplicate state",
+      "rejected": true
+    },
+    {
+      "fault": "range-endpoint",
+      "id": "case-001",
+      "reason": "accumulation obligation",
+      "rejected": true
+    },
+    {
+      "fault": "table-binding",
+      "id": "case-001",
+      "reason": "block references",
+      "rejected": true
+    },
+    {
+      "fault": "extra-field",
+      "id": "case-001",
+      "reason": "certificate fields",
+      "rejected": true
+    },
+    {
+      "fault": "claimed-stage",
+      "id": "case-007",
+      "reason": "stage classification",
+      "rejected": true
+    },
+    {
+      "fault": "decision",
+      "id": "case-007",
+      "reason": "decode conclusion",
+      "rejected": true
+    },
+    {
+      "fault": "input-domain-binding",
+      "id": "case-007",
+      "reason": "certificate not bound to supplied specification",
+      "rejected": true
+    },
+    {
+      "fault": "initial-carry",
+      "id": "case-007",
+      "reason": "initial state",
+      "rejected": true
+    },
+    {
+      "fault": "drop-final-layer",
+      "id": "case-007",
+      "reason": "layer count",
+      "rejected": true
+    },
+    {
+      "fault": "flip-bad-state",
+      "id": "case-007",
+      "reason": "transition closure or minimal-prefix label",
+      "rejected": true
+    },
+    {
+      "fault": "witness",
+      "id": "case-007",
+      "reason": "counterexample claim",
+      "rejected": true
+    },
+    {
+      "fault": "transition-count",
+      "id": "case-007",
+      "reason": "transition count",
+      "rejected": true
+    },
+    {
+      "fault": "duplicate-state",
+      "id": "case-007",
+      "reason": "duplicate state",
+      "rejected": true
+    },
+    {
+      "fault": "range-endpoint",
+      "id": "case-007",
+      "reason": "accumulation obligation",
+      "rejected": true
+    },
+    {
+      "fault": "table-binding",
+      "id": "case-007",
+      "reason": "block references",
+      "rejected": true
+    },
+    {
+      "fault": "extra-field",
+      "id": "case-007",
+      "reason": "certificate fields",
+      "rejected": true
+    },
+    {
+      "fault": "claimed-stage",
+      "id": "case-013",
+      "reason": "stage classification",
+      "rejected": true
+    },
+    {
+      "fault": "decision",
+      "id": "case-013",
+      "reason": "decode conclusion",
+      "rejected": true
+    },
+    {
+      "fault": "input-domain-binding",
+      "id": "case-013",
+      "reason": "certificate not bound to supplied specification",
+      "rejected": true
+    },
+    {
+      "fault": "initial-carry",
+      "id": "case-013",
+      "reason": "initial state",
+      "rejected": true
+    },
+    {
+      "fault": "drop-final-layer",
+      "id": "case-013",
+      "reason": "layer count",
+      "rejected": true
+    },
+    {
+      "fault": "flip-bad-state",
+      "id": "case-013",
+      "reason": "duplicate state",
+      "rejected": true
+    },
+    {
+      "fault": "witness",
+      "id": "case-013",
+      "reason": "counterexample claim",
+      "rejected": true
+    },
+    {
+      "fault": "transition-count",
+      "id": "case-013",
+      "reason": "transition count",
+      "rejected": true
+    },
+    {
+      "fault": "duplicate-state",
+      "id": "case-013",
+      "reason": "duplicate state",
+      "rejected": true
+    },
+    {
+      "fault": "range-endpoint",
+      "id": "case-013",
+      "reason": "accumulation obligation",
+      "rejected": true
+    },
+    {
+      "fault": "table-binding",
+      "id": "case-013",
+      "reason": "block references",
+      "rejected": true
+    },
+    {
+      "fault": "extra-field",
+      "id": "case-013",
+      "reason": "certificate fields",
+      "rejected": true
+    },
+    {
+      "fault": "claimed-stage",
+      "id": "case-021",
+      "reason": "stage classification",
+      "rejected": true
+    },
+    {
+      "fault": "decision",
+      "id": "case-021",
+      "reason": "decode conclusion",
+      "rejected": true
+    },
+    {
+      "fault": "input-domain-binding",
+      "id": "case-021",
+      "reason": "certificate not bound to supplied specification",
+      "rejected": true
+    },
+    {
+      "fault": "initial-carry",
+      "id": "case-021",
+      "reason": "initial state",
+      "rejected": true
+    },
+    {
+      "fault": "drop-final-layer",
+      "id": "case-021",
+      "reason": "layer count",
+      "rejected": true
+    },
+    {
+      "fault": "flip-bad-state",
+      "id": "case-021",
+      "reason": "transition closure or minimal-prefix label",
+      "rejected": true
+    },
+    {
+      "fault": "witness",
+      "id": "case-021",
+      "reason": "counterexample claim",
+      "rejected": true
+    },
+    {
+      "fault": "transition-count",
+      "id": "case-021",
+      "reason": "transition count",
+      "rejected": true
+    },
+    {
+      "fault": "duplicate-state",
+      "id": "case-021",
+      "reason": "duplicate state",
+      "rejected": true
+    },
+    {
+      "fault": "range-endpoint",
+      "id": "case-021",
+      "reason": "accumulation obligation",
+      "rejected": true
+    },
+    {
+      "fault": "table-binding",
+      "id": "case-021",
+      "reason": "block references",
+      "rejected": true
+    },
+    {
+      "fault": "extra-field",
+      "id": "case-021",
+      "reason": "certificate fields",
+      "rejected": true
+    },
+    {
+      "fault": "claimed-stage",
+      "id": "case-121",
+      "reason": "stage classification",
+      "rejected": true
+    },
+    {
+      "fault": "decision",
+      "id": "case-121",
+      "reason": "decode conclusion",
+      "rejected": true
+    },
+    {
+      "fault": "input-domain-binding",
+      "id": "case-121",
+      "reason": "certificate not bound to supplied specification",
+      "rejected": true
+    },
+    {
+      "fault": "initial-carry",
+      "id": "case-121",
+      "reason": "initial state",
+      "rejected": true
+    },
+    {
+      "fault": "drop-final-layer",
+      "id": "case-121",
+      "reason": "layer count",
+      "rejected": true
+    },
+    {
+      "fault": "flip-bad-state",
+      "id": "case-121",
+      "reason": "transition closure or minimal-prefix label",
+      "rejected": true
+    },
+    {
+      "fault": "witness",
+      "id": "case-121",
+      "reason": "counterexample claim",
+      "rejected": true
+    },
+    {
+      "fault": "transition-count",
+      "id": "case-121",
+      "reason": "transition count",
+      "rejected": true
+    },
+    {
+      "fault": "duplicate-state",
+      "id": "case-121",
+      "reason": "duplicate state",
+      "rejected": true
+    },
+    {
+      "fault": "range-endpoint",
+      "id": "case-121",
+      "reason": "accumulation obligation",
+      "rejected": true
+    },
+    {
+      "fault": "table-binding",
+      "id": "case-121",
+      "reason": "block references",
+      "rejected": true
+    },
+    {
+      "fault": "extra-field",
+      "id": "case-121",
+      "reason": "certificate fields",
+      "rejected": true
+    },
+    {
+      "fault": "claimed-stage",
+      "id": "case-127",
+      "reason": "stage classification",
+      "rejected": true
+    },
+    {
+      "fault": "decision",
+      "id": "case-127",
+      "reason": "decode conclusion",
+      "rejected": true
+    },
+    {
+      "fault": "input-domain-binding",
+      "id": "case-127",
+      "reason": "certificate not bound to supplied specification",
+      "rejected": true
+    },
+    {
+      "fault": "initial-carry",
+      "id": "case-127",
+      "reason": "initial state",
+      "rejected": true
+    },
+    {
+      "fault": "drop-final-layer",
+      "id": "case-127",
+      "reason": "layer count",
+      "rejected": true
+    },
+    {
+      "fault": "flip-bad-state",
+      "id": "case-127",
+      "reason": "transition closure or minimal-prefix label",
+      "rejected": true
+    },
+    {
+      "fault": "witness",
+      "id": "case-127",
+      "reason": "counterexample claim",
+      "rejected": true
+    },
+    {
+      "fault": "transition-count",
+      "id": "case-127",
+      "reason": "transition count",
+      "rejected": true
+    },
+    {
+      "fault": "duplicate-state",
+      "id": "case-127",
+      "reason": "duplicate state",
+      "rejected": true
+    },
+    {
+      "fault": "range-endpoint",
+      "id": "case-127",
+      "reason": "accumulation obligation",
+      "rejected": true
+    },
+    {
+      "fault": "table-binding",
+      "id": "case-127",
+      "reason": "block references",
+      "rejected": true
+    },
+    {
+      "fault": "extra-field",
+      "id": "case-127",
+      "reason": "certificate fields",
+      "rejected": true
+    },
+    {
+      "fault": "claimed-stage",
+      "id": "case-128",
+      "reason": "stage classification",
+      "rejected": true
+    },
+    {
+      "fault": "decision",
+      "id": "case-128",
+      "reason": "decode conclusion",
+      "rejected": true
+    },
+    {
+      "fault": "input-domain-binding",
+      "id": "case-128",
+      "reason": "certificate not bound to supplied specification",
+      "rejected": true
+    },
+    {
+      "fault": "initial-carry",
+      "id": "case-128",
+      "reason": "initial state",
+      "rejected": true
+    },
+    {
+      "fault": "drop-final-layer",
+      "id": "case-128",
+      "reason": "layer count",
+      "rejected": true
+    },
+    {
+      "fault": "flip-bad-state",
+      "id": "case-128",
+      "reason": "transition closure or minimal-prefix label",
+      "rejected": true
+    },
+    {
+      "fault": "witness",
+      "id": "case-128",
+      "reason": "counterexample claim",
+      "rejected": true
+    },
+    {
+      "fault": "transition-count",
+      "id": "case-128",
+      "reason": "transition count",
+      "rejected": true
+    },
+    {
+      "fault": "duplicate-state",
+      "id": "case-128",
+      "reason": "duplicate state",
+      "rejected": true
+    },
+    {
+      "fault": "range-endpoint",
+      "id": "case-128",
+      "reason": "accumulation obligation",
+      "rejected": true
+    },
+    {
+      "fault": "table-binding",
+      "id": "case-128",
+      "reason": "block references",
+      "rejected": true
+    },
+    {
+      "fault": "extra-field",
+      "id": "case-128",
+      "reason": "certificate fields",
+      "rejected": true
+    },
+    {
+      "fault": "claimed-stage",
+      "id": "case-132",
+      "reason": "stage classification",
+      "rejected": true
+    },
+    {
+      "fault": "decision",
+      "id": "case-132",
+      "reason": "decode conclusion",
+      "rejected": true
+    },
+    {
+      "fault": "input-domain-binding",
+      "id": "case-132",
+      "reason": "certificate not bound to supplied specification",
+      "rejected": true
+    },
+    {
+      "fault": "initial-carry",
+      "id": "case-132",
+      "reason": "initial state",
+      "rejected": true
+    },
+    {
+      "fault": "drop-final-layer",
+      "id": "case-132",
+      "reason": "layer count",
+      "rejected": true
+    },
+    {
+      "fault": "flip-bad-state",
+      "id": "case-132",
+      "reason": "transition closure or minimal-prefix label",
+      "rejected": true
+    },
+    {
+      "fault": "witness",
+      "id": "case-132",
+      "reason": "counterexample claim",
+      "rejected": true
+    },
+    {
+      "fault": "transition-count",
+      "id": "case-132",
+      "reason": "transition count",
+      "rejected": true
+    },
+    {
+      "fault": "duplicate-state",
+      "id": "case-132",
+      "reason": "duplicate state",
+      "rejected": true
+    },
+    {
+      "fault": "range-endpoint",
+      "id": "case-132",
+      "reason": "accumulation obligation",
+      "rejected": true
+    },
+    {
+      "fault": "table-binding",
+      "id": "case-132",
+      "reason": "block references",
+      "rejected": true
+    },
+    {
+      "fault": "extra-field",
+      "id": "case-132",
+      "reason": "certificate fields",
+      "rejected": true
+    }
+  ]
+}

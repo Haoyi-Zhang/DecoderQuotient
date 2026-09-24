@@ -1,0 +1,289 @@
+{
+  "audit_kind": "delivery-only retained-file integrity audit",
+  "checks": [
+    {
+      "check": "cases.json contains 142 cases",
+      "passed": true
+    },
+    {
+      "check": "certificates.json contains 142 certificates",
+      "passed": true
+    },
+    {
+      "check": "case_metadata.json contains 142 rows",
+      "passed": true
+    },
+    {
+      "check": "raw.csv contains 142 rows",
+      "passed": true
+    },
+    {
+      "check": "case identifiers are unique",
+      "passed": true
+    },
+    {
+      "check": "case identifiers and order agree across retained files",
+      "passed": true
+    },
+    {
+      "check": "raw stage totals are 84/48/5/5",
+      "passed": true
+    },
+    {
+      "check": "summary case count is 142",
+      "passed": true
+    },
+    {
+      "check": "summary stage totals match raw.csv",
+      "passed": true
+    },
+    {
+      "check": "summary stages partition all cases",
+      "passed": true
+    },
+    {
+      "check": "summary decoder-valid count is 94",
+      "passed": true
+    },
+    {
+      "check": "smt_queries.json contains 120 queries",
+      "passed": true
+    },
+    {
+      "check": "SMT results are 72 UNSAT and 48 SAT",
+      "passed": true
+    },
+    {
+      "check": "all retained SMT results equal their expected classification",
+      "passed": true
+    },
+    {
+      "check": "summary SMT query count is 120",
+      "passed": true
+    },
+    {
+      "check": "summary SMT totals match query file",
+      "passed": true
+    },
+    {
+      "check": "summary reports zero SMT disagreements",
+      "passed": true
+    },
+    {
+      "check": "oracle contains 40 schema rows",
+      "passed": true
+    },
+    {
+      "check": "oracle assignment count is 3,570",
+      "passed": true
+    },
+    {
+      "check": "oracle packing check count is 416",
+      "passed": true
+    },
+    {
+      "check": "summary oracle counts match",
+      "passed": true
+    },
+    {
+      "check": "summary packing count matches",
+      "passed": true
+    },
+    {
+      "check": "certificate fault suite reports 96 rejections",
+      "passed": true
+    },
+    {
+      "check": "certificate fault file contains 96 rows",
+      "passed": true
+    },
+    {
+      "check": "every selected certificate alteration is rejected",
+      "passed": true
+    },
+    {
+      "check": "summary fault count matches",
+      "passed": true
+    },
+    {
+      "check": "focused record contains six checks",
+      "passed": true
+    },
+    {
+      "check": "five focused malformed-type records are rejected",
+      "passed": true
+    },
+    {
+      "check": "focused record contains the saturation boundary example",
+      "passed": true
+    },
+    {
+      "check": "saturation boundary ends at equal value 6 while contract fails",
+      "passed": true
+    },
+    {
+      "check": "closed-form record covers 142 cases",
+      "passed": true
+    },
+    {
+      "check": "closed-form record contains 147 table comparisons",
+      "passed": true
+    },
+    {
+      "check": "closed-form aggregate table count matches",
+      "passed": true
+    },
+    {
+      "check": "closed-form comparator reports zero disagreements",
+      "passed": true
+    },
+    {
+      "check": "closed-form decision-call count is 1,051",
+      "passed": true
+    },
+    {
+      "check": "summary records 300 whole-word/dot-product replays",
+      "passed": true
+    },
+    {
+      "check": "summary scalar-ablation false accepts equal 25",
+      "passed": true
+    },
+    {
+      "check": "summary strict-guard false rejects equal 8",
+      "passed": true
+    },
+    {
+      "check": "maximum compact certificate size is 82,534 bytes",
+      "passed": true
+    },
+    {
+      "check": "maximum retained carry-state count is 16",
+      "passed": true
+    },
+    {
+      "check": "accounting components recompute to 209,282",
+      "passed": true
+    },
+    {
+      "check": "recorded accounting lower bound is 209,282",
+      "passed": true
+    },
+    {
+      "check": "recorded enumeration ceiling is 200,000",
+      "passed": true
+    },
+    {
+      "check": "conservative lower bound exceeds the ceiling",
+      "passed": true
+    },
+    {
+      "check": "historical resource ceiling is explicitly uncertified",
+      "passed": true
+    },
+    {
+      "check": "clean focused run matches the retained focused result exactly",
+      "passed": true
+    },
+    {
+      "check": "clean closed-form run matches the retained closed-form result exactly",
+      "passed": true
+    },
+    {
+      "check": "both hard-metered confirmatory runs completed",
+      "passed": true
+    },
+    {
+      "check": "hard-meter ledgers name the intended frozen modules",
+      "passed": true
+    },
+    {
+      "check": "focused hard meter records 4,489 conservative events",
+      "passed": true
+    },
+    {
+      "check": "closed-form hard meter records 13,950 conservative events",
+      "passed": true
+    },
+    {
+      "check": "focused meter categories reconcile",
+      "passed": true
+    },
+    {
+      "check": "closed-form meter categories reconcile",
+      "passed": true
+    },
+    {
+      "check": "each hard-metered run stays below its obligation limit",
+      "passed": true
+    },
+    {
+      "check": "all confirmatory executions use one worker",
+      "passed": true
+    },
+    {
+      "check": "each retained run stays below its CPU-time limit",
+      "passed": true
+    },
+    {
+      "check": "each retained run stays below its address-space limit",
+      "passed": true
+    },
+    {
+      "check": "both ledgers record pre-execution charging",
+      "passed": true
+    },
+    {
+      "check": "pre-integration pilots retain 18,441 conservative events",
+      "passed": true
+    },
+    {
+      "check": "complete confirmatory campaign components reconcile to 36,880 events",
+      "passed": true
+    },
+    {
+      "check": "combined CPU total reconciles to all four executions",
+      "passed": true
+    },
+    {
+      "check": "combined peak RSS reconciles to all four executions",
+      "passed": true
+    },
+    {
+      "check": "confirmatory campaign remains within 200,000-event ceiling",
+      "passed": true
+    },
+    {
+      "check": "confirmatory ledger preserves the historical full-campaign nonclaim",
+      "passed": true
+    }
+  ],
+  "checks_passed": 64,
+  "passed": true,
+  "results_directory": "results",
+  "scientific_execution": false,
+  "summary": {
+    "cases": 142,
+    "certificate_faults_rejected": 96,
+    "closed_form_decision_calls": 1051,
+    "closed_form_table_comparisons": 147,
+    "confirmatory_campaign_used": 36880,
+    "confirmatory_campaign_within_ceiling": true,
+    "historical_resource_lower_bound": 209282,
+    "oracle_assignments": 3570,
+    "oracle_cases": 40,
+    "packing_checks": 416,
+    "resource_ceiling": 200000,
+    "smt": {
+      "sat": 48,
+      "total": 120,
+      "unsat": 72
+    },
+    "stages": {
+      "accepted": 84,
+      "accumulation": 5,
+      "decode": 48,
+      "layout": 5
+    }
+  }
+}

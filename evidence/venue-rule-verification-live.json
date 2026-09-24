@@ -1,0 +1,17 @@
+{
+  "status": "HOLD",
+  "retrieved_utc": "2026-09-20T16:52:58+00:00",
+  "records": [
+    {
+      "url": "https://dl.acm.org/journal/taco/author-guidelines",
+      "error": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>"
+    },
+    {
+      "url": "https://www.acm.org/publications/authors/submissions",
+      "error": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>"
+    }
+  ],
+  "live_page_limit_text_found": false,
+  "internal_contract": "20 content pages; references excluded, as frozen in research-plan.md",
+  "note": "Dynamic publisher pages are recorded as retrieval evidence; absence of a phrase is not treated as proof of a contrary rule."
+}

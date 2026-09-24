@@ -1,0 +1,70 @@
+{
+  "archive_target_bytes": 134217728,
+  "atomic_lower_bound_components": {
+    "case_126_scalar_checks_per_completed_case_loop": 65536,
+    "closed_form": 1051,
+    "completed_case_loops": 2,
+    "focused": 97,
+    "intake": 14840,
+    "retained_primary": 62222
+  },
+  "atomic_lower_bound_definition": "count scalar code-value checks as enumerated checks in addition to already charged units; count only case-126 from each of the two completed case loops; omit every other scalar check and all non-scalar work in the failed attempt",
+  "ceiling_certified": false,
+  "clean_confirmatory_campaign": "results/reproduced-clean/combined-budget.json",
+  "conservative_atomic_check_lower_bound": 209282,
+  "cpu_bound_qualification": "The failed attempt is bounded, not measured. These records cover the scientific invocations above, not document rendering, archive handling or source inspection.",
+  "cpu_seconds_bound_including_failed_attempt": 120.256086917,
+  "enumeration_ceiling": 200000,
+  "external_compute": false,
+  "further_scientific_execution": "historical full campaign stopped after accounting audit; later hard-metered confirmation limited to focused and closed-form controls (36,880 events including pilots)",
+  "gpu_execution": false,
+  "legacy_cumulative_charge": 155450,
+  "legacy_reported_unit": "carry transitions, complete small-oracle valuations, packing checks, mutation replay transitions, solver queries, interpreter replays, and closed-form decision calls",
+  "maximum_recorded_peak_rss_kib": 133496,
+  "model_execution_or_external_model_api": false,
+  "recorded_measured_cpu_seconds": 1.256086917,
+  "runs": [
+    {
+      "charge": 14840,
+      "cpu_seconds": 0.01603777499999992,
+      "evidence": "intake/pilot.json",
+      "kind": "intake pilot",
+      "peak_rss_kib": 92588,
+      "wall_seconds": 0.018651862000012898
+    },
+    {
+      "cpu_seconds": null,
+      "cpu_seconds_upper_bound": 119,
+      "kind": "unsuccessful full campaign; terminal accounting assertion after case loop",
+      "legacy_conservative_charge": 77240,
+      "measurement_note": "No timing/RSS result file was retained for the failed invocation. The 119-second bound is the process hard CPU limit, not a measurement. The same fixed inventory and scalar ablation were used.",
+      "peak_rss_kib": null
+    },
+    {
+      "cpu_seconds": 1.206933558,
+      "enumeration_charge": 62222,
+      "evidence": "resources.json",
+      "kind": "retained primary full-generation campaign",
+      "peak_rss_kib": 133496,
+      "solver_timeout_ms": 2000,
+      "wall_seconds": 1.2083100029999514,
+      "workers": 1
+    },
+    {
+      "charge": 97,
+      "cpu_seconds": 0.001407855,
+      "kind": "focused grammar and saturation checks",
+      "measurement_note": "CPU/RSS observed in the invocation output; scientific outcomes retained in focused.json",
+      "peak_rss_kib": 93744
+    },
+    {
+      "charge": 1051,
+      "cpu_seconds": 0.031707729,
+      "kind": "post-hoc closed-form comparison",
+      "measurement_note": "CPU observed in the invocation output; scientific outcomes retained in closed_form.json"
+    }
+  ],
+  "status": "ACCOUNTING_DEFECT_AND_ENUMERATION_CEILING_HOLD",
+  "unmetered_work": "scalar_only enumerates every code value separately for every logical coordinate until a mismatch; these input-value checks were absent from enumeration_charge",
+  "workers": 1
+}

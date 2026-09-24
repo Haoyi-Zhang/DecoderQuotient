@@ -1,0 +1,8 @@
+{
+  "cpu_seconds": 1.206933558,
+  "enumeration_charge": 62222,
+  "peak_rss_kib": 133496,
+  "solver_timeout_ms": 2000,
+  "wall_seconds": 1.2083100029999514,
+  "workers": 1
+}

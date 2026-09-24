@@ -1,0 +1,124 @@
+{
+  "adjacent": [
+    {
+      "basis": "adjacent quantized-kernel, tensor-compiler, or validation venue",
+      "key": "qserve",
+      "title": "QServe : W4A8KV4 Quantization and System Co-design for Efficient LLM Serving"
+    },
+    {
+      "basis": "adjacent quantized-kernel, tensor-compiler, or validation venue",
+      "key": "liquidgemm",
+      "title": "LiquidGEMM : Hardware-Efficient W4A8 GEMM Kernel for High-Performance LLM Serving"
+    },
+    {
+      "basis": "adjacent quantized-kernel, tensor-compiler, or validation venue",
+      "key": "tensorir",
+      "title": "TensorIR : An Abstraction for Automatic Tensorized Program Optimization"
+    },
+    {
+      "basis": "adjacent quantized-kernel, tensor-compiler, or validation venue",
+      "key": "mlir",
+      "title": "MLIR : Scaling Compiler Infrastructure for Domain Specific Computation"
+    },
+    {
+      "basis": "adjacent quantized-kernel, tensor-compiler, or validation venue",
+      "key": "triton",
+      "title": "Triton : An Intermediate Language and Compiler for Tiled Neural Network Computations"
+    }
+  ],
+  "counts": {
+    "adjacent": 5,
+    "influential": 5,
+    "same_venue": 12
+  },
+  "influential": [
+    {
+      "basis": "foundational or widely adopted method/system; no award claim",
+      "key": "pcc",
+      "title": "Proof-Carrying Code"
+    },
+    {
+      "basis": "foundational or widely adopted method/system; no award claim",
+      "key": "qserve",
+      "title": "QServe : W4A8KV4 Quantization and System Co-design for Efficient LLM Serving"
+    },
+    {
+      "basis": "foundational or widely adopted method/system; no award claim",
+      "key": "alive2",
+      "title": "Alive2 : Bounded Translation Validation for LLVM"
+    },
+    {
+      "basis": "foundational or widely adopted method/system; no award claim",
+      "key": "tvm",
+      "title": "TVM : An Automated End-to-End Optimizing Compiler for Deep Learning"
+    },
+    {
+      "basis": "foundational or widely adopted method/system; no award claim",
+      "key": "z3",
+      "title": "Z3 : An Efficient SMT Solver"
+    }
+  ],
+  "note": "Selections are relevance calibration, not a ranking or acceptance prediction.",
+  "same_venue": [
+    {
+      "basis": "same-venue TACO article",
+      "key": "packing",
+      "title": "Improved Bitwidth-Aware Variable Packing"
+    },
+    {
+      "basis": "same-venue TACO article",
+      "key": "fixedpoint-rns",
+      "title": "Fixed-point Encoding and Architecture Exploration for Residue Number Systems"
+    },
+    {
+      "basis": "same-venue TACO article",
+      "key": "pico",
+      "title": "PICO : A Presburger In-bounds Check Optimization for Compiler-based Memory Safety Instrumentations"
+    },
+    {
+      "basis": "same-venue TACO article",
+      "key": "interleaved-vectorization",
+      "title": "Automatic Vectorization of Interleaved Data Revisited"
+    },
+    {
+      "basis": "same-venue TACO article",
+      "key": "fixedpoint-conversion",
+      "title": "Profile-Guided Floating- to Fixed-Point Conversion for Hybrid FPGA -Processor Applications"
+    },
+    {
+      "basis": "same-venue TACO article",
+      "key": "visual-polyhedral",
+      "title": "Visual Program Manipulation in the Polyhedral Model"
+    },
+    {
+      "basis": "same-venue TACO article",
+      "key": "armorall",
+      "title": "ArmorAll : Compiler-based Resilience Targeting GPU Applications"
+    },
+    {
+      "basis": "same-venue TACO article",
+      "key": "heapcheck",
+      "title": "HeapCheck : Low-cost Hardware Support for Memory Safety"
+    },
+    {
+      "basis": "same-venue TACO article",
+      "key": "ppcg",
+      "title": "Polyhedral Parallel Code Generation for CUDA"
+    },
+    {
+      "basis": "same-venue TACO article",
+      "key": "sparse-mlir",
+      "title": "Compiler Support for Sparse Tensor Computations in MLIR"
+    },
+    {
+      "basis": "same-venue TACO article",
+      "key": "mixednumeric",
+      "title": "MIX-PC : Enabling Efficient DNN Inference with Mixed Numeric Precision Compilation Optimization"
+    },
+    {
+      "basis": "same-venue TACO article",
+      "key": "vectorweaver",
+      "title": "VectorWeaver: A Stage-Aware Automated Optimization Framework for LLM Inference on Edge Platform"
+    }
+  ]
+}

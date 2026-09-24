@@ -1,0 +1,488 @@
+{
+  "cases": 53,
+  "transitions": 5880,
+  "exhaustive_assignments": 8960,
+  "cpu_seconds": 0.01603777499999992,
+  "wall_seconds": 0.018651862000012898,
+  "peak_rss_kib": 92588,
+  "rows": [
+    {
+      "bits": 4,
+      "scale": 0,
+      "zero": 0,
+      "mode": "mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 4,
+      "scale": 0,
+      "zero": 0,
+      "mode": "sub_mul",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 4,
+      "scale": 0,
+      "zero": 0,
+      "mode": "word_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 4,
+      "scale": 0,
+      "zero": 0,
+      "mode": "sat_mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 4,
+      "scale": 0,
+      "zero": 3,
+      "mode": "mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 4,
+      "scale": 0,
+      "zero": 3,
+      "mode": "sub_mul",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 4,
+      "scale": 0,
+      "zero": 3,
+      "mode": "word_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 4,
+      "scale": 0,
+      "zero": 3,
+      "mode": "sat_mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 4,
+      "scale": 1,
+      "zero": 0,
+      "mode": "mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 4,
+      "scale": 1,
+      "zero": 0,
+      "mode": "sub_mul",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 4,
+      "scale": 1,
+      "zero": 0,
+      "mode": "word_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 4,
+      "scale": 1,
+      "zero": 0,
+      "mode": "sat_mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 4,
+      "scale": 1,
+      "zero": 3,
+      "mode": "mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 4,
+      "scale": 1,
+      "zero": 3,
+      "mode": "sub_mul",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 4,
+      "scale": 1,
+      "zero": 3,
+      "mode": "word_sub",
+      "witness": [
+        0,
+        0
+      ],
+      "max_states": 3
+    },
+    {
+      "bits": 4,
+      "scale": 1,
+      "zero": 3,
+      "mode": "sat_mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 4,
+      "scale": 2,
+      "zero": 0,
+      "mode": "mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 4,
+      "scale": 2,
+      "zero": 0,
+      "mode": "sub_mul",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 4,
+      "scale": 2,
+      "zero": 0,
+      "mode": "word_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 4,
+      "scale": 2,
+      "zero": 0,
+      "mode": "sat_mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 4,
+      "scale": 2,
+      "zero": 3,
+      "mode": "mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 4,
+      "scale": 2,
+      "zero": 3,
+      "mode": "sub_mul",
+      "witness": [
+        0,
+        0
+      ],
+      "max_states": 4
+    },
+    {
+      "bits": 4,
+      "scale": 2,
+      "zero": 3,
+      "mode": "word_sub",
+      "witness": [
+        0,
+        0
+      ],
+      "max_states": 3
+    },
+    {
+      "bits": 4,
+      "scale": 2,
+      "zero": 3,
+      "mode": "sat_mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "scale": 0,
+      "zero": 0,
+      "mode": "mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "scale": 0,
+      "zero": 0,
+      "mode": "sub_mul",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "scale": 0,
+      "zero": 0,
+      "mode": "word_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "scale": 0,
+      "zero": 0,
+      "mode": "sat_mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "scale": 0,
+      "zero": 3,
+      "mode": "mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "scale": 0,
+      "zero": 3,
+      "mode": "sub_mul",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "scale": 0,
+      "zero": 3,
+      "mode": "word_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "scale": 0,
+      "zero": 3,
+      "mode": "sat_mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "scale": 1,
+      "zero": 0,
+      "mode": "mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "scale": 1,
+      "zero": 0,
+      "mode": "sub_mul",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "scale": 1,
+      "zero": 0,
+      "mode": "word_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "scale": 1,
+      "zero": 0,
+      "mode": "sat_mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "scale": 1,
+      "zero": 3,
+      "mode": "mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "scale": 1,
+      "zero": 3,
+      "mode": "sub_mul",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "scale": 1,
+      "zero": 3,
+      "mode": "word_sub",
+      "witness": [
+        0,
+        0
+      ],
+      "max_states": 3
+    },
+    {
+      "bits": 8,
+      "scale": 1,
+      "zero": 3,
+      "mode": "sat_mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "scale": 2,
+      "zero": 0,
+      "mode": "mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "scale": 2,
+      "zero": 0,
+      "mode": "sub_mul",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "scale": 2,
+      "zero": 0,
+      "mode": "word_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "scale": 2,
+      "zero": 0,
+      "mode": "sat_mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "scale": 2,
+      "zero": 3,
+      "mode": "mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "scale": 2,
+      "zero": 3,
+      "mode": "sub_mul",
+      "witness": [
+        0,
+        0
+      ],
+      "max_states": 4
+    },
+    {
+      "bits": 8,
+      "scale": 2,
+      "zero": 3,
+      "mode": "word_sub",
+      "witness": [
+        0,
+        0
+      ],
+      "max_states": 3
+    },
+    {
+      "bits": 8,
+      "scale": 2,
+      "zero": 3,
+      "mode": "sat_mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "lanes": 3,
+      "scale": 2,
+      "zero": 8,
+      "mode": "mul_sub",
+      "witness": null,
+      "max_states": 1
+    },
+    {
+      "bits": 8,
+      "lanes": 3,
+      "scale": 2,
+      "zero": 8,
+      "mode": "sub_mul",
+      "witness": [
+        0,
+        0,
+        0
+      ],
+      "max_states": 4
+    },
+    {
+      "bits": 4,
+      "lanes": 8,
+      "scale": 15,
+      "zero": 7,
+      "mode": "mul_sub",
+      "witness": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_states": 15
+    },
+    {
+      "bits": 4,
+      "lanes": 8,
+      "scale": 15,
+      "zero": 7,
+      "mode": "sub_mul",
+      "witness": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_states": 16
+    },
+    {
+      "bits": 4,
+      "lanes": 8,
+      "scale": 15,
+      "zero": 7,
+      "mode": "word_sub",
+      "witness": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_states": 16
+    }
+  ]
+}

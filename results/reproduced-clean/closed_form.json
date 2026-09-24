@@ -1,0 +1,1758 @@
+{
+  "cases": 142,
+  "disagreements": 0,
+  "enumeration_charge": 1051,
+  "rows": [
+    {
+      "decoder_equal": true,
+      "id": "case-001",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-002",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-003",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-004",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-005",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-006",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-007",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-008",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-009",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-010",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-011",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-012",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-013",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-014",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-015",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-016",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-017",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-018",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-019",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-020",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-021",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-022",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-023",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-024",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-025",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-026",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            14,
+            14,
+            14,
+            14,
+            14,
+            14,
+            14,
+            14
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-027",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            14,
+            14,
+            14,
+            14,
+            14,
+            14,
+            14,
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-028",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            14,
+            14,
+            14,
+            14,
+            14,
+            14,
+            14,
+            14
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-029",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            14,
+            14,
+            14,
+            14,
+            14,
+            14,
+            14,
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-030",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            14,
+            14,
+            14,
+            14,
+            14,
+            14,
+            14,
+            14
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-031",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-032",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-033",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-034",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-035",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-036",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-037",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-038",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-039",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-040",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-041",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-042",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-043",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-044",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-045",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-046",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-047",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-048",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-049",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-050",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-051",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-052",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-053",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-054",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-055",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0,
+            0,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-056",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            14,
+            14,
+            15,
+            14
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-057",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-058",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-059",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-060",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            14,
+            14,
+            14,
+            14
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-061",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-062",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-063",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-064",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-065",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-066",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-067",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-068",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-069",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-070",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-071",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-072",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-073",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-074",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-075",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-076",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-077",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-078",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-079",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-080",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-081",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-082",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-083",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": false,
+      "id": "case-084",
+      "tables": [
+        {
+          "equal": false,
+          "witness": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-085",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-086",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-087",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-088",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-089",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-090",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-091",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-092",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-093",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-094",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-095",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-096",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-097",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-098",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-099",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-100",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-101",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-102",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-103",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-104",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-105",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-106",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-107",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-108",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-109",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-110",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-111",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-112",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-113",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-114",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-115",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-116",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-117",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-118",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-119",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-120",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-121",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-122",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-123",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-124",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-125",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-126",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-127",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-128",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-129",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-130",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-131",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-132",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        },
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-133",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        },
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-134",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        },
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-135",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        },
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-136",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        },
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-137",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-138",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-139",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-140",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-141",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    },
+    {
+      "decoder_equal": true,
+      "id": "case-142",
+      "tables": [
+        {
+          "equal": true,
+          "witness": null
+        }
+      ]
+    }
+  ],
+  "table_comparisons": 147
+}

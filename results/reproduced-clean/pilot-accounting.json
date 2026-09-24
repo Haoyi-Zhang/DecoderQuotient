@@ -1,0 +1,43 @@
+{
+  "date": "2026-09-19",
+  "meter_policy": {
+    "events": [
+      "python function call",
+      "FOR_ITER",
+      "backward jump"
+    ],
+    "interpretation": "conservative upper bound on bounded confirmatory work",
+    "source_scope": "artifact/bptc under a pre-integration opcode tracer"
+  },
+  "note": "These measured pilots motivated and tested the retained hard meter. They are included in the cumulative campaign total rather than discarded.",
+  "runs": {
+    "closed_form": {
+      "counts": {
+        "backward_jump": 3988,
+        "for_iter": 5144,
+        "python_function_call": 4819
+      },
+      "cpu_seconds": 16.568273324,
+      "output_comparison": "exact match to results/closed_form.json",
+      "peak_rss_kib": 103512,
+      "used": 13951,
+      "wall_seconds": 16.572125674000006
+    },
+    "focused": {
+      "counts": {
+        "backward_jump": 1080,
+        "for_iter": 1514,
+        "python_function_call": 1896
+      },
+      "cpu_seconds": 2.797044142,
+      "output_comparison": "exact match to results/focused.json",
+      "peak_rss_kib": 99580,
+      "used": 4490,
+      "wall_seconds": 2.7986889660000003
+    }
+  },
+  "schema": "bptc-preintegration-pilot-v1",
+  "scientific_execution": true,
+  "total_used": 18441,
+  "workers": 1
+}

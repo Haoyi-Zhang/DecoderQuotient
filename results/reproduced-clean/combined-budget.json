@@ -1,0 +1,19 @@
+{
+  "ceiling": 200000,
+  "components": {
+    "preintegration_pilots": 18441,
+    "retained_closed_form_run": 13950,
+    "retained_focused_run": 4489
+  },
+  "cpu_seconds_sum": 26.689538057,
+  "date": "2026-09-19",
+  "nonclaim": "This does not rehabilitate or reproduce the historical full 142-case producer/checker/SMT/oracle campaign, whose conservative lower bound is 209,282.",
+  "peak_rss_kib_max": 103580,
+  "remaining": 163120,
+  "schema": "bptc-confirmatory-campaign-v1",
+  "scientific_execution": true,
+  "scope": "decisive focused boundary controls and exact closed-form comparison only",
+  "used": 36880,
+  "within_ceiling": true,
+  "workers_max": 1
+}

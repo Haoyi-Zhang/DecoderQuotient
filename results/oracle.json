@@ -1,0 +1,412 @@
+{
+  "assignments": 3570,
+  "packing_checks": 416,
+  "producer_transitions": 420,
+  "rows": [
+    {
+      "assignments": 256,
+      "bits": 4,
+      "mode": "mul_sub",
+      "scale": 1,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 256,
+      "bits": 4,
+      "mode": "sub_mul",
+      "scale": 1,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 256,
+      "bits": 4,
+      "mode": "word_sub",
+      "scale": 1,
+      "witness": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "zero": 3
+    },
+    {
+      "assignments": 256,
+      "bits": 4,
+      "mode": "word_affine",
+      "scale": 1,
+      "witness": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "zero": 3
+    },
+    {
+      "assignments": 256,
+      "bits": 4,
+      "mode": "sat_mul_sub",
+      "scale": 1,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 256,
+      "bits": 4,
+      "mode": "mul_sub",
+      "scale": 2,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 256,
+      "bits": 4,
+      "mode": "sub_mul",
+      "scale": 2,
+      "witness": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "zero": 3
+    },
+    {
+      "assignments": 256,
+      "bits": 4,
+      "mode": "word_sub",
+      "scale": 2,
+      "witness": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "zero": 3
+    },
+    {
+      "assignments": 256,
+      "bits": 4,
+      "mode": "word_affine",
+      "scale": 2,
+      "witness": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "zero": 3
+    },
+    {
+      "assignments": 256,
+      "bits": 4,
+      "mode": "sat_mul_sub",
+      "scale": 2,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 81,
+      "bits": 8,
+      "mode": "mul_sub",
+      "scale": 1,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 81,
+      "bits": 8,
+      "mode": "sub_mul",
+      "scale": 1,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 81,
+      "bits": 8,
+      "mode": "word_sub",
+      "scale": 1,
+      "witness": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "zero": 3
+    },
+    {
+      "assignments": 81,
+      "bits": 8,
+      "mode": "word_affine",
+      "scale": 1,
+      "witness": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "zero": 3
+    },
+    {
+      "assignments": 81,
+      "bits": 8,
+      "mode": "sat_mul_sub",
+      "scale": 1,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 81,
+      "bits": 8,
+      "mode": "mul_sub",
+      "scale": 2,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 81,
+      "bits": 8,
+      "mode": "sub_mul",
+      "scale": 2,
+      "witness": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "zero": 3
+    },
+    {
+      "assignments": 81,
+      "bits": 8,
+      "mode": "word_sub",
+      "scale": 2,
+      "witness": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "zero": 3
+    },
+    {
+      "assignments": 81,
+      "bits": 8,
+      "mode": "word_affine",
+      "scale": 2,
+      "witness": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "zero": 3
+    },
+    {
+      "assignments": 81,
+      "bits": 8,
+      "mode": "sat_mul_sub",
+      "scale": 2,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 16,
+      "bits": 16,
+      "mode": "mul_sub",
+      "scale": 1,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 16,
+      "bits": 16,
+      "mode": "sub_mul",
+      "scale": 1,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 16,
+      "bits": 16,
+      "mode": "word_sub",
+      "scale": 1,
+      "witness": [
+        0,
+        0
+      ],
+      "zero": 3
+    },
+    {
+      "assignments": 16,
+      "bits": 16,
+      "mode": "word_affine",
+      "scale": 1,
+      "witness": [
+        0,
+        0
+      ],
+      "zero": 3
+    },
+    {
+      "assignments": 16,
+      "bits": 16,
+      "mode": "sat_mul_sub",
+      "scale": 1,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 16,
+      "bits": 16,
+      "mode": "mul_sub",
+      "scale": 2,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 16,
+      "bits": 16,
+      "mode": "sub_mul",
+      "scale": 2,
+      "witness": [
+        0,
+        0
+      ],
+      "zero": 3
+    },
+    {
+      "assignments": 16,
+      "bits": 16,
+      "mode": "word_sub",
+      "scale": 2,
+      "witness": [
+        0,
+        0
+      ],
+      "zero": 3
+    },
+    {
+      "assignments": 16,
+      "bits": 16,
+      "mode": "word_affine",
+      "scale": 2,
+      "witness": [
+        0,
+        0
+      ],
+      "zero": 3
+    },
+    {
+      "assignments": 16,
+      "bits": 16,
+      "mode": "sat_mul_sub",
+      "scale": 2,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 4,
+      "bits": 32,
+      "mode": "mul_sub",
+      "scale": 1,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 4,
+      "bits": 32,
+      "mode": "sub_mul",
+      "scale": 1,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 4,
+      "bits": 32,
+      "mode": "word_sub",
+      "scale": 1,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 4,
+      "bits": 32,
+      "mode": "word_affine",
+      "scale": 1,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 4,
+      "bits": 32,
+      "mode": "sat_mul_sub",
+      "scale": 1,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 4,
+      "bits": 32,
+      "mode": "mul_sub",
+      "scale": 2,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 4,
+      "bits": 32,
+      "mode": "sub_mul",
+      "scale": 2,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 4,
+      "bits": 32,
+      "mode": "word_sub",
+      "scale": 2,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 4,
+      "bits": 32,
+      "mode": "word_affine",
+      "scale": 2,
+      "witness": null,
+      "zero": 3
+    },
+    {
+      "assignments": 4,
+      "bits": 32,
+      "mode": "sat_mul_sub",
+      "scale": 2,
+      "witness": null,
+      "zero": 3
+    }
+  ]
+}

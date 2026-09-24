@@ -1,0 +1,46 @@
+{
+  "budget": {
+    "categories": {
+      "backward_jump": 1080,
+      "for_iter": 1514,
+      "python_function_call": 1895
+    },
+    "category_sum": 4489,
+    "label": "bptc.focused",
+    "limit": 80000,
+    "remaining": 75511,
+    "used": 4489
+  },
+  "command_arguments": [
+    "--out",
+    "results/reproduced-clean/focused.json",
+    "--compare",
+    "results/focused.json"
+  ],
+  "error": null,
+  "measurements": {
+    "cpu_seconds": 1.480962492,
+    "peak_rss_kib": 97560,
+    "wall_seconds": 1.483217532000026
+  },
+  "meter_policy": {
+    "charged_before_execution": true,
+    "events": [
+      "python function call",
+      "FOR_ITER",
+      "backward jump"
+    ],
+    "interpretation": "conservative upper bound on bounded confirmatory work",
+    "source_scope": "artifact/bptc excluding budget.py and metered_runner.py"
+  },
+  "module": "bptc.focused",
+  "resource_limits": {
+    "address_space_mib": 2500,
+    "cpu_seconds": 120,
+    "obligations": 80000
+  },
+  "schema": "bptc-hard-meter-v1",
+  "scientific_execution": true,
+  "status": "completed",
+  "workers": 1
+}

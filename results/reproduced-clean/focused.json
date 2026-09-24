@@ -1,0 +1,127 @@
+{
+  "checks": 6,
+  "enumeration_charge": 97,
+  "rows": [
+    {
+      "check": "boolean-offset",
+      "rejected": true
+    },
+    {
+      "check": "float-scale",
+      "rejected": true
+    },
+    {
+      "check": "boolean-prefix",
+      "rejected": true
+    },
+    {
+      "check": "integer-fit",
+      "rejected": true
+    },
+    {
+      "check": "boolean-witness",
+      "rejected": true
+    },
+    {
+      "check": "saturation-not-necessary",
+      "reference": 6,
+      "specification": {
+        "acc_semantics": "saturating",
+        "acc_widths": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "activation_bounds": [
+          1,
+          1
+        ],
+        "arithmetic": "mul_sub",
+        "bits": 4,
+        "consume": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "domains": [
+          [
+            15,
+            15
+          ],
+          [
+            15,
+            15
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            15,
+            15
+          ],
+          [
+            15,
+            15
+          ],
+          [
+            8,
+            8
+          ]
+        ],
+        "id": "saturation-not-necessary",
+        "input_offset": 0,
+        "layout": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "memory_bytes": 24,
+        "observations": [
+          8
+        ],
+        "output_offset": 20,
+        "scale": 1,
+        "shape": [
+          8
+        ],
+        "zero": 8
+      },
+      "stage": "accumulation",
+      "target": 6,
+      "terms": [
+        7,
+        7,
+        -8,
+        -7,
+        -7,
+        7,
+        7,
+        0
+      ]
+    }
+  ]
+}

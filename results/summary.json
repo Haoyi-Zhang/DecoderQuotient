@@ -1,0 +1,29 @@
+{
+  "actual_fault_transition_charge": 14994,
+  "cases": 142,
+  "certificate_faults": 96,
+  "conservative_fault_transition_charge": 30012,
+  "decoder_valid": 94,
+  "enumeration_charge": 62222,
+  "guard_false_rejects": 8,
+  "implementation_transitions": 42822,
+  "max_certificate_bytes": 82534,
+  "max_states": 16,
+  "oracle_assignments": 3570,
+  "oracle_cases": 40,
+  "packing_checks": 416,
+  "scalar_false_accepts": 25,
+  "smt_disagreements": 0,
+  "smt_queries": 120,
+  "smt_results": {
+    "sat": 48,
+    "unsat": 72
+  },
+  "stages": {
+    "accepted": 84,
+    "accumulation": 5,
+    "decode": 48,
+    "layout": 5
+  },
+  "whole_interpreter_replays": 300
+}

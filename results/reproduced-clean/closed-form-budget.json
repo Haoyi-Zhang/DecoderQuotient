@@ -1,0 +1,48 @@
+{
+  "budget": {
+    "categories": {
+      "backward_jump": 3988,
+      "for_iter": 5144,
+      "python_function_call": 4818
+    },
+    "category_sum": 13950,
+    "label": "bptc.closed_form",
+    "limit": 80000,
+    "remaining": 66050,
+    "used": 13950
+  },
+  "command_arguments": [
+    "--reference",
+    "results",
+    "--out",
+    "results/reproduced-clean/closed_form.json",
+    "--compare",
+    "results/closed_form.json"
+  ],
+  "error": null,
+  "measurements": {
+    "cpu_seconds": 5.843258099,
+    "peak_rss_kib": 103580,
+    "wall_seconds": 5.844863291999957
+  },
+  "meter_policy": {
+    "charged_before_execution": true,
+    "events": [
+      "python function call",
+      "FOR_ITER",
+      "backward jump"
+    ],
+    "interpretation": "conservative upper bound on bounded confirmatory work",
+    "source_scope": "artifact/bptc excluding budget.py and metered_runner.py"
+  },
+  "module": "bptc.closed_form",
+  "resource_limits": {
+    "address_space_mib": 2500,
+    "cpu_seconds": 120,
+    "obligations": 80000
+  },
+  "schema": "bptc-hard-meter-v1",
+  "scientific_execution": true,
+  "status": "completed",
+  "workers": 1
+}

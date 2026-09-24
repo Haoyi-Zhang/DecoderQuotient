@@ -1,0 +1,83 @@
+{
+  "audit_kind": "static code and data hygiene audit",
+  "checks": [
+    {
+      "check": "Python source inventory is nonempty",
+      "passed": true
+    },
+    {
+      "check": "all Python sources parse",
+      "passed": true
+    },
+    {
+      "check": "no eval/exec calls exist",
+      "passed": true
+    },
+    {
+      "check": "source contains no private absolute runtime paths",
+      "passed": true
+    },
+    {
+      "check": "focused.py rejects unmetered scientific execution",
+      "passed": true
+    },
+    {
+      "check": "closed_form.py rejects unmetered scientific execution",
+      "passed": true
+    },
+    {
+      "check": "campaign.py rejects unmetered scientific execution",
+      "passed": true
+    },
+    {
+      "check": "hard meter charges before operations",
+      "passed": true
+    },
+    {
+      "check": "hard meter only admits frozen confirmatory modules",
+      "passed": true
+    },
+    {
+      "check": "all retained JSON files parse",
+      "passed": true
+    },
+    {
+      "check": "claim_evidence_ledger.csv has consistent row widths",
+      "passed": true
+    },
+    {
+      "check": "external_resources.csv has consistent row widths",
+      "passed": true
+    },
+    {
+      "check": "literature-calibration.csv has consistent row widths",
+      "passed": true
+    },
+    {
+      "check": "results/raw.csv has consistent row widths",
+      "passed": true
+    },
+    {
+      "check": "evidence/reference-verification.tsv has consistent row widths",
+      "passed": true
+    },
+    {
+      "check": "artifact contains no Python bytecode cache directories",
+      "passed": true
+    },
+    {
+      "check": "artifact contains no compiled Python bytecode",
+      "passed": true
+    },
+    {
+      "check": "standalone artifact contains no nested archives",
+      "passed": true
+    }
+  ],
+  "checks_passed": 18,
+  "json_files": 24,
+  "passed": true,
+  "python_files": 18,
+  "scientific_execution": false,
+  "tabular_files": 5
+}

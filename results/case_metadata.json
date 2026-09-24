@@ -1,0 +1,712 @@
+[
+  {
+    "detail": "box 0; 4-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-001"
+  },
+  {
+    "detail": "box 0; 4-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-002"
+  },
+  {
+    "detail": "box 0; 4-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-003"
+  },
+  {
+    "detail": "box 0; 4-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-004"
+  },
+  {
+    "detail": "box 0; 4-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-005"
+  },
+  {
+    "detail": "box 1; 4-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-006"
+  },
+  {
+    "detail": "box 1; 4-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-007"
+  },
+  {
+    "detail": "box 1; 4-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-008"
+  },
+  {
+    "detail": "box 1; 4-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-009"
+  },
+  {
+    "detail": "box 1; 4-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-010"
+  },
+  {
+    "detail": "box 2; 4-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-011"
+  },
+  {
+    "detail": "box 2; 4-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-012"
+  },
+  {
+    "detail": "box 2; 4-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-013"
+  },
+  {
+    "detail": "box 2; 4-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-014"
+  },
+  {
+    "detail": "box 2; 4-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-015"
+  },
+  {
+    "detail": "box 3; 4-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-016"
+  },
+  {
+    "detail": "box 3; 4-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-017"
+  },
+  {
+    "detail": "box 3; 4-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-018"
+  },
+  {
+    "detail": "box 3; 4-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-019"
+  },
+  {
+    "detail": "box 3; 4-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-020"
+  },
+  {
+    "detail": "box 4; 4-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-021"
+  },
+  {
+    "detail": "box 4; 4-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-022"
+  },
+  {
+    "detail": "box 4; 4-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-023"
+  },
+  {
+    "detail": "box 4; 4-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-024"
+  },
+  {
+    "detail": "box 4; 4-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-025"
+  },
+  {
+    "detail": "box 5; 4-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-026"
+  },
+  {
+    "detail": "box 5; 4-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-027"
+  },
+  {
+    "detail": "box 5; 4-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-028"
+  },
+  {
+    "detail": "box 5; 4-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-029"
+  },
+  {
+    "detail": "box 5; 4-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-030"
+  },
+  {
+    "detail": "box 0; 8-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-031"
+  },
+  {
+    "detail": "box 0; 8-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-032"
+  },
+  {
+    "detail": "box 0; 8-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-033"
+  },
+  {
+    "detail": "box 0; 8-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-034"
+  },
+  {
+    "detail": "box 0; 8-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-035"
+  },
+  {
+    "detail": "box 1; 8-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-036"
+  },
+  {
+    "detail": "box 1; 8-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-037"
+  },
+  {
+    "detail": "box 1; 8-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-038"
+  },
+  {
+    "detail": "box 1; 8-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-039"
+  },
+  {
+    "detail": "box 1; 8-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-040"
+  },
+  {
+    "detail": "box 2; 8-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-041"
+  },
+  {
+    "detail": "box 2; 8-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-042"
+  },
+  {
+    "detail": "box 2; 8-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-043"
+  },
+  {
+    "detail": "box 2; 8-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-044"
+  },
+  {
+    "detail": "box 2; 8-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-045"
+  },
+  {
+    "detail": "box 3; 8-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-046"
+  },
+  {
+    "detail": "box 3; 8-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-047"
+  },
+  {
+    "detail": "box 3; 8-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-048"
+  },
+  {
+    "detail": "box 3; 8-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-049"
+  },
+  {
+    "detail": "box 3; 8-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-050"
+  },
+  {
+    "detail": "box 4; 8-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-051"
+  },
+  {
+    "detail": "box 4; 8-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-052"
+  },
+  {
+    "detail": "box 4; 8-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-053"
+  },
+  {
+    "detail": "box 4; 8-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-054"
+  },
+  {
+    "detail": "box 4; 8-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-055"
+  },
+  {
+    "detail": "box 5; 8-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-056"
+  },
+  {
+    "detail": "box 5; 8-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-057"
+  },
+  {
+    "detail": "box 5; 8-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-058"
+  },
+  {
+    "detail": "box 5; 8-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-059"
+  },
+  {
+    "detail": "box 5; 8-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-060"
+  },
+  {
+    "detail": "box 0; 16-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-061"
+  },
+  {
+    "detail": "box 0; 16-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-062"
+  },
+  {
+    "detail": "box 0; 16-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-063"
+  },
+  {
+    "detail": "box 0; 16-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-064"
+  },
+  {
+    "detail": "box 0; 16-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-065"
+  },
+  {
+    "detail": "box 1; 16-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-066"
+  },
+  {
+    "detail": "box 1; 16-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-067"
+  },
+  {
+    "detail": "box 1; 16-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-068"
+  },
+  {
+    "detail": "box 1; 16-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-069"
+  },
+  {
+    "detail": "box 1; 16-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-070"
+  },
+  {
+    "detail": "box 2; 16-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-071"
+  },
+  {
+    "detail": "box 2; 16-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-072"
+  },
+  {
+    "detail": "box 2; 16-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-073"
+  },
+  {
+    "detail": "box 2; 16-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-074"
+  },
+  {
+    "detail": "box 2; 16-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-075"
+  },
+  {
+    "detail": "box 3; 16-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-076"
+  },
+  {
+    "detail": "box 3; 16-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-077"
+  },
+  {
+    "detail": "box 3; 16-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-078"
+  },
+  {
+    "detail": "box 3; 16-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-079"
+  },
+  {
+    "detail": "box 3; 16-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-080"
+  },
+  {
+    "detail": "box 4; 16-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-081"
+  },
+  {
+    "detail": "box 4; 16-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-082"
+  },
+  {
+    "detail": "box 4; 16-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-083"
+  },
+  {
+    "detail": "box 4; 16-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-084"
+  },
+  {
+    "detail": "box 4; 16-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-085"
+  },
+  {
+    "detail": "box 5; 16-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-086"
+  },
+  {
+    "detail": "box 5; 16-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-087"
+  },
+  {
+    "detail": "box 5; 16-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-088"
+  },
+  {
+    "detail": "box 5; 16-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-089"
+  },
+  {
+    "detail": "box 5; 16-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-090"
+  },
+  {
+    "detail": "box 0; 32-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-091"
+  },
+  {
+    "detail": "box 0; 32-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-092"
+  },
+  {
+    "detail": "box 0; 32-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-093"
+  },
+  {
+    "detail": "box 0; 32-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-094"
+  },
+  {
+    "detail": "box 0; 32-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-095"
+  },
+  {
+    "detail": "box 1; 32-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-096"
+  },
+  {
+    "detail": "box 1; 32-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-097"
+  },
+  {
+    "detail": "box 1; 32-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-098"
+  },
+  {
+    "detail": "box 1; 32-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-099"
+  },
+  {
+    "detail": "box 1; 32-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-100"
+  },
+  {
+    "detail": "box 2; 32-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-101"
+  },
+  {
+    "detail": "box 2; 32-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-102"
+  },
+  {
+    "detail": "box 2; 32-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-103"
+  },
+  {
+    "detail": "box 2; 32-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-104"
+  },
+  {
+    "detail": "box 2; 32-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-105"
+  },
+  {
+    "detail": "box 3; 32-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-106"
+  },
+  {
+    "detail": "box 3; 32-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-107"
+  },
+  {
+    "detail": "box 3; 32-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-108"
+  },
+  {
+    "detail": "box 3; 32-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-109"
+  },
+  {
+    "detail": "box 3; 32-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-110"
+  },
+  {
+    "detail": "box 4; 32-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-111"
+  },
+  {
+    "detail": "box 4; 32-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-112"
+  },
+  {
+    "detail": "box 4; 32-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-113"
+  },
+  {
+    "detail": "box 4; 32-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-114"
+  },
+  {
+    "detail": "box 4; 32-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-115"
+  },
+  {
+    "detail": "box 5; 32-bit lanes; mul_sub",
+    "family": "word-grid",
+    "id": "case-116"
+  },
+  {
+    "detail": "box 5; 32-bit lanes; sub_mul",
+    "family": "word-grid",
+    "id": "case-117"
+  },
+  {
+    "detail": "box 5; 32-bit lanes; word_sub",
+    "family": "word-grid",
+    "id": "case-118"
+  },
+  {
+    "detail": "box 5; 32-bit lanes; word_affine",
+    "family": "word-grid",
+    "id": "case-119"
+  },
+  {
+    "detail": "box 5; 32-bit lanes; sat_mul_sub",
+    "family": "word-grid",
+    "id": "case-120"
+  },
+  {
+    "detail": "fixed decoder, reversed logical order",
+    "family": "size-layout",
+    "id": "case-121"
+  },
+  {
+    "detail": "fixed decoder, reversed logical order",
+    "family": "size-layout",
+    "id": "case-122"
+  },
+  {
+    "detail": "fixed decoder, reversed logical order",
+    "family": "size-layout",
+    "id": "case-123"
+  },
+  {
+    "detail": "fixed decoder, reversed logical order",
+    "family": "size-layout",
+    "id": "case-124"
+  },
+  {
+    "detail": "fixed decoder, reversed logical order",
+    "family": "size-layout",
+    "id": "case-125"
+  },
+  {
+    "detail": "fixed decoder, reversed logical order",
+    "family": "size-layout",
+    "id": "case-126"
+  },
+  {
+    "detail": "discarded outgoing carry of final lane",
+    "family": "boundary",
+    "id": "case-127"
+  },
+  {
+    "detail": "saturation changes value by two lane moduli",
+    "family": "boundary",
+    "id": "case-128"
+  },
+  {
+    "detail": "final 16-bit result may overflow",
+    "family": "accumulation",
+    "id": "case-129"
+  },
+  {
+    "detail": "signed widening after eight products",
+    "family": "accumulation",
+    "id": "case-130"
+  },
+  {
+    "detail": "signed widening at positive endpoint 32768",
+    "family": "accumulation",
+    "id": "case-131"
+  },
+  {
+    "detail": "transient modular overflow cancels before final observation",
+    "family": "accumulation",
+    "id": "case-132"
+  },
+  {
+    "detail": "same schedule with saturation",
+    "family": "accumulation",
+    "id": "case-133"
+  },
+  {
+    "detail": "signed widening exposes transient modular overflow",
+    "family": "accumulation",
+    "id": "case-134"
+  },
+  {
+    "detail": "narrowing preserves residue",
+    "family": "accumulation",
+    "id": "case-135"
+  },
+  {
+    "detail": "explicit intermediate signed observation",
+    "family": "accumulation",
+    "id": "case-136"
+  },
+  {
+    "detail": "activation/weight index mismatch",
+    "family": "layout",
+    "id": "case-137"
+  },
+  {
+    "detail": "duplicate logical coordinate",
+    "family": "layout",
+    "id": "case-138"
+  },
+  {
+    "detail": "output aliases immutable packed input",
+    "family": "layout",
+    "id": "case-139"
+  },
+  {
+    "detail": "output end lies outside declared memory",
+    "family": "layout",
+    "id": "case-140"
+  },
+  {
+    "detail": "input interval crosses 32-bit address bound",
+    "family": "layout",
+    "id": "case-141"
+  },
+  {
+    "detail": "32-code interleave as an explicit bijection",
+    "family": "layout",
+    "id": "case-142"
+  }
+]
