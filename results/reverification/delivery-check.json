@@ -1,0 +1,78 @@
+{
+  "delivery_scope": "One two-folder project package, not a submission or a guarantee of scientific completeness.",
+  "references": {
+    "entries": 68,
+    "scholarly_papers_books": 67,
+    "software": 1,
+    "cited_unique": 68,
+    "occurrences": 71,
+    "full_text_review_complete": false,
+    "metadata_accuracy_unqualified": false,
+    "partial_indexed_primary_records": 7,
+    "source_audit": "evidence/reference-reverification.json"
+  },
+  "code_regressions": {
+    "tests": 39,
+    "failures": [],
+    "errors": [],
+    "skipped": 0,
+    "success": true,
+    "events_this_run": 1653,
+    "events_cumulative": 187881
+  },
+  "saved_semantic_replay": {
+    "status": "pass",
+    "audit_mode": "semantic certificate replay, independent baseline recomputation, and saved-record audit",
+    "results_dir": "results/publication/main",
+    "compare_dir": "results/publication/reproduction",
+    "counts": {
+      "accumulator": 64,
+      "decoder": 30
+    },
+    "comparison": {
+      "byte_compared_scientific_files": 246,
+      "byte_identical": true,
+      "summary_comparison": "scientific fields equal; measured resource fields and labels intentionally excluded"
+    },
+    "events_this_check": 15370
+  },
+  "citation_negative_controls": {
+    "status": "pass",
+    "positive_records": 68,
+    "negative_controls": [
+      {
+        "control": "reviewed_title_drift",
+        "rejected": true,
+        "reason": "bibliography changed after source review: awq"
+      },
+      {
+        "control": "reviewed_author_drift",
+        "rejected": true,
+        "reason": "bibliography changed after source review: awq"
+      },
+      {
+        "control": "compcert_to_qserve",
+        "rejected": true,
+        "reason": "CompCert macro points at the wrong work"
+      }
+    ],
+    "scope": "Tests file/metadata binding, not the truth of the external publications."
+  },
+  "paper": {
+    "main_total_pages": 20,
+    "main_content_pages": 16,
+    "references_start_page": 17,
+    "supplement_pages": 6,
+    "all_26_pages_rendered_and_viewed": true,
+    "clean_rebuild_pdf_byte_equality": true,
+    "internal_20_content_page_target_met": false
+  },
+  "resource": {
+    "continuing_repair_events": 187881,
+    "limit": 200000,
+    "historical_overrun_lower_bound": 209282,
+    "historical_whole_project_compliance": false
+  },
+  "research_readiness": "not established: journal-level novelty/significance, representative workloads/strong-validator comparisons, full literature calibration and external submission compliance remain unresolved",
+  "verification_boundary": "Neither unit tests nor package consistency imply absence of all bugs, correctness of every citation, new scientific contribution, or external peer review."
+}

@@ -1,0 +1,115 @@
+{
+  "accepted": true,
+  "assumptions": [
+    "valid loads and stores",
+    "defined __byte_perm and __vadd4 intrinsic semantics",
+    "no concurrent interference"
+  ],
+  "bytewise_corrections": 8,
+  "loaded_vectors": 8,
+  "method": "complete frozen-token equality, ignoring whitespace and comments only",
+  "mutation_test": {
+    "mutations": 22,
+    "records": [
+      {
+        "mutation": "low-mask",
+        "rejected": true
+      },
+      {
+        "mutation": "high-mask",
+        "rejected": true
+      },
+      {
+        "mutation": "shift",
+        "rejected": true
+      },
+      {
+        "mutation": "component",
+        "rejected": true
+      },
+      {
+        "mutation": "duplicate-index",
+        "rejected": true
+      },
+      {
+        "mutation": "scale-mask",
+        "rejected": true
+      },
+      {
+        "mutation": "scale-shift",
+        "rejected": true
+      },
+      {
+        "mutation": "zero-selector",
+        "rejected": true
+      },
+      {
+        "mutation": "comment-decoy",
+        "rejected": true
+      },
+      {
+        "mutation": "extra-assignment",
+        "rejected": true
+      },
+      {
+        "mutation": "extra-statement",
+        "rejected": true
+      },
+      {
+        "mutation": "early-store",
+        "rejected": true
+      },
+      {
+        "mutation": "lost-correction",
+        "rejected": true
+      },
+      {
+        "mutation": "destination",
+        "rejected": true
+      },
+      {
+        "mutation": "scale-pair-0",
+        "rejected": true
+      },
+      {
+        "mutation": "scale-pair-1",
+        "rejected": true
+      },
+      {
+        "mutation": "scale-pair-2",
+        "rejected": true
+      },
+      {
+        "mutation": "scale-pair-3",
+        "rejected": true
+      },
+      {
+        "mutation": "scale-pair-4",
+        "rejected": true
+      },
+      {
+        "mutation": "scale-pair-5",
+        "rejected": true
+      },
+      {
+        "mutation": "scale-pair-6",
+        "rejected": true
+      },
+      {
+        "mutation": "scale-pair-7",
+        "rejected": true
+      }
+    ],
+    "rejected": 22
+  },
+  "parameter_bounds": {
+    "digit_max": 15,
+    "digit_min": 0,
+    "lane_bits": 8,
+    "scale_max": 255,
+    "scale_min": 0
+  },
+  "scale_bytes": 4,
+  "trusted_boundary": "No control-flow, alias, memory-safety, MMA, floating-point, or whole-kernel validation.",
+  "whole_word_multiplies": 8
+}

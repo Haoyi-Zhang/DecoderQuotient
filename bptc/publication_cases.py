@@ -23,8 +23,10 @@ def _pairs_for_product(product: int, count: int = 3) -> Tuple[Pair, ...]:
         if pair not in unique:
             unique.append(pair)
     unique.sort(key=lambda pair: (max(abs(pair[0]), abs(pair[1])), abs(pair[0]) + abs(pair[1]), pair))
-    if len(unique) < count:
-        raise ValueError(f"cannot create {count} representatives for product {product}")
+    if type(count) is not int or count < 1:
+        raise ValueError("count must be positive")
+    # +/-1 have only two distinct integer factor pairs. Use available pairs;
+    # never duplicate a member to manufacture compression.
     return tuple(unique[:count])
 
 
@@ -158,13 +160,13 @@ def accumulator_specs() -> List[AccumulatorSpec]:
             )
         )
 
-        products = [high + 1, -4 * high, 0, 0]
+        products = [high + 1, -1, -4 * high, 0]
         specs.append(
             AccumulatorSpec(
                 name=f"intermediate-observation-{variant:02d}",
                 initial=0,
                 stages=tuple(
-                    _stage([p], wide, "saturate", bits, "saturate", observe=(i == 0))
+                    _stage([p], wide, "saturate", bits, "saturate", observe=(i == 1))
                     for i, p in enumerate(products)
                 ),
                 final_observe=True,

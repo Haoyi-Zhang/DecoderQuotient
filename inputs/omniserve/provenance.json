@@ -1,0 +1,18 @@
+{
+  "repository": "mit-han-lab/omniserve",
+  "commit": "02b2925aa6fa3b92b06316a1524b7f38922cd9c8",
+  "path": "kernels/csrc/qgemm/w4a8_per_group/gemm_cuda.cu",
+  "upstream_blob": "5d1fb48bd4934dddcd6e66a175910a4d1b3e6ed1",
+  "retrieved_range": [
+    260,
+    340
+  ],
+  "retrieved_on": "2026-09-29",
+  "method": "GitHub connector fetch_file",
+  "selection_start": "uint4 loaded =",
+  "selection_end": "ptr[7] = __vadd4(ptr_7, zero_point_3);",
+  "local_representation": "Same lexical token sequence as the selected upstream statements; indentation and line breaks normalized. Not a byte-exact copy of the entire upstream file.",
+  "allowed_normalization": "Whitespace and C/C++ comments only, token boundaries preserved. No literal or arithmetic rewrites.",
+  "license": "Apache-2.0",
+  "live_check": "Retrieved upstream range compared with the retained expression sequence."
+}

@@ -1,0 +1,32 @@
+{
+  "assignments": 81,
+  "equivalent": false,
+  "failing_assignments": 81,
+  "least_counterexample": {
+    "first_bad_stage": 3,
+    "indices": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pairs": [
+      [
+        -4,
+        -2
+      ],
+      [
+        -4,
+        2
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  }
+}

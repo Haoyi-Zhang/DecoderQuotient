@@ -1,8 +1,3 @@
-// Frozen review excerpt from mit-han-lab/omniserve, Apache-2.0.
-// Repository commit: 02b2925aa6fa3b92b06316a1524b7f38922cd9c8
-// Path: kernels/csrc/qgemm/w4a8_per_group/gemm_cuda.cu
-// Blob identifier recorded by the upstream repository: 5d1fb48bd4934dddcd6e66a175910a4d1b3e6ed1
-// Only the restricted packed-dequant expression block is retained here.
 uint4 loaded = *((uint4 *)(src) + warp_offset_n / 32 * kSmemCol +
                  shared_iter * 32 / 32 * kSmemCol + k_0_1 * INTRIN_K + threadIdx.x);
 uint32_t loaded_0 = loaded.x & 0x0F0F0F0F;

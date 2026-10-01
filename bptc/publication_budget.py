@@ -20,20 +20,20 @@ class ObligationLedger:
     _lock: Lock = field(default_factory=Lock, repr=False, compare=False)
 
     def __post_init__(self) -> None:
-        if not isinstance(self.limit, int) or self.limit <= 0:
+        if type(self.limit) is not int or self.limit <= 0:
             raise ValueError("limit must be a positive integer")
-        if not isinstance(self.used, int) or self.used < 0 or self.used > self.limit:
+        if type(self.used) is not int or self.used < 0 or self.used > self.limit:
             raise ValueError("invalid initial use")
-        if any((not isinstance(v, int) or v < 0) for v in self.categories.values()):
+        if any((type(v) is not int or v < 0) for v in self.categories.values()):
             raise ValueError("invalid category count")
         if sum(self.categories.values()) != self.used:
             raise ValueError("category counts must sum to used")
 
     def charge(self, category: str, count: int = 1) -> None:
         """Atomically reserve *count* obligations before their execution."""
-        if not category or not isinstance(category, str):
+        if type(category) is not str or not category:
             raise ValueError("category must be a non-empty string")
-        if not isinstance(count, int) or count <= 0:
+        if type(count) is not int or count <= 0:
             raise ValueError("count must be a positive integer")
         with self._lock:
             if self.used + count > self.limit:

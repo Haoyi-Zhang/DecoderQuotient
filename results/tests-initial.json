@@ -1,0 +1,19 @@
+{
+  "tests": 27,
+  "failures": [
+    [
+      "test_reconvergence_observation (tests.test_contracts.ReplayTests.test_reconvergence_observation)",
+      "Traceback (most recent call last):\n  File \"PROJECT_ROOT/Artifacts/tests/test_contracts.py\", line 150, in test_reconvergence_observation\n    self.assertFalse(run_oracle(spec_to_dict(observed),LEDGER)[\"equivalent\"])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: True is not false\n"
+    ]
+  ],
+  "errors": [
+    [
+      "test_end_to_end_single_case (tests.test_contracts.ExportTests.test_end_to_end_single_case)",
+      "Traceback (most recent call last):\n  File \"PROJECT_ROOT/Artifacts/tests/test_contracts.py\", line 189, in test_end_to_end_single_case\n    result=run_once(root,out,LEDGER,\"smoke\",[accumulator_specs()[0]],[decoder_specs()[0]])\n  File \"PROJECT_ROOT/Artifacts/bptc/publication_campaign.py\", line 256, in run_once\n    writer.writerow(row)\n    ~~~~~~~~~~~~~~~^^^^^\n  File \"/usr/lib/python3.13/csv.py\", line 226, in writerow\n    return self.writer.writerow(self._dict_to_list(rowdict))\n                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/usr/lib/python3.13/csv.py\", line 221, in _dict_to_list\n    raise ValueError(\"dict contains fields not in fieldnames: \"\n                     + \", \".join([repr(x) for x in wrong_fields]))\nValueError: dict contains fields not in fieldnames: 'term_fit_final_guard', 'direct_dp_equivalent', 'direct_dp_transitions'\n"
+    ]
+  ],
+  "skipped": 0,
+  "success": false,
+  "events_this_run": 1548,
+  "events_cumulative": 1548
+}

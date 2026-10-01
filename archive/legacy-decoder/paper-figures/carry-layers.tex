@@ -1,0 +1,14 @@
+\begin{tikzpicture}[>=Stealth, every node/.style={font=\small}, state/.style={draw,rounded corners=1pt,minimum width=23mm,minimum height=11mm,align=center}, lab/.style={font=\footnotesize,align=center}]
+\node[state] (s0) at (0,0) {$c_0=0$\\$e_0=\mathrm{false}$};
+\node[state] (s1) at (3.2,0) {$c_i, e_i$\\minimum prefix};
+\node[state] (s2) at (6.7,0) {$c_{i+1}, e_{i+1}$\\minimum prefix};
+\node[state] (s3) at (10.2,0) {final layer\\bad state?};
+\draw[->] (s0)--(s1);
+\draw[->] (s1)--(s2);
+\draw[->] (s2)--(s3);
+\node[lab] at (1.6,0.90) {verified layers};
+\node[lab] at (4.95,0.95) {$q_i\in D_i$\\exact transition};
+\node[lab] at (8.45,0.90) {remaining lanes};
+\node[lab,text width=42mm] at (3.2,-1.2) {carry: inter-lane arithmetic\\flag: any earlier mismatch};
+\node[lab,text width=42mm] at (8.5,-1.2) {no bad state: exact decoder\\otherwise: least full word};
+\end{tikzpicture}

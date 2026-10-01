@@ -10,7 +10,8 @@ import time
 from pathlib import Path
 from typing import Dict, Iterable, List
 
-from .accumulator_baselines import final_range_only, no_overflow_sufficient
+from .accumulator_baselines import final_range_only, no_overflow_sufficient, term_fit_and_final_range
+from .direct_state import solve as direct_solve
 from .accumulator_checker import check_certificate
 from .accumulator_oracle import run_oracle
 from .exact_accumulator import generate_certificate
@@ -72,9 +73,12 @@ def _mutate_decoder_certificate(certificate: dict, mutation: int) -> dict:
     return changed
 
 
-def run_once(root: Path, out: Path, ledger: ObligationLedger, run_label: str) -> dict:
+def run_once(root: Path, out: Path, ledger: ObligationLedger, run_label: str,
+             accumulator_suite=None, decoder_suite=None) -> dict:
     cpu_start = time.process_time()
     usage_start = resource.getrusage(resource.RUSAGE_SELF)
+    if out.exists() and any(out.iterdir()):
+        raise ValueError("result directory must be empty")
     out.mkdir(parents=True, exist_ok=True)
     certificate_dir = out / "certificates"
     decoder_dir = out / "decoder-certificates"
@@ -86,6 +90,7 @@ def run_once(root: Path, out: Path, ledger: ObligationLedger, run_label: str) ->
     source_report = parse_frozen_file(source_path, ledger)
     source_mutations = source_mutation_suite(source_text, ledger)
 
+    mutation_records = []
     accumulator_rows: List[dict] = []
     accumulator_certificates: List[dict] = []
     oracle_assignments = 0
@@ -97,11 +102,14 @@ def run_once(root: Path, out: Path, ledger: ObligationLedger, run_label: str) ->
     oracle_disagreements = 0
     checker_disagreements = 0
 
-    for spec in accumulator_specs():
+    for spec in (accumulator_specs() if accumulator_suite is None else accumulator_suite):
         certificate = generate_certificate(spec, ledger, f"{run_label}:accumulator-producer")
         accumulator_certificates.append(certificate)
         checker = check_certificate(certificate, ledger, f"{run_label}:accumulator-checker")
         oracle = run_oracle(certificate["spec"], ledger, f"{run_label}:accumulator-oracle")
+        direct = direct_solve(certificate["spec"], ledger, f"{run_label}:accumulator-direct")
+        _write_json(out / "oracles" / f"{spec.name}.json", oracle)
+        _write_json(out / "direct" / f"{spec.name}.json", direct)
         producer = certificate["decision"]
         if checker["equivalent"] != producer["equivalent"]:
             checker_disagreements += 1
@@ -114,16 +122,24 @@ def run_once(root: Path, out: Path, ledger: ObligationLedger, run_label: str) ->
         }
         if oracle["equivalent"] != producer["equivalent"] or oracle_cex != producer_prefix:
             oracle_disagreements += 1
-        exact = bool(producer["equivalent"])
+        if direct["equivalent"] != producer["equivalent"] or direct["least_counterexample"] != producer_prefix:
+            raise ValueError("unquotiented direct-state disagreement")
+        if direct["reachable_final_states"] != checker["reachable_final_states"] or direct["transitions"] != checker["metrics"]["unquotiented_frontier_edges"]:
+            raise ValueError("independent state/edge count disagreement")
+        exact = producer["equivalent"]
+        ledger.charge(f"{run_label}:baseline-pair",3*sum(len(st["pairs"]) for st in certificate["spec"]["stages"]))
         sufficient = no_overflow_sufficient(certificate["spec"])
         final_only = final_range_only(certificate["spec"])
+        enhanced = term_fit_and_final_range(certificate["spec"])
+        if sufficient and not exact:
+            raise ValueError("sufficient guard accepted an inequivalent schedule")
         exact_equivalent += int(exact)
         guard_false_rejects += int(exact and not sufficient)
         final_false_accepts += int((not exact) and final_only)
         oracle_assignments += oracle["assignments"]
         producer_transitions += certificate["metrics"]["producer_transitions"]
         checker_transitions += checker["checked_transitions"]
-        metrics = certificate["metrics"]
+        metrics = checker["metrics"]
         accumulator_rows.append(
             {
                 "case": spec.name,
@@ -131,9 +147,12 @@ def run_once(root: Path, out: Path, ledger: ObligationLedger, run_label: str) ->
                 "exact_equivalent": exact,
                 "sufficient_guard": sufficient,
                 "final_range_guard": final_only,
+                "term_fit_final_guard": enhanced,
+                "direct_dp_transitions": direct["transitions"],
+                "direct_dp_equivalent": direct["equivalent"],
                 "concrete_assignments": metrics["concrete_assignments"],
                 "failing_assignments": oracle["failing_assignments"],
-                "reachable_final_states": metrics["reachable_final_states"],
+                "reachable_final_states": checker["reachable_final_states"],
                 "quotient_edges": metrics["quotient_frontier_edges"],
                 "unquotiented_edges": metrics["unquotiented_frontier_edges"],
                 "edge_reduction": metrics["unquotiented_frontier_edges"] - metrics["quotient_frontier_edges"],
@@ -158,8 +177,9 @@ def run_once(root: Path, out: Path, ledger: ObligationLedger, run_label: str) ->
                     ledger,
                     f"{run_label}:accumulator-mutant-checker",
                 )
-            except (ValueError, IndexError):
+            except (ValueError, IndexError) as error:
                 accumulator_mutations_rejected += 1
+                mutation_records.append({"kind":"accumulator", "case":selected["spec"]["name"], "mutation":mutation, "rejected":True, "diagnostic":str(error)})
     if accumulator_mutations_rejected != accumulator_mutations:
         raise AssertionError("an accumulator certificate mutation escaped")
 
@@ -169,13 +189,14 @@ def run_once(root: Path, out: Path, ledger: ObligationLedger, run_label: str) ->
     decoder_oracle_assignments = 0
     decoder_disagreements = 0
     decoder_equivalent = 0
-    for spec in decoder_specs():
+    for spec in (decoder_specs() if decoder_suite is None else decoder_suite):
         certificate = generate_decoder_certificate(spec, ledger, f"{run_label}:decoder-producer")
         decoder_certificates.append(certificate)
         checked = check_decoder_certificate(certificate, ledger, f"{run_label}:decoder-checker")
         oracle = None
         if certificate["metrics"]["concrete_assignments"] <= 4096:
             oracle = brute_force_decoder(spec, ledger, f"{run_label}:decoder-oracle")
+            _write_json(out / "decoder-oracles" / f"{spec.name}.json", oracle)
             decoder_oracle_cases += 1
             decoder_oracle_assignments += oracle["assignments"]
             producer_cex = certificate["decision"]["least_counterexample"]
@@ -220,15 +241,16 @@ def run_once(root: Path, out: Path, ledger: ObligationLedger, run_label: str) ->
                     ledger,
                     f"{run_label}:decoder-mutant-checker",
                 )
-            except (ValueError, IndexError):
+            except (ValueError, IndexError) as error:
                 decoder_mutations_rejected += 1
+                mutation_records.append({"kind":"decoder", "case":selected["spec"]["name"], "mutation":mutation, "rejected":True, "diagnostic":str(error)})
     if decoder_mutations_rejected != decoder_mutations:
         raise AssertionError("a decoder certificate mutation escaped")
 
     with (out / "accumulator-cases.csv").open("w", newline="") as handle:
         fields = [
             "case", "provenance", "exact_equivalent", "sufficient_guard",
-            "final_range_guard", "concrete_assignments", "failing_assignments",
+            "final_range_guard", "term_fit_final_guard", "direct_dp_transitions", "direct_dp_equivalent", "concrete_assignments", "failing_assignments",
             "reachable_final_states", "quotient_edges", "unquotiented_edges",
             "edge_reduction", "least_counterexample",
         ]
@@ -278,6 +300,9 @@ def run_once(root: Path, out: Path, ledger: ObligationLedger, run_label: str) ->
             "cross_check_disagreements": oracle_disagreements + checker_disagreements,
             "sufficient_guard_false_rejects": guard_false_rejects,
             "final_range_false_accepts": final_false_accepts,
+            "term_fit_final_false_accepts": sum((not row["exact_equivalent"]) and row["term_fit_final_guard"] for row in accumulator_rows),
+            "direct_dp_transitions": sum(row["direct_dp_transitions"] for row in accumulator_rows),
+            "direct_dp_disagreements": 0,
             "unquotiented_frontier_edges": total_unquotiented,
             "quotient_frontier_edges": total_quotient,
             "edge_reduction": total_unquotiented - total_quotient,
@@ -293,68 +318,37 @@ def run_once(root: Path, out: Path, ledger: ObligationLedger, run_label: str) ->
             "workers": 1,
         },
     }
+    _write_json(out / "mutations.json", mutation_records)
+    _write_json(out / "source-report.json", {**source_report, "mutation_test":source_mutations})
     _write_json(out / "summary.json", summary)
     return summary
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--root", type=Path, default=Path("."))
-    parser.add_argument("--out", type=Path, default=Path("results/publication"))
-    parser.add_argument("--limit", type=int, default=200000)
-    parser.add_argument("--pilot-events", type=int, default=14807)
-    parser.add_argument("--carry-budget", type=Path)
-    args = parser.parse_args()
-
-    root = args.root.resolve()
-    out = args.out.resolve()
-    out.mkdir(parents=True, exist_ok=True)
-    if args.carry_budget is not None:
-        previous = json.loads(args.carry_budget.read_text())
-        if previous["limit"] != args.limit:
-            raise ValueError("carried ledger uses a different limit")
-        ledger = ObligationLedger(
-            args.limit,
-            used=previous["events_used"],
-            categories=dict(previous["categories"]),
-        )
-        if args.pilot_events:
-            raise ValueError("do not charge pilot events twice when carrying a ledger")
-    else:
-        ledger = ObligationLedger(args.limit)
-        if args.pilot_events:
-            ledger.charge("inherited-prospective-pilot", args.pilot_events)
-
-    main_summary = run_once(root, out / "main", ledger, "main")
-    reproduction_summary = run_once(root, out / "reproduction", ledger, "reproduction")
-    if _semantic_projection(main_summary) != _semantic_projection(reproduction_summary):
-        raise AssertionError("clean reproduction summary differs")
-
-    # Compare all certificate and table bytes, since outputs contain no timing fields.
-    for relative in ["accumulator-cases.csv", "decoder-cases.csv"]:
-        if (out / "main" / relative).read_bytes() != (out / "reproduction" / relative).read_bytes():
-            raise AssertionError(f"clean reproduction differs for {relative}")
-    for subdir in ["certificates", "decoder-certificates"]:
-        main_files = sorted((out / "main" / subdir).glob("*.json"))
-        reproduction_files = sorted((out / "reproduction" / subdir).glob("*.json"))
-        if [path.name for path in main_files] != [path.name for path in reproduction_files]:
-            raise AssertionError("certificate file set differs")
-        for left, right in zip(main_files, reproduction_files):
-            if left.read_bytes() != right.read_bytes():
-                raise AssertionError(f"certificate differs: {left.name}")
-
-    combined = {
-        "format": "bptc-publication-campaign-combined-v1",
-        "main_summary": _semantic_projection(main_summary),
-        "reproduction_summary": _semantic_projection(reproduction_summary),
-        "semantic_reproduction_equal": True,
-        "byte_identical_certificates_and_tables": True,
-        "ledger": ledger.to_dict(),
-    }
-    _write_json(out / "combined-summary.json", combined)
-    ledger.write(out / "budget.json")
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--root",type=Path,default=Path("."))
+    parser.add_argument("--out",type=Path,required=True)
+    parser.add_argument("--label",choices=("main","reproduction"),required=True)
+    parser.add_argument("--ledger",type=Path,required=True)
+    parser.add_argument("--limit",type=int,default=200000)
+    args=parser.parse_args()
+    if not 1 <= args.limit <= 200000: raise ValueError("limit outside project ceiling")
+    if args.ledger.exists():
+        old=strict_json_loads(args.ledger.read_text())
+        if old["limit"]!=args.limit:raise ValueError("ledger limit mismatch")
+        ledger=ObligationLedger(args.limit,old["events_used"],old["categories"])
+    else:ledger=ObligationLedger(args.limit)
+    # Bound this single worker; no child or GPU execution is used.
+    resource.setrlimit(resource.RLIMIT_AS,(int(2.5*1024**3),int(2.5*1024**3)))
+    resource.setrlimit(resource.RLIMIT_CPU,(120,120))
+    before=ledger.used
+    try:
+        summary=run_once(args.root.resolve(),args.out.resolve(),ledger,args.label)
+        _write_json(args.out/"run-accounting.json",{"label":args.label,"events_before":before,"events_after":ledger.used,"events_this_run":ledger.used-before,"resource_usage":summary["resource_usage"]})
+    finally:
+        ledger.write(args.ledger)
+    print(json.dumps({"out":str(args.out),"accumulator_cases":summary["accumulator"]["cases"],"decoder_cases":summary["decoder"]["cases"],"events_this_run":ledger.used-before,"events_cumulative":ledger.used}))
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())

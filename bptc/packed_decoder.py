@@ -6,6 +6,7 @@ from itertools import product
 from typing import Dict, List, Tuple
 
 from .publication_budget import ObligationLedger
+from .certificate_format import exact, keys, integer, text
 
 
 @dataclass(frozen=True)
@@ -18,17 +19,18 @@ class DecoderSpec:
     provenance: str = "systematic"
 
     def __post_init__(self) -> None:
-        if not self.name or len(self.maxima) == 0:
-            raise ValueError("decoder name and lanes are required")
-        if len(self.maxima) != len(self.biases):
-            raise ValueError("bias count must equal lane count")
-        base = 1 << self.lane_bits
-        if not (0 <= self.scale < base):
-            raise ValueError("scale must be an unsigned lane value")
-        if any(value < 0 or value > 15 for value in self.maxima):
-            raise ValueError("source-anchored nibble maxima must lie in 0..15")
-        if any(value < 0 or value >= base for value in self.biases):
-            raise ValueError("bias must be a lane value")
+        if type(self.name) is not str or not self.name or type(self.provenance) is not str or not self.provenance:
+            raise ValueError("name and provenance required")
+        if type(self.lane_bits) is not int or self.lane_bits != 8:
+            raise ValueError("source fragment uses byte lanes")
+        if type(self.maxima) is not tuple or type(self.biases) is not tuple or not 1 <= len(self.maxima) <= 4 or len(self.maxima) != len(self.biases):
+            raise ValueError("requires 1..4 lanes and matching biases")
+        if type(self.scale) is not int or not 0 <= self.scale < 256:
+            raise ValueError("scale must be an unsigned byte")
+        if any(type(x) is not int or not 0 <= x <= 15 for x in self.maxima):
+            raise ValueError("maxima must be integer nibbles")
+        if any(type(x) is not int or not 0 <= x < 256 for x in self.biases):
+            raise ValueError("biases must be unsigned bytes")
 
 
 def spec_to_dict(spec: DecoderSpec) -> dict:
@@ -143,80 +145,55 @@ def _product(values) -> int:
     return answer
 
 
-def check_decoder_certificate(
-    certificate: dict,
-    ledger: ObligationLedger,
-    category_prefix: str = "decoder-checker",
-) -> dict:
-    """Independent replay, with arithmetic restated rather than delegated."""
-    if certificate.get("format") != "bptc-packed-decoder-certificate-v1":
-        raise ValueError("unknown decoder certificate")
+def check_decoder_certificate(certificate: dict, ledger: ObligationLedger,
+                              category_prefix: str = "decoder-checker") -> dict:
+    """Recompute every field without calling the certificate producer."""
+    ledger.charge(f"{category_prefix}:schema")
+    keys(certificate,{"format","spec","source_parameter_bound","closed_form","layers","decision","metrics"},"certificate")
+    exact(certificate["format"],"bptc-packed-decoder-certificate-v1","format")
     spec = certificate["spec"]
-    width = spec["lane_bits"]
-    radix = 2**width
-    scale = spec["scale"]
-    maxima = spec["maxima"]
-    if not (scale < radix and max(maxima) <= 15):
-        raise ValueError("source parameter bound does not hold")
-    current: Dict[Tuple[int, bool, int], Tuple[int, ...]] = {(0, False, -1): ()}
-    layers = certificate["layers"]
-    if layers[0]["states"] != [{"state": [0, False, -1], "least_witness": []}]:
-        raise ValueError("bad initial decoder layer")
-
-    checked = 0
-    envelope = 0
-    safe = True
+    keys(spec,{"name","scale","maxima","biases","lane_bits","provenance"},"spec")
+    text(spec["name"],"name"); text(spec["provenance"],"provenance")
+    integer(spec["lane_bits"],"lane_bits",8,8)
+    integer(spec["scale"],"scale",0,255)
+    maxima = spec["maxima"]; biases = spec["biases"]
+    if type(maxima) is not list or not 1 <= len(maxima) <= 4:
+        raise ValueError("requires 1..4 lanes")
+    if type(biases) is not list or len(biases) != len(maxima):
+        raise ValueError("bias count mismatch")
+    for x in maxima: integer(x,"maximum",0,15)
+    for x in biases: integer(x,"bias",0,255)
+    radix = 256; scale = spec["scale"]
+    current = {(0,False,-1):()}
+    rebuilt = [{"index":0,"states":[{"state":[0,False,-1],"least_witness":[]}]}]
+    checked = 0; envelope = 0; safe = True; assignments = 1
     for lane_number, upper in enumerate(maxima):
-        if lane_number and envelope:
-            safe = False
-        envelope = (scale * upper + envelope) // radix
-        expected_edges = []
-        following: Dict[Tuple[int, bool, int], Tuple[int, ...]] = {}
-        for old, prefix in sorted(current.items(), key=lambda item: (item[0], item[1])):
-            incoming, failed, first = old
-            for digit in range(upper + 1):
-                ledger.charge(f"{category_prefix}:transition")
-                checked += 1
-                combined = scale * digit + incoming
-                outgoing = combined // radix
-                differs = (combined % radix) != ((scale * digit) % radix)
-                failed_new = failed or differs
-                first_new = lane_number if differs and not failed else first
-                state_new = (outgoing, failed_new, first_new)
-                witness_new = prefix + (digit,)
-                previous = following.get(state_new)
-                if previous is None or witness_new < previous:
-                    following[state_new] = witness_new
-                expected_edges.append(
-                    {"from": list(old), "digit": digit, "to": list(state_new)}
-                )
-        layer = layers[lane_number + 1]
-        expected_states = [
-            {"state": list(state), "least_witness": list(witness)}
-            for state, witness in sorted(following.items(), key=lambda item: (item[0], item[1]))
-        ]
-        if layer.get("edges") != expected_edges or layer.get("states") != expected_states:
-            raise ValueError(f"decoder replay mismatch at lane {lane_number}")
-        current = following
-
-    bad = [(w, s) for s, w in current.items() if s[1]]
-    least = min(bad, default=None, key=lambda item: item[0])
-    decision = certificate["decision"]
-    if decision["equivalent"] != (least is None):
-        raise ValueError("decoder decision mismatch")
-    expected_counterexample = None
-    if least is not None:
-        witness, state = least
-        expected_counterexample = {
-            "digits": list(witness),
-            "first_bad_lane": state[2],
-            "final_carry": state[0],
-        }
-    if decision["least_counterexample"] != expected_counterexample:
-        raise ValueError("decoder counterexample mismatch")
-    if certificate["closed_form"]["equivalent"] != safe:
-        raise ValueError("closed-form result mismatch")
-    return {"accepted": True, "equivalent": least is None, "checked_transitions": checked}
+        assignments *= upper + 1
+        if lane_number and envelope: safe = False
+        envelope = (scale*upper + envelope)//radix
+        edges = []; following = {}
+        for old,prefix in sorted(current.items(),key=lambda item:(item[0],item[1])):
+            incoming,failed,first = old
+            for digit in range(upper+1):
+                ledger.charge(f"{category_prefix}:transition"); checked += 1
+                combined = scale*digit+incoming
+                differs = combined % radix != (scale*digit) % radix
+                state = (combined//radix, failed or differs, lane_number if differs and not failed else first)
+                witness = prefix+(digit,)
+                if state not in following or witness < following[state]: following[state]=witness
+                edges.append({"from":list(old),"digit":digit,"to":list(state)})
+        states=[{"state":list(st),"least_witness":list(w)} for st,w in sorted(following.items(),key=lambda item:(item[0],item[1]))]
+        rebuilt.append({"index":lane_number+1,"states":states,"edges":edges}); current=following
+    failures=[(w,st) for st,w in current.items() if st[1]]
+    least=min(failures,default=None,key=lambda x:x[0])
+    cex=None if least is None else {"digits":list(least[0]),"first_bad_lane":least[1][2],"final_carry":least[1][0]}
+    expected={"format":"bptc-packed-decoder-certificate-v1","spec":spec,"source_parameter_bound":True,
+              "closed_form":{"equivalent":safe,"max_carry_after_last_lane":envelope},"layers":rebuilt,
+              "decision":{"equivalent":least is None,"least_counterexample":cex},
+              "metrics":{"producer_transitions":checked,"concrete_assignments":assignments,"reachable_final_states":len(current)}}
+    exact(certificate,expected)
+    return {"accepted":True,"equivalent":least is None,"checked_transitions":checked,
+            "metrics":expected["metrics"]}
 
 
 def brute_force_decoder(

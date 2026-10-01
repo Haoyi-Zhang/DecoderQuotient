@@ -1,0 +1,1867 @@
+{
+  "closed_form": {
+    "equivalent": false,
+    "max_carry_after_last_lane": 0
+  },
+  "decision": {
+    "equivalent": false,
+    "least_counterexample": {
+      "digits": [
+        0,
+        0,
+        2,
+        0
+      ],
+      "final_carry": 0,
+      "first_bad_lane": 3
+    }
+  },
+  "format": "bptc-packed-decoder-certificate-v1",
+  "layers": [
+    {
+      "index": 0,
+      "states": [
+        {
+          "least_witness": [],
+          "state": [
+            0,
+            false,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "digit": 0,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 1,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 2,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            1,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 3,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            2,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 4,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            3,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 5,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            4,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 6,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            5,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 7,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            6,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 8,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            7,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 9,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            8,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 10,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            9,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 11,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            10,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 12,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            11,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 13,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            12,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 14,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            13,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 15,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            14,
+            false,
+            -1
+          ]
+        }
+      ],
+      "index": 1,
+      "states": [
+        {
+          "least_witness": [
+            0
+          ],
+          "state": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            2
+          ],
+          "state": [
+            1,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            3
+          ],
+          "state": [
+            2,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            4
+          ],
+          "state": [
+            3,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            5
+          ],
+          "state": [
+            4,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            6
+          ],
+          "state": [
+            5,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            7
+          ],
+          "state": [
+            6,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            8
+          ],
+          "state": [
+            7,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            9
+          ],
+          "state": [
+            8,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            10
+          ],
+          "state": [
+            9,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            11
+          ],
+          "state": [
+            10,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            12
+          ],
+          "state": [
+            11,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            13
+          ],
+          "state": [
+            12,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            14
+          ],
+          "state": [
+            13,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            15
+          ],
+          "state": [
+            14,
+            false,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "digit": 0,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            1,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            2,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            3,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            4,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            5,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            6,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            7,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            8,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            9,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            10,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            11,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            12,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            13,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            14,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        }
+      ],
+      "index": 2,
+      "states": [
+        {
+          "least_witness": [
+            0,
+            0
+          ],
+          "state": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            2,
+            0
+          ],
+          "state": [
+            0,
+            true,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "digit": 0,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 1,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 2,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            1,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 3,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            2,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 4,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            3,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 5,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            4,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 6,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            5,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 7,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            6,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 8,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            7,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 9,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            8,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 10,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            9,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 11,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            10,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 12,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            11,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 13,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            12,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 14,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            13,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 15,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            14,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            0,
+            true,
+            1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 1,
+          "from": [
+            0,
+            true,
+            1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 2,
+          "from": [
+            0,
+            true,
+            1
+          ],
+          "to": [
+            1,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 3,
+          "from": [
+            0,
+            true,
+            1
+          ],
+          "to": [
+            2,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 4,
+          "from": [
+            0,
+            true,
+            1
+          ],
+          "to": [
+            3,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 5,
+          "from": [
+            0,
+            true,
+            1
+          ],
+          "to": [
+            4,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 6,
+          "from": [
+            0,
+            true,
+            1
+          ],
+          "to": [
+            5,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 7,
+          "from": [
+            0,
+            true,
+            1
+          ],
+          "to": [
+            6,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 8,
+          "from": [
+            0,
+            true,
+            1
+          ],
+          "to": [
+            7,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 9,
+          "from": [
+            0,
+            true,
+            1
+          ],
+          "to": [
+            8,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 10,
+          "from": [
+            0,
+            true,
+            1
+          ],
+          "to": [
+            9,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 11,
+          "from": [
+            0,
+            true,
+            1
+          ],
+          "to": [
+            10,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 12,
+          "from": [
+            0,
+            true,
+            1
+          ],
+          "to": [
+            11,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 13,
+          "from": [
+            0,
+            true,
+            1
+          ],
+          "to": [
+            12,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 14,
+          "from": [
+            0,
+            true,
+            1
+          ],
+          "to": [
+            13,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 15,
+          "from": [
+            0,
+            true,
+            1
+          ],
+          "to": [
+            14,
+            true,
+            1
+          ]
+        }
+      ],
+      "index": 3,
+      "states": [
+        {
+          "least_witness": [
+            0,
+            0,
+            0
+          ],
+          "state": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            2,
+            0,
+            0
+          ],
+          "state": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "least_witness": [
+            0,
+            0,
+            2
+          ],
+          "state": [
+            1,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            2,
+            0,
+            2
+          ],
+          "state": [
+            1,
+            true,
+            1
+          ]
+        },
+        {
+          "least_witness": [
+            0,
+            0,
+            3
+          ],
+          "state": [
+            2,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            2,
+            0,
+            3
+          ],
+          "state": [
+            2,
+            true,
+            1
+          ]
+        },
+        {
+          "least_witness": [
+            0,
+            0,
+            4
+          ],
+          "state": [
+            3,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            2,
+            0,
+            4
+          ],
+          "state": [
+            3,
+            true,
+            1
+          ]
+        },
+        {
+          "least_witness": [
+            0,
+            0,
+            5
+          ],
+          "state": [
+            4,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            2,
+            0,
+            5
+          ],
+          "state": [
+            4,
+            true,
+            1
+          ]
+        },
+        {
+          "least_witness": [
+            0,
+            0,
+            6
+          ],
+          "state": [
+            5,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            2,
+            0,
+            6
+          ],
+          "state": [
+            5,
+            true,
+            1
+          ]
+        },
+        {
+          "least_witness": [
+            0,
+            0,
+            7
+          ],
+          "state": [
+            6,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            2,
+            0,
+            7
+          ],
+          "state": [
+            6,
+            true,
+            1
+          ]
+        },
+        {
+          "least_witness": [
+            0,
+            0,
+            8
+          ],
+          "state": [
+            7,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            2,
+            0,
+            8
+          ],
+          "state": [
+            7,
+            true,
+            1
+          ]
+        },
+        {
+          "least_witness": [
+            0,
+            0,
+            9
+          ],
+          "state": [
+            8,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            2,
+            0,
+            9
+          ],
+          "state": [
+            8,
+            true,
+            1
+          ]
+        },
+        {
+          "least_witness": [
+            0,
+            0,
+            10
+          ],
+          "state": [
+            9,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            2,
+            0,
+            10
+          ],
+          "state": [
+            9,
+            true,
+            1
+          ]
+        },
+        {
+          "least_witness": [
+            0,
+            0,
+            11
+          ],
+          "state": [
+            10,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            2,
+            0,
+            11
+          ],
+          "state": [
+            10,
+            true,
+            1
+          ]
+        },
+        {
+          "least_witness": [
+            0,
+            0,
+            12
+          ],
+          "state": [
+            11,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            2,
+            0,
+            12
+          ],
+          "state": [
+            11,
+            true,
+            1
+          ]
+        },
+        {
+          "least_witness": [
+            0,
+            0,
+            13
+          ],
+          "state": [
+            12,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            2,
+            0,
+            13
+          ],
+          "state": [
+            12,
+            true,
+            1
+          ]
+        },
+        {
+          "least_witness": [
+            0,
+            0,
+            14
+          ],
+          "state": [
+            13,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            2,
+            0,
+            14
+          ],
+          "state": [
+            13,
+            true,
+            1
+          ]
+        },
+        {
+          "least_witness": [
+            0,
+            0,
+            15
+          ],
+          "state": [
+            14,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            2,
+            0,
+            15
+          ],
+          "state": [
+            14,
+            true,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "digit": 0,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            0,
+            true,
+            1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            1,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            3
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            1,
+            true,
+            1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            2,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            3
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            2,
+            true,
+            1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            3,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            3
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            3,
+            true,
+            1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            4,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            3
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            4,
+            true,
+            1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            5,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            3
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            5,
+            true,
+            1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            6,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            3
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            6,
+            true,
+            1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            7,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            3
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            7,
+            true,
+            1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            8,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            3
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            8,
+            true,
+            1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            9,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            3
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            9,
+            true,
+            1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            10,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            3
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            10,
+            true,
+            1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            11,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            3
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            11,
+            true,
+            1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            12,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            3
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            12,
+            true,
+            1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            13,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            3
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            13,
+            true,
+            1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            14,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            true,
+            3
+          ]
+        },
+        {
+          "digit": 0,
+          "from": [
+            14,
+            true,
+            1
+          ],
+          "to": [
+            0,
+            true,
+            1
+          ]
+        }
+      ],
+      "index": 4,
+      "states": [
+        {
+          "least_witness": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "state": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness": [
+            2,
+            0,
+            0,
+            0
+          ],
+          "state": [
+            0,
+            true,
+            1
+          ]
+        },
+        {
+          "least_witness": [
+            0,
+            0,
+            2,
+            0
+          ],
+          "state": [
+            0,
+            true,
+            3
+          ]
+        }
+      ]
+    }
+  ],
+  "metrics": {
+    "concrete_assignments": 256,
+    "producer_transitions": 93,
+    "reachable_final_states": 3
+  },
+  "source_parameter_bound": true,
+  "spec": {
+    "biases": [
+      1,
+      0,
+      255,
+      254
+    ],
+    "lane_bits": 8,
+    "maxima": [
+      15,
+      0,
+      15,
+      0
+    ],
+    "name": "decoder-alternating-lanes-255",
+    "provenance": "alternating-lanes",
+    "scale": 255
+  }
+}

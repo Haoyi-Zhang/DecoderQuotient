@@ -1,0 +1,22 @@
+{
+  "status": "pass",
+  "positive_records": 68,
+  "negative_controls": [
+    {
+      "control": "reviewed_title_drift",
+      "rejected": true,
+      "reason": "bibliography changed after source review: awq"
+    },
+    {
+      "control": "reviewed_author_drift",
+      "rejected": true,
+      "reason": "bibliography changed after source review: awq"
+    },
+    {
+      "control": "compcert_to_qserve",
+      "rejected": true,
+      "reason": "CompCert macro points at the wrong work"
+    }
+  ],
+  "scope": "Tests file/metadata binding, not the truth of the external publications."
+}

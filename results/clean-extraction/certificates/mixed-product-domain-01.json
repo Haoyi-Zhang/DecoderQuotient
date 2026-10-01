@@ -1,0 +1,1321 @@
+{
+  "decision": {
+    "bad_final_states": 6,
+    "equivalent": false,
+    "least_counterexample": {
+      "final_state": [
+        1,
+        -1,
+        true,
+        3
+      ],
+      "first_bad_stage": 3,
+      "indices": [
+        0,
+        2,
+        0,
+        0
+      ],
+      "pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          -4,
+          -4
+        ],
+        [
+          -5,
+          3
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    "reachable_final_states": 9
+  },
+  "format": "bptc-exact-accumulator-certificate-v1",
+  "layers": [
+    {
+      "index": 0,
+      "states": [
+        {
+          "least_witness_indices": [],
+          "least_witness_pairs": [],
+          "state": [
+            0,
+            0,
+            false,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "from": [
+            0,
+            0,
+            false,
+            -1
+          ],
+          "product": 0,
+          "representative_index": 0,
+          "to": [
+            0,
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "from": [
+            0,
+            0,
+            false,
+            -1
+          ],
+          "product": 1,
+          "representative_index": 2,
+          "to": [
+            1,
+            0,
+            false,
+            -1
+          ]
+        }
+      ],
+      "index": 1,
+      "states": [
+        {
+          "least_witness_indices": [
+            0
+          ],
+          "least_witness_pairs": [
+            [
+              0,
+              0
+            ]
+          ],
+          "state": [
+            0,
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness_indices": [
+            2
+          ],
+          "least_witness_pairs": [
+            [
+              -1,
+              -1
+            ]
+          ],
+          "state": [
+            1,
+            0,
+            false,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "from": [
+            0,
+            0,
+            false,
+            -1
+          ],
+          "product": 15,
+          "representative_index": 0,
+          "to": [
+            15,
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "from": [
+            0,
+            0,
+            false,
+            -1
+          ],
+          "product": 16,
+          "representative_index": 2,
+          "to": [
+            16,
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "from": [
+            1,
+            0,
+            false,
+            -1
+          ],
+          "product": 15,
+          "representative_index": 0,
+          "to": [
+            16,
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "from": [
+            1,
+            0,
+            false,
+            -1
+          ],
+          "product": 16,
+          "representative_index": 2,
+          "to": [
+            17,
+            0,
+            false,
+            -1
+          ]
+        }
+      ],
+      "index": 2,
+      "states": [
+        {
+          "least_witness_indices": [
+            0,
+            0
+          ],
+          "least_witness_pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -5,
+              -3
+            ]
+          ],
+          "state": [
+            15,
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness_indices": [
+            0,
+            2
+          ],
+          "least_witness_pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -4,
+              -4
+            ]
+          ],
+          "state": [
+            16,
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness_indices": [
+            2,
+            2
+          ],
+          "least_witness_pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -4,
+              -4
+            ]
+          ],
+          "state": [
+            17,
+            0,
+            false,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "from": [
+            15,
+            0,
+            false,
+            -1
+          ],
+          "product": -15,
+          "representative_index": 0,
+          "to": [
+            0,
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "from": [
+            15,
+            0,
+            false,
+            -1
+          ],
+          "product": -16,
+          "representative_index": 2,
+          "to": [
+            -1,
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "from": [
+            16,
+            0,
+            false,
+            -1
+          ],
+          "product": -15,
+          "representative_index": 0,
+          "to": [
+            1,
+            -1,
+            false,
+            -1
+          ]
+        },
+        {
+          "from": [
+            16,
+            0,
+            false,
+            -1
+          ],
+          "product": -16,
+          "representative_index": 2,
+          "to": [
+            0,
+            -1,
+            false,
+            -1
+          ]
+        },
+        {
+          "from": [
+            17,
+            0,
+            false,
+            -1
+          ],
+          "product": -15,
+          "representative_index": 0,
+          "to": [
+            2,
+            -2,
+            false,
+            -1
+          ]
+        },
+        {
+          "from": [
+            17,
+            0,
+            false,
+            -1
+          ],
+          "product": -16,
+          "representative_index": 2,
+          "to": [
+            1,
+            -2,
+            false,
+            -1
+          ]
+        }
+      ],
+      "index": 3,
+      "states": [
+        {
+          "least_witness_indices": [
+            0,
+            0,
+            2
+          ],
+          "least_witness_pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -5,
+              -3
+            ],
+            [
+              -4,
+              4
+            ]
+          ],
+          "state": [
+            -1,
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness_indices": [
+            0,
+            2,
+            2
+          ],
+          "least_witness_pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -4,
+              -4
+            ],
+            [
+              -4,
+              4
+            ]
+          ],
+          "state": [
+            0,
+            -1,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness_indices": [
+            0,
+            0,
+            0
+          ],
+          "least_witness_pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -5,
+              -3
+            ],
+            [
+              -5,
+              3
+            ]
+          ],
+          "state": [
+            0,
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness_indices": [
+            2,
+            2,
+            2
+          ],
+          "least_witness_pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -4,
+              -4
+            ],
+            [
+              -4,
+              4
+            ]
+          ],
+          "state": [
+            1,
+            -2,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness_indices": [
+            0,
+            2,
+            0
+          ],
+          "least_witness_pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -4,
+              -4
+            ],
+            [
+              -5,
+              3
+            ]
+          ],
+          "state": [
+            1,
+            -1,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness_indices": [
+            2,
+            2,
+            0
+          ],
+          "least_witness_pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -4,
+              -4
+            ],
+            [
+              -5,
+              3
+            ]
+          ],
+          "state": [
+            2,
+            -2,
+            false,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "from": [
+            -1,
+            0,
+            false,
+            -1
+          ],
+          "product": 0,
+          "representative_index": 0,
+          "to": [
+            -1,
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "from": [
+            -1,
+            0,
+            false,
+            -1
+          ],
+          "product": 1,
+          "representative_index": 2,
+          "to": [
+            0,
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "from": [
+            0,
+            -1,
+            false,
+            -1
+          ],
+          "product": 0,
+          "representative_index": 0,
+          "to": [
+            0,
+            -1,
+            true,
+            3
+          ]
+        },
+        {
+          "from": [
+            0,
+            -1,
+            false,
+            -1
+          ],
+          "product": 1,
+          "representative_index": 2,
+          "to": [
+            1,
+            -1,
+            true,
+            3
+          ]
+        },
+        {
+          "from": [
+            0,
+            0,
+            false,
+            -1
+          ],
+          "product": 0,
+          "representative_index": 0,
+          "to": [
+            0,
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "from": [
+            0,
+            0,
+            false,
+            -1
+          ],
+          "product": 1,
+          "representative_index": 2,
+          "to": [
+            1,
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "from": [
+            1,
+            -2,
+            false,
+            -1
+          ],
+          "product": 0,
+          "representative_index": 0,
+          "to": [
+            1,
+            -2,
+            true,
+            3
+          ]
+        },
+        {
+          "from": [
+            1,
+            -2,
+            false,
+            -1
+          ],
+          "product": 1,
+          "representative_index": 2,
+          "to": [
+            2,
+            -2,
+            true,
+            3
+          ]
+        },
+        {
+          "from": [
+            1,
+            -1,
+            false,
+            -1
+          ],
+          "product": 0,
+          "representative_index": 0,
+          "to": [
+            1,
+            -1,
+            true,
+            3
+          ]
+        },
+        {
+          "from": [
+            1,
+            -1,
+            false,
+            -1
+          ],
+          "product": 1,
+          "representative_index": 2,
+          "to": [
+            2,
+            -1,
+            true,
+            3
+          ]
+        },
+        {
+          "from": [
+            2,
+            -2,
+            false,
+            -1
+          ],
+          "product": 0,
+          "representative_index": 0,
+          "to": [
+            2,
+            -2,
+            true,
+            3
+          ]
+        },
+        {
+          "from": [
+            2,
+            -2,
+            false,
+            -1
+          ],
+          "product": 1,
+          "representative_index": 2,
+          "to": [
+            3,
+            -2,
+            true,
+            3
+          ]
+        }
+      ],
+      "index": 4,
+      "states": [
+        {
+          "least_witness_indices": [
+            0,
+            0,
+            2,
+            0
+          ],
+          "least_witness_pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -5,
+              -3
+            ],
+            [
+              -4,
+              4
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "state": [
+            -1,
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness_indices": [
+            0,
+            2,
+            2,
+            0
+          ],
+          "least_witness_pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -4,
+              -4
+            ],
+            [
+              -4,
+              4
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "state": [
+            0,
+            -1,
+            true,
+            3
+          ]
+        },
+        {
+          "least_witness_indices": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "least_witness_pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -5,
+              -3
+            ],
+            [
+              -5,
+              3
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "state": [
+            0,
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness_indices": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "least_witness_pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -4,
+              -4
+            ],
+            [
+              -4,
+              4
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "state": [
+            1,
+            -2,
+            true,
+            3
+          ]
+        },
+        {
+          "least_witness_indices": [
+            0,
+            2,
+            0,
+            0
+          ],
+          "least_witness_pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -4,
+              -4
+            ],
+            [
+              -5,
+              3
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "state": [
+            1,
+            -1,
+            true,
+            3
+          ]
+        },
+        {
+          "least_witness_indices": [
+            0,
+            0,
+            0,
+            2
+          ],
+          "least_witness_pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -5,
+              -3
+            ],
+            [
+              -5,
+              3
+            ],
+            [
+              -1,
+              -1
+            ]
+          ],
+          "state": [
+            1,
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "least_witness_indices": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "least_witness_pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -4,
+              -4
+            ],
+            [
+              -5,
+              3
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "state": [
+            2,
+            -2,
+            true,
+            3
+          ]
+        },
+        {
+          "least_witness_indices": [
+            0,
+            2,
+            0,
+            2
+          ],
+          "least_witness_pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -4,
+              -4
+            ],
+            [
+              -5,
+              3
+            ],
+            [
+              -1,
+              -1
+            ]
+          ],
+          "state": [
+            2,
+            -1,
+            true,
+            3
+          ]
+        },
+        {
+          "least_witness_indices": [
+            2,
+            2,
+            0,
+            2
+          ],
+          "least_witness_pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -4,
+              -4
+            ],
+            [
+              -5,
+              3
+            ],
+            [
+              -1,
+              -1
+            ]
+          ],
+          "state": [
+            3,
+            -2,
+            true,
+            3
+          ]
+        }
+      ]
+    }
+  ],
+  "metrics": {
+    "concrete_assignments": 256,
+    "producer_transitions": 24,
+    "quotient_frontier_edges": 24,
+    "quotient_product_sequences": 16,
+    "unquotiented_frontier_edges": 48
+  },
+  "product_classes": [
+    [
+      {
+        "member_indices": [
+          0,
+          1
+        ],
+        "member_pairs": [
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            0
+          ]
+        ],
+        "product": 0,
+        "representative_index": 0,
+        "representative_pair": [
+          0,
+          0
+        ]
+      },
+      {
+        "member_indices": [
+          2,
+          3
+        ],
+        "member_pairs": [
+          [
+            -1,
+            -1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "product": 1,
+        "representative_index": 2,
+        "representative_pair": [
+          -1,
+          -1
+        ]
+      }
+    ],
+    [
+      {
+        "member_indices": [
+          0,
+          1
+        ],
+        "member_pairs": [
+          [
+            -5,
+            -3
+          ],
+          [
+            -3,
+            -5
+          ]
+        ],
+        "product": 15,
+        "representative_index": 0,
+        "representative_pair": [
+          -5,
+          -3
+        ]
+      },
+      {
+        "member_indices": [
+          2,
+          3
+        ],
+        "member_pairs": [
+          [
+            -4,
+            -4
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "product": 16,
+        "representative_index": 2,
+        "representative_pair": [
+          -4,
+          -4
+        ]
+      }
+    ],
+    [
+      {
+        "member_indices": [
+          0,
+          1
+        ],
+        "member_pairs": [
+          [
+            -5,
+            3
+          ],
+          [
+            -3,
+            5
+          ]
+        ],
+        "product": -15,
+        "representative_index": 0,
+        "representative_pair": [
+          -5,
+          3
+        ]
+      },
+      {
+        "member_indices": [
+          2,
+          3
+        ],
+        "member_pairs": [
+          [
+            -4,
+            4
+          ],
+          [
+            4,
+            -4
+          ]
+        ],
+        "product": -16,
+        "representative_index": 2,
+        "representative_pair": [
+          -4,
+          4
+        ]
+      }
+    ],
+    [
+      {
+        "member_indices": [
+          0,
+          1
+        ],
+        "member_pairs": [
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            0
+          ]
+        ],
+        "product": 0,
+        "representative_index": 0,
+        "representative_pair": [
+          0,
+          0
+        ]
+      },
+      {
+        "member_indices": [
+          2,
+          3
+        ],
+        "member_pairs": [
+          [
+            -1,
+            -1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "product": 1,
+        "representative_index": 2,
+        "representative_pair": [
+          -1,
+          -1
+        ]
+      }
+    ]
+  ],
+  "spec": {
+    "final_observe": true,
+    "initial": 0,
+    "name": "mixed-product-domain-01",
+    "provenance": "systematic-product-box",
+    "stages": [
+      {
+        "acc_bits": 5,
+        "acc_mode": "saturate",
+        "observe": false,
+        "pairs": [
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            0
+          ],
+          [
+            -1,
+            -1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "term_bits": 9,
+        "term_mode": "saturate"
+      },
+      {
+        "acc_bits": 5,
+        "acc_mode": "saturate",
+        "observe": false,
+        "pairs": [
+          [
+            -5,
+            -3
+          ],
+          [
+            -3,
+            -5
+          ],
+          [
+            -4,
+            -4
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "term_bits": 9,
+        "term_mode": "saturate"
+      },
+      {
+        "acc_bits": 5,
+        "acc_mode": "saturate",
+        "observe": false,
+        "pairs": [
+          [
+            -5,
+            3
+          ],
+          [
+            -3,
+            5
+          ],
+          [
+            -4,
+            4
+          ],
+          [
+            4,
+            -4
+          ]
+        ],
+        "term_bits": 9,
+        "term_mode": "saturate"
+      },
+      {
+        "acc_bits": 5,
+        "acc_mode": "saturate",
+        "observe": false,
+        "pairs": [
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            0
+          ],
+          [
+            -1,
+            -1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "term_bits": 9,
+        "term_mode": "saturate"
+      }
+    ]
+  }
+}

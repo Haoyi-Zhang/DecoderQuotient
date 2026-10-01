@@ -1,0 +1,2063 @@
+{
+  "date": "2026-09-29",
+  "status": "identity_and_citation_scope_reviewed_with_explicit_access_limits",
+  "entries": 68,
+  "scholarly_papers_and_books": 67,
+  "software_sources": 1,
+  "minimum_required": 60,
+  "count_meets_request": true,
+  "access_scope_counts": {
+    "publisher_record_abstract": 10,
+    "retained_source_provenance": 1,
+    "author_abstract_record": 22,
+    "project_bibliography": 3,
+    "author_institution_record": 5,
+    "author_bibliography": 4,
+    "author_record_abstract": 3,
+    "author_pdf_titlepage_abstract": 6,
+    "conference_record_abstract": 1,
+    "author_poster_and_indexed_paper_record": 1,
+    "indexed_primary_record_partial": 7,
+    "publisher_bibliography": 1,
+    "publisher_title_copyright_contents": 1,
+    "author_publication_announcement": 1,
+    "indexed_author_record": 1,
+    "author_announcement_and_indexed_publisher": 1
+  },
+  "scope": "Every retained reference has a source, its exact current bibliographic record, and an actual citation purpose. Primary-page/abstract checks and partial indexed records are explicitly separated. No universal metadata/full-text certification is claimed.",
+  "corrections": [
+    {
+      "key": "awq",
+      "field": "title",
+      "before": "{AWQ}: Activation-aware Weight Quantization for {LLM} Compression and Acceleration",
+      "after": "{AWQ}: Activation-aware Weight Quantization for On-Device {LLM} Compression and Acceleration",
+      "reason": "Use the actual title of the MLSys 2024 version of record, not the shorter arXiv title."
+    },
+    {
+      "key": "awq",
+      "field": "url",
+      "before": null,
+      "after": "https://proceedings.mlsys.org/paper_files/paper/2024/hash/42a452cbafa9dd64e9ba4aa95cc1ef21-Abstract-Conference.html",
+      "reason": "Formal proceedings record for the version cited."
+    },
+    {
+      "key": "boolector",
+      "field": "series",
+      "before": "Lecture Notes in Computer Science",
+      "after": null,
+      "reason": "This is a JSAT journal article, not an LNCS chapter."
+    },
+    {
+      "key": "qqq",
+      "field": "primaryclass",
+      "before": "cs.LG",
+      "after": null,
+      "reason": "Omit optional arXiv classification labels; inherited labels were not consistently the primary class and are not bibliographic evidence."
+    },
+    {
+      "key": "smoothquant",
+      "field": "primaryclass",
+      "before": "cs.LG",
+      "after": null,
+      "reason": "Omit optional arXiv classification labels; inherited labels were not consistently the primary class and are not bibliographic evidence."
+    },
+    {
+      "key": "awq",
+      "field": "primaryclass",
+      "before": "cs.LG",
+      "after": null,
+      "reason": "Omit optional arXiv classification labels; inherited labels were not consistently the primary class and are not bibliographic evidence."
+    },
+    {
+      "key": "gptq",
+      "field": "primaryclass",
+      "before": "cs.LG",
+      "after": null,
+      "reason": "Omit optional arXiv classification labels; inherited labels were not consistently the primary class and are not bibliographic evidence."
+    },
+    {
+      "key": "llmint8",
+      "field": "primaryclass",
+      "before": "cs.LG",
+      "after": null,
+      "reason": "Omit optional arXiv classification labels; inherited labels were not consistently the primary class and are not bibliographic evidence."
+    },
+    {
+      "key": "zeroquant",
+      "field": "primaryclass",
+      "before": "cs.LG",
+      "after": null,
+      "reason": "Omit optional arXiv classification labels; inherited labels were not consistently the primary class and are not bibliographic evidence."
+    },
+    {
+      "key": "omniquant",
+      "field": "primaryclass",
+      "before": "cs.LG",
+      "after": null,
+      "reason": "Omit optional arXiv classification labels; inherited labels were not consistently the primary class and are not bibliographic evidence."
+    },
+    {
+      "key": "spqr",
+      "field": "primaryclass",
+      "before": "cs.LG",
+      "after": null,
+      "reason": "Omit optional arXiv classification labels; inherited labels were not consistently the primary class and are not bibliographic evidence."
+    },
+    {
+      "key": "aqlm",
+      "field": "primaryclass",
+      "before": "cs.LG",
+      "after": null,
+      "reason": "Omit optional arXiv classification labels; inherited labels were not consistently the primary class and are not bibliographic evidence."
+    },
+    {
+      "key": "quik",
+      "field": "primaryclass",
+      "before": "cs.LG",
+      "after": null,
+      "reason": "Omit optional arXiv classification labels; inherited labels were not consistently the primary class and are not bibliographic evidence."
+    },
+    {
+      "key": "atom",
+      "field": "primaryclass",
+      "before": "cs.LG",
+      "after": null,
+      "reason": "Omit optional arXiv classification labels; inherited labels were not consistently the primary class and are not bibliographic evidence."
+    },
+    {
+      "key": "quarot",
+      "field": "primaryclass",
+      "before": "cs.LG",
+      "after": null,
+      "reason": "Omit optional arXiv classification labels; inherited labels were not consistently the primary class and are not bibliographic evidence."
+    },
+    {
+      "key": "marlin",
+      "field": "primaryclass",
+      "before": "cs.LG",
+      "after": null,
+      "reason": "Omit optional arXiv classification labels; inherited labels were not consistently the primary class and are not bibliographic evidence."
+    },
+    {
+      "key": "integeronly",
+      "field": "primaryclass",
+      "before": "cs.LG",
+      "after": null,
+      "reason": "Omit optional arXiv classification labels; inherited labels were not consistently the primary class and are not bibliographic evidence."
+    },
+    {
+      "key": "tvm",
+      "field": "primaryclass",
+      "before": "cs.LG",
+      "after": null,
+      "reason": "Omit optional arXiv classification labels; inherited labels were not consistently the primary class and are not bibliographic evidence."
+    },
+    {
+      "key": "ansor",
+      "field": "primaryclass",
+      "before": "cs.LG",
+      "after": null,
+      "reason": "Omit optional arXiv classification labels; inherited labels were not consistently the primary class and are not bibliographic evidence."
+    },
+    {
+      "key": "tensorir",
+      "field": "primaryclass",
+      "before": "cs.PL",
+      "after": null,
+      "reason": "Omit optional arXiv classification labels; inherited labels were not consistently the primary class and are not bibliographic evidence."
+    },
+    {
+      "key": "fbgemm",
+      "field": "primaryclass",
+      "before": "cs.LG",
+      "after": null,
+      "reason": "Omit optional arXiv classification labels; inherited labels were not consistently the primary class and are not bibliographic evidence."
+    },
+    {
+      "key": "souper",
+      "field": "primaryclass",
+      "before": "cs.PL",
+      "after": null,
+      "reason": "Omit optional arXiv classification labels; inherited labels were not consistently the primary class and are not bibliographic evidence."
+    }
+  ],
+  "records": {
+    "qserve": {
+      "key": "qserve",
+      "type": "scholarly_paper",
+      "primary_source": "https://proceedings.mlsys.org/paper_files/paper/2025/hash/fbe2b2f74a2ece8070d8fb073717bda6-Abstract-Conference.html",
+      "access_scope": "publisher_record_abstract",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "qserve",
+        "author": "Lin, Yujun and Tang, Haotian and Yang, Shang and Zhang, Zhekai and Xiao, Guangxuan and Gan, Chuang and Han, Song",
+        "title": "{QServe}: {W4A8KV4} Quantization and System Co-design for Efficient {LLM} Serving",
+        "booktitle": "Proceedings of Machine Learning and Systems",
+        "year": "2025",
+        "volume": "7",
+        "url": "https://proceedings.mlsys.org/paper_files/paper/2025/file/fbe2b2f74a2ece8070d8fb073717bda6-Paper-Conference.pdf"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "W4A8KV4 progressive quantization and register-level dequantization motivate the selected integer block.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "omniserve": {
+      "key": "omniserve",
+      "type": "software",
+      "primary_source": "https://github.com/mit-han-lab/omniserve/blob/02b2925aa6fa3b92b06316a1524b7f38922cd9c8/kernels/csrc/qgemm/w4a8_per_group/gemm_cuda.cu",
+      "access_scope": "retained_source_provenance",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "misc",
+        "key": "omniserve",
+        "author": "{MIT Han Lab}",
+        "title": "{OmniServe}: Source Code for {QServe} and {LServe}",
+        "year": "2026",
+        "howpublished": "Software source",
+        "url": "https://github.com/mit-han-lab/omniserve/tree/02b2925aa6fa3b92b06316a1524b7f38922cd9c8",
+        "note": "Frozen source snapshot; accessed 29 September 2026."
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Frozen arithmetic source block.",
+      "qualification": "Existing immutable-commit source and license evidence retained and locally audited. No new upstream network fetch was performed in this re-verification."
+    },
+    "liquidgemm": {
+      "key": "liquidgemm",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/2509.01229",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "liquidgemm",
+        "author": "Hu, Huanqi and Xiao, Bowen and Sun, Shixuan and Yin, Jianian and Zhang, Zhexi and Luo, Xiang and Jiang, Chengquan and Xu, Weiqi and Jia, Xiaoying and Liu, Xin and Guo, Minyi",
+        "title": "{LiquidGEMM}: Hardware-Efficient {W4A8} {GEMM} Kernel for High-Performance {LLM} Serving",
+        "booktitle": "Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis",
+        "year": "2025",
+        "pages": "1619--1630",
+        "doi": "10.1145/3712285.3759852"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Overflow-safe W4A8 dequantization is prior kernel work, not a new contribution of this study.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "qqq": {
+      "key": "qqq",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/2406.09904",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "misc",
+        "key": "qqq",
+        "author": "Zhang, Ying and Zhang, Peng and Huang, Mincong and Xiang, Jingyang and Wang, Yujie and Wang, Chao and Zhang, Yineng and Yu, Lei and Liu, Chuan and Lin, Wei",
+        "title": "{QQQ}: Quality Quattuor-Bit Quantization for Large Language Models",
+        "year": "2024",
+        "eprint": "2406.09904",
+        "archiveprefix": "arXiv"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Contrast mixed four-bit quantization calibration with exact integer implementation checking.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "smoothquant": {
+      "key": "smoothquant",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/2211.10438",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "smoothquant",
+        "author": "Xiao, Guangxuan and Lin, Ji and Seznec, Mickael and Wu, Hao and Demouth, Julien and Han, Song",
+        "title": "{SmoothQuant}: Accurate and Efficient Post-Training Quantization for Large Language Models",
+        "booktitle": "Proceedings of the 40th International Conference on Machine Learning",
+        "year": "2023",
+        "series": "Proceedings of Machine Learning Research",
+        "volume": "202",
+        "pages": "38087--38099",
+        "eprint": "2211.10438",
+        "archiveprefix": "arXiv"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Activation-outlier smoothing is a quantization transformation, not bit-exact lowering validation.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "awq": {
+      "key": "awq",
+      "type": "scholarly_paper",
+      "primary_source": "https://proceedings.mlsys.org/paper_files/paper/2024/hash/42a452cbafa9dd64e9ba4aa95cc1ef21-Abstract-Conference.html",
+      "access_scope": "publisher_record_abstract",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "awq",
+        "author": "Lin, Ji and Tang, Jiaming and Tang, Haotian and Yang, Shang and Chen, Wei-Ming and Wang, Wei-Chen and Xiao, Guangxuan and Dang, Xingyu and Gan, Chuang and Han, Song",
+        "title": "{AWQ}: Activation-aware Weight Quantization for On-Device {LLM} Compression and Acceleration",
+        "booktitle": "Proceedings of Machine Learning and Systems",
+        "year": "2024",
+        "volume": "6",
+        "eprint": "2306.00978",
+        "archiveprefix": "arXiv",
+        "url": "https://proceedings.mlsys.org/paper_files/paper/2024/hash/42a452cbafa9dd64e9ba4aa95cc1ef21-Abstract-Conference.html"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Activation-aware weight calibration and packing motivate low-bit representations.",
+      "qualification": "Formal MLSys 2024 title includes On-Device. The current arXiv title is shorter; the chosen version is now internally consistent."
+    },
+    "gptq": {
+      "key": "gptq",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/2210.17323",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "gptq",
+        "author": "Frantar, Elias and Ashkboos, Saleh and Hoefler, Torsten and Alistarh, Dan",
+        "title": "{GPTQ}: Accurate Post-Training Quantization for Generative Pre-trained Transformers",
+        "booktitle": "International Conference on Learning Representations",
+        "year": "2023",
+        "eprint": "2210.17323",
+        "archiveprefix": "arXiv"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Second-order weight quantization optimizes approximation error, not integer refinement.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "llmint8": {
+      "key": "llmint8",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/2208.07339",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "llmint8",
+        "author": "Dettmers, Tim and Lewis, Mike and Belkada, Younes and Zettlemoyer, Luke",
+        "title": "{LLM.int8()}: 8-bit Matrix Multiplication for Transformers at Scale",
+        "booktitle": "Advances in Neural Information Processing Systems",
+        "year": "2022",
+        "volume": "35",
+        "eprint": "2208.07339",
+        "archiveprefix": "arXiv"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Mixed-precision outlier decomposition is outside the fixed integer-only fragment.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "zeroquant": {
+      "key": "zeroquant",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/2206.01861",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "zeroquant",
+        "author": "Yao, Zhewei and Aminabadi, Reza Yazdani and Zhang, Minjia and Wu, Xiaoxia and Li, Conglong and He, Yuxiong",
+        "title": "{ZeroQuant}: Efficient and Affordable Post-Training Quantization for Large-Scale Transformers",
+        "booktitle": "Advances in Neural Information Processing Systems",
+        "year": "2022",
+        "volume": "35",
+        "eprint": "2206.01861",
+        "archiveprefix": "arXiv"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Fine-grained quantization and backend co-design provide system context.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "omniquant": {
+      "key": "omniquant",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/2308.13137",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "omniquant",
+        "author": "Shao, Wenqi and Chen, Mengzhao and Zhang, Zhaoyang and Xu, Peng and Zhao, Lirui and Li, Zhiqian and Zhang, Kaipeng and Gao, Peng and Qiao, Yu and Luo, Ping",
+        "title": "{OmniQuant}: Omnidirectionally Calibrated Quantization for Large Language Models",
+        "booktitle": "International Conference on Learning Representations",
+        "year": "2024",
+        "eprint": "2308.13137",
+        "archiveprefix": "arXiv"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Learnable clipping and equivalent transformations are calibration methods, not proof certificates.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "spqr": {
+      "key": "spqr",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/2306.03078",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "spqr",
+        "author": "Dettmers, Tim and Svirschevski, Ruslan and Egiazarian, Vage and Kuznedelev, Denis and Frantar, Elias and Ashkboos, Saleh and Borzunov, Alexander and Hoefler, Torsten and Alistarh, Dan",
+        "title": "{SpQR}: A Sparse-Quantized Representation for Near-Lossless {LLM} Weight Compression",
+        "booktitle": "International Conference on Learning Representations",
+        "year": "2024",
+        "eprint": "2306.03078",
+        "archiveprefix": "arXiv"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Sparse high-precision outliers illustrate representations excluded by the nibble-box model.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "aqlm": {
+      "key": "aqlm",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/2401.06118",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "aqlm",
+        "author": "Egiazarian, Vage and Panferov, Andrei and Kuznedelev, Denis and Frantar, Elias and Babenko, Artem and Alistarh, Dan",
+        "title": "Extreme Compression of Large Language Models via Additive Quantization",
+        "booktitle": "Proceedings of the 41st International Conference on Machine Learning",
+        "year": "2024",
+        "eprint": "2401.06118",
+        "archiveprefix": "arXiv"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Additive codebook quantization lies outside scalar nibble multiplication.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "quik": {
+      "key": "quik",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/2310.09259",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "misc",
+        "key": "quik",
+        "author": "Ashkboos, Saleh and Markov, Ilia and Frantar, Elias and Zhong, Tingxuan and Wang, Xincheng and Ren, Jie and Hoefler, Torsten and Alistarh, Dan",
+        "title": "{QUIK}: Towards End-to-End 4-Bit Inference on Generative Large Language Models",
+        "year": "2023",
+        "eprint": "2310.09259",
+        "archiveprefix": "arXiv"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Hybrid four-bit inference handles outliers rather than proving arbitrary accumulator schedules.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "atom": {
+      "key": "atom",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/2310.19102",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "atom",
+        "author": "Zhao, Yilong and Lin, Chien-Yu and Zhu, Kan and Ye, Zihao and Chen, Lequn and Zheng, Size and Ceze, Luis and Krishnamurthy, Arvind and Chen, Tianqi and Kasikci, Baris",
+        "title": "{Atom}: Low-Bit Quantization for Efficient and Accurate {LLM} Serving",
+        "booktitle": "Proceedings of Machine Learning and Systems",
+        "year": "2024",
+        "volume": "6",
+        "eprint": "2310.19102",
+        "archiveprefix": "arXiv",
+        "url": "https://proceedings.mlsys.org/paper_files/paper/2024/file/5edb57c05c81d04beb716ef1d542fe9e-Paper-Conference.pdf"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Low-bit mixed-precision serving is system context; no benchmark result is reused.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "quarot": {
+      "key": "quarot",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/2404.00456",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "quarot",
+        "author": "Ashkboos, Saleh and Mohtashami, Amirkeivan and Croci, Maximilian L. and Li, Bo and Cameron, Pashmina and Jaggi, Martin and Alistarh, Dan and Hoefler, Torsten and Hensman, James",
+        "title": "{QuaRot}: Outlier-Free 4-Bit Inference in Rotated {LLMs}",
+        "booktitle": "Advances in Neural Information Processing Systems",
+        "year": "2024",
+        "volume": "37",
+        "eprint": "2404.00456",
+        "archiveprefix": "arXiv",
+        "doi": "10.5555/3737916.3741096"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Orthogonal rotation removes activation outliers; it is not a theorem about the frozen byte program.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "marlin": {
+      "key": "marlin",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/2408.11743",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "misc",
+        "key": "marlin",
+        "author": "Frantar, Elias and Castro, Roberto L. and Chen, Jiale and Hoefler, Torsten and Alistarh, Dan",
+        "title": "{Marlin}: Mixed-Precision Auto-Regressive Parallel Inference on Large Language Models",
+        "year": "2024",
+        "eprint": "2408.11743",
+        "archiveprefix": "arXiv"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Mixed-precision GPU execution is related implementation context, not an evaluated baseline.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "integeronly": {
+      "key": "integeronly",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/1712.05877",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "integeronly",
+        "author": "Jacob, Benoit and Kligys, Skirmantas and Chen, Bo and Zhu, Menglong and Tang, Matthew and Howard, Andrew and Adam, Hartwig and Kalenichenko, Dmitry",
+        "title": "Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only Inference",
+        "booktitle": "Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition",
+        "year": "2018",
+        "pages": "2704--2713",
+        "doi": "10.1109/CVPR.2018.00286",
+        "eprint": "1712.05877",
+        "archiveprefix": "arXiv"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Integer-only quantization distinguishes representation approximation from implementation equivalence.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "tvm": {
+      "key": "tvm",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/1802.04799",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "tvm",
+        "author": "Chen, Tianqi and Moreau, Thierry and Jiang, Ziheng and Zheng, Lianmin and Yan, Eddie and Cowan, Meghan and Shen, Haichen and Wang, Leyuan and Hu, Yuwei and Ceze, Luis and Guestrin, Carlos and Krishnamurthy, Arvind",
+        "title": "{TVM}: An Automated End-to-End Optimizing Compiler for Deep Learning",
+        "booktitle": "13th USENIX Symposium on Operating Systems Design and Implementation",
+        "year": "2018",
+        "pages": "578--594",
+        "eprint": "1802.04799",
+        "archiveprefix": "arXiv",
+        "url": "https://www.usenix.org/conference/osdi18/presentation/chen"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Graph/operator compiler optimizations provide a possible consumer, not an implemented integration.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "ansor": {
+      "key": "ansor",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/2006.06762",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "ansor",
+        "author": "Zheng, Lianmin and Jia, Chengfan and Sun, Minmin and Wu, Zhao and Yu, Cody Hao and Haj-Ali, Ameer and Wang, Yida and Yang, Jun and Zhuo, Danyang and Sen, Koushik and Gonzalez, Joseph E. and Stoica, Ion",
+        "title": "{Ansor}: Generating High-Performance Tensor Programs for Deep Learning",
+        "booktitle": "14th USENIX Symposium on Operating Systems Design and Implementation",
+        "year": "2020",
+        "pages": "863--879",
+        "eprint": "2006.06762",
+        "archiveprefix": "arXiv",
+        "url": "https://www.usenix.org/conference/osdi20/presentation/zheng"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Automatic program search and learned cost models are orthogonal to fixed-candidate correctness.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "tensorir": {
+      "key": "tensorir",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/2207.04296",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "tensorir",
+        "author": "Feng, Siyuan and Hou, Bohan and Jin, Hongyi and Lin, Wuwei and Shao, Junru and Lai, Ruihang and Ye, Zihao and Zheng, Lianmin and Yu, Cody Hao and Yu, Yong and Chen, Tianqi",
+        "title": "{TensorIR}: An Abstraction for Automatic Tensorized Program Optimization",
+        "booktitle": "Proceedings of the 28th ACM International Conference on Architectural Support for Programming Languages and Operating Systems",
+        "year": "2023",
+        "eprint": "2207.04296",
+        "archiveprefix": "arXiv"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Tensor-level instruction abstractions define wider compiler scope than the finite schedule.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "mlir": {
+      "key": "mlir",
+      "type": "scholarly_paper",
+      "primary_source": "https://mlir.llvm.org/getting_started/Faq/",
+      "access_scope": "project_bibliography",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "mlir",
+        "author": "Lattner, Chris and Amini, Mehdi and Bondhugula, Uday and Cohen, Albert and Davis, Andy and Pienaar, Jacques and Riddle, River and Shpeisman, Tatiana and Vasilache, Nicolas and Zinenko, Oleksandr",
+        "title": "{MLIR}: Scaling Compiler Infrastructure for Domain Specific Computation",
+        "booktitle": "2021 IEEE/ACM International Symposium on Code Generation and Optimization",
+        "year": "2021",
+        "pages": "2--14",
+        "doi": "10.1109/CGO51591.2021.9370308"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Extensible intermediate representations are infrastructure, not an existing importer in this artifact.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "triton": {
+      "key": "triton",
+      "type": "scholarly_paper",
+      "primary_source": "https://research.ibm.com/publications/triton-an-intermediate-language-and-compiler-for-tiled-neural-network-computations",
+      "access_scope": "author_institution_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "triton",
+        "author": "Tillet, Philippe and Kung, H. T. and Cox, David",
+        "title": "{Triton}: An Intermediate Language and Compiler for Tiled Neural Network Computations",
+        "booktitle": "Proceedings of the 3rd ACM SIGPLAN International Workshop on Machine Learning and Programming Languages",
+        "year": "2019",
+        "pages": "10--19",
+        "doi": "10.1145/3315508.3329973"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Tiled programs motivate kernel generation; no Triton integration is claimed.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "halide-dsl": {
+      "key": "halide-dsl",
+      "type": "scholarly_paper",
+      "primary_source": "https://halide-lang.org/",
+      "access_scope": "project_bibliography",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "halide-dsl",
+        "author": "Ragan-Kelley, Jonathan and Barnes, Connelly and Adams, Andrew and Paris, Sylvain and Durand, Fredo and Amarasinghe, Saman",
+        "title": "Halide: A Language and Compiler for Optimizing Parallelism, Locality, and Recomputation in Image Processing Pipelines",
+        "booktitle": "Proceedings of the 34th ACM SIGPLAN Conference on Programming Language Design and Implementation",
+        "year": "2013",
+        "pages": "519--530",
+        "doi": "10.1145/2491956.2462176"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Separating algorithms from schedules motivates checking a chosen schedule.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "fbgemm": {
+      "key": "fbgemm",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/2101.05615",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "misc",
+        "key": "fbgemm",
+        "author": "Khudia, Daya and Huang, Jianyu and Basu, Protonu and Deng, Summer and Liu, Haixin and Park, Jongsoo and Smelyanskiy, Mikhail",
+        "title": "{FBGEMM}: Enabling High-Performance Low-Precision Deep Learning Inference",
+        "year": "2021",
+        "eprint": "2101.05615",
+        "archiveprefix": "arXiv"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "CPU low-precision kernels demonstrate a hardware setting distinct from the CPU checker runtime.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "translationvalidation": {
+      "key": "translationvalidation",
+      "type": "scholarly_paper",
+      "primary_source": "https://link.springer.com/chapter/10.1007/BFb0054170",
+      "access_scope": "publisher_record_abstract",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "translationvalidation",
+        "author": "Pnueli, Amir and Siegel, Michael and Singerman, Eli",
+        "title": "Translation Validation",
+        "booktitle": "Tools and Algorithms for the Construction and Analysis of Systems",
+        "year": "1998",
+        "series": "Lecture Notes in Computer Science",
+        "volume": "1384",
+        "pages": "151--166",
+        "publisher": "Springer",
+        "doi": "10.1007/BFb0054170"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Per-translation refinement checking rather than proving the translator once.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "neculatv": {
+      "key": "neculatv",
+      "type": "scholarly_paper",
+      "primary_source": "https://people.eecs.berkeley.edu/~necula/papers.html",
+      "access_scope": "author_bibliography",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "neculatv",
+        "author": "Necula, George C.",
+        "title": "Translation Validation for an Optimizing Compiler",
+        "booktitle": "Proceedings of the ACM SIGPLAN Conference on Programming Language Design and Implementation",
+        "year": "2000",
+        "pages": "83--94",
+        "doi": "10.1145/349299.349314"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Translation validation for optimizing compilers; not a new idea of this manuscript.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "tristanleroy": {
+      "key": "tristanleroy",
+      "type": "scholarly_paper",
+      "primary_source": "https://xavierleroy.org/bibrefs/Tristan-Leroy-scheduling.html",
+      "access_scope": "author_record_abstract",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "tristanleroy",
+        "author": "Tristan, Jean-Baptiste and Leroy, Xavier",
+        "title": "Formal Verification of Translation Validators: A Case Study on Instruction Scheduling Optimizations",
+        "booktitle": "Proceedings of the 35th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages",
+        "year": "2008",
+        "pages": "17--27",
+        "doi": "10.1145/1328438.1328444"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Mechanized soundness of scheduling validators; distinct from our written proofs.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "compcert": {
+      "key": "compcert",
+      "type": "scholarly_paper",
+      "primary_source": "https://cv.hal.science/xavier-leroy",
+      "access_scope": "author_bibliography",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "compcert",
+        "author": "Leroy, Xavier",
+        "title": "Formal Verification of a Realistic Compiler",
+        "journal": "Communications of the ACM",
+        "year": "2009",
+        "volume": "52",
+        "number": "7",
+        "pages": "107--115",
+        "doi": "10.1145/1538788.1538814"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "CompCert compiler verification; correct target of the dedicated CompCert citation.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "compcert-backend": {
+      "key": "compcert-backend",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/0902.2137",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "compcert-backend",
+        "author": "Leroy, Xavier",
+        "title": "A Formally Verified Compiler Back-end",
+        "journal": "Journal of Automated Reasoning",
+        "year": "2009",
+        "volume": "43",
+        "number": "4",
+        "pages": "363--446",
+        "doi": "10.1007/s10817-009-9155-4"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Coq semantic-preservation proof for a compiler back end.",
+      "qualification": "Author manuscript identity and abstract checked. Formal JAR version is retained separately from the arXiv posting date."
+    },
+    "alive": {
+      "key": "alive",
+      "type": "scholarly_paper",
+      "primary_source": "https://www.microsoft.com/en-us/research/publication/provably-correct-peephole-optimizations-alive/",
+      "access_scope": "author_institution_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "alive",
+        "author": "Lopes, Nuno P. and Menendez, David and Nagarakatte, Santosh and Regehr, John",
+        "title": "Provably Correct Peephole Optimizations with {Alive}",
+        "booktitle": "Proceedings of the 36th ACM SIGPLAN Conference on Programming Language Design and Implementation",
+        "year": "2015",
+        "pages": "22--32",
+        "doi": "10.1145/2737924.2737965"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "DSL and SMT validation of LLVM peephole optimizations.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "alive2": {
+      "key": "alive2",
+      "type": "scholarly_paper",
+      "primary_source": "https://users.cs.utah.edu/~regehr/alive2-pldi21.pdf",
+      "access_scope": "author_pdf_titlepage_abstract",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "alive2",
+        "author": "Lopes, Nuno P. and Lee, Juneyoung and Hur, Chung-Kil and Liu, Zhengyang and Regehr, John",
+        "title": "{Alive2}: Bounded Translation Validation for {LLVM}",
+        "booktitle": "Proceedings of the ACM SIGPLAN Conference on Programming Language Design and Implementation",
+        "year": "2021",
+        "publisher": "Association for Computing Machinery",
+        "address": "New York, NY, USA",
+        "pages": "65--79",
+        "doi": "10.1145/3453483.3454030"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Bounded LLVM refinement validation, including undefined behavior; not an evaluated baseline here.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "halide": {
+      "key": "halide",
+      "type": "scholarly_paper",
+      "primary_source": "https://storage.googleapis.com/gweb-research2023-media/pubtools/6569.pdf",
+      "access_scope": "author_pdf_titlepage_abstract",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "halide",
+        "author": "Cl{\\'e}ment, Basile and Cohen, Albert",
+        "title": "End-to-End Translation Validation for the {Halide} Language",
+        "journal": "Proceedings of the ACM on Programming Languages",
+        "volume": "6",
+        "number": "OOPSLA1",
+        "articleno": "84",
+        "numpages": "30",
+        "year": "2022",
+        "doi": "10.1145/3527328"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "End-to-end validation of affine Halide specifications, much broader source integration.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "mlirtv": {
+      "key": "mlirtv",
+      "type": "scholarly_paper",
+      "primary_source": "https://link.springer.com/chapter/10.1007/978-3-031-13188-2_19",
+      "access_scope": "publisher_record_abstract",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "mlirtv",
+        "author": "Bang, Seongwon and Nam, Seunghyeon and Chun, Inwhan and Jhoo, Ho Young and Lee, Juneyoung",
+        "title": "{SMT}-Based Translation Validation for Machine Learning Compiler",
+        "booktitle": "Computer Aided Verification",
+        "year": "2022",
+        "series": "Lecture Notes in Computer Science",
+        "volume": "13372",
+        "pages": "386--407",
+        "publisher": "Springer",
+        "doi": "10.1007/978-3-031-13188-2_19"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "SMT-based machine-learning compiler translation validation.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "tenspiler": {
+      "key": "tenspiler",
+      "type": "scholarly_paper",
+      "primary_source": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ECOOP.2024.32",
+      "access_scope": "publisher_record_abstract",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "tenspiler",
+        "author": "Qiu, Jie and Cai, Colin and Bhatia, Sahil and Hasabnis, Niranjan and Seshia, Sanjit A. and Cheung, Alvin",
+        "title": "{Tenspiler}: A Verified-Lifting-Based Compiler for Tensor Operations",
+        "booktitle": "38th European Conference on Object-Oriented Programming",
+        "series": "LIPIcs",
+        "volume": "313",
+        "pages": "32:1--32:28",
+        "year": "2024",
+        "publisher": "Schloss Dagstuhl--Leibniz-Zentrum fuer Informatik",
+        "doi": "10.4230/LIPIcs.ECOOP.2024.32"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Verified lifting for tensor operations, not a predecessor benchmarked by this artifact.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "aarch64tv": {
+      "key": "aarch64tv",
+      "type": "scholarly_paper",
+      "primary_source": "https://web.ist.utl.pt/nuno.lopes/pubs.php?id=armtv-oopsla25",
+      "access_scope": "author_record_abstract",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "aarch64tv",
+        "author": "Berger, Ryan and Briles, Mitch and Boushehrinejad Moradi, Nader and Coughlin, Nicholas and Lam, Kait and Lopes, Nuno P. and Mada, Stefan and Tirpankar, Tanmay and Regehr, John",
+        "title": "Translation Validation for {LLVM}'s {AArch64} Backend",
+        "journal": "Proceedings of the ACM on Programming Languages",
+        "year": "2025",
+        "volume": "9",
+        "number": "OOPSLA2",
+        "pages": "2710--2735",
+        "doi": "10.1145/3763147"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "LLVM-to-AArch64 refinement and ABI semantics are outside our arithmetic model.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "verification-dialects": {
+      "key": "verification-dialects",
+      "type": "scholarly_paper",
+      "primary_source": "https://pldi25.sigplan.org/details/pldi-2025-papers/60/First-Class-Verification-Dialects-for-MLIR",
+      "access_scope": "conference_record_abstract",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "verification-dialects",
+        "author": "Fehr, Mathieu and Fan, Yuyou and Pompougnac, Hugo and Regehr, John and Grosser, Tobias",
+        "title": "First-Class Verification Dialects for {MLIR}",
+        "journal": "Proceedings of the ACM on Programming Languages",
+        "year": "2025",
+        "volume": "9",
+        "number": "PLDI",
+        "articleno": "206",
+        "numpages": "25",
+        "pages": "1466--1490",
+        "doi": "10.1145/3729309"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "First-class verification dialects are a broader compiler-infrastructure approach.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "polyhedral-verified": {
+      "key": "polyhedral-verified",
+      "type": "scholarly_paper",
+      "primary_source": "https://xavierleroy.org/publi/polyhedral-codegen.pdf",
+      "access_scope": "author_pdf_titlepage_abstract",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "polyhedral-verified",
+        "author": "Courant, Nathana{\\\"e}l and Leroy, Xavier",
+        "title": "Verified Code Generation for the Polyhedral Model",
+        "journal": "Proceedings of the ACM on Programming Languages",
+        "year": "2021",
+        "volume": "5",
+        "number": "POPL",
+        "articleno": "40",
+        "doi": "10.1145/3434321"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Verified polyhedral code generation; different proof object from arithmetic schedules.",
+      "qualification": "Author-hosted full paper: title page and abstract directly viewed; two authors, 2021, PACMPL 5 POPL article 40, DOI 10.1145/3434321. Full proof not independently rechecked."
+    },
+    "blocksim": {
+      "key": "blocksim",
+      "type": "scholarly_paper",
+      "primary_source": "https://www-verimag.imag.fr/~boulme/pub/poster_OOPSLA23.pdf",
+      "access_scope": "author_poster_and_indexed_paper_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "blocksim",
+        "author": "Gourdin, L{\\'e}o and Bonneau, Benjamin and Boulm{\\'e}, Sylvain and Monniaux, David and B{\\'e}rard, Alexandre",
+        "title": "Formally Verifying Optimizations with Block Simulations",
+        "journal": "Proceedings of the ACM on Programming Languages",
+        "year": "2023",
+        "volume": "7",
+        "number": "OOPSLA2",
+        "pages": "59--88",
+        "doi": "10.1145/3622799"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Block simulations for optimization correctness; broader transformations than this model.",
+      "qualification": "All five author names and symbolic block-simulation mechanism checked against the author-hosted one-page OOPSLA23 poster; publication identity also checked in indexed HAL metadata. Poster access is not a full-paper reading; journal pagination is retained, not independently verified from the paper."
+    },
+    "stoke": {
+      "key": "stoke",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/1211.0557",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "stoke",
+        "author": "Schkufza, Eric and Sharma, Rahul and Aiken, Alex",
+        "title": "Stochastic Superoptimization",
+        "booktitle": "Proceedings of the 18th International Conference on Architectural Support for Programming Languages and Operating Systems",
+        "year": "2013",
+        "pages": "305--316",
+        "doi": "10.1145/2451116.2451150"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Stochastic superoptimization searches for implementations; our tool checks given schedules.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "denali": {
+      "key": "denali",
+      "type": "scholarly_paper",
+      "primary_source": "https://people.csail.mit.edu/randall/papers/abstracts/denali.html",
+      "access_scope": "author_record_abstract",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "denali",
+        "author": "Joshi, Rajeev and Nelson, Greg and Randall, Keith H.",
+        "title": "Denali: A Goal-Directed Superoptimizer",
+        "booktitle": "Proceedings of the ACM SIGPLAN Conference on Programming Language Design and Implementation",
+        "year": "2002",
+        "pages": "304--314",
+        "doi": "10.1145/512529.512566"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Goal-directed superoptimization, distinct from certificate replay.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "superoptimizer": {
+      "key": "superoptimizer",
+      "type": "scholarly_paper",
+      "primary_source": "https://dl.acm.org/doi/10.1145/36206.36194",
+      "access_scope": "indexed_primary_record_partial",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "superoptimizer",
+        "author": "Massalin, Henry",
+        "title": "Superoptimizer: A Look at the Smallest Program",
+        "booktitle": "Proceedings of the Second International Conference on Architectural Support for Programming Languages and Operating Systems",
+        "year": "1987",
+        "pages": "122--126",
+        "doi": "10.1145/36206.36194"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Shortest-program search, distinct from least counterexample for a fixed program.",
+      "qualification": "Direct full-text retrieval was blocked or unavailable. The indexed primary record establishes identity/topic only; it does not certify every page, volume, byline field, or result."
+    },
+    "souper": {
+      "key": "souper",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/1711.04422",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "misc",
+        "key": "souper",
+        "author": "Sasnauskas, Raimondas and Chen, Yang and Collingbourne, Peter and Ketema, Jeroen and Lup, Gratian and Taneja, Jubi and Regehr, John",
+        "title": "{Souper}: A Synthesizing Superoptimizer",
+        "year": "2017",
+        "eprint": "1711.04422",
+        "archiveprefix": "arXiv"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Synthesis proposes optimized fragments; checking remains a distinct obligation.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "pcc": {
+      "key": "pcc",
+      "type": "scholarly_paper",
+      "primary_source": "https://people.eecs.berkeley.edu/~necula/papers.html",
+      "access_scope": "author_bibliography",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "pcc",
+        "author": "Necula, George C.",
+        "title": "Proof-Carrying Code",
+        "booktitle": "Proceedings of the 24th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages",
+        "year": "1997",
+        "pages": "106--119",
+        "doi": "10.1145/263699.263712"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Untrusted producer and separately checked evidence are established proof-carrying principles.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "klee": {
+      "key": "klee",
+      "type": "scholarly_paper",
+      "primary_source": "https://www.usenix.org/conference/osdi-08/klee-unassisted-and-automatic-generation-high-coverage-tests-complex-systems",
+      "access_scope": "publisher_bibliography",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "klee",
+        "author": "Cadar, Cristian and Dunbar, Daniel and Engler, Dawson",
+        "title": "{KLEE}: Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs",
+        "booktitle": "8th USENIX Symposium on Operating Systems Design and Implementation",
+        "year": "2008",
+        "pages": "209--224",
+        "doi": "10.5555/1855741.1855756",
+        "url": "https://www.usenix.org/conference/osdi-08/klee-unassisted-and-automatic-generation-high-coverage-tests-complex-systems"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Symbolic execution generates tests; finite enumeration here is not full systems-program testing.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "cbmc": {
+      "key": "cbmc",
+      "type": "scholarly_paper",
+      "primary_source": "https://link.springer.com/chapter/10.1007/978-3-642-54862-8_26",
+      "access_scope": "publisher_record_abstract",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "cbmc",
+        "author": "Kroening, Daniel and Tautschnig, Michael",
+        "title": "{CBMC}: C Bounded Model Checker",
+        "booktitle": "Tools and Algorithms for the Construction and Analysis of Systems",
+        "year": "2014",
+        "series": "Lecture Notes in Computer Science",
+        "volume": "8413",
+        "pages": "389--391",
+        "publisher": "Springer",
+        "doi": "10.1007/978-3-642-54862-8_26"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Bit-precise bounded C model checking is an alternative validation approach.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "z3": {
+      "key": "z3",
+      "type": "scholarly_paper",
+      "primary_source": "https://link.springer.com/chapter/10.1007/978-3-540-78800-3_24",
+      "access_scope": "publisher_record_abstract",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "z3",
+        "author": "de Moura, Leonardo and Bj{\\o}rner, Nikolaj",
+        "title": "{Z3}: An Efficient {SMT} Solver",
+        "booktitle": "Tools and Algorithms for the Construction and Analysis of Systems",
+        "year": "2008",
+        "series": "Lecture Notes in Computer Science",
+        "volume": "4963",
+        "pages": "337--340",
+        "publisher": "Springer",
+        "doi": "10.1007/978-3-540-78800-3_24"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "General SMT solving, not required by the active standard-library-only implementation.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "boolector": {
+      "key": "boolector",
+      "type": "scholarly_paper",
+      "primary_source": "https://boolector.github.io/bibtex.html",
+      "access_scope": "project_bibliography",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "boolector",
+        "author": "Niemetz, Aina and Preiner, Mathias and Biere, Armin",
+        "title": "{Boolector 2.0}: System Description",
+        "year": "2014",
+        "volume": "9",
+        "pages": "53--58",
+        "doi": "10.3233/SAT190101",
+        "journal": "Journal on Satisfiability, Boolean Modeling and Computation",
+        "number": "1"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Bit-vector and array solving; no comparative timing is claimed.",
+      "qualification": "Official project BibTeX uses 2014 and JSAT 9(1), 53--58. Publisher/original issue metadata also displays 2015. This record follows the project citation convention and removes the erroneous LNCS series."
+    },
+    "cvc4": {
+      "key": "cvc4",
+      "type": "scholarly_paper",
+      "primary_source": "https://link.springer.com/chapter/10.1007/978-3-642-22110-1_14",
+      "access_scope": "publisher_record_abstract",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "cvc4",
+        "author": "Barrett, Clark and Conway, Christopher L. and Deters, Morgan and Hadarean, Liana and Jovanovic, Dejan and King, Tim and Reynolds, Andrew and Tinelli, Cesare",
+        "title": "{CVC4}",
+        "booktitle": "Computer Aided Verification",
+        "year": "2011",
+        "series": "Lecture Notes in Computer Science",
+        "volume": "6806",
+        "pages": "171--177",
+        "publisher": "Springer",
+        "doi": "10.1007/978-3-642-22110-1_14"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "General SMT infrastructure; not run in this evaluation.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "vellvm": {
+      "key": "vellvm",
+      "type": "scholarly_paper",
+      "primary_source": "https://www.cis.upenn.edu/~stevez/papers/ZNMZ12.pdf",
+      "access_scope": "author_pdf_titlepage_abstract",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "vellvm",
+        "author": "Zhao, Jianzhou and Nagarakatte, Santosh and Martin, Milo M. K. and Zdancewic, Steve",
+        "title": "Formalizing the {LLVM} Intermediate Representation for Verified Program Transformations",
+        "booktitle": "Proceedings of the 39th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages",
+        "year": "2012",
+        "pages": "427--440",
+        "doi": "10.1145/2103656.2103709"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Mechanized LLVM intermediate-representation semantics.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "lamport": {
+      "key": "lamport",
+      "type": "scholarly_paper",
+      "primary_source": "https://www.microsoft.com/en-us/research/publication/multiple-byte-processing-with-full-word-instructions/",
+      "access_scope": "author_institution_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "lamport",
+        "author": "Lamport, Leslie",
+        "title": "Multiple Byte Processing with Full-Word Instructions",
+        "journal": "Communications of the ACM",
+        "year": "1975",
+        "volume": "18",
+        "number": "8",
+        "pages": "471--475",
+        "doi": "10.1145/360933.360994"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Historical packed full-word arithmetic and masking.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "fisherdietz": {
+      "key": "fisherdietz",
+      "type": "scholarly_paper",
+      "primary_source": "https://link.springer.com/chapter/10.1007/3-540-48319-5_19",
+      "access_scope": "publisher_record_abstract",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "inproceedings",
+        "key": "fisherdietz",
+        "author": "Fisher, Randall J. and Dietz, Henry G.",
+        "title": "Compiling for {SIMD} Within a Register",
+        "booktitle": "Languages and Compilers for Parallel Computing",
+        "year": "1999",
+        "series": "Lecture Notes in Computer Science",
+        "volume": "1656",
+        "pages": "290--305",
+        "publisher": "Springer",
+        "doi": "10.1007/3-540-48319-5_19"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "SIMD-within-a-register lowering; historical packed-arithmetic context.",
+      "qualification": "The Springer recommended citation uses 1999 for LCPC 1998, while online publication is displayed as 2000; retain the recommended-citation year, not the access date."
+    },
+    "hackersdelight": {
+      "key": "hackersdelight",
+      "type": "book",
+      "primary_source": "https://ptgmedia.pearsoncmg.com/images/9780321842688/samplepages/0321842685.pdf",
+      "access_scope": "publisher_title_copyright_contents",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "book",
+        "key": "hackersdelight",
+        "author": "Warren, Jr., Henry S.",
+        "title": "Hacker's Delight",
+        "edition": "2",
+        "year": "2013",
+        "publisher": "Addison-Wesley Professional",
+        "isbn": "9780321842688"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Low-level integer and bit manipulation; not a source of our specific certificate theorem.",
+      "qualification": "Publisher sample title/copyright/contents pages were viewed. Second edition and ISBN match. Copyright/selected printing year is 2013; release listings may use 2012. The complete book was not read."
+    },
+    "integeroverflow": {
+      "key": "integeroverflow",
+      "type": "scholarly_paper",
+      "primary_source": "https://wdtz.org/",
+      "access_scope": "author_publication_announcement",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "integeroverflow",
+        "author": "Dietz, Will and Li, Peng and Regehr, John and Adve, Vikram",
+        "title": "Understanding Integer Overflow in {C/C++}",
+        "journal": "ACM Transactions on Software Engineering and Methodology",
+        "year": "2015",
+        "volume": "25",
+        "number": "1",
+        "articleno": "2",
+        "numpages": "29",
+        "doi": "10.1145/2743019"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Overflow can be intentional or erroneous; the cited journal expansion is distinguished from ICSE 2012.",
+      "qualification": "Author announcement explicitly distinguishes the TOSEM journal version from ICSE 2012; the journal DOI is retained."
+    },
+    "packing": {
+      "key": "packing",
+      "type": "scholarly_paper",
+      "primary_source": "https://www.cse.iitm.ac.in/~krishna/courses/2013/odd-cs6013/NandivadaBarik13.pdf",
+      "access_scope": "author_pdf_titlepage_abstract",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "packing",
+        "author": "Nandivada, V. Krishna and Barik, Rajkishore",
+        "title": "Improved Bitwidth-Aware Variable Packing",
+        "journal": "ACM Transactions on Architecture and Code Optimization",
+        "year": "2013",
+        "volume": "10",
+        "number": "3",
+        "pages": "1--22",
+        "doi": "10.1145/2509420.2509427"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Bitwidth-aware variable packing concerns register allocation, not this carry equivalence theorem.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "fixedpoint-rns": {
+      "key": "fixedpoint-rns",
+      "type": "scholarly_paper",
+      "primary_source": "https://doi.org/10.1145/3664923",
+      "access_scope": "publisher_record_abstract",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "fixedpoint-rns",
+        "author": "Deng, Bobin and Nadendla, Bhargava and Suo, Kun and Xie, Yixin and Lo, Dan Chia-Tien",
+        "title": "Fixed-point Encoding and Architecture Exploration for Residue Number Systems",
+        "journal": "ACM Transactions on Architecture and Code Optimization",
+        "year": "2024",
+        "volume": "21",
+        "number": "3",
+        "pages": "1--27",
+        "doi": "10.1145/3664923"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Residue encodings require distinct conversion semantics; the present theorem does not cover them.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "pico": {
+      "key": "pico",
+      "type": "scholarly_paper",
+      "primary_source": "https://compilers.cs.uni-saarland.de/publications.php/",
+      "access_scope": "author_bibliography",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "pico",
+        "author": "Jung, Tina and Ritter, Fabian and Hack, Sebastian",
+        "title": "{PICO}: A Presburger In-bounds Check Optimization for Compiler-based Memory Safety Instrumentations",
+        "journal": "ACM Transactions on Architecture and Code Optimization",
+        "year": "2021",
+        "volume": "18",
+        "number": "4",
+        "articleno": "45",
+        "numpages": "27",
+        "doi": "10.1145/3460434"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline",
+        "version_or_venue_context"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Memory-safety check optimization is not established by arithmetic certificates.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "interleaved-vectorization": {
+      "key": "interleaved-vectorization",
+      "type": "scholarly_paper",
+      "primary_source": "https://publications.scss.tcd.ie/RSS/publications.php?u=dgregg",
+      "access_scope": "indexed_author_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "interleaved-vectorization",
+        "author": "Anderson, Andrew and Malik, Avinash and Gregg, David",
+        "title": "Automatic Vectorization of Interleaved Data Revisited",
+        "journal": "ACM Transactions on Architecture and Code Optimization",
+        "year": "2015",
+        "volume": "12",
+        "number": "4",
+        "articleno": "50",
+        "doi": "10.1145/2838735",
+        "numpages": "25"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Interleaved data vectorization requires layout reasoning beyond this scalar arithmetic model.",
+      "qualification": "Direct full-text retrieval was blocked or unavailable. The indexed primary record establishes identity/topic only; it does not certify every page, volume, byline field, or result."
+    },
+    "fixedpoint-conversion": {
+      "key": "fixedpoint-conversion",
+      "type": "scholarly_paper",
+      "primary_source": "https://dl.acm.org/doi/10.1145/2400682.2400702",
+      "access_scope": "indexed_primary_record_partial",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "fixedpoint-conversion",
+        "author": "Chen, Doris and Singh, Deshanand P.",
+        "title": "Profile-Guided Floating- to Fixed-Point Conversion for Hybrid {FPGA}-Processor Applications",
+        "journal": "ACM Transactions on Architecture and Code Optimization",
+        "year": "2013",
+        "volume": "9",
+        "number": "4",
+        "articleno": "43",
+        "doi": "10.1145/2400682.2400702"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Profile-guided floating-to-fixed conversion requires accuracy evidence absent here.",
+      "qualification": "Direct full-text retrieval was blocked or unavailable. The indexed primary record establishes identity/topic only; it does not certify every page, volume, byline field, or result."
+    },
+    "visual-polyhedral": {
+      "key": "visual-polyhedral",
+      "type": "scholarly_paper",
+      "primary_source": "https://www.pollylabs.org/publications/zinenko-2018-Visual-Program-Manipulation-in-the-Polyhedral-Model.pdf",
+      "access_scope": "author_pdf_titlepage_abstract",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "visual-polyhedral",
+        "author": "Zinenko, Oleksandr and Huot, St{\\'e}phane and Bastoul, C{\\'e}dric",
+        "title": "Visual Program Manipulation in the Polyhedral Model",
+        "journal": "ACM Transactions on Architecture and Code Optimization",
+        "year": "2018",
+        "volume": "15",
+        "number": "1",
+        "articleno": "16",
+        "pages": "1--25",
+        "doi": "10.1145/3177961"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Interactive polyhedral transformation and visualization; no human-study evidence is inherited.",
+      "qualification": "Author-hosted title page and abstract directly viewed: three authors, TACO 15(1), article 16, 25 pages, 2018, DOI 10.1145/3177961. It is the TACO article, not a conference substitute. Full user study not independently rechecked."
+    },
+    "armorall": {
+      "key": "armorall",
+      "type": "scholarly_paper",
+      "primary_source": "https://dl.acm.org/doi/10.1145/3382132",
+      "access_scope": "indexed_primary_record_partial",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "armorall",
+        "author": "Kalra, Charu and Previlon, Fritz and Rubin, Norman and Kaeli, David",
+        "title": "{ArmorAll}: Compiler-based Resilience Targeting {GPU} Applications",
+        "journal": "ACM Transactions on Architecture and Code Optimization",
+        "year": "2020",
+        "volume": "17",
+        "number": "2",
+        "articleno": "9",
+        "doi": "10.1145/3382132",
+        "numpages": "24"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "GPU resilience targets transient faults, not deterministic arithmetic refinement.",
+      "qualification": "Direct full-text retrieval was blocked or unavailable. The indexed primary record establishes identity/topic only; it does not certify every page, volume, byline field, or result."
+    },
+    "heapcheck": {
+      "key": "heapcheck",
+      "type": "scholarly_paper",
+      "primary_source": "https://research.ibm.com/publications/heapcheck-low-cost-hardware-support-for-memory-safety",
+      "access_scope": "author_institution_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "heapcheck",
+        "author": "Saileshwar, Gururaj and Boivie, Rick and Chen, Tong and Segal, Benjamin and Buyuktosunoglu, Alper",
+        "title": "{HeapCheck}: Low-cost Hardware Support for Memory Safety",
+        "journal": "ACM Transactions on Architecture and Code Optimization",
+        "year": "2022",
+        "volume": "19",
+        "number": "1",
+        "pages": "1--24",
+        "doi": "10.1145/3495152"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Hardware heap memory safety is a different property from arithmetic equivalence.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "ppcg": {
+      "key": "ppcg",
+      "type": "scholarly_paper",
+      "primary_source": "https://dl.acm.org/doi/10.1145/2400682.2400713",
+      "access_scope": "indexed_primary_record_partial",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "ppcg",
+        "author": "Verdoolaege, Sven and Juega, Juan Carlos and Cohen, Albert and G{\\'o}mez, Jos{\\'e} Ignacio and Tenllado, Christian and Catthoor, Francky",
+        "title": "Polyhedral Parallel Code Generation for {CUDA}",
+        "journal": "ACM Transactions on Architecture and Code Optimization",
+        "year": "2013",
+        "volume": "9",
+        "number": "4",
+        "pages": "54:1--54:23",
+        "doi": "10.1145/2400682.2400713"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Polyhedral CUDA generation includes schedules and memory mapping excluded here.",
+      "qualification": "Direct full-text retrieval was blocked or unavailable. The indexed primary record establishes identity/topic only; it does not certify every page, volume, byline field, or result."
+    },
+    "sparse-mlir": {
+      "key": "sparse-mlir",
+      "type": "scholarly_paper",
+      "primary_source": "https://arxiv.org/abs/2202.04305",
+      "access_scope": "author_abstract_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "sparse-mlir",
+        "author": "Bik, Aart J. C. and Koanantakool, Penporn and Shpeisman, Tatiana and Vasilache, Nicolas and Zheng, Bixia and Kjolstad, Fredrik",
+        "title": "Compiler Support for Sparse Tensor Computations in {MLIR}",
+        "journal": "ACM Transactions on Architecture and Code Optimization",
+        "year": "2022",
+        "volume": "19",
+        "number": "4",
+        "articleno": "50",
+        "numpages": "25",
+        "doi": "10.1145/3544559"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Sparse tensor code generation is separate from packed integer arithmetic.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "cotest": {
+      "key": "cotest",
+      "type": "scholarly_paper",
+      "primary_source": "https://tjusail.github.io/people/chenjunjie/index.html",
+      "access_scope": "author_announcement_and_indexed_publisher",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "cotest",
+        "author": "Chen, Junjie and Suo, Chenyao",
+        "title": "Boosting Compiler Testing via Compiler Optimization Exploration",
+        "journal": "ACM Transactions on Software Engineering and Methodology",
+        "year": "2022",
+        "doi": "10.1145/3508362"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Compiler optimization exploration motivates testing choices, not statistical generalization from our suite.",
+      "qualification": "Author homepage announces acceptance of this exact title on 24 December 2021; publisher/author indexed records identify Junjie Chen and Chenyao Suo and publication in 2022. No full-text reading or re-execution claimed."
+    },
+    "mixednumeric": {
+      "key": "mixednumeric",
+      "type": "scholarly_paper",
+      "primary_source": "https://dl.acm.org/doi/10.1145/3785473",
+      "access_scope": "indexed_primary_record_partial",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "mixednumeric",
+        "author": "Huang, Shiyuan and Liu, Fangxin and Wang, Zongwu and Yang, Ning and Li, Haomin and Jiang, Li and Guan, Haibing",
+        "title": "{MIX-PC}: Enabling Efficient {DNN} Inference with Mixed Numeric Precision Compilation Optimization",
+        "journal": "ACM Transactions on Architecture and Code Optimization",
+        "year": "2026",
+        "volume": "23",
+        "number": "1",
+        "pages": "1--26",
+        "doi": "10.1145/3785473"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Mixed numeric precision compilation is optimization work, not the same exact certificate problem.",
+      "qualification": "2026 publisher and author-contributed records identify the title/byline. Full article was not obtained; no technical result beyond the named optimization topic is used. Coauthor Fangxin Liu's homepage groups the work under 2025 and lists the last two authors Guan then Jiang, whereas the retained version-of-record metadata uses 2026 and Jiang then Guan. The accessible author page did not resolve the publication-order discrepancy; the entry remains explicitly qualified, not certified fully correct.",
+      "additional_primary_source": "https://mxhx7199.github.io/publications/"
+    },
+    "vectorweaver": {
+      "key": "vectorweaver",
+      "type": "scholarly_paper",
+      "primary_source": "https://dl.acm.org/doi/10.1145/3799719",
+      "access_scope": "indexed_primary_record_partial",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "vectorweaver",
+        "author": "Yang, Pengfei and Zeng, Hui and Hou, Wenxuan and Wang, Mingwei and Ji, Weiye and Zheng, Tianyang and Li, Hui",
+        "title": "VectorWeaver: A Stage-Aware Automated Optimization Framework for {LLM} Inference on Edge Platform",
+        "journal": "ACM Transactions on Architecture and Code Optimization",
+        "year": "2026",
+        "volume": "23",
+        "number": "1",
+        "pages": "1--24",
+        "doi": "10.1145/3799719"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Stage-aware edge inference optimization has system and workload obligations absent from the finite checker.",
+      "qualification": "2026 publisher and author-contributed records identify the title/byline. Full article was not obtained; no performance number is inherited."
+    },
+    "next700": {
+      "key": "next700",
+      "type": "scholarly_paper",
+      "primary_source": "https://research.google/pubs/the-next-700-accelerated-layers-from-mathematical-expressions-of-network-computation-graphs-to-accelerated-gpu-kernels-automatically/",
+      "access_scope": "author_institution_record",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "next700",
+        "author": "Vasilache, Nicolas and Zinenko, Oleksandr and Theodoridis, Theodoros and Goyal, Priya and Devito, Zachary and Moses, William S. and Verdoolaege, Sven and Adams, Andrew and Cohen, Albert",
+        "title": "The Next 700 Accelerated Layers: From Mathematical Expressions of Network Computation Graphs to Accelerated {GPU} Kernels, Automatically",
+        "journal": "ACM Transactions on Architecture and Code Optimization",
+        "year": "2019",
+        "volume": "16",
+        "number": "4",
+        "articleno": "38",
+        "numpages": "26",
+        "doi": "10.1145/3355606"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity",
+        "byline"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Automatic GPU kernel generation is broader than frozen expression recognition.",
+      "qualification": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "matog": {
+      "key": "matog",
+      "type": "scholarly_paper",
+      "primary_source": "https://dl.acm.org/doi/10.1145/3106341",
+      "access_scope": "indexed_primary_record_partial",
+      "check_date": "2026-09-29",
+      "bibliographic_record": {
+        "type": "article",
+        "key": "matog",
+        "author": "Weber, Nicolas and Goesele, Michael",
+        "title": "{MATOG}: Array Layout Auto-Tuning for {CUDA}",
+        "journal": "ACM Transactions on Architecture and Code Optimization",
+        "year": "2017",
+        "volume": "14",
+        "number": "3",
+        "articleno": "28",
+        "numpages": "26",
+        "doi": "10.1145/3106341"
+      },
+      "fields_rechecked_to_available_scope": [
+        "title",
+        "identity"
+      ],
+      "full_text_read_complete": false,
+      "external_experiment_reproduced": false,
+      "citation_purpose": "Array-layout autotuning is a performance task not evaluated here.",
+      "qualification": "Direct full-text retrieval was blocked or unavailable. The indexed primary record establishes identity/topic only; it does not certify every page, volume, byline field, or result."
+    }
+  },
+  "metadata_discrepancies_not_fully_resolved": [
+    "mixednumeric: coauthor-page year/byline-order differ from retained journal metadata; full version-of-record byline not accessible in this recheck",
+    "boolector: journal volume-year and online-date convention",
+    "hackersdelight: copyright-year and first-release-date convention"
+  ]
+}

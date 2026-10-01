@@ -1,0 +1,6 @@
+{
+  "equivalent": true,
+  "least_counterexample": null,
+  "reachable_final_states": 1,
+  "transitions": 10
+}

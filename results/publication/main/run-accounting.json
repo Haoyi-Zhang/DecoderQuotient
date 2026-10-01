@@ -1,0 +1,12 @@
+{
+  "events_after": 83760,
+  "events_before": 56872,
+  "events_this_run": 26888,
+  "label": "main",
+  "resource_usage": {
+    "cpu_seconds": 0.13606682400000003,
+    "peak_rss_kib": 97204,
+    "single_process": true,
+    "workers": 1
+  }
+}

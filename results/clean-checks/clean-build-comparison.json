@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "method": "Direct byte comparison of the freshly rebuilt PDFs from a clean candidate ZIP extraction with the staged PDFs. No hashes are used.",
+  "pdf_byte_equal": {
+    "main.pdf": true,
+    "supplement.pdf": true
+  },
+  "scientific_regeneration": "Executed from the clean extracted Artifacts directory; all 246 scientific files agree with the retained main run.",
+  "cumulative_repair_events": 162252
+}

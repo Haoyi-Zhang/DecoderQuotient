@@ -1,0 +1,433 @@
+{
+  "decision": {
+    "bad_final_states": 0,
+    "equivalent": true,
+    "least_counterexample": null,
+    "reachable_final_states": 1
+  },
+  "format": "bptc-exact-accumulator-certificate-v1",
+  "layers": [
+    {
+      "index": 0,
+      "states": [
+        {
+          "least_witness_indices": [],
+          "least_witness_pairs": [],
+          "state": [
+            0,
+            0,
+            false,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "from": [
+            0,
+            0,
+            false,
+            -1
+          ],
+          "product": 8,
+          "representative_index": 0,
+          "to": [
+            8,
+            0,
+            false,
+            -1
+          ]
+        }
+      ],
+      "index": 1,
+      "states": [
+        {
+          "least_witness_indices": [
+            0
+          ],
+          "least_witness_pairs": [
+            [
+              -4,
+              -2
+            ]
+          ],
+          "state": [
+            8,
+            0,
+            false,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "from": [
+            8,
+            0,
+            false,
+            -1
+          ],
+          "product": -28,
+          "representative_index": 0,
+          "to": [
+            -20,
+            0,
+            false,
+            -1
+          ]
+        }
+      ],
+      "index": 2,
+      "states": [
+        {
+          "least_witness_indices": [
+            0,
+            0
+          ],
+          "least_witness_pairs": [
+            [
+              -4,
+              -2
+            ],
+            [
+              -7,
+              4
+            ]
+          ],
+          "state": [
+            -20,
+            0,
+            false,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "from": [
+            -20,
+            0,
+            false,
+            -1
+          ],
+          "product": 0,
+          "representative_index": 0,
+          "to": [
+            -20,
+            0,
+            false,
+            -1
+          ]
+        }
+      ],
+      "index": 3,
+      "states": [
+        {
+          "least_witness_indices": [
+            0,
+            0,
+            0
+          ],
+          "least_witness_pairs": [
+            [
+              -4,
+              -2
+            ],
+            [
+              -7,
+              4
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "state": [
+            -20,
+            0,
+            false,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "from": [
+            -20,
+            0,
+            false,
+            -1
+          ],
+          "product": 0,
+          "representative_index": 0,
+          "to": [
+            -20,
+            0,
+            false,
+            -1
+          ]
+        }
+      ],
+      "index": 4,
+      "states": [
+        {
+          "least_witness_indices": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "least_witness_pairs": [
+            [
+              -4,
+              -2
+            ],
+            [
+              -7,
+              4
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "state": [
+            -20,
+            0,
+            false,
+            -1
+          ]
+        }
+      ]
+    }
+  ],
+  "metrics": {
+    "concrete_assignments": 81,
+    "producer_transitions": 4,
+    "quotient_frontier_edges": 4,
+    "quotient_product_sequences": 1,
+    "unquotiented_frontier_edges": 12
+  },
+  "product_classes": [
+    [
+      {
+        "member_indices": [
+          0,
+          1,
+          2
+        ],
+        "member_pairs": [
+          [
+            -4,
+            -2
+          ],
+          [
+            -2,
+            -4
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "product": 8,
+        "representative_index": 0,
+        "representative_pair": [
+          -4,
+          -2
+        ]
+      }
+    ],
+    [
+      {
+        "member_indices": [
+          0,
+          1,
+          2
+        ],
+        "member_pairs": [
+          [
+            -7,
+            4
+          ],
+          [
+            -4,
+            7
+          ],
+          [
+            4,
+            -7
+          ]
+        ],
+        "product": -28,
+        "representative_index": 0,
+        "representative_pair": [
+          -7,
+          4
+        ]
+      }
+    ],
+    [
+      {
+        "member_indices": [
+          0,
+          1,
+          2
+        ],
+        "member_pairs": [
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        "product": 0,
+        "representative_index": 0,
+        "representative_pair": [
+          0,
+          0
+        ]
+      }
+    ],
+    [
+      {
+        "member_indices": [
+          0,
+          1,
+          2
+        ],
+        "member_pairs": [
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        "product": 0,
+        "representative_index": 0,
+        "representative_pair": [
+          0,
+          0
+        ]
+      }
+    ]
+  ],
+  "spec": {
+    "final_observe": true,
+    "initial": 0,
+    "name": "saturation-reconvergence-00",
+    "provenance": "cancellation-control",
+    "stages": [
+      {
+        "acc_bits": 4,
+        "acc_mode": "saturate",
+        "observe": false,
+        "pairs": [
+          [
+            -4,
+            -2
+          ],
+          [
+            -2,
+            -4
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "term_bits": 8,
+        "term_mode": "saturate"
+      },
+      {
+        "acc_bits": 4,
+        "acc_mode": "saturate",
+        "observe": false,
+        "pairs": [
+          [
+            -7,
+            4
+          ],
+          [
+            -4,
+            7
+          ],
+          [
+            4,
+            -7
+          ]
+        ],
+        "term_bits": 8,
+        "term_mode": "saturate"
+      },
+      {
+        "acc_bits": 4,
+        "acc_mode": "saturate",
+        "observe": false,
+        "pairs": [
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        "term_bits": 8,
+        "term_mode": "saturate"
+      },
+      {
+        "acc_bits": 4,
+        "acc_mode": "saturate",
+        "observe": false,
+        "pairs": [
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        "term_bits": 8,
+        "term_mode": "saturate"
+      }
+    ]
+  }
+}

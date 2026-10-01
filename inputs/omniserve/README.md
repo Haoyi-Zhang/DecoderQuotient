@@ -1,14 +1,10 @@
-# Frozen source anchor
+# Frozen arithmetic source input
 
-This directory retains a review-sized excerpt of the Apache-2.0 OmniServe
-W4A8 per-group CUDA kernel at repository commit
-`02b2925aa6fa3b92b06316a1524b7f38922cd9c8`, path
-`kernels/csrc/qgemm/w4a8_per_group/gemm_cuda.cu`.  The excerpt is used only by
-the restricted structural importer.  It is not represented as the complete
-kernel, and the artifact does not claim to validate CUDA control flow,
-addressing, synchronization, MMA, floating-point scale application, or the
-epilogue.
-
-Upstream repository: `https://github.com/mit-han-lab/omniserve`
-
-The upstream Apache License 2.0 is retained in `LICENSE`.
+`share_to_reg_one_stage_B.cu` contains the selected arithmetic body, without
+local provenance comments. `provenance.json` records the upstream repository,
+immutable commit and file; `LICENSE` is the retained Apache-2.0 text.
+The complete token sequence is compared against `bptc/source_anchor.py`'s
+fixed sequence, with comments and whitespace as the only ignored content.
+The extracted body was inspected against the primary repository source.
+This is not compilation or execution of CUDA and does not establish memory,
+control-flow, intrinsic implementation, floating-point or concurrency safety.

@@ -1,28 +1,25 @@
-# Source import boundary
+# Frozen source boundary
 
-The artifact retains a fixed Apache-2.0 excerpt from the OmniServe W4A8
-per-group kernel at repository commit
-`02b2925aa6fa3b92b06316a1524b7f38922cd9c8`, path
-`kernels/csrc/qgemm/w4a8_per_group/gemm_cuda.cu`.
+The source check is a complete token allowlist, not a C++ structural importer.
+The lexer consumes the entire selected block. Only whitespace and comments
+are discarded; all remaining tokens must equal the fixed expected sequence.
+Unknown statements, reordered operations, extra writes, altered masks/shifts,
+changed zero selectors and comment-only decoys are rejected.
 
-The importer is intentionally narrower than a C++ or CUDA frontend.  It checks
-all of the following structural facts in the frozen block:
+The retained block is from the immutable OmniServe commit recorded in
+inputs/omniserve/provenance.json. Metadata is separate from the code body.
+The body was compared to the primary repository token sequence. Apache-2.0
+licensing and original attribution are retained.
 
-1. eight named low/high nibble extractions from the four components of a
-   `uint4`, with the expected masks and shift;
-2. eight whole-word unsigned multiplications;
-3. the expected pairing of two extracted words with each of four scalar
-   bytes; and
-4. eight bytewise `__vadd4` corrections with the corresponding zero-point
-   byte.
+Acceptance fixes eight nibble relations, four unsigned byte scales, four byte
+zero-point selections, eight whole-word multiplies and eight bytewise stores.
+The accompanying arithmetic proof assumes valid loads/stores, the intended
+__byte_perm and __vadd4 semantics, and no concurrent interference. It does not
+establish those assumptions from the surrounding CUDA program. No accumulator
+schedule is automatically extracted, and no complete kernel correctness,
+aliasing, memory, floating-point or concurrency claim is made.
 
-The parser rejects changes to masks, shifts, source components, product
-pairings, destinations, or correction pairings.  A deterministic mutation
-suite exercises these failure modes.
-
-This establishes a reviewable syntactic import certificate for the restricted
-expression idiom.  It does **not** establish CUDA memory safety, pointer
-alignment, race freedom, synchronization, `ldmatrix` or `mma` semantics,
-integer intrinsic semantics outside the normalized block, floating-point
-scale application, epilogue behavior, or end-to-end QServe/OmniServe
-correctness.  Those items remain explicit trusted or excluded boundaries.
+The 22 targeted source mutations are recorded individually with rejection
+results. Token equality rejects other unlisted rewrites too, including some
+semantically harmless changes. This is a deliberately narrow scope choice,
+not evidence of a general-purpose semantics-preserving source importer.

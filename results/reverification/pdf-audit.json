@@ -1,0 +1,352 @@
+{
+  "scope": "PDF structural extraction and rendered-page review; not a proof of scientific correctness.",
+  "renderer": "PyMuPDF at 180 dpi",
+  "documents": {
+    "main": {
+      "pages": 20,
+      "reference_start_pages": [
+        17
+      ],
+      "author_metadata": "",
+      "all_fonts_embedded": true,
+      "fonts": [
+        {
+          "name": "SYXOTM+LinLibertineT",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "RXNCFI+LinBiolinumTB",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "DOUPGF+LinBiolinumT",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "ZJCYQP+LinLibertineTI",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "IDIBIH+Inconsolatazi4-Regular",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "MRLLZX+txsys",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "SYXOTM+LinLibertineT",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "FATXPQ+LibertineMathMI",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "KDMOOH+LibertineMathMI7",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "OGYQFN+txmiaX",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "DOUPGF+LinBiolinumT",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "RFNONQ+txsym",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "SYXOTM+LinLibertineT",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "BNIRKB+txexs",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "FWCOTL+NewTXMI",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "AEHVRN+LibertineMathRM",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "FPBYUE+LinLibertineTB",
+          "embedded": true,
+          "subset": true
+        }
+      ],
+      "page_checks": [
+        {
+          "page": 1,
+          "text_chars": 4144,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 2,
+          "text_chars": 4125,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 3,
+          "text_chars": 3138,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 4,
+          "text_chars": 2774,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 5,
+          "text_chars": 3833,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 6,
+          "text_chars": 2736,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 7,
+          "text_chars": 3762,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 8,
+          "text_chars": 3714,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 9,
+          "text_chars": 3459,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 10,
+          "text_chars": 3565,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 11,
+          "text_chars": 3152,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 12,
+          "text_chars": 3333,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 13,
+          "text_chars": 3141,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 14,
+          "text_chars": 4212,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 15,
+          "text_chars": 4066,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 16,
+          "text_chars": 3667,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 17,
+          "text_chars": 5851,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 18,
+          "text_chars": 5516,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 19,
+          "text_chars": 5666,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 20,
+          "text_chars": 2035,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        }
+      ]
+    },
+    "supplement": {
+      "pages": 6,
+      "reference_start_pages": [],
+      "author_metadata": "",
+      "all_fonts_embedded": true,
+      "fonts": [
+        {
+          "name": "PLOFVU+LinLibertineT",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "DXSMKI+LinBiolinumTB",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "JJHZLB+LinBiolinumT",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "UVCSVW+LibertineMathMI",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "OOPCJB+LibertineMathMI7",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "UYUARY+txsys",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "OGYQFN+txmiaX",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "PLOFVU+LinLibertineT",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "WPHYYM+txexs",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "FWCOTL+NewTXMI",
+          "embedded": true,
+          "subset": true
+        },
+        {
+          "name": "FDNYQO+Inconsolatazi4-Regular",
+          "embedded": true,
+          "subset": true
+        }
+      ],
+      "page_checks": [
+        {
+          "page": 1,
+          "text_chars": 3194,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 2,
+          "text_chars": 3102,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 3,
+          "text_chars": 2841,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 4,
+          "text_chars": 2242,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 5,
+          "text_chars": 2628,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        },
+        {
+          "page": 6,
+          "text_chars": 3082,
+          "width_pt": 486.0,
+          "height_pt": 720.0,
+          "rendered": true
+        }
+      ]
+    }
+  },
+  "visual_review": "All 20 main and 6 supplement pages viewed in thirteen two-page contact sheets generated from final 180-dpi renders. No clipping, text/figure overlap, black-square glyphs or unresolved visible references found. References start at main page 17. Review is internal, not external peer review.",
+  "latex_warning_scope": "No compilation errors, undefined citations/references or overfull hboxes. Two harmless hyperref PDF-string warnings remain for TeX tokens; author metadata is empty."
+}

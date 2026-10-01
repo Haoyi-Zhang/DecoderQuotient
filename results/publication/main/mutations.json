@@ -1,0 +1,422 @@
+[
+  {
+    "case": "safe-saturating-00",
+    "diagnostic": "certificate.layers[1].edges[0].to[1]: value mismatch",
+    "kind": "accumulator",
+    "mutation": 0,
+    "rejected": true
+  },
+  {
+    "case": "safe-saturating-00",
+    "diagnostic": "certificate.product_classes[0][0].representative_index: value mismatch",
+    "kind": "accumulator",
+    "mutation": 1,
+    "rejected": true
+  },
+  {
+    "case": "safe-saturating-00",
+    "diagnostic": "certificate.layers[1].states[0].least_witness_indices[0]: value mismatch",
+    "kind": "accumulator",
+    "mutation": 2,
+    "rejected": true
+  },
+  {
+    "case": "safe-saturating-00",
+    "diagnostic": "certificate.decision.equivalent: value mismatch",
+    "kind": "accumulator",
+    "mutation": 3,
+    "rejected": true
+  },
+  {
+    "case": "safe-saturating-00",
+    "diagnostic": "certificate.layers[1].states: wrong length",
+    "kind": "accumulator",
+    "mutation": 4,
+    "rejected": true
+  },
+  {
+    "case": "visible-saturation-00",
+    "diagnostic": "certificate.layers[1].edges[0].to[1]: value mismatch",
+    "kind": "accumulator",
+    "mutation": 0,
+    "rejected": true
+  },
+  {
+    "case": "visible-saturation-00",
+    "diagnostic": "certificate.product_classes[0][0].representative_index: value mismatch",
+    "kind": "accumulator",
+    "mutation": 1,
+    "rejected": true
+  },
+  {
+    "case": "visible-saturation-00",
+    "diagnostic": "certificate.layers[1].states[0].least_witness_indices[0]: value mismatch",
+    "kind": "accumulator",
+    "mutation": 2,
+    "rejected": true
+  },
+  {
+    "case": "visible-saturation-00",
+    "diagnostic": "certificate.decision.equivalent: value mismatch",
+    "kind": "accumulator",
+    "mutation": 3,
+    "rejected": true
+  },
+  {
+    "case": "visible-saturation-00",
+    "diagnostic": "certificate.layers[1].states: wrong length",
+    "kind": "accumulator",
+    "mutation": 4,
+    "rejected": true
+  },
+  {
+    "case": "saturation-reconvergence-00",
+    "diagnostic": "certificate.layers[1].edges[0].to[1]: value mismatch",
+    "kind": "accumulator",
+    "mutation": 0,
+    "rejected": true
+  },
+  {
+    "case": "saturation-reconvergence-00",
+    "diagnostic": "certificate.product_classes[0][0].representative_index: value mismatch",
+    "kind": "accumulator",
+    "mutation": 1,
+    "rejected": true
+  },
+  {
+    "case": "saturation-reconvergence-00",
+    "diagnostic": "certificate.layers[1].states[0].least_witness_indices[0]: value mismatch",
+    "kind": "accumulator",
+    "mutation": 2,
+    "rejected": true
+  },
+  {
+    "case": "saturation-reconvergence-00",
+    "diagnostic": "certificate.decision.equivalent: value mismatch",
+    "kind": "accumulator",
+    "mutation": 3,
+    "rejected": true
+  },
+  {
+    "case": "saturation-reconvergence-00",
+    "diagnostic": "certificate.layers[1].states: wrong length",
+    "kind": "accumulator",
+    "mutation": 4,
+    "rejected": true
+  },
+  {
+    "case": "final-range-unsound-00",
+    "diagnostic": "certificate.layers[1].edges[0].to[1]: value mismatch",
+    "kind": "accumulator",
+    "mutation": 0,
+    "rejected": true
+  },
+  {
+    "case": "final-range-unsound-00",
+    "diagnostic": "certificate.product_classes[0][0].representative_index: value mismatch",
+    "kind": "accumulator",
+    "mutation": 1,
+    "rejected": true
+  },
+  {
+    "case": "final-range-unsound-00",
+    "diagnostic": "certificate.layers[1].states[0].least_witness_indices[0]: value mismatch",
+    "kind": "accumulator",
+    "mutation": 2,
+    "rejected": true
+  },
+  {
+    "case": "final-range-unsound-00",
+    "diagnostic": "certificate.decision.equivalent: value mismatch",
+    "kind": "accumulator",
+    "mutation": 3,
+    "rejected": true
+  },
+  {
+    "case": "final-range-unsound-00",
+    "diagnostic": "certificate.layers[1].states: wrong length",
+    "kind": "accumulator",
+    "mutation": 4,
+    "rejected": true
+  },
+  {
+    "case": "term-narrowing-00",
+    "diagnostic": "certificate.layers[1].edges[0].to[1]: value mismatch",
+    "kind": "accumulator",
+    "mutation": 0,
+    "rejected": true
+  },
+  {
+    "case": "term-narrowing-00",
+    "diagnostic": "certificate.product_classes[0][0].representative_index: value mismatch",
+    "kind": "accumulator",
+    "mutation": 1,
+    "rejected": true
+  },
+  {
+    "case": "term-narrowing-00",
+    "diagnostic": "certificate.layers[1].states[0].least_witness_indices[0]: value mismatch",
+    "kind": "accumulator",
+    "mutation": 2,
+    "rejected": true
+  },
+  {
+    "case": "term-narrowing-00",
+    "diagnostic": "certificate.decision.equivalent: value mismatch",
+    "kind": "accumulator",
+    "mutation": 3,
+    "rejected": true
+  },
+  {
+    "case": "term-narrowing-00",
+    "diagnostic": "certificate.layers[1].states: wrong length",
+    "kind": "accumulator",
+    "mutation": 4,
+    "rejected": true
+  },
+  {
+    "case": "width-schedule-00",
+    "diagnostic": "certificate.layers[1].edges[0].to[1]: value mismatch",
+    "kind": "accumulator",
+    "mutation": 0,
+    "rejected": true
+  },
+  {
+    "case": "width-schedule-00",
+    "diagnostic": "certificate.product_classes[0][0].representative_index: value mismatch",
+    "kind": "accumulator",
+    "mutation": 1,
+    "rejected": true
+  },
+  {
+    "case": "width-schedule-00",
+    "diagnostic": "certificate.layers[1].states[0].least_witness_indices[0]: value mismatch",
+    "kind": "accumulator",
+    "mutation": 2,
+    "rejected": true
+  },
+  {
+    "case": "width-schedule-00",
+    "diagnostic": "certificate.decision.equivalent: value mismatch",
+    "kind": "accumulator",
+    "mutation": 3,
+    "rejected": true
+  },
+  {
+    "case": "width-schedule-00",
+    "diagnostic": "certificate.layers[1].states: wrong length",
+    "kind": "accumulator",
+    "mutation": 4,
+    "rejected": true
+  },
+  {
+    "case": "intermediate-observation-00",
+    "diagnostic": "certificate.layers[1].edges[0].to[1]: value mismatch",
+    "kind": "accumulator",
+    "mutation": 0,
+    "rejected": true
+  },
+  {
+    "case": "intermediate-observation-00",
+    "diagnostic": "certificate.product_classes[0][0].representative_index: value mismatch",
+    "kind": "accumulator",
+    "mutation": 1,
+    "rejected": true
+  },
+  {
+    "case": "intermediate-observation-00",
+    "diagnostic": "certificate.layers[1].states[0].least_witness_indices[0]: value mismatch",
+    "kind": "accumulator",
+    "mutation": 2,
+    "rejected": true
+  },
+  {
+    "case": "intermediate-observation-00",
+    "diagnostic": "certificate.decision.equivalent: value mismatch",
+    "kind": "accumulator",
+    "mutation": 3,
+    "rejected": true
+  },
+  {
+    "case": "intermediate-observation-00",
+    "diagnostic": "certificate.layers[1].states: wrong length",
+    "kind": "accumulator",
+    "mutation": 4,
+    "rejected": true
+  },
+  {
+    "case": "mixed-product-domain-00",
+    "diagnostic": "certificate.layers[1].edges[0].to[1]: value mismatch",
+    "kind": "accumulator",
+    "mutation": 0,
+    "rejected": true
+  },
+  {
+    "case": "mixed-product-domain-00",
+    "diagnostic": "certificate.product_classes[0][0].representative_index: value mismatch",
+    "kind": "accumulator",
+    "mutation": 1,
+    "rejected": true
+  },
+  {
+    "case": "mixed-product-domain-00",
+    "diagnostic": "certificate.layers[1].states[0].least_witness_indices[0]: value mismatch",
+    "kind": "accumulator",
+    "mutation": 2,
+    "rejected": true
+  },
+  {
+    "case": "mixed-product-domain-00",
+    "diagnostic": "certificate.decision.equivalent: value mismatch",
+    "kind": "accumulator",
+    "mutation": 3,
+    "rejected": true
+  },
+  {
+    "case": "mixed-product-domain-00",
+    "diagnostic": "certificate.layers[1].states: wrong length",
+    "kind": "accumulator",
+    "mutation": 4,
+    "rejected": true
+  },
+  {
+    "case": "decoder-full-nibble-box-001",
+    "diagnostic": "certificate.layers[1].edges[0].to[0]: value mismatch",
+    "kind": "decoder",
+    "mutation": 0,
+    "rejected": true
+  },
+  {
+    "case": "decoder-full-nibble-box-001",
+    "diagnostic": "certificate.layers[1].states[0].least_witness[0]: value mismatch",
+    "kind": "decoder",
+    "mutation": 1,
+    "rejected": true
+  },
+  {
+    "case": "decoder-full-nibble-box-001",
+    "diagnostic": "certificate.decision.equivalent: value mismatch",
+    "kind": "decoder",
+    "mutation": 2,
+    "rejected": true
+  },
+  {
+    "case": "decoder-full-nibble-box-001",
+    "diagnostic": "certificate.closed_form.equivalent: value mismatch",
+    "kind": "decoder",
+    "mutation": 3,
+    "rejected": true
+  },
+  {
+    "case": "decoder-full-nibble-box-007",
+    "diagnostic": "certificate.layers[1].edges[0].to[0]: value mismatch",
+    "kind": "decoder",
+    "mutation": 0,
+    "rejected": true
+  },
+  {
+    "case": "decoder-full-nibble-box-007",
+    "diagnostic": "certificate.layers[1].states[0].least_witness[0]: value mismatch",
+    "kind": "decoder",
+    "mutation": 1,
+    "rejected": true
+  },
+  {
+    "case": "decoder-full-nibble-box-007",
+    "diagnostic": "certificate.decision.equivalent: value mismatch",
+    "kind": "decoder",
+    "mutation": 2,
+    "rejected": true
+  },
+  {
+    "case": "decoder-full-nibble-box-007",
+    "diagnostic": "certificate.closed_form.equivalent: value mismatch",
+    "kind": "decoder",
+    "mutation": 3,
+    "rejected": true
+  },
+  {
+    "case": "decoder-full-nibble-box-015",
+    "diagnostic": "certificate.layers[1].edges[0].to[0]: value mismatch",
+    "kind": "decoder",
+    "mutation": 0,
+    "rejected": true
+  },
+  {
+    "case": "decoder-full-nibble-box-015",
+    "diagnostic": "certificate.layers[1].states[0].least_witness[0]: value mismatch",
+    "kind": "decoder",
+    "mutation": 1,
+    "rejected": true
+  },
+  {
+    "case": "decoder-full-nibble-box-015",
+    "diagnostic": "certificate.decision.equivalent: value mismatch",
+    "kind": "decoder",
+    "mutation": 2,
+    "rejected": true
+  },
+  {
+    "case": "decoder-full-nibble-box-015",
+    "diagnostic": "certificate.closed_form.equivalent: value mismatch",
+    "kind": "decoder",
+    "mutation": 3,
+    "rejected": true
+  },
+  {
+    "case": "decoder-full-nibble-box-016",
+    "diagnostic": "certificate.layers[1].edges[0].to[0]: value mismatch",
+    "kind": "decoder",
+    "mutation": 0,
+    "rejected": true
+  },
+  {
+    "case": "decoder-full-nibble-box-016",
+    "diagnostic": "certificate.layers[1].states[0].least_witness[0]: value mismatch",
+    "kind": "decoder",
+    "mutation": 1,
+    "rejected": true
+  },
+  {
+    "case": "decoder-full-nibble-box-016",
+    "diagnostic": "certificate.decision.equivalent: value mismatch",
+    "kind": "decoder",
+    "mutation": 2,
+    "rejected": true
+  },
+  {
+    "case": "decoder-full-nibble-box-016",
+    "diagnostic": "certificate.closed_form.equivalent: value mismatch",
+    "kind": "decoder",
+    "mutation": 3,
+    "rejected": true
+  },
+  {
+    "case": "decoder-full-nibble-box-017",
+    "diagnostic": "certificate.layers[1].edges[0].to[0]: value mismatch",
+    "kind": "decoder",
+    "mutation": 0,
+    "rejected": true
+  },
+  {
+    "case": "decoder-full-nibble-box-017",
+    "diagnostic": "certificate.layers[1].states[0].least_witness[0]: value mismatch",
+    "kind": "decoder",
+    "mutation": 1,
+    "rejected": true
+  },
+  {
+    "case": "decoder-full-nibble-box-017",
+    "diagnostic": "certificate.decision.equivalent: value mismatch",
+    "kind": "decoder",
+    "mutation": 2,
+    "rejected": true
+  },
+  {
+    "case": "decoder-full-nibble-box-017",
+    "diagnostic": "certificate.closed_form.equivalent: value mismatch",
+    "kind": "decoder",
+    "mutation": 3,
+    "rejected": true
+  }
+]

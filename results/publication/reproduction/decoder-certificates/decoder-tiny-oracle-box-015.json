@@ -1,0 +1,332 @@
+{
+  "closed_form": {
+    "equivalent": true,
+    "max_carry_after_last_lane": 0
+  },
+  "decision": {
+    "equivalent": true,
+    "least_counterexample": null
+  },
+  "format": "bptc-packed-decoder-certificate-v1",
+  "layers": [
+    {
+      "index": 0,
+      "states": [
+        {
+          "least_witness": [],
+          "state": [
+            0,
+            false,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "digit": 0,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 1,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 2,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 3,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        }
+      ],
+      "index": 1,
+      "states": [
+        {
+          "least_witness": [
+            0
+          ],
+          "state": [
+            0,
+            false,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "digit": 0,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 1,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 2,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 3,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        }
+      ],
+      "index": 2,
+      "states": [
+        {
+          "least_witness": [
+            0,
+            0
+          ],
+          "state": [
+            0,
+            false,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "digit": 0,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 1,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 2,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 3,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        }
+      ],
+      "index": 3,
+      "states": [
+        {
+          "least_witness": [
+            0,
+            0,
+            0
+          ],
+          "state": [
+            0,
+            false,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "digit": 0,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 1,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 2,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        },
+        {
+          "digit": 3,
+          "from": [
+            0,
+            false,
+            -1
+          ],
+          "to": [
+            0,
+            false,
+            -1
+          ]
+        }
+      ],
+      "index": 4,
+      "states": [
+        {
+          "least_witness": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "state": [
+            0,
+            false,
+            -1
+          ]
+        }
+      ]
+    }
+  ],
+  "metrics": {
+    "concrete_assignments": 256,
+    "producer_transitions": 16,
+    "reachable_final_states": 1
+  },
+  "source_parameter_bound": true,
+  "spec": {
+    "biases": [
+      16,
+      31,
+      46,
+      61
+    ],
+    "lane_bits": 8,
+    "maxima": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "name": "decoder-tiny-oracle-box-015",
+    "provenance": "tiny-oracle-box",
+    "scale": 15
+  }
+}

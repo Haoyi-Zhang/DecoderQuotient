@@ -1,0 +1,27 @@
+{
+  "status": "pass",
+  "origin": "New extraction of the current candidate ZIP, after the replay-validator and reference-check repairs.",
+  "pdfs": {
+    "main": {
+      "bytes_identical_to_visually_reviewed_pdf": true,
+      "pages": 20,
+      "bytes": 568661
+    },
+    "supplement": {
+      "bytes_identical_to_visually_reviewed_pdf": true,
+      "pages": 6,
+      "bytes": 302593
+    }
+  },
+  "full_campaign_reexecuted_in_this_extraction": false,
+  "tests_executed": {
+    "tests": 39,
+    "failures": [],
+    "errors": [],
+    "skipped": 0,
+    "success": true,
+    "events_this_run": 1653,
+    "events_cumulative": 187881
+  },
+  "scope": "Unit regressions, structural saved-record/citation checks and fresh TeX build. Full semantic saved-certificate replay was executed earlier in this recheck and is recorded separately."
+}

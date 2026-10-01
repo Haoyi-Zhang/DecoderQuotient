@@ -1,0 +1,12 @@
+{
+  "events_after": 110648,
+  "events_before": 83760,
+  "events_this_run": 26888,
+  "label": "reproduction",
+  "resource_usage": {
+    "cpu_seconds": 0.123954958,
+    "peak_rss_kib": 97196,
+    "single_process": true,
+    "workers": 1
+  }
+}

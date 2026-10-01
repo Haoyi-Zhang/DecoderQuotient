@@ -25,7 +25,7 @@ At an observed stage, the required equality is
 `L_{i+1} = A_i(T_{i+1})`.  Observation history matters: a later numerical
 reconvergence does not erase an earlier observed mismatch.
 
-The certificate state after stage `i` is
+The certificate state at layer `i` (after `i` stages) is
 
 ```
 (T_i, E_i, B_i, F_i),
@@ -73,8 +73,9 @@ sets are equal.  Induction completes the proof.  QED.
 The schedule is equivalent at all declared observations iff no final
 reachable state has its failure bit set.
 
-This follows because Theorem 1 preserves every concrete observation history,
-not merely final values.
+This follows because the reachable states include the sticky failure flag
+and the first failed observation. They do not retain the whole observation
+value sequence.
 
 ## 3. Least counterexamples
 
@@ -131,7 +132,7 @@ Python runtime, JSON parser, or arbitrary CUDA/C++ programs.
 
 ## 5. Complexity
 
-Let `R_i` be the reachable quotient state set after stage `i`, `D_i` the
+Let `R_i` be the reachable quotient state set before stage `i`, `D_i` the
 concrete pair domain, and `P_i` its distinct-product set.  The producer and
 checker perform
 
@@ -146,7 +147,8 @@ product multiplicity and state merging.
 
 ## 6. Baseline facts
 
-The no-overflow guard checks that every exact term and every exact prefix
+The no-overflow guard first checks that the initial value fits the first
+accumulator type; it then checks that every exact term and every exact prefix
 interval fits its declared width.  When it accepts, every conversion is the
 identity, so it is sound.  It is incomplete for final-only observations:
 with a four-bit saturating accumulator, products `+8,-28` yield reference and
@@ -157,3 +159,22 @@ unsound: with a four-bit saturating accumulator, products `+8,-8` have final
 exact target zero, but the lowered path is `7,-1`, so the final values differ.
 These controls separate the need for an exact trace analysis from a merely
 conservative range check or a final-range test.
+
+## 7. Materialized witnesses and domain assumptions
+
+The active implementation keeps all layers and full prefix indices/pairs.
+For one zero-product pair at each of n stages, serialized index lengths total
+n(n+1)/2. Hence node/edge counts alone do not bound serialization or replay
+time linearly, and adjacent-frontier space is not the current total-memory
+bound. Partition construction, sorting, prefix copying and integer bit lengths
+also contribute. Product quotienting only guarantees a nonincrease in semantic
+frontier transitions.
+
+Domains are nonempty, unique ordered lists of strict integer pairs. Widths are
+2..32, stages 1..64, flags true Booleans; schema validation rejects rather than
+normalizes malformed data. Future domains are independent of discarded
+history. Equal product is not a valid quotient for per-operand operations.
+
+The pure final-range rule and the term-fit/final-range rule are separately
+implemented. The latter cannot accept a term-narrowing counterexample; it can
+still accept a schedule whose intermediate accumulator loses information.

@@ -1,0 +1,550 @@
+{
+  "review_date": "2026-09-29",
+  "scope": "Primary-source identity and citation-purpose review. This is not a replication of cited experiments or a claim that all full texts were read.",
+  "entries": {
+    "qserve": {
+      "key": "qserve",
+      "primary_source": "https://proceedings.mlsys.org/paper_files/paper/2025/hash/fbe2b2f74a2ece8070d8fb073717bda6-Abstract-Conference.html",
+      "date": "2026-09-29",
+      "verification": "Access scope: publisher_record_abstract. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "W4A8KV4 progressive quantization and register-level dequantization motivate the selected integer block.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "omniserve": {
+      "key": "omniserve",
+      "primary_source": "https://github.com/mit-han-lab/omniserve/blob/02b2925aa6fa3b92b06316a1524b7f38922cd9c8/kernels/csrc/qgemm/w4a8_per_group/gemm_cuda.cu",
+      "date": "2026-09-29",
+      "verification": "Access scope: retained_source_provenance. Existing immutable-commit source and license evidence retained and locally audited. No new upstream network fetch was performed in this re-verification.",
+      "citation_purpose": "Frozen arithmetic source block.",
+      "notes": "Existing immutable-commit source and license evidence retained and locally audited. No new upstream network fetch was performed in this re-verification."
+    },
+    "liquidgemm": {
+      "key": "liquidgemm",
+      "primary_source": "https://arxiv.org/abs/2509.01229",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Overflow-safe W4A8 dequantization is prior kernel work, not a new contribution of this study.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "qqq": {
+      "key": "qqq",
+      "primary_source": "https://arxiv.org/abs/2406.09904",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Contrast mixed four-bit quantization calibration with exact integer implementation checking.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "smoothquant": {
+      "key": "smoothquant",
+      "primary_source": "https://arxiv.org/abs/2211.10438",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Activation-outlier smoothing is a quantization transformation, not bit-exact lowering validation.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "awq": {
+      "key": "awq",
+      "primary_source": "https://proceedings.mlsys.org/paper_files/paper/2024/hash/42a452cbafa9dd64e9ba4aa95cc1ef21-Abstract-Conference.html",
+      "date": "2026-09-29",
+      "verification": "Access scope: publisher_record_abstract. Formal MLSys 2024 title includes On-Device. The current arXiv title is shorter; the chosen version is now internally consistent.",
+      "citation_purpose": "Activation-aware weight calibration and packing motivate low-bit representations.",
+      "notes": "Formal MLSys 2024 title includes On-Device. The current arXiv title is shorter; the chosen version is now internally consistent."
+    },
+    "gptq": {
+      "key": "gptq",
+      "primary_source": "https://arxiv.org/abs/2210.17323",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Second-order weight quantization optimizes approximation error, not integer refinement.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "llmint8": {
+      "key": "llmint8",
+      "primary_source": "https://arxiv.org/abs/2208.07339",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Mixed-precision outlier decomposition is outside the fixed integer-only fragment.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "zeroquant": {
+      "key": "zeroquant",
+      "primary_source": "https://arxiv.org/abs/2206.01861",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Fine-grained quantization and backend co-design provide system context.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "omniquant": {
+      "key": "omniquant",
+      "primary_source": "https://arxiv.org/abs/2308.13137",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Learnable clipping and equivalent transformations are calibration methods, not proof certificates.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "spqr": {
+      "key": "spqr",
+      "primary_source": "https://arxiv.org/abs/2306.03078",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Sparse high-precision outliers illustrate representations excluded by the nibble-box model.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "aqlm": {
+      "key": "aqlm",
+      "primary_source": "https://arxiv.org/abs/2401.06118",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Additive codebook quantization lies outside scalar nibble multiplication.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "quik": {
+      "key": "quik",
+      "primary_source": "https://arxiv.org/abs/2310.09259",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Hybrid four-bit inference handles outliers rather than proving arbitrary accumulator schedules.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "atom": {
+      "key": "atom",
+      "primary_source": "https://arxiv.org/abs/2310.19102",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Low-bit mixed-precision serving is system context; no benchmark result is reused.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "quarot": {
+      "key": "quarot",
+      "primary_source": "https://arxiv.org/abs/2404.00456",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Orthogonal rotation removes activation outliers; it is not a theorem about the frozen byte program.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "marlin": {
+      "key": "marlin",
+      "primary_source": "https://arxiv.org/abs/2408.11743",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Mixed-precision GPU execution is related implementation context, not an evaluated baseline.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "integeronly": {
+      "key": "integeronly",
+      "primary_source": "https://arxiv.org/abs/1712.05877",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Integer-only quantization distinguishes representation approximation from implementation equivalence.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "tvm": {
+      "key": "tvm",
+      "primary_source": "https://arxiv.org/abs/1802.04799",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Graph/operator compiler optimizations provide a possible consumer, not an implemented integration.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "ansor": {
+      "key": "ansor",
+      "primary_source": "https://arxiv.org/abs/2006.06762",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Automatic program search and learned cost models are orthogonal to fixed-candidate correctness.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "tensorir": {
+      "key": "tensorir",
+      "primary_source": "https://arxiv.org/abs/2207.04296",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Tensor-level instruction abstractions define wider compiler scope than the finite schedule.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "mlir": {
+      "key": "mlir",
+      "primary_source": "https://mlir.llvm.org/getting_started/Faq/",
+      "date": "2026-09-29",
+      "verification": "Access scope: project_bibliography. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Extensible intermediate representations are infrastructure, not an existing importer in this artifact.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "triton": {
+      "key": "triton",
+      "primary_source": "https://research.ibm.com/publications/triton-an-intermediate-language-and-compiler-for-tiled-neural-network-computations",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_institution_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Tiled programs motivate kernel generation; no Triton integration is claimed.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "halide-dsl": {
+      "key": "halide-dsl",
+      "primary_source": "https://halide-lang.org/",
+      "date": "2026-09-29",
+      "verification": "Access scope: project_bibliography. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Separating algorithms from schedules motivates checking a chosen schedule.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "fbgemm": {
+      "key": "fbgemm",
+      "primary_source": "https://arxiv.org/abs/2101.05615",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "CPU low-precision kernels demonstrate a hardware setting distinct from the CPU checker runtime.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "souper": {
+      "key": "souper",
+      "primary_source": "https://arxiv.org/abs/1711.04422",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Synthesis proposes optimized fragments; checking remains a distinct obligation.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "fixedpoint-rns": {
+      "key": "fixedpoint-rns",
+      "primary_source": "https://doi.org/10.1145/3664923",
+      "date": "2026-09-29",
+      "verification": "Access scope: publisher_record_abstract. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Residue encodings require distinct conversion semantics; the present theorem does not cover them.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "mixednumeric": {
+      "key": "mixednumeric",
+      "primary_source": "https://dl.acm.org/doi/10.1145/3785473",
+      "date": "2026-09-29",
+      "verification": "Access scope: indexed_primary_record_partial. 2026 publisher and author-contributed records identify the title/byline. Full article was not obtained; no technical result beyond the named optimization topic is used. Coauthor Fangxin Liu's homepage groups the work under 2025 and lists the last two authors Guan then Jiang, whereas the retained version-of-record metadata uses 2026 and Jiang then Guan. The accessible author page did not resolve the publication-order discrepancy; the entry remains explicitly qualified, not certified fully correct.",
+      "citation_purpose": "Mixed numeric precision compilation is optimization work, not the same exact certificate problem.",
+      "notes": "2026 publisher and author-contributed records identify the title/byline. Full article was not obtained; no technical result beyond the named optimization topic is used."
+    },
+    "vectorweaver": {
+      "key": "vectorweaver",
+      "primary_source": "https://dl.acm.org/doi/10.1145/3799719",
+      "date": "2026-09-29",
+      "verification": "Access scope: indexed_primary_record_partial. 2026 publisher and author-contributed records identify the title/byline. Full article was not obtained; no performance number is inherited.",
+      "citation_purpose": "Stage-aware edge inference optimization has system and workload obligations absent from the finite checker.",
+      "notes": "2026 publisher and author-contributed records identify the title/byline. Full article was not obtained; no performance number is inherited."
+    },
+    "translationvalidation": {
+      "key": "translationvalidation",
+      "primary_source": "https://link.springer.com/chapter/10.1007/BFb0054170",
+      "date": "2026-09-29",
+      "verification": "Access scope: publisher_record_abstract. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Per-translation refinement checking rather than proving the translator once.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "neculatv": {
+      "key": "neculatv",
+      "primary_source": "https://people.eecs.berkeley.edu/~necula/papers.html",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_bibliography. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Translation validation for optimizing compilers; not a new idea of this manuscript.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "tristanleroy": {
+      "key": "tristanleroy",
+      "primary_source": "https://xavierleroy.org/bibrefs/Tristan-Leroy-scheduling.html",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_record_abstract. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Mechanized soundness of scheduling validators; distinct from our written proofs.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "compcert": {
+      "key": "compcert",
+      "primary_source": "https://cv.hal.science/xavier-leroy",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_bibliography. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "CompCert compiler verification; correct target of the dedicated CompCert citation.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "compcert-backend": {
+      "key": "compcert-backend",
+      "primary_source": "https://arxiv.org/abs/0902.2137",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Author manuscript identity and abstract checked. Formal JAR version is retained separately from the arXiv posting date.",
+      "citation_purpose": "Coq semantic-preservation proof for a compiler back end.",
+      "notes": "Author manuscript identity and abstract checked. Formal JAR version is retained separately from the arXiv posting date."
+    },
+    "alive": {
+      "key": "alive",
+      "primary_source": "https://www.microsoft.com/en-us/research/publication/provably-correct-peephole-optimizations-alive/",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_institution_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "DSL and SMT validation of LLVM peephole optimizations.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "alive2": {
+      "key": "alive2",
+      "primary_source": "https://users.cs.utah.edu/~regehr/alive2-pldi21.pdf",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_pdf_titlepage_abstract. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Bounded LLVM refinement validation, including undefined behavior; not an evaluated baseline here.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "halide": {
+      "key": "halide",
+      "primary_source": "https://storage.googleapis.com/gweb-research2023-media/pubtools/6569.pdf",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_pdf_titlepage_abstract. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "End-to-end validation of affine Halide specifications, much broader source integration.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "mlirtv": {
+      "key": "mlirtv",
+      "primary_source": "https://link.springer.com/chapter/10.1007/978-3-031-13188-2_19",
+      "date": "2026-09-29",
+      "verification": "Access scope: publisher_record_abstract. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "SMT-based machine-learning compiler translation validation.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "tenspiler": {
+      "key": "tenspiler",
+      "primary_source": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ECOOP.2024.32",
+      "date": "2026-09-29",
+      "verification": "Access scope: publisher_record_abstract. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Verified lifting for tensor operations, not a predecessor benchmarked by this artifact.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "aarch64tv": {
+      "key": "aarch64tv",
+      "primary_source": "https://web.ist.utl.pt/nuno.lopes/pubs.php?id=armtv-oopsla25",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_record_abstract. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "LLVM-to-AArch64 refinement and ABI semantics are outside our arithmetic model.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "verification-dialects": {
+      "key": "verification-dialects",
+      "primary_source": "https://pldi25.sigplan.org/details/pldi-2025-papers/60/First-Class-Verification-Dialects-for-MLIR",
+      "date": "2026-09-29",
+      "verification": "Access scope: conference_record_abstract. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "First-class verification dialects are a broader compiler-infrastructure approach.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "polyhedral-verified": {
+      "key": "polyhedral-verified",
+      "primary_source": "https://xavierleroy.org/publi/polyhedral-codegen.pdf",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_pdf_titlepage_abstract. Author-hosted full paper: title page and abstract directly viewed; two authors, 2021, PACMPL 5 POPL article 40, DOI 10.1145/3434321. Full proof not independently rechecked.",
+      "citation_purpose": "Verified polyhedral code generation; different proof object from arithmetic schedules.",
+      "notes": "Direct full-text retrieval was blocked or unavailable. The indexed primary record establishes identity/topic only; it does not certify every page, volume, byline field, or result."
+    },
+    "blocksim": {
+      "key": "blocksim",
+      "primary_source": "https://www-verimag.imag.fr/~boulme/pub/poster_OOPSLA23.pdf",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_poster_and_indexed_paper_record. All five author names and symbolic block-simulation mechanism checked against the author-hosted one-page OOPSLA23 poster; publication identity also checked in indexed HAL metadata. Poster access is not a full-paper reading; journal pagination is retained, not independently verified from the paper.",
+      "citation_purpose": "Block simulations for optimization correctness; broader transformations than this model.",
+      "notes": "Direct full-text retrieval was blocked or unavailable. The indexed primary record establishes identity/topic only; it does not certify every page, volume, byline field, or result."
+    },
+    "stoke": {
+      "key": "stoke",
+      "primary_source": "https://arxiv.org/abs/1211.0557",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Stochastic superoptimization searches for implementations; our tool checks given schedules.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "denali": {
+      "key": "denali",
+      "primary_source": "https://people.csail.mit.edu/randall/papers/abstracts/denali.html",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_record_abstract. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Goal-directed superoptimization, distinct from certificate replay.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "superoptimizer": {
+      "key": "superoptimizer",
+      "primary_source": "https://dl.acm.org/doi/10.1145/36206.36194",
+      "date": "2026-09-29",
+      "verification": "Access scope: indexed_primary_record_partial. Direct full-text retrieval was blocked or unavailable. The indexed primary record establishes identity/topic only; it does not certify every page, volume, byline field, or result.",
+      "citation_purpose": "Shortest-program search, distinct from least counterexample for a fixed program.",
+      "notes": "Direct full-text retrieval was blocked or unavailable. The indexed primary record establishes identity/topic only; it does not certify every page, volume, byline field, or result."
+    },
+    "pcc": {
+      "key": "pcc",
+      "primary_source": "https://people.eecs.berkeley.edu/~necula/papers.html",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_bibliography. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Untrusted producer and separately checked evidence are established proof-carrying principles.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "klee": {
+      "key": "klee",
+      "primary_source": "https://www.usenix.org/conference/osdi-08/klee-unassisted-and-automatic-generation-high-coverage-tests-complex-systems",
+      "date": "2026-09-29",
+      "verification": "Access scope: publisher_bibliography. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Symbolic execution generates tests; finite enumeration here is not full systems-program testing.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "cbmc": {
+      "key": "cbmc",
+      "primary_source": "https://link.springer.com/chapter/10.1007/978-3-642-54862-8_26",
+      "date": "2026-09-29",
+      "verification": "Access scope: publisher_record_abstract. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Bit-precise bounded C model checking is an alternative validation approach.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "z3": {
+      "key": "z3",
+      "primary_source": "https://link.springer.com/chapter/10.1007/978-3-540-78800-3_24",
+      "date": "2026-09-29",
+      "verification": "Access scope: publisher_record_abstract. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "General SMT solving, not required by the active standard-library-only implementation.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "boolector": {
+      "key": "boolector",
+      "primary_source": "https://boolector.github.io/bibtex.html",
+      "date": "2026-09-29",
+      "verification": "Access scope: project_bibliography. Official project BibTeX uses 2014 and JSAT 9(1), 53--58. Publisher/original issue metadata also displays 2015. This record follows the project citation convention and removes the erroneous LNCS series.",
+      "citation_purpose": "Bit-vector and array solving; no comparative timing is claimed.",
+      "notes": "Official project BibTeX uses 2014 and JSAT 9(1), 53--58. Publisher/original issue metadata also displays 2015. This record follows the project citation convention and removes the erroneous LNCS series."
+    },
+    "cvc4": {
+      "key": "cvc4",
+      "primary_source": "https://link.springer.com/chapter/10.1007/978-3-642-22110-1_14",
+      "date": "2026-09-29",
+      "verification": "Access scope: publisher_record_abstract. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "General SMT infrastructure; not run in this evaluation.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "vellvm": {
+      "key": "vellvm",
+      "primary_source": "https://www.cis.upenn.edu/~stevez/papers/ZNMZ12.pdf",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_pdf_titlepage_abstract. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Mechanized LLVM intermediate-representation semantics.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "lamport": {
+      "key": "lamport",
+      "primary_source": "https://www.microsoft.com/en-us/research/publication/multiple-byte-processing-with-full-word-instructions/",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_institution_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Historical packed full-word arithmetic and masking.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "fisherdietz": {
+      "key": "fisherdietz",
+      "primary_source": "https://link.springer.com/chapter/10.1007/3-540-48319-5_19",
+      "date": "2026-09-29",
+      "verification": "Access scope: publisher_record_abstract. The Springer recommended citation uses 1999 for LCPC 1998, while online publication is displayed as 2000; retain the recommended-citation year, not the access date.",
+      "citation_purpose": "SIMD-within-a-register lowering; historical packed-arithmetic context.",
+      "notes": "The Springer recommended citation uses 1999 for LCPC 1998, while online publication is displayed as 2000; retain the recommended-citation year, not the access date."
+    },
+    "hackersdelight": {
+      "key": "hackersdelight",
+      "primary_source": "https://ptgmedia.pearsoncmg.com/images/9780321842688/samplepages/0321842685.pdf",
+      "date": "2026-09-29",
+      "verification": "Access scope: publisher_title_copyright_contents. Publisher sample title/copyright/contents pages were viewed. Second edition and ISBN match. Copyright/selected printing year is 2013; release listings may use 2012. The complete book was not read.",
+      "citation_purpose": "Low-level integer and bit manipulation; not a source of our specific certificate theorem.",
+      "notes": "Publisher sample title/copyright/contents pages were viewed. Second edition and ISBN match. Copyright/selected printing year is 2013; release listings may use 2012. The complete book was not read."
+    },
+    "integeroverflow": {
+      "key": "integeroverflow",
+      "primary_source": "https://wdtz.org/",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_publication_announcement. Author announcement explicitly distinguishes the TOSEM journal version from ICSE 2012; the journal DOI is retained.",
+      "citation_purpose": "Overflow can be intentional or erroneous; the cited journal expansion is distinguished from ICSE 2012.",
+      "notes": "Author announcement explicitly distinguishes the TOSEM journal version from ICSE 2012; the journal DOI is retained."
+    },
+    "packing": {
+      "key": "packing",
+      "primary_source": "https://www.cse.iitm.ac.in/~krishna/courses/2013/odd-cs6013/NandivadaBarik13.pdf",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_pdf_titlepage_abstract. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Bitwidth-aware variable packing concerns register allocation, not this carry equivalence theorem.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "pico": {
+      "key": "pico",
+      "primary_source": "https://compilers.cs.uni-saarland.de/publications.php/",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_bibliography. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Memory-safety check optimization is not established by arithmetic certificates.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "interleaved-vectorization": {
+      "key": "interleaved-vectorization",
+      "primary_source": "https://publications.scss.tcd.ie/RSS/publications.php?u=dgregg",
+      "date": "2026-09-29",
+      "verification": "Access scope: indexed_author_record. Direct full-text retrieval was blocked or unavailable. The indexed primary record establishes identity/topic only; it does not certify every page, volume, byline field, or result.",
+      "citation_purpose": "Interleaved data vectorization requires layout reasoning beyond this scalar arithmetic model.",
+      "notes": "Direct full-text retrieval was blocked or unavailable. The indexed primary record establishes identity/topic only; it does not certify every page, volume, byline field, or result."
+    },
+    "fixedpoint-conversion": {
+      "key": "fixedpoint-conversion",
+      "primary_source": "https://dl.acm.org/doi/10.1145/2400682.2400702",
+      "date": "2026-09-29",
+      "verification": "Access scope: indexed_primary_record_partial. Direct full-text retrieval was blocked or unavailable. The indexed primary record establishes identity/topic only; it does not certify every page, volume, byline field, or result.",
+      "citation_purpose": "Profile-guided floating-to-fixed conversion requires accuracy evidence absent here.",
+      "notes": "Direct full-text retrieval was blocked or unavailable. The indexed primary record establishes identity/topic only; it does not certify every page, volume, byline field, or result."
+    },
+    "visual-polyhedral": {
+      "key": "visual-polyhedral",
+      "primary_source": "https://www.pollylabs.org/publications/zinenko-2018-Visual-Program-Manipulation-in-the-Polyhedral-Model.pdf",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_pdf_titlepage_abstract. Author-hosted title page and abstract directly viewed: three authors, TACO 15(1), article 16, 25 pages, 2018, DOI 10.1145/3177961. It is the TACO article, not a conference substitute. Full user study not independently rechecked.",
+      "citation_purpose": "Interactive polyhedral transformation and visualization; no human-study evidence is inherited.",
+      "notes": "Publisher/author index used for this recheck; the inherited generic CGO link is not treated as a verified full-text URL."
+    },
+    "armorall": {
+      "key": "armorall",
+      "primary_source": "https://dl.acm.org/doi/10.1145/3382132",
+      "date": "2026-09-29",
+      "verification": "Access scope: indexed_primary_record_partial. Direct full-text retrieval was blocked or unavailable. The indexed primary record establishes identity/topic only; it does not certify every page, volume, byline field, or result.",
+      "citation_purpose": "GPU resilience targets transient faults, not deterministic arithmetic refinement.",
+      "notes": "Direct full-text retrieval was blocked or unavailable. The indexed primary record establishes identity/topic only; it does not certify every page, volume, byline field, or result."
+    },
+    "heapcheck": {
+      "key": "heapcheck",
+      "primary_source": "https://research.ibm.com/publications/heapcheck-low-cost-hardware-support-for-memory-safety",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_institution_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Hardware heap memory safety is a different property from arithmetic equivalence.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "ppcg": {
+      "key": "ppcg",
+      "primary_source": "https://dl.acm.org/doi/10.1145/2400682.2400713",
+      "date": "2026-09-29",
+      "verification": "Access scope: indexed_primary_record_partial. Direct full-text retrieval was blocked or unavailable. The indexed primary record establishes identity/topic only; it does not certify every page, volume, byline field, or result.",
+      "citation_purpose": "Polyhedral CUDA generation includes schedules and memory mapping excluded here.",
+      "notes": "Direct full-text retrieval was blocked or unavailable. The indexed primary record establishes identity/topic only; it does not certify every page, volume, byline field, or result."
+    },
+    "sparse-mlir": {
+      "key": "sparse-mlir",
+      "primary_source": "https://arxiv.org/abs/2202.04305",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_abstract_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Sparse tensor code generation is separate from packed integer arithmetic.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "cotest": {
+      "key": "cotest",
+      "primary_source": "https://tjusail.github.io/people/chenjunjie/index.html",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_announcement_and_indexed_publisher. Author homepage announces acceptance of this exact title on 24 December 2021; publisher/author indexed records identify Junjie Chen and Chenyao Suo and publication in 2022. No full-text reading or re-execution claimed.",
+      "citation_purpose": "Compiler optimization exploration motivates testing choices, not statistical generalization from our suite.",
+      "notes": "Direct full-text retrieval was blocked or unavailable. The indexed primary record establishes identity/topic only; it does not certify every page, volume, byline field, or result."
+    },
+    "next700": {
+      "key": "next700",
+      "primary_source": "https://research.google/pubs/the-next-700-accelerated-layers-from-mathematical-expressions-of-network-computation-graphs-to-accelerated-gpu-kernels-automatically/",
+      "date": "2026-09-29",
+      "verification": "Access scope: author_institution_record. Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading.",
+      "citation_purpose": "Automatic GPU kernel generation is broader than frozen expression recognition.",
+      "notes": "Only the displayed primary record, abstract, or cited first-page material was rechecked; no claim of complete full-text reading."
+    },
+    "matog": {
+      "key": "matog",
+      "primary_source": "https://dl.acm.org/doi/10.1145/3106341",
+      "date": "2026-09-29",
+      "verification": "Access scope: indexed_primary_record_partial. Direct full-text retrieval was blocked or unavailable. The indexed primary record establishes identity/topic only; it does not certify every page, volume, byline field, or result.",
+      "citation_purpose": "Array-layout autotuning is a performance task not evaluated here.",
+      "notes": "Direct full-text retrieval was blocked or unavailable. The indexed primary record establishes identity/topic only; it does not certify every page, volume, byline field, or result."
+    }
+  }
+}

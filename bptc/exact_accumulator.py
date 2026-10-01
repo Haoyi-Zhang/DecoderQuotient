@@ -25,16 +25,18 @@ class StageSpec:
     observe: bool = False
 
     def __post_init__(self) -> None:
-        if not self.pairs:
-            raise ValueError("a stage requires at least one operand pair")
+        if type(self.pairs) is not tuple or not 1 <= len(self.pairs) <= 4096:
+            raise ValueError("a stage requires 1..4096 ordered operand pairs")
+        if any(type(p) is not tuple or len(p) != 2 or any(type(x) is not int for x in p) for p in self.pairs):
+            raise ValueError("pairs require strict integers")
         if len(set(self.pairs)) != len(self.pairs):
-            raise ValueError("operand pairs must be unique and ordered")
-        if self.term_bits < 2 or self.acc_bits < 2:
-            raise ValueError("bit widths must be at least two")
-        if self.term_mode not in {"wrap", "saturate"}:
-            raise ValueError("unknown term mode")
-        if self.acc_mode not in {"wrap", "saturate"}:
-            raise ValueError("unknown accumulator mode")
+            raise ValueError("operand pairs must be unique")
+        if any(type(w) is not int or not 2 <= w <= 32 for w in (self.term_bits, self.acc_bits)):
+            raise ValueError("bit widths must be integers in 2..32")
+        if self.term_mode not in {"wrap", "saturate"} or self.acc_mode not in {"wrap", "saturate"}:
+            raise ValueError("unknown conversion mode")
+        if type(self.observe) is not bool:
+            raise ValueError("observation must be Boolean")
 
 
 @dataclass(frozen=True)
@@ -46,8 +48,12 @@ class AccumulatorSpec:
     provenance: str = "systematic"
 
     def __post_init__(self) -> None:
-        if not self.name or not self.stages:
-            raise ValueError("name and stages are required")
+        if type(self.name) is not str or not self.name or type(self.provenance) is not str or not self.provenance:
+            raise ValueError("name and provenance are required")
+        if type(self.stages) is not tuple or not 1 <= len(self.stages) <= 64 or any(not isinstance(x, StageSpec) for x in self.stages):
+            raise ValueError("requires 1..64 well-formed stages")
+        if type(self.initial) is not int or type(self.final_observe) is not bool:
+            raise ValueError("strict integer initial value and Boolean final observation required")
 
 
 @dataclass(frozen=True, order=True)
@@ -66,6 +72,8 @@ def cast_signed(value: int, bits: int, mode: str) -> int:
     lo, hi = signed_bounds(bits)
     if mode == "saturate":
         return min(hi, max(lo, value))
+    if mode != "wrap":
+        raise ValueError("unknown conversion mode")
     modulus = 1 << bits
     raw = value % modulus
     return raw - modulus if raw >= (1 << (bits - 1)) else raw
@@ -173,6 +181,7 @@ def generate_certificate(
     class_tables: List[list] = []
 
     for stage_index, stage in enumerate(spec.stages):
+        ledger.charge(f"{category_prefix}:partition-pair", len(stage.pairs))
         classes = _classes(stage)
         class_tables.append(classes)
         concrete_prefixes *= len(stage.pairs)

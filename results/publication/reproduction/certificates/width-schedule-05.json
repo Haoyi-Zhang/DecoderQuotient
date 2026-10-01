@@ -1,0 +1,456 @@
+{
+  "decision": {
+    "bad_final_states": 1,
+    "equivalent": false,
+    "least_counterexample": {
+      "final_state": [
+        15,
+        -1,
+        true,
+        2
+      ],
+      "first_bad_stage": 2,
+      "indices": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pairs": [
+        [
+          -4,
+          -4
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    "reachable_final_states": 1
+  },
+  "format": "bptc-exact-accumulator-certificate-v1",
+  "layers": [
+    {
+      "index": 0,
+      "states": [
+        {
+          "least_witness_indices": [],
+          "least_witness_pairs": [],
+          "state": [
+            0,
+            0,
+            false,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "from": [
+            0,
+            0,
+            false,
+            -1
+          ],
+          "product": 16,
+          "representative_index": 0,
+          "to": [
+            16,
+            0,
+            false,
+            -1
+          ]
+        }
+      ],
+      "index": 1,
+      "states": [
+        {
+          "least_witness_indices": [
+            0
+          ],
+          "least_witness_pairs": [
+            [
+              -4,
+              -4
+            ]
+          ],
+          "state": [
+            16,
+            0,
+            false,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "from": [
+            16,
+            0,
+            false,
+            -1
+          ],
+          "product": -2,
+          "representative_index": 0,
+          "to": [
+            14,
+            -1,
+            false,
+            -1
+          ]
+        }
+      ],
+      "index": 2,
+      "states": [
+        {
+          "least_witness_indices": [
+            0,
+            0
+          ],
+          "least_witness_pairs": [
+            [
+              -4,
+              -4
+            ],
+            [
+              -2,
+              1
+            ]
+          ],
+          "state": [
+            14,
+            -1,
+            false,
+            -1
+          ]
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "from": [
+            14,
+            -1,
+            false,
+            -1
+          ],
+          "product": 1,
+          "representative_index": 0,
+          "to": [
+            15,
+            -1,
+            true,
+            2
+          ]
+        }
+      ],
+      "index": 3,
+      "states": [
+        {
+          "least_witness_indices": [
+            0,
+            0,
+            0
+          ],
+          "least_witness_pairs": [
+            [
+              -4,
+              -4
+            ],
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              -1
+            ]
+          ],
+          "state": [
+            15,
+            -1,
+            true,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "from": [
+            15,
+            -1,
+            true,
+            2
+          ],
+          "product": 0,
+          "representative_index": 0,
+          "to": [
+            15,
+            -1,
+            true,
+            2
+          ]
+        }
+      ],
+      "index": 4,
+      "states": [
+        {
+          "least_witness_indices": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "least_witness_pairs": [
+            [
+              -4,
+              -4
+            ],
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "state": [
+            15,
+            -1,
+            true,
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "metrics": {
+    "concrete_assignments": 54,
+    "producer_transitions": 4,
+    "quotient_frontier_edges": 4,
+    "quotient_product_sequences": 1,
+    "unquotiented_frontier_edges": 11
+  },
+  "product_classes": [
+    [
+      {
+        "member_indices": [
+          0,
+          1,
+          2
+        ],
+        "member_pairs": [
+          [
+            -4,
+            -4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            -8,
+            -2
+          ]
+        ],
+        "product": 16,
+        "representative_index": 0,
+        "representative_pair": [
+          -4,
+          -4
+        ]
+      }
+    ],
+    [
+      {
+        "member_indices": [
+          0,
+          1,
+          2
+        ],
+        "member_pairs": [
+          [
+            -2,
+            1
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            -2
+          ]
+        ],
+        "product": -2,
+        "representative_index": 0,
+        "representative_pair": [
+          -2,
+          1
+        ]
+      }
+    ],
+    [
+      {
+        "member_indices": [
+          0,
+          1
+        ],
+        "member_pairs": [
+          [
+            -1,
+            -1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "product": 1,
+        "representative_index": 0,
+        "representative_pair": [
+          -1,
+          -1
+        ]
+      }
+    ],
+    [
+      {
+        "member_indices": [
+          0,
+          1,
+          2
+        ],
+        "member_pairs": [
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        "product": 0,
+        "representative_index": 0,
+        "representative_pair": [
+          0,
+          0
+        ]
+      }
+    ]
+  ],
+  "spec": {
+    "final_observe": true,
+    "initial": 0,
+    "name": "width-schedule-05",
+    "provenance": "mixed-width-schedule",
+    "stages": [
+      {
+        "acc_bits": 5,
+        "acc_mode": "saturate",
+        "observe": false,
+        "pairs": [
+          [
+            -4,
+            -4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            -8,
+            -2
+          ]
+        ],
+        "term_bits": 9,
+        "term_mode": "saturate"
+      },
+      {
+        "acc_bits": 9,
+        "acc_mode": "wrap",
+        "observe": false,
+        "pairs": [
+          [
+            -2,
+            1
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            -2
+          ]
+        ],
+        "term_bits": 9,
+        "term_mode": "saturate"
+      },
+      {
+        "acc_bits": 5,
+        "acc_mode": "saturate",
+        "observe": true,
+        "pairs": [
+          [
+            -1,
+            -1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "term_bits": 9,
+        "term_mode": "saturate"
+      },
+      {
+        "acc_bits": 9,
+        "acc_mode": "saturate",
+        "observe": false,
+        "pairs": [
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        "term_bits": 9,
+        "term_mode": "saturate"
+      }
+    ]
+  }
+}

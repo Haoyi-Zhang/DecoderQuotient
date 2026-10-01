@@ -1,0 +1,65 @@
+case,provenance,exact_equivalent,sufficient_guard,final_range_guard,term_fit_final_guard,direct_dp_transitions,direct_dp_equivalent,concrete_assignments,failing_assignments,reachable_final_states,quotient_edges,unquotiented_edges,edge_reduction,least_counterexample
+safe-saturating-00,safe-control,True,True,True,True,10,True,36,0,1,4,10,6,null
+visible-saturation-00,adversarial-overflow,False,False,False,False,11,False,54,54,1,4,11,7,"{""final_state"": [8, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-7, -1], [-2, -1], [-1, 1], [0, 0]]}"
+saturation-reconvergence-00,cancellation-control,True,False,False,False,12,True,81,0,1,4,12,8,null
+final-range-unsound-00,final-range-counterexample,False,False,True,True,12,False,81,81,1,4,12,8,"{""final_state"": [0, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-4, -2], [-4, 2], [0, 0], [0, 0]]}"
+term-narrowing-00,mixed-width-term,False,False,True,False,12,False,81,81,1,4,12,8,"{""final_state"": [8, -16, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-4, -2], [0, 0], [0, 0], [0, 0]]}"
+width-schedule-00,mixed-width-schedule,False,False,True,True,11,False,54,54,1,4,11,7,"{""final_state"": [7, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-4, -2], [-2, 1], [-1, -1], [0, 0]]}"
+intermediate-observation-00,observation-schedule,False,False,False,False,11,False,54,54,1,4,11,7,"{""final_state"": [-21, 0, true, 1], ""first_bad_stage"": 1, ""indices"": [0, 0, 0, 0], ""pairs"": [[-4, -2], [-1, 1], [-7, 4], [0, 0]]}"
+mixed-product-domain-00,systematic-product-box,False,False,True,True,48,False,256,192,9,24,48,24,"{""final_state"": [1, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 2, 0, 0], ""pairs"": [[0, 0], [-4, -2], [-7, 1], [0, 0]]}"
+safe-saturating-01,safe-control,True,True,True,True,10,True,36,0,1,4,10,6,null
+visible-saturation-01,adversarial-overflow,False,False,False,False,11,False,54,54,1,4,11,7,"{""final_state"": [16, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-5, -3], [-2, -1], [-1, 1], [0, 0]]}"
+saturation-reconvergence-01,cancellation-control,True,False,False,False,12,True,81,0,1,4,12,8,null
+final-range-unsound-01,final-range-counterexample,False,False,True,True,12,False,81,81,1,4,12,8,"{""final_state"": [0, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-4, -4], [-4, 4], [0, 0], [0, 0]]}"
+term-narrowing-01,mixed-width-term,False,False,True,False,12,False,81,81,1,4,12,8,"{""final_state"": [16, -32, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-4, -4], [0, 0], [0, 0], [0, 0]]}"
+width-schedule-01,mixed-width-schedule,False,False,True,True,11,False,54,54,1,4,11,7,"{""final_state"": [15, -1, true, 2], ""first_bad_stage"": 2, ""indices"": [0, 0, 0, 0], ""pairs"": [[-4, -4], [-2, 1], [-1, -1], [0, 0]]}"
+intermediate-observation-01,observation-schedule,False,False,False,False,11,False,54,54,1,4,11,7,"{""final_state"": [-45, 0, true, 1], ""first_bad_stage"": 1, ""indices"": [0, 0, 0, 0], ""pairs"": [[-4, -4], [-1, 1], [-10, 6], [0, 0]]}"
+mixed-product-domain-01,systematic-product-box,False,False,True,True,48,False,256,192,9,24,48,24,"{""final_state"": [1, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 2, 0, 0], ""pairs"": [[0, 0], [-4, -4], [-5, 3], [0, 0]]}"
+safe-saturating-02,safe-control,True,True,True,True,10,True,36,0,1,4,10,6,null
+visible-saturation-02,adversarial-overflow,False,False,False,False,11,False,54,54,1,4,11,7,"{""final_state"": [32, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-31, -1], [-2, -1], [-1, 1], [0, 0]]}"
+saturation-reconvergence-02,cancellation-control,True,False,False,False,12,True,81,0,1,4,12,8,null
+final-range-unsound-02,final-range-counterexample,False,False,True,True,12,False,81,81,1,4,12,8,"{""final_state"": [0, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-8, -4], [-8, 4], [0, 0], [0, 0]]}"
+term-narrowing-02,mixed-width-term,False,False,True,False,12,False,81,81,1,4,12,8,"{""final_state"": [32, -64, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-8, -4], [0, 0], [0, 0], [0, 0]]}"
+width-schedule-02,mixed-width-schedule,False,False,True,True,11,False,54,54,1,4,11,7,"{""final_state"": [31, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-8, -4], [-2, 1], [-1, -1], [0, 0]]}"
+intermediate-observation-02,observation-schedule,False,False,False,False,11,False,54,54,1,4,11,7,"{""final_state"": [-93, 0, true, 1], ""first_bad_stage"": 1, ""indices"": [0, 0, 0, 0], ""pairs"": [[-8, -4], [-1, 1], [-31, 4], [0, 0]]}"
+mixed-product-domain-02,systematic-product-box,False,False,True,True,48,False,256,192,9,24,48,24,"{""final_state"": [1, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 2, 0, 0], ""pairs"": [[0, 0], [-8, -4], [-31, 1], [0, 0]]}"
+safe-saturating-03,safe-control,True,True,True,True,10,True,36,0,1,4,10,6,null
+visible-saturation-03,adversarial-overflow,False,False,False,False,11,False,54,54,1,4,11,7,"{""final_state"": [64, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-9, -7], [-2, -1], [-1, 1], [0, 0]]}"
+saturation-reconvergence-03,cancellation-control,True,False,False,False,12,True,81,0,1,4,12,8,null
+final-range-unsound-03,final-range-counterexample,False,False,True,True,12,False,81,81,1,4,12,8,"{""final_state"": [0, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-8, -8], [-8, 8], [0, 0], [0, 0]]}"
+term-narrowing-03,mixed-width-term,False,False,True,False,12,False,81,81,1,4,12,8,"{""final_state"": [64, -128, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-8, -8], [0, 0], [0, 0], [0, 0]]}"
+width-schedule-03,mixed-width-schedule,False,False,True,True,11,False,54,54,1,4,11,7,"{""final_state"": [63, -1, true, 2], ""first_bad_stage"": 2, ""indices"": [0, 0, 0, 0], ""pairs"": [[-8, -8], [-2, 1], [-1, -1], [0, 0]]}"
+intermediate-observation-03,observation-schedule,False,False,False,False,11,False,54,54,1,4,11,7,"{""final_state"": [-189, 0, true, 1], ""first_bad_stage"": 1, ""indices"": [0, 0, 0, 0], ""pairs"": [[-8, -8], [-1, 1], [-18, 14], [0, 0]]}"
+mixed-product-domain-03,systematic-product-box,False,False,True,True,48,False,256,192,9,24,48,24,"{""final_state"": [1, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 2, 0, 0], ""pairs"": [[0, 0], [-8, -8], [-9, 7], [0, 0]]}"
+safe-saturating-04,safe-control,True,True,True,True,10,True,36,0,1,4,10,6,null
+visible-saturation-04,adversarial-overflow,False,False,False,False,11,False,54,54,1,4,11,7,"{""final_state"": [8, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-7, -1], [-2, -1], [-1, 1], [0, 0]]}"
+saturation-reconvergence-04,cancellation-control,True,False,False,False,12,True,81,0,1,4,12,8,null
+final-range-unsound-04,final-range-counterexample,False,False,True,True,12,False,81,81,1,4,12,8,"{""final_state"": [0, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-4, -2], [-4, 2], [0, 0], [0, 0]]}"
+term-narrowing-04,mixed-width-term,False,False,True,False,12,False,81,81,1,4,12,8,"{""final_state"": [8, -16, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-4, -2], [0, 0], [0, 0], [0, 0]]}"
+width-schedule-04,mixed-width-schedule,False,False,True,True,11,False,54,54,1,4,11,7,"{""final_state"": [7, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-4, -2], [-2, 1], [-1, -1], [0, 0]]}"
+intermediate-observation-04,observation-schedule,False,False,False,False,11,False,54,54,1,4,11,7,"{""final_state"": [-21, 0, true, 1], ""first_bad_stage"": 1, ""indices"": [0, 0, 0, 0], ""pairs"": [[-4, -2], [-1, 1], [-7, 4], [0, 0]]}"
+mixed-product-domain-04,systematic-product-box,False,False,True,True,48,False,256,192,9,24,48,24,"{""final_state"": [1, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 2, 0, 0], ""pairs"": [[0, 0], [-4, -2], [-7, 1], [0, 0]]}"
+safe-saturating-05,safe-control,True,True,True,True,10,True,36,0,1,4,10,6,null
+visible-saturation-05,adversarial-overflow,False,False,False,False,11,False,54,54,1,4,11,7,"{""final_state"": [16, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-5, -3], [-2, -1], [-1, 1], [0, 0]]}"
+saturation-reconvergence-05,cancellation-control,True,False,False,False,12,True,81,0,1,4,12,8,null
+final-range-unsound-05,final-range-counterexample,False,False,True,True,12,False,81,81,1,4,12,8,"{""final_state"": [0, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-4, -4], [-4, 4], [0, 0], [0, 0]]}"
+term-narrowing-05,mixed-width-term,False,False,True,False,12,False,81,81,1,4,12,8,"{""final_state"": [16, -32, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-4, -4], [0, 0], [0, 0], [0, 0]]}"
+width-schedule-05,mixed-width-schedule,False,False,True,True,11,False,54,54,1,4,11,7,"{""final_state"": [15, -1, true, 2], ""first_bad_stage"": 2, ""indices"": [0, 0, 0, 0], ""pairs"": [[-4, -4], [-2, 1], [-1, -1], [0, 0]]}"
+intermediate-observation-05,observation-schedule,False,False,False,False,11,False,54,54,1,4,11,7,"{""final_state"": [-45, 0, true, 1], ""first_bad_stage"": 1, ""indices"": [0, 0, 0, 0], ""pairs"": [[-4, -4], [-1, 1], [-10, 6], [0, 0]]}"
+mixed-product-domain-05,systematic-product-box,False,False,True,True,48,False,256,192,9,24,48,24,"{""final_state"": [1, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 2, 0, 0], ""pairs"": [[0, 0], [-4, -4], [-5, 3], [0, 0]]}"
+safe-saturating-06,safe-control,True,True,True,True,10,True,36,0,1,4,10,6,null
+visible-saturation-06,adversarial-overflow,False,False,False,False,11,False,54,54,1,4,11,7,"{""final_state"": [32, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-31, -1], [-2, -1], [-1, 1], [0, 0]]}"
+saturation-reconvergence-06,cancellation-control,True,False,False,False,12,True,81,0,1,4,12,8,null
+final-range-unsound-06,final-range-counterexample,False,False,True,True,12,False,81,81,1,4,12,8,"{""final_state"": [0, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-8, -4], [-8, 4], [0, 0], [0, 0]]}"
+term-narrowing-06,mixed-width-term,False,False,True,False,12,False,81,81,1,4,12,8,"{""final_state"": [32, -64, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-8, -4], [0, 0], [0, 0], [0, 0]]}"
+width-schedule-06,mixed-width-schedule,False,False,True,True,11,False,54,54,1,4,11,7,"{""final_state"": [31, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-8, -4], [-2, 1], [-1, -1], [0, 0]]}"
+intermediate-observation-06,observation-schedule,False,False,False,False,11,False,54,54,1,4,11,7,"{""final_state"": [-93, 0, true, 1], ""first_bad_stage"": 1, ""indices"": [0, 0, 0, 0], ""pairs"": [[-8, -4], [-1, 1], [-31, 4], [0, 0]]}"
+mixed-product-domain-06,systematic-product-box,False,False,True,True,48,False,256,192,9,24,48,24,"{""final_state"": [1, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 2, 0, 0], ""pairs"": [[0, 0], [-8, -4], [-31, 1], [0, 0]]}"
+safe-saturating-07,safe-control,True,True,True,True,10,True,36,0,1,4,10,6,null
+visible-saturation-07,adversarial-overflow,False,False,False,False,11,False,54,54,1,4,11,7,"{""final_state"": [64, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-9, -7], [-2, -1], [-1, 1], [0, 0]]}"
+saturation-reconvergence-07,cancellation-control,True,False,False,False,12,True,81,0,1,4,12,8,null
+final-range-unsound-07,final-range-counterexample,False,False,True,True,12,False,81,81,1,4,12,8,"{""final_state"": [0, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-8, -8], [-8, 8], [0, 0], [0, 0]]}"
+term-narrowing-07,mixed-width-term,False,False,True,False,12,False,81,81,1,4,12,8,"{""final_state"": [64, -128, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 0, 0, 0], ""pairs"": [[-8, -8], [0, 0], [0, 0], [0, 0]]}"
+width-schedule-07,mixed-width-schedule,False,False,True,True,11,False,54,54,1,4,11,7,"{""final_state"": [63, -1, true, 2], ""first_bad_stage"": 2, ""indices"": [0, 0, 0, 0], ""pairs"": [[-8, -8], [-2, 1], [-1, -1], [0, 0]]}"
+intermediate-observation-07,observation-schedule,False,False,False,False,11,False,54,54,1,4,11,7,"{""final_state"": [-189, 0, true, 1], ""first_bad_stage"": 1, ""indices"": [0, 0, 0, 0], ""pairs"": [[-8, -8], [-1, 1], [-18, 14], [0, 0]]}"
+mixed-product-domain-07,systematic-product-box,False,False,True,True,48,False,256,192,9,24,48,24,"{""final_state"": [1, -1, true, 3], ""first_bad_stage"": 3, ""indices"": [0, 2, 0, 0], ""pairs"": [[0, 0], [-8, -8], [-9, 7], [0, 0]]}"

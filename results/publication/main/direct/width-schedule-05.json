@@ -1,0 +1,32 @@
+{
+  "equivalent": false,
+  "least_counterexample": {
+    "first_bad_stage": 2,
+    "indices": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pairs": [
+      [
+        -4,
+        -4
+      ],
+      [
+        -2,
+        1
+      ],
+      [
+        -1,
+        -1
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  "reachable_final_states": 1,
+  "transitions": 11
+}

@@ -1,0 +1,11 @@
+{
+  "date": "2026-09-29",
+  "target": "ACM Transactions on Architecture and Code Optimization",
+  "author_guidelines_url": "https://dl.acm.org/journal/taco/author-guidelines",
+  "live_fetch": "403 Forbidden",
+  "authorship_policy_url": "https://www.acm.org/publications/policies/new-acm-policy-on-authorship",
+  "policy_fetch": "403 Forbidden",
+  "used_template": "supplied unmodified acmart acmsmall screen review anonymous, with nonacm for the internal manuscript",
+  "page_contract": "Original brief gives 20 content-page maximum and an internal exactly-20 planning target. Current content is not padded to meet the internal target.",
+  "status": "current external submission compliance not certified"
+}

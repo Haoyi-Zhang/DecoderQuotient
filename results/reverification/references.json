@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "entries": 68,
+  "cited_unique": 68,
+  "citation_occurrences": 71,
+  "missing_keys": [],
+  "uncited_keys": [],
+  "scope": "Offline coverage and identity-field consistency. Primary-source reading is recorded in reference-audit.json, including partial-access and date-convention qualifications. This check does not establish full-text reading or universal accuracy."
+}

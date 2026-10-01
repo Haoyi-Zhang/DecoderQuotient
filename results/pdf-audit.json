@@ -1,0 +1,32 @@
+{
+  "status": "pass",
+  "render_engine": "PyMuPDF",
+  "render_dpi": 160,
+  "scope": "PDF structure, text bounds, embedded fonts and rendered-page inspection; not a scientific proof.",
+  "documents": {
+    "main": {
+      "pages": 20,
+      "reference_heading_pages": [
+        17
+      ],
+      "all_fonts_embedded": true,
+      "font_output": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nSYXOTM+LinLibertineT                 Type 1            Custom           yes yes yes    188  0\nRXNCFI+LinBiolinumTB                 Type 1            Custom           yes yes yes    190  0\nDOUPGF+LinBiolinumT                  Type 1            Custom           yes yes yes    191  0\nZJCYQP+LinLibertineTI                Type 1            Custom           yes yes yes    206  0\nIDIBIH+Inconsolatazi4-Regular        Type 1            Custom           yes yes yes    207  0\nMRLLZX+txsys                         Type 1            Builtin          yes yes yes    216  0\nSYXOTM+LinLibertineT                 Type 1            Custom           yes yes yes    217  0\nFATXPQ+LibertineMathMI               Type 1            Builtin          yes yes yes    218  0\nKDMOOH+LibertineMathMI7              Type 1            Builtin          yes yes yes    224  0\nOGYQFN+txmiaX                        Type 1            Builtin          yes yes yes    225  0\nDOUPGF+LinBiolinumT                  Type 1            Custom           yes yes yes    226  0\nRFNONQ+txsym                         Type 1            Builtin          yes yes yes    227  0\nSYXOTM+LinLibertineT                 Type 1            Custom           yes yes yes    243  0\nBNIRKB+txexs                         Type 1            Builtin          yes yes yes    248  0\nFWCOTL+NewTXMI                       Type 1            Builtin          yes yes yes    252  0\nAEHVRN+LibertineMathRM               Type 1            Builtin          yes yes yes    270  0\nFPBYUE+LinLibertineTB                Type 1            Custom           yes yes yes    290  0\n",
+      "author_metadata": "",
+      "out_of_page_text_spans": []
+    },
+    "supplement": {
+      "pages": 6,
+      "reference_heading_pages": [],
+      "all_fonts_embedded": true,
+      "font_output": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nPLOFVU+LinLibertineT                 Type 1            Custom           yes yes yes     70  0\nDXSMKI+LinBiolinumTB                 Type 1            Custom           yes yes yes     72  0\nJJHZLB+LinBiolinumT                  Type 1            Custom           yes yes yes     73  0\nUVCSVW+LibertineMathMI               Type 1            Builtin          yes yes yes     74  0\nOOPCJB+LibertineMathMI7              Type 1            Builtin          yes yes yes     75  0\nUYUARY+txsys                         Type 1            Builtin          yes yes yes     76  0\nOGYQFN+txmiaX                        Type 1            Builtin          yes yes yes     77  0\nPLOFVU+LinLibertineT                 Type 1            Custom           yes yes yes     78  0\nWPHYYM+txexs                         Type 1            Builtin          yes yes yes     84  0\nFWCOTL+NewTXMI                       Type 1            Builtin          yes yes yes     85  0\nFDNYQO+Inconsolatazi4-Regular        Type 1            Custom           yes yes yes     97  0\n",
+      "author_metadata": "",
+      "out_of_page_text_spans": []
+    }
+  },
+  "visual_review": {
+    "main_pages": 20,
+    "supplement_pages": 6,
+    "method": "All pages rendered at 160 dpi and visually inspected in seven contact sheets; figures also inspected in context.",
+    "observations": "No remaining visible clipping or overlap; bar baseline is zero. This is an internal visual check, not automated proof of every layout property."
+  }
+}

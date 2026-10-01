@@ -1,0 +1,31 @@
+case,provenance,scale,maxima,equivalent,closed_form_equivalent,concrete_assignments,reachable_final_states,oracle_run,least_counterexample
+decoder-full-nibble-box-001,full-nibble-box,1,"[15, 15, 15, 15]",True,True,65536,1,False,null
+decoder-full-nibble-box-007,full-nibble-box,7,"[15, 15, 15, 15]",True,True,65536,1,False,null
+decoder-full-nibble-box-015,full-nibble-box,15,"[15, 15, 15, 15]",True,True,65536,1,False,null
+decoder-full-nibble-box-016,full-nibble-box,16,"[15, 15, 15, 15]",True,True,65536,1,False,null
+decoder-full-nibble-box-017,full-nibble-box,17,"[15, 15, 15, 15]",True,True,65536,1,False,null
+decoder-full-nibble-box-018,full-nibble-box,18,"[15, 15, 15, 15]",False,False,65536,8,False,"{""digits"": [0, 0, 15, 0], ""final_carry"": 0, ""first_bad_lane"": 3}"
+decoder-full-nibble-box-031,full-nibble-box,31,"[15, 15, 15, 15]",False,False,65536,8,False,"{""digits"": [0, 0, 9, 0], ""final_carry"": 0, ""first_bad_lane"": 3}"
+decoder-full-nibble-box-063,full-nibble-box,63,"[15, 15, 15, 15]",False,False,65536,16,False,"{""digits"": [0, 0, 5, 0], ""final_carry"": 0, ""first_bad_lane"": 3}"
+decoder-full-nibble-box-127,full-nibble-box,127,"[15, 15, 15, 15]",False,False,65536,32,False,"{""digits"": [0, 0, 3, 0], ""final_carry"": 0, ""first_bad_lane"": 3}"
+decoder-full-nibble-box-255,full-nibble-box,255,"[15, 15, 15, 15]",False,False,65536,60,False,"{""digits"": [0, 0, 2, 0], ""final_carry"": 0, ""first_bad_lane"": 3}"
+decoder-tiny-oracle-box-001,tiny-oracle-box,1,"[3, 3, 3, 3]",True,True,256,1,True,null
+decoder-tiny-oracle-box-007,tiny-oracle-box,7,"[3, 3, 3, 3]",True,True,256,1,True,null
+decoder-tiny-oracle-box-015,tiny-oracle-box,15,"[3, 3, 3, 3]",True,True,256,1,True,null
+decoder-tiny-oracle-box-016,tiny-oracle-box,16,"[3, 3, 3, 3]",True,True,256,1,True,null
+decoder-tiny-oracle-box-017,tiny-oracle-box,17,"[3, 3, 3, 3]",True,True,256,1,True,null
+decoder-tiny-oracle-box-018,tiny-oracle-box,18,"[3, 3, 3, 3]",True,True,256,1,True,null
+decoder-tiny-oracle-box-031,tiny-oracle-box,31,"[3, 3, 3, 3]",True,True,256,1,True,null
+decoder-tiny-oracle-box-063,tiny-oracle-box,63,"[3, 3, 3, 3]",True,True,256,1,True,null
+decoder-tiny-oracle-box-127,tiny-oracle-box,127,"[3, 3, 3, 3]",False,False,256,8,True,"{""digits"": [0, 0, 3, 0], ""final_carry"": 0, ""first_bad_lane"": 3}"
+decoder-tiny-oracle-box-255,tiny-oracle-box,255,"[3, 3, 3, 3]",False,False,256,12,True,"{""digits"": [0, 0, 2, 0], ""final_carry"": 0, ""first_bad_lane"": 3}"
+decoder-alternating-lanes-001,alternating-lanes,1,"[15, 0, 15, 0]",True,True,256,1,True,null
+decoder-alternating-lanes-007,alternating-lanes,7,"[15, 0, 15, 0]",True,True,256,1,True,null
+decoder-alternating-lanes-015,alternating-lanes,15,"[15, 0, 15, 0]",True,True,256,1,True,null
+decoder-alternating-lanes-016,alternating-lanes,16,"[15, 0, 15, 0]",True,True,256,1,True,null
+decoder-alternating-lanes-017,alternating-lanes,17,"[15, 0, 15, 0]",True,True,256,1,True,null
+decoder-alternating-lanes-018,alternating-lanes,18,"[15, 0, 15, 0]",False,False,256,3,True,"{""digits"": [0, 0, 15, 0], ""final_carry"": 0, ""first_bad_lane"": 3}"
+decoder-alternating-lanes-031,alternating-lanes,31,"[15, 0, 15, 0]",False,False,256,3,True,"{""digits"": [0, 0, 9, 0], ""final_carry"": 0, ""first_bad_lane"": 3}"
+decoder-alternating-lanes-063,alternating-lanes,63,"[15, 0, 15, 0]",False,False,256,3,True,"{""digits"": [0, 0, 5, 0], ""final_carry"": 0, ""first_bad_lane"": 3}"
+decoder-alternating-lanes-127,alternating-lanes,127,"[15, 0, 15, 0]",False,False,256,3,True,"{""digits"": [0, 0, 3, 0], ""final_carry"": 0, ""first_bad_lane"": 3}"
+decoder-alternating-lanes-255,alternating-lanes,255,"[15, 0, 15, 0]",False,False,256,3,True,"{""digits"": [0, 0, 2, 0], ""final_carry"": 0, ""first_bad_lane"": 3}"

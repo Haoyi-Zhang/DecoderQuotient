@@ -1,0 +1,6 @@
+\begin{tikzpicture}
+\begin{loglogaxis}[width=0.82\linewidth,height=5.1cm,log basis x=2,log basis y=2,xlabel={Logical scalar elements},ylabel={Compact certificate bytes},xtick={4,16,64,256,1024,4096},xticklabels={4,16,64,256,1024,4096},ytick={1024,4096,16384,65536},yticklabels={1024,4096,16384,65536},grid=major,major grid style={draw=black!15},tick label style={font=\small},label style={font=\small},legend style={font=\small,at={(0.03,0.97)},anchor=north west}]
+\addplot[black,mark=square*,thick] table[x=n,y=bytes,col sep=comma]{figures/certificate-size.csv};
+\legend{One reused decoder table}
+\end{loglogaxis}
+\end{tikzpicture}

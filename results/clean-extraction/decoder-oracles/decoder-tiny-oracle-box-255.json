@@ -1,0 +1,14 @@
+{
+  "assignments": 256,
+  "equivalent": false,
+  "failing_assignments": 224,
+  "least_counterexample": {
+    "digits": [
+      0,
+      0,
+      2,
+      0
+    ],
+    "first_bad_lane": 3
+  }
+}

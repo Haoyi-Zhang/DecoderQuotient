@@ -1,0 +1,12 @@
+\begin{tikzpicture}[>=Stealth, every node/.style={font=\small}, box/.style={draw,minimum width=24mm,minimum height=10mm,align=center}, lab/.style={align=center,font=\footnotesize}]
+\node[box] (a) at (0,0) {source prefix\\$S_4=448$};
+\node[box] (b) at (4.1,0) {8-bit residue\\$v_4=-64$};
+\node[box] (c) at (9.2,0.85) {stay at 8 bits\\final $0$};
+\node[box] (d) at (9.2,-0.85) {widen to 16 bits\\final $-512$};
+\draw[->] (a)--node[above,font=\footnotesize]{modulo $256$}(b);
+\draw[->] (b.east)--(c.west);
+\draw[->] (b.east)--(d.west);
+\node[lab] at (6.65,1.18) {four further terms\\$-112$ each};
+\node[lab] at (6.65,-1.18) {same four terms\\$-112$ each};
+\node[lab] at (3.4,-2.05) {Signed widening requires an exact prefix;\\narrowing only requires a residue.};
+\end{tikzpicture}
