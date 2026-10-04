@@ -119,10 +119,7 @@ witness storage can be quadratic even on one-state chains. There is no general
 CUDA frontend, floating-point or GPU performance evidence, representative
 production benchmark, or established new general quotient principle.
 
-For the current self-audit and unresolved research-readiness limits, read
-`docs/PROJECT-STATUS.md`. Prior PASS-labelled reports in the inherited input
-are not treated as evidence that current files exist or that novelty has been
-established. AI assistance was substantive and is disclosed in the manuscript.
+For the current self-audit and unresolved research-readiness limits, read `docs/PROJECT-STATUS.md`. Prior PASS-labelled reports in the inherited input are not treated as evidence that current files exist or that novelty has been established.
 
 ## Execution from a clean extracted package
 
