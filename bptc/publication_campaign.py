@@ -11,6 +11,7 @@ from pathlib import Path
 from typing import Dict, Iterable, List
 
 from .accumulator_baselines import final_range_only, no_overflow_sufficient, term_fit_and_final_range
+from .certificate_format import strict_json_loads
 from .direct_state import solve as direct_solve
 from .accumulator_checker import check_certificate
 from .accumulator_oracle import run_oracle

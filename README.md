@@ -1,7 +1,7 @@
 # Exact Quotient Certificates for Packed-Integer Decoders and Mixed-Width Accumulators
 
 This is the active artifact for `paper/main.tex` and `paper/main.pdf` in the
-one-package delivery. It is an internally reviewed finite-semantics study, not
+one-package delivery. It is a finite-semantics study, not
 an externally accepted paper or the previous decoder-only negative report.
 The active results are in `results/publication/`. Archived exploration is
 segregated in `archive/legacy-decoder/` and is not current evidence.
