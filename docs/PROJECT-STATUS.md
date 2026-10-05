@@ -106,7 +106,7 @@ were read, all cited experiments were replicated, or the 12/5/5 full-text
 calibration requirement was satisfied. Offline citation checks do not
 independently re-fetch publisher metadata.
 
-## Scientific and submission-readiness limitations
+## Scientific scope and limitations
 
 The decoder envelope follows a narrow carry bound; the accumulator proof uses
 a standard exact finite-state quotient and least-prefix argument. This study
