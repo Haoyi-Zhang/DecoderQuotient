@@ -1,0 +1,156 @@
+{
+  "accumulator": {
+    "cases": 64,
+    "certificate_mutations": 40,
+    "certificate_mutations_rejected": 40,
+    "checker_transitions": 416,
+    "cross_check_disagreements": 0,
+    "direct_dp_disagreements": 0,
+    "direct_dp_transitions": 1016,
+    "edge_reduction": 600,
+    "edge_reduction_fraction": 0.5905511811023623,
+    "equivalent": 16,
+    "final_range_false_accepts": 32,
+    "inequivalent": 48,
+    "oracle_assignments": 5576,
+    "producer_transitions": 416,
+    "quotient_frontier_edges": 416,
+    "sufficient_guard_false_rejects": 8,
+    "term_fit_final_false_accepts": 24,
+    "unquotiented_frontier_edges": 1016
+  },
+  "all_cross_checks_agree": true,
+  "decoder": {
+    "cases": 30,
+    "certificate_mutations": 20,
+    "certificate_mutations_rejected": 20,
+    "cross_check_disagreements": 0,
+    "equivalent": 18,
+    "inequivalent": 12,
+    "oracle_assignments": 5120,
+    "oracle_cases": 20
+  },
+  "format": "bptc-publication-campaign-v1",
+  "resource_usage": {
+    "cpu_seconds": 0.27510339699999997,
+    "peak_rss_kib": 20812,
+    "single_process": true,
+    "workers": 1
+  },
+  "run_label": "main",
+  "source_anchor": {
+    "accepted": true,
+    "assumptions": [
+      "valid loads and stores",
+      "defined __byte_perm and __vadd4 intrinsic semantics",
+      "no concurrent interference"
+    ],
+    "bytewise_corrections": 8,
+    "loaded_vectors": 8,
+    "method": "complete frozen-token equality, ignoring whitespace and comments only",
+    "mutation_test": {
+      "mutations": 22,
+      "records": [
+        {
+          "mutation": "low-mask",
+          "rejected": true
+        },
+        {
+          "mutation": "high-mask",
+          "rejected": true
+        },
+        {
+          "mutation": "shift",
+          "rejected": true
+        },
+        {
+          "mutation": "component",
+          "rejected": true
+        },
+        {
+          "mutation": "duplicate-index",
+          "rejected": true
+        },
+        {
+          "mutation": "scale-mask",
+          "rejected": true
+        },
+        {
+          "mutation": "scale-shift",
+          "rejected": true
+        },
+        {
+          "mutation": "zero-selector",
+          "rejected": true
+        },
+        {
+          "mutation": "comment-decoy",
+          "rejected": true
+        },
+        {
+          "mutation": "extra-assignment",
+          "rejected": true
+        },
+        {
+          "mutation": "extra-statement",
+          "rejected": true
+        },
+        {
+          "mutation": "early-store",
+          "rejected": true
+        },
+        {
+          "mutation": "lost-correction",
+          "rejected": true
+        },
+        {
+          "mutation": "destination",
+          "rejected": true
+        },
+        {
+          "mutation": "scale-pair-0",
+          "rejected": true
+        },
+        {
+          "mutation": "scale-pair-1",
+          "rejected": true
+        },
+        {
+          "mutation": "scale-pair-2",
+          "rejected": true
+        },
+        {
+          "mutation": "scale-pair-3",
+          "rejected": true
+        },
+        {
+          "mutation": "scale-pair-4",
+          "rejected": true
+        },
+        {
+          "mutation": "scale-pair-5",
+          "rejected": true
+        },
+        {
+          "mutation": "scale-pair-6",
+          "rejected": true
+        },
+        {
+          "mutation": "scale-pair-7",
+          "rejected": true
+        }
+      ],
+      "rejected": 22
+    },
+    "parameter_bounds": {
+      "digit_max": 15,
+      "digit_min": 0,
+      "lane_bits": 8,
+      "scale_max": 255,
+      "scale_min": 0
+    },
+    "scale_bytes": 4,
+    "trusted_boundary": "No control-flow, alias, memory-safety, MMA, floating-point, or whole-kernel validation.",
+    "whole_word_multiplies": 8
+  }
+}

@@ -1,0 +1,56 @@
+{"out": "/home/runner/work/_temp/p053-scientific/main", "accumulator_cases": 64, "decoder_cases": 30, "events_this_run": 26888, "events_cumulative": 26888}
+{"out": "/home/runner/work/_temp/p053-scientific/reproduction", "accumulator_cases": 64, "decoder_cases": 30, "events_this_run": 26888, "events_cumulative": 53776}
+{"status": "pass", "audit_mode": "semantic certificate replay, independent baseline recomputation, and saved-record audit", "results_dir": "/home/runner/work/_temp/p053-scientific/main", "compare_dir": "/home/runner/work/_temp/p053-scientific/reproduction", "counts": {"accumulator": 64, "decoder": 30}, "comparison": {"byte_compared_scientific_files": 246, "byte_identical": true, "summary_comparison": "scientific fields equal; measured resource fields and labels intentionally excluded"}, "events_this_check": 15370}
+{"status": "pass", "audit_mode": "saved-record structural audit only", "results_dir": "/home/runner/work/_temp/p053-scientific/main", "compare_dir": "results/publication/main", "counts": {"accumulator": 64, "decoder": 30}, "comparison": {"byte_compared_scientific_files": 246, "byte_identical": true, "summary_comparison": "scientific fields equal; measured resource fields and labels intentionally excluded"}, "events_this_check": 0}
+test_ambiguous_or_nonfinite_existing_ledger_is_rejected (tests.test_campaign_cli.CampaignCliTests.test_ambiguous_or_nonfinite_existing_ledger_is_rejected) ... ok
+test_existing_ledger_is_preserved_across_commands (tests.test_campaign_cli.CampaignCliTests.test_existing_ledger_is_preserved_across_commands) ... ok
+test_json_scientific_records_have_canonical_bytes (tests.test_campaign_cli.CampaignCliTests.test_json_scientific_records_have_canonical_bytes) ... ok
+test_unsupported_hard_limits_fail_before_semantic_work (tests.test_campaign_cli.CampaignCliTests.test_unsupported_hard_limits_fail_before_semantic_work) ... ok
+test_atomic_rejection (tests.test_contracts.BudgetTests.test_atomic_rejection) ... ok
+test_boolean_not_integer (tests.test_contracts.BudgetTests.test_boolean_not_integer) ... ok
+test_concurrency (tests.test_contracts.BudgetTests.test_concurrency) ... ok
+test_invalid_charge_unchanged (tests.test_contracts.BudgetTests.test_invalid_charge_unchanged) ... ok
+test_accumulator_empty_vacuity (tests.test_contracts.DomainTests.test_accumulator_empty_vacuity) ... ok
+test_accumulator_invalid_domains (tests.test_contracts.DomainTests.test_accumulator_invalid_domains) ... ok
+test_complete_suite (tests.test_contracts.DomainTests.test_complete_suite) ... ok
+test_decoder_invalid_domains (tests.test_contracts.DomainTests.test_decoder_invalid_domains) ... ok
+test_extra_and_wrong_scalar_types (tests.test_contracts.DomainTests.test_extra_and_wrong_scalar_types) ... ok
+test_producer_bad_types (tests.test_contracts.DomainTests.test_producer_bad_types) ... ok
+test_real_factor_pairs (tests.test_contracts.DomainTests.test_real_factor_pairs) ... ok
+test_end_to_end_single_case (tests.test_contracts.ExportTests.test_end_to_end_single_case) ... ok
+test_accumulator_counts_and_indices (tests.test_contracts.ReplayTests.test_accumulator_counts_and_indices) ... ok
+test_all_accumulator_metrics (tests.test_contracts.ReplayTests.test_all_accumulator_metrics) ... ok
+test_decoder_discard_final_carry (tests.test_contracts.ReplayTests.test_decoder_discard_final_carry) ... ok
+test_decoder_metrics_envelope_and_layers (tests.test_contracts.ReplayTests.test_decoder_metrics_envelope_and_layers) ... ok
+test_materialized_witness_quadratic (tests.test_contracts.ReplayTests.test_materialized_witness_quadratic) ... ok
+test_minimality_product_merge (tests.test_contracts.ReplayTests.test_minimality_product_merge) ... ok
+test_no_observation_is_vacuous_by_contract (tests.test_contracts.ReplayTests.test_no_observation_is_vacuous_by_contract) ... ok
+test_nonzero_initial_counterexample (tests.test_contracts.ReplayTests.test_nonzero_initial_counterexample) ... ok
+test_reconvergence_observation (tests.test_contracts.ReplayTests.test_reconvergence_observation) ... ok
+test_signed_initial_guard_grid (tests.test_contracts.ReplayTests.test_signed_initial_guard_grid) ... ok
+test_two_final_guards_distinguished (tests.test_contracts.ReplayTests.test_two_final_guards_distinguished) ... ok
+test_unknown_fields_rejected (tests.test_contracts.ReplayTests.test_unknown_fields_rejected) ... ok
+test_coordinated_baseline_tamper_rejected (tests.test_contracts.ReverificationTests.test_coordinated_baseline_tamper_rejected) ... ok
+test_csv_duplicate_header_rejected (tests.test_contracts.ReverificationTests.test_csv_duplicate_header_rejected) ... ok
+test_csv_missing_extra_cells_rejected (tests.test_contracts.ReverificationTests.test_csv_missing_extra_cells_rejected) ... ok
+test_duplicate_json_members_rejected (tests.test_contracts.ReverificationTests.test_duplicate_json_members_rejected) ... ok
+test_independent_guard_matches_boundary_baselines (tests.test_contracts.ReverificationTests.test_independent_guard_matches_boundary_baselines) ... ok
+test_nonfinite_json_rejected (tests.test_contracts.ReverificationTests.test_nonfinite_json_rejected) ... ok
+test_oracle_bad_failure_counts_rejected (tests.test_contracts.ReverificationTests.test_oracle_bad_failure_counts_rejected) ... ok
+test_provenance_drift_rejected (tests.test_contracts.ReverificationTests.test_provenance_drift_rejected) ... ok
+test_both_empty_are_rejected (tests.test_contracts.SavedEvidenceTests.test_both_empty_are_rejected) ... ok
+test_complete_saved_evidence (tests.test_contracts.SavedEvidenceTests.test_complete_saved_evidence) ... ok
+test_matching_deleted_certificate_is_rejected (tests.test_contracts.SavedEvidenceTests.test_matching_deleted_certificate_is_rejected) ... ok
+test_new_directory_tampering_is_rejected (tests.test_contracts.SavedEvidenceTests.test_new_directory_tampering_is_rejected) ... ok
+test_full_mutation_suite (tests.test_contracts.SourceTests.test_full_mutation_suite) ... ok
+test_positive_whitespace_comments (tests.test_contracts.SourceTests.test_positive_whitespace_comments) ... ok
+test_retained_implementation_attribution (tests.test_contracts.SourceTests.test_retained_implementation_attribution) ... ok
+test_source_order (tests.test_contracts.SourceTests.test_source_order) ... ok
+test_extensionless_and_explicit_tex_inputs (tests.test_pipeline.PipelineTests.test_extensionless_and_explicit_tex_inputs) ... ok
+test_project_paths_allow_root_readme (tests.test_pipeline.PipelineTests.test_project_paths_allow_root_readme) ... ok
+test_runner_includes_continuing_ledger_controls (tests.test_pipeline.PipelineTests.test_runner_includes_continuing_ledger_controls) ... ok
+
+----------------------------------------------------------------------
+Ran 47 tests in 0.533s
+
+OK
