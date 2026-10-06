@@ -17,8 +17,12 @@ The last three arithmetic routes do not invoke certificate production.
 The source check is complete frozen-token equality, ignoring only comments and
 whitespace; it is not a general CUDA importer.
 
-The active code requires Python >=3.11 and only the standard library. It runs
-on one CPU process. No GPU, external model, private data or network service is
+The active code requires Python >=3.11 and only the standard library. The
+campaign command requires Linux/POSIX `resource` support to impose its 120-second
+CPU and 2.5-GiB address-space limits; it fails before semantic execution when
+these limits cannot be installed. Semantic functions can be imported on other
+hosts under caller-owned resource bounds, with unavailable POSIX RSS recorded
+as null, not zero. No GPU, external model, private data or network service is
 required. The historical Z3 library is not loaded by current commands.
 
 ## Retained evidence
@@ -81,8 +85,11 @@ these boundaries.
 
 The same ledger is carried into every command. A fresh counter describes the
 new local reproduction only; it does not reset the historical project budget.
-The 39 unit tests include schema, initialization, minimum-witness, extra-layer,
-source-token, budget-atomicity, missing-file and new-output-tampering cases.
+The runner discovers all 47 current tests, including the continuing-ledger CLI
+controls, rather than loading only one test module. Tests include schema,
+initialization, minimum-witness, extra-layer, source-token, budget-atomicity,
+missing-file, new-output-tampering, canonical JSON byte, reproduction-path and
+retained source-attribution cases.
 Generic unittest discovery can run them, but the supplied runner additionally
 persists the semantic-work charges. An acceptance report cannot replace
 reading or independently checking the proof.
@@ -104,7 +111,7 @@ from the project root. See `paper/README.md` for TeX dependencies.
 
 ## Budget and interpretation
 
-The retained main and reproduction commands each charged 26,888 obligations,
+The retained historical main and reproduction commands each charged 26,888 obligations,
 53,776 together. `results/repair-budget.json` also carries failed tests,
 preliminary complete runs, saved-certificate replay and final checks. These
 counts charge declared units: one concrete oracle word covers its full bounded
@@ -131,7 +138,7 @@ run. Both PDFs rebuilt from that extraction are byte-identical to the supplied
 PDFs. That earlier clean regeneration consumed budget recorded in the same continuing ledger;
 the historical overrun and scientific-readiness limitations remain unchanged.
 
-## Current re-verification records
+## Historical re-verification records
 
 `results/reverification/repaired-tests.json` reports 39 executed tests.
 `repaired-semantic-replay.json` reports replay of both complete retained runs,
@@ -159,8 +166,19 @@ These two commands require the sibling `paper/` because they inspect citations;
 arithmetic tests and result replay do not. See `docs/核实结果.md` for the Chinese
 summary of completed repairs and substantive remaining research limitations.
 
-The continuing repair ledger after the latest clean-extraction regressions is
+The retained continuing repair ledger after those clean-extraction regressions is
 187,881 / 200,000 declared units. The earlier full saved-result semantic replay
-used 15,370 units; the clean-extraction unit suite used 1,653. The current
-PDFs were rebuilt from that extraction and matched the visually reviewed PDFs
-byte for byte. The fresh extraction did not re-run the full scientific campaign.
+used 15,370 units; the clean-extraction unit suite used 1,653. Those retained
+PDFs were rebuilt from that extraction and matched the then-reviewed PDFs
+byte for byte. That extraction did not re-run the full scientific campaign.
+
+## Automated scientific checks
+
+The standalone artifact repository's `scientific-checks.yml` regenerates two
+finite runs, replays their certificates and interval baselines, compares their
+246 scientific files with each other and the retained evidence, and runs all
+discovered regressions. The Ubuntu 24.04 job bounds the complete command block
+to 240 seconds of wall time, applies per-process CPU/address-space/file limits,
+retains failure exit codes, and uploads raw outputs even when a gate fails.
+It does not build the sibling paper or establish mathematical correctness from
+test agreement. Adding the workflow is not evidence that a remote run occurred.

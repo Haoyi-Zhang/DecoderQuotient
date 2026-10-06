@@ -1,3 +1,6 @@
+// Implemented by Haotian Tang and Shang Yang.
+// Selected arithmetic excerpt; indentation and line breaks normalized.
+// The immutable upstream path and selection boundaries are in provenance.json.
 uint4 loaded = *((uint4 *)(src) + warp_offset_n / 32 * kSmemCol +
                  shared_iter * 32 / 32 * kSmemCol + k_0_1 * INTRIN_K + threadIdx.x);
 uint32_t loaded_0 = loaded.x & 0x0F0F0F0F;

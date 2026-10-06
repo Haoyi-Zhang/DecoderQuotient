@@ -5,10 +5,14 @@ import argparse
 import copy
 import csv
 import json
-import resource
 import time
 from pathlib import Path
 from typing import Dict, Iterable, List
+
+try:
+    import resource
+except ImportError:
+    resource = None  # The semantic function can run under an owned outer bound.
 
 from .accumulator_baselines import final_range_only, no_overflow_sufficient, term_fit_and_final_range
 from .certificate_format import strict_json_loads
@@ -29,7 +33,8 @@ from .source_anchor import parse_frozen_file
 
 def _write_json(path: Path, value: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n")
+    path.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n",
+                    encoding="utf-8", newline="\n")
 
 
 def _semantic_projection(value: object) -> object:
@@ -76,8 +81,12 @@ def _mutate_decoder_certificate(certificate: dict, mutation: int) -> dict:
 
 def run_once(root: Path, out: Path, ledger: ObligationLedger, run_label: str,
              accumulator_suite=None, decoder_suite=None) -> dict:
+    """Run finite semantics; callers other than main must impose resource bounds.
+
+    POSIX RSS is unavailable on hosts without resource. A null measurement is
+    intentional, not a zero-RSS claim. main() still requires POSIX hard limits.
+    """
     cpu_start = time.process_time()
-    usage_start = resource.getrusage(resource.RUSAGE_SELF)
     if out.exists() and any(out.iterdir()):
         raise ValueError("result directory must be empty")
     out.mkdir(parents=True, exist_ok=True)
@@ -314,7 +323,7 @@ def run_once(root: Path, out: Path, ledger: ObligationLedger, run_label: str,
         "all_cross_checks_agree": True,
         "resource_usage": {
             "cpu_seconds": time.process_time() - cpu_start,
-            "peak_rss_kib": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
+            "peak_rss_kib": None if resource is None else resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
             "single_process": True,
             "workers": 1,
         },
@@ -323,6 +332,14 @@ def run_once(root: Path, out: Path, ledger: ObligationLedger, run_label: str,
     _write_json(out / "source-report.json", {**source_report, "mutation_test":source_mutations})
     _write_json(out / "summary.json", summary)
     return summary
+
+
+def enforce_limits() -> None:
+    """Fail closed when the public campaign cannot install its hard bounds."""
+    if resource is None:
+        raise RuntimeError("campaign CLI requires POSIX resource limits; use Linux")
+    resource.setrlimit(resource.RLIMIT_AS,(int(2.5*1024**3),int(2.5*1024**3)))
+    resource.setrlimit(resource.RLIMIT_CPU,(120,120))
 
 
 def main() -> int:
@@ -340,8 +357,7 @@ def main() -> int:
         ledger=ObligationLedger(args.limit,old["events_used"],old["categories"])
     else:ledger=ObligationLedger(args.limit)
     # Bound this single worker; no child or GPU execution is used.
-    resource.setrlimit(resource.RLIMIT_AS,(int(2.5*1024**3),int(2.5*1024**3)))
-    resource.setrlimit(resource.RLIMIT_CPU,(120,120))
+    enforce_limits()
     before=ledger.used
     try:
         summary=run_once(args.root.resolve(),args.out.resolve(),ledger,args.label)

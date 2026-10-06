@@ -170,6 +170,11 @@ class ReplayTests(unittest.TestCase):
         self.assertTrue(o["equivalent"]);self.assertGreater(c["closed_form"]["max_carry_after_last_lane"],0)
 
 class SourceTests(unittest.TestCase):
+    def test_retained_implementation_attribution(self):
+        path=Path(__file__).resolve().parents[1]/'inputs/omniserve/share_to_reg_one_stage_B.cu'
+        text=path.read_text(encoding='utf-8')
+        self.assertIn('// Implemented by Haotian Tang and Shang Yang.',text)
+        self.assertTrue(parse_source(text,LEDGER)['accepted'])
     def test_positive_whitespace_comments(self):
         self.assertTrue(parse_source(EXPECTED,LEDGER)["accepted"])
         self.assertTrue(parse_source("/* harmless */\n"+EXPECTED.replace(";","; // comment\n"),LEDGER)["accepted"])

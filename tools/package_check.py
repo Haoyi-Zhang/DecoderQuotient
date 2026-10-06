@@ -9,10 +9,22 @@ from tools.reference_check import check as check_references
 TITLE='Exact Quotient Certificates for Packed-Integer Decoders and Mixed-Width Accumulators'
 def require(ok,message):
     if not ok:raise ValueError(message)
+def project_paths(root):
+    paper=root/'paper';artifact=root/'artifact'
+    require(paper.is_dir() and artifact.is_dir(),'missing paper or artifact directory')
+    return artifact,paper
+
+def check_tex_inputs(paper,doc):
+    text=(paper/(doc+'.tex')).read_text()
+    for rel in re.findall(r'\\input\{([^}]+)\}',text):
+        include=paper/rel
+        if not include.suffix:include=include.with_suffix('.tex')
+        require(include.is_file(),'missing TeX include '+rel)
+
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--project-root',type=Path,required=True);p.add_argument('--out',type=Path,required=True);args=p.parse_args();root=args.project_root.resolve();a=root/'Artifacts';paper=root/'paper';steps=[]
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--project-root',type=Path,required=True);p.add_argument('--out',type=Path,required=True);args=p.parse_args();root=args.project_root.resolve();steps=[]
     try:
-        require({p.name for p in root.iterdir()}=={'paper','Artifacts'},'mixed or unexpected project root')
+        a,paper=project_paths(root)
         for f in ['main.tex','supplement.tex','main.pdf','supplement.pdf','references.bib','build.sh','README.md','acmart.cls','ACM-Reference-Format.bst']:
             require((paper/f).is_file() and (paper/f).stat().st_size>0,'missing paper file: '+f)
         for f in ('main.pdf','supplement.pdf'):require((paper/f).read_bytes().startswith(b'%PDF-'),'not a PDF: '+f)
@@ -32,12 +44,11 @@ def main():
                 if isinstance(node,ast.Name):require(node.id!='generate_certificate','producer call name in '+name)
         steps.append('active Python syntax and direct producer-import exclusion (not a complete call-graph proof)')
         for doc in ('main','supplement'):
-            text=(paper/(doc+'.tex')).read_text()
-            for rel in re.findall(r'\\input\{([^}]+)\}',text):require((paper/(rel+'.tex')).is_file(),'missing TeX include '+rel)
+            check_tex_inputs(paper,doc)
             log=(paper/'build-logs'/(doc+'.log')).read_text()
             for pattern in ('Undefined control sequence','There were undefined references','There were undefined citations','! LaTeX Error','Overfull \\hbox'):
                 require(pattern not in log,'LaTeX log problem: '+pattern)
-        steps.append('all TeX includes present and current logs free of errors, undefined references and horizontal overflow')
+        steps.append('all TeX includes present; retained build logs free of errors, undefined references and horizontal overflow (not a fresh build or source/log binding)')
         # The reproduction command is part of the delivered interface.
         campaign_tree=ast.parse((a/'bptc/publication_campaign.py').read_text())
         label_choices=None

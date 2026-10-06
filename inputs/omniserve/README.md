@@ -1,7 +1,9 @@
 # Frozen arithmetic source input
 
-`share_to_reg_one_stage_B.cu` contains the selected arithmetic body, without
-local provenance comments. `provenance.json` records the upstream repository,
+`share_to_reg_one_stage_B.cu` contains the selected arithmetic body and the
+upstream implementation attribution to Haotian Tang and Shang Yang. The comment
+header identifies the excerpt's whitespace normalization; it is not part of
+the selected arithmetic token sequence. `provenance.json` records the upstream repository,
 immutable commit and file; `LICENSE` is the retained Apache-2.0 text.
 The complete token sequence is compared against `bptc/source_anchor.py`'s
 fixed sequence, with comments and whitespace as the only ignored content.

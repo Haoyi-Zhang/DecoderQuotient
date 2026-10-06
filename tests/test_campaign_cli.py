@@ -8,7 +8,7 @@ import unittest
 from unittest.mock import patch
 
 from bptc.publication_budget import ObligationLedger
-from bptc.publication_campaign import main
+from bptc.publication_campaign import main, enforce_limits, _write_json
 
 
 class CampaignCliTests(unittest.TestCase):
@@ -32,7 +32,7 @@ class CampaignCliTests(unittest.TestCase):
                         "--label", label, "--ledger", str(ledger_path),
                         "--limit", "20"]
                 with patch("sys.argv", argv), \
-                     patch("bptc.publication_campaign.resource.setrlimit"), \
+                     patch("bptc.publication_campaign.enforce_limits"), \
                      patch("bptc.publication_campaign.run_once", side_effect=bounded_campaign), \
                      contextlib.redirect_stdout(io.StringIO()):
                     self.assertEqual(main(), 0)
@@ -59,10 +59,33 @@ class CampaignCliTests(unittest.TestCase):
                         "--limit", "20"]
                 with patch("sys.argv", argv), \
                      patch("bptc.publication_campaign.run_once") as runner, \
-                     patch("bptc.publication_campaign.resource.setrlimit") as limits:
+                     patch("bptc.publication_campaign.enforce_limits") as limits:
                     with self.assertRaises(ValueError):
                         main()
                     runner.assert_not_called()
                     limits.assert_not_called()
                 self.assertEqual(ledger_path.read_text(), source)
                 self.assertFalse((root / "unused").exists())
+
+    def test_unsupported_hard_limits_fail_before_semantic_work(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            path = root / "budget.json"
+            ObligationLedger(20, 3, {"prior": 3}).write(path)
+            before = path.read_bytes()
+            argv = ["campaign", "--out", str(root / "unused"), "--label", "main",
+                    "--ledger", str(path), "--limit", "20"]
+            with patch("sys.argv", argv), \
+                 patch("bptc.publication_campaign.resource", None), \
+                 patch("bptc.publication_campaign.run_once") as runner:
+                with self.assertRaisesRegex(RuntimeError, "POSIX resource limits"):
+                    main()
+                runner.assert_not_called()
+            self.assertEqual(path.read_bytes(), before)
+            self.assertFalse((root / "unused").exists())
+
+    def test_json_scientific_records_have_canonical_bytes(self):
+        with tempfile.TemporaryDirectory() as td:
+            path = Path(td) / "record.json"
+            _write_json(path, {"z": 1, "a": 2})
+            self.assertEqual(path.read_bytes(), b'{\n  "a": 2,\n  "z": 1\n}\n')

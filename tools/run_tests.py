@@ -6,6 +6,10 @@ from bptc.certificate_format import strict_json_loads
 from bptc.publication_budget import ObligationLedger
 from tests import test_contracts
 
+def regression_suite():
+    root=Path(__file__).resolve().parents[1]
+    return unittest.defaultTestLoader.discover(str(root/'tests'),pattern='test_*.py',top_level_dir=str(root))
+
 def main():
     p=argparse.ArgumentParser();p.add_argument("--ledger",type=Path,required=True);p.add_argument("--out",type=Path,required=True)
     args=p.parse_args()
@@ -13,7 +17,7 @@ def main():
         old=strict_json_loads(args.ledger.read_text());ledger=ObligationLedger(old["limit"],old["events_used"],old["categories"])
     else:ledger=ObligationLedger(200000)
     test_contracts.LEDGER=ledger;before=ledger.used
-    suite=unittest.defaultTestLoader.loadTestsFromModule(test_contracts)
+    suite=regression_suite()
     result=unittest.TextTestRunner(verbosity=2).run(suite)
     ledger.write(args.ledger)
     report={"tests":result.testsRun,"failures":[(str(t),trace) for t,trace in result.failures],"errors":[(str(t),trace) for t,trace in result.errors],"skipped":len(result.skipped),"success":result.wasSuccessful(),"events_this_run":ledger.used-before,"events_cumulative":ledger.used}
