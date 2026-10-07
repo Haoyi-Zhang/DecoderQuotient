@@ -67,16 +67,18 @@ semantic traversal and output creation.
 One Intel Core i7-12700KF Windows host, Zig 0.15.2/Clang 20.1.2, and verified
 CPU-0 affinity `0x1` produced 2,037 native paired samples and 1,659 separate
 checker samples. Original accumulator per-case median walker ratios are
-1.469--1.977 and preparation+walk component-sum ratios are 1.325--1.587.
+1.483--1.979 and preparation+walk component-sum ratios are 1.346--1.598.
 The latter adds **separately timed phases**, not a timed end-to-end path,
-and excludes JSON serialization and Python checking. Two unique-product
-controls are slower for walk and three for preparation+walk. All raw slower
+and excludes JSON serialization and Python checking. Three unique-product
+controls are slower for preparation+walk. All raw slower
 pairs and outliers remain in the records. The 18 safe decoder examples measure
-1.077--1.079 against lane-wise native evaluation; unsafe boxes are not timed.
+1.075--1.080 against lane-wise native evaluation; unsafe boxes are not timed.
 
-Serialization and replay can dominate these small walkers: original-case
-serialization/walk median ratios span 104.8--170.2 and separate Python replay
-medians span 106.4--320.9 us. There is no measured whole-checker speedup, GPU
+Buffered integer JSON preserves complete certificate bytes while improving
+emission by 29.02--39.09 over ostream on original cases. The matched fused
+prepare--walk--serialize call improves by 19.91--26.55, with the same quotient
+in both arms. Serialization/walk median ratios span 2.7--5.2; separate Python
+replay medians span 106.3--323.6 us. There is no measured whole-checker speedup, GPU
 performance, or production/deployment benefit. See `native/README.md` for the
 complete baseline, phase definitions, bounds, negative controls, and proof/code
 mapping.

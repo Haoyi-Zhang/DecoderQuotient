@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <array>
 #include <chrono>
+#include <charconv>
 #include <cstdint>
 #include <filesystem>
 #include <fstream>
@@ -14,6 +15,7 @@
 #include <stdexcept>
 #include <string>
 #include <tuple>
+#include <type_traits>
 #include <utility>
 #include <vector>
 #ifdef _WIN32
@@ -143,33 +145,54 @@ static Graph walk(const Spec& s,const Branches& branches,bool account=false) {
         g.layers.push_back(std::move(next));
     }return g;
 }
-// Small JSON writer: inputs are strict identifiers, integral values and flags.
-static void json_bool(std::ostream& o,bool b){o<<(b?"true":"false");}
-static void word(std::ostream& o,const Word& w){o<<'[';for(std::size_t i=0;i<w.size();i++){if(i)o<<',';o<<w[i];}o<<']';}
-static void pair(std::ostream& o,const std::array<I,2>& p){o<<'['<<p[0]<<','<<p[1]<<']';}
-static void state(std::ostream& o,const State& s){o<<'['<<s.t<<','<<s.e<<',';json_bool(o,s.bad);o<<','<<s.first<<']';}
-static void pairs(std::ostream& o,const Spec& s,const Word& w){o<<'[';for(std::size_t i=0;i<w.size();i++){if(i)o<<',';pair(o,s.stages[i].pairs[static_cast<std::size_t>(w[i])]);}o<<']';}
-static void spec_json(std::ostream& o,const Spec& s) {
+// The certificate language has strict identifiers, integers and Boolean flags.
+// Buffer appends avoid ostream formatting; the same field traversal serves the
+// stream baseline and the buffered implementation.
+struct JsonBuffer {
+    std::string bytes;
+    JsonBuffer& operator<<(char value){bytes.push_back(value);return *this;}
+    JsonBuffer& operator<<(const char* value){bytes.append(value);return *this;}
+    JsonBuffer& operator<<(const std::string& value){bytes.append(value);return *this;}
+    template<class T, std::enable_if_t<std::is_integral_v<T> && !std::is_same_v<T,bool>,int> = 0>
+    JsonBuffer& operator<<(T value){
+        char digits[32];auto result=std::to_chars(digits,digits+sizeof(digits),value);
+        require(result.ec==std::errc{},"integer JSON conversion");
+        bytes.append(digits,static_cast<std::size_t>(result.ptr-digits));return *this;
+    }
+};
+template<class O> static void json_bool(O& o,bool b){o<<(b?"true":"false");}
+template<class O> static void word(O& o,const Word& w){o<<'[';for(std::size_t i=0;i<w.size();i++){if(i)o<<',';o<<w[i];}o<<']';}
+template<class O> static void pair(O& o,const std::array<I,2>& p){o<<'['<<p[0]<<','<<p[1]<<']';}
+template<class O> static void state(O& o,const State& s){o<<'['<<s.t<<','<<s.e<<',';json_bool(o,s.bad);o<<','<<s.first<<']';}
+template<class O> static void pairs(O& o,const Spec& s,const Word& w){o<<'[';for(std::size_t i=0;i<w.size();i++){if(i)o<<',';pair(o,s.stages[i].pairs[static_cast<std::size_t>(w[i])]);}o<<']';}
+template<class O> static void spec_json(O& o,const Spec& s) {
     o<<"{\"name\":\""<<s.name<<"\",\"provenance\":\""<<s.provenance<<"\",\"initial\":"<<s.initial<<",\"final_observe\":";json_bool(o,s.final);o<<",\"stages\":[";
     for(std::size_t i=0;i<s.stages.size();i++){if(i)o<<',';const Stage& st=s.stages[i];o<<"{\"pairs\":[";for(std::size_t j=0;j<st.pairs.size();j++){if(j)o<<',';pair(o,st.pairs[j]);}o<<"],\"term_bits\":"<<st.tw<<",\"term_mode\":\""<<(st.ts?"saturate":"wrap")<<"\",\"acc_bits\":"<<st.aw<<",\"acc_mode\":\""<<(st.as?"saturate":"wrap")<<"\",\"observe\":";json_bool(o,st.observe);o<<'}';}o<<"]}";
 }
-static void layers_json(std::ostream& o,const Spec& s,const Graph& g) {
+template<class O> static void layers_json(O& o,const Spec& s,const Graph& g) {
     o<<'[';for(std::size_t i=0;i<g.layers.size();i++) {
         if(i)o<<',';o<<"{\"index\":"<<i<<",\"states\":[";bool first=true;
         for(const auto& kv:g.layers[i].states){if(!first)o<<',';first=false;o<<"{\"state\":";state(o,kv.first);o<<",\"least_witness_indices\":";word(o,kv.second);o<<",\"least_witness_pairs\":";pairs(o,s,kv.second);o<<'}';}o<<']';
         if(i){o<<",\"edges\":[";first=true;for(const auto& e:g.layers[i].edges){if(!first)o<<',';first=false;o<<"{\"from\":";state(o,e.from);o<<",\"product\":"<<e.product<<",\"representative_index\":"<<e.rep<<",\"to\":";state(o,e.to);o<<'}';}o<<']';}o<<'}';
     }o<<']';
 }
-static void decision_json(std::ostream& o,const Spec& s,const Graph& g) {
+template<class O> static void decision_json(O& o,const Spec& s,const Graph& g) {
     const auto& final=g.layers.back().states;const Word* least=nullptr;State ls{};int bad=0;
     for(const auto& kv:final)if(kv.first.bad){bad++;if(!least||kv.second<*least){least=&kv.second;ls=kv.first;}}
     o<<"{\"equivalent\":";json_bool(o,bad==0);o<<",\"reachable_final_states\":"<<final.size()<<",\"bad_final_states\":"<<bad<<",\"least_counterexample\":";
     if(!least)o<<"null";else {o<<"{\"indices\":";word(o,*least);o<<",\"pairs\":";pairs(o,s,*least);o<<",\"first_bad_stage\":"<<ls.first<<",\"final_state\":";state(o,ls);o<<'}';}o<<'}';
 }
-static void certificate_json(std::ostream& o,const Spec& s,const Branches& b,const Graph& g) {
+template<class O> static void certificate_json(O& o,const Spec& s,const Branches& b,const Graph& g) {
     o<<"{\"format\":\"bptc-exact-accumulator-certificate-v1\",\"spec\":";spec_json(o,s);o<<",\"product_classes\":[";
     for(std::size_t i=0;i<b.size();i++){if(i)o<<',';o<<'[';for(std::size_t j=0;j<b[i].size();j++){if(j)o<<',';const auto& c=b[i][j];o<<"{\"product\":"<<c.product<<",\"representative_index\":"<<c.rep<<",\"representative_pair\":";pair(o,s.stages[i].pairs[static_cast<std::size_t>(c.rep)]);o<<",\"member_indices\":";word(o,c.members);o<<",\"member_pairs\":[";for(std::size_t k=0;k<c.members.size();k++){if(k)o<<',';pair(o,s.stages[i].pairs[static_cast<std::size_t>(c.members[k])]);}o<<"]}";}o<<']';}
     o<<"],\"layers\":";layers_json(o,s,g);o<<",\"decision\":";decision_json(o,s,g);o<<",\"metrics\":{\"concrete_assignments\":"<<g.words<<",\"quotient_product_sequences\":"<<g.sequences<<",\"producer_transitions\":"<<g.edges<<",\"unquotiented_frontier_edges\":"<<g.u<<",\"quotient_frontier_edges\":"<<g.edges<<"}}";
+}
+static std::string certificate_bytes(const Spec& s,const Branches& b,const Graph& g){
+    JsonBuffer out;certificate_json(out,s,b,g);return std::move(out.bytes);
+}
+static void check_writer(const Spec& s,const Branches& b,const Graph& g){
+    std::ostringstream reference;certificate_json(reference,s,b,g);
+    require(reference.str()==certificate_bytes(s,b,g),"certificate serializer disagreement");
 }
 static std::vector<Word> concrete_words(const Spec& s,I count) {
     std::vector<Word> words;const std::size_t n=s.stages.size();
@@ -207,7 +230,7 @@ static void affinity_json(std::ostream& o,const Affinity& a) {
 static void conform(std::ostream& o,const Panel& p) {
     const Affinity affinity=pin_available_cpu();
     o<<"{\"format\":\"p053-native-conformance-v1\",\"performance_measured\":false,\"affinity\":";affinity_json(o,affinity);o<<",\"accumulators\":[";
-    for(std::size_t k=0;k<p.acc.size();k++){if(k)o<<',';const auto& s=p.acc[k];auto q=prepare(s,true,true),u=prepare(s,false,true);auto qg=walk(s,q,true),ug=walk(s,u,true);o<<"{\"name\":\""<<s.name<<"\",\"quotient_certificate\":";certificate_json(o,s,q,qg);o<<",\"baseline_layers\":";layers_json(o,s,ug);o<<",\"baseline_decision\":";decision_json(o,s,ug);o<<",\"baseline_edges\":"<<ug.edges<<",\"concrete\":";concrete_json(o,s,qg);o<<'}';}
+    for(std::size_t k=0;k<p.acc.size();k++){if(k)o<<',';const auto& s=p.acc[k];auto q=prepare(s,true,true),u=prepare(s,false,true);auto qg=walk(s,q,true),ug=walk(s,u,true);check_writer(s,q,qg);o<<"{\"name\":\""<<s.name<<"\",\"quotient_certificate\":"<<certificate_bytes(s,q,qg);o<<",\"baseline_layers\":";layers_json(o,s,ug);o<<",\"baseline_decision\":";decision_json(o,s,ug);o<<",\"baseline_edges\":"<<ug.edges<<",\"concrete\":";concrete_json(o,s,qg);o<<'}';}
     o<<"],\"decoders\":[";for(std::size_t k=0;k<p.dec.size();k++){if(k)o<<',';decoder_json(o,p.dec[k]);}o<<"],\"charges\":"<<charged<<",\"cap\":"<<cap<<"}\n";
 }
 static I tick(){return std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now().time_since_epoch()).count();}
@@ -217,13 +240,20 @@ template<class F> static I timed(int batch,F fn){I start=tick();for(int k=0;k<ba
 static void environment_json(std::ostream& o){o<<"{\"pointer_bits\":"<<sizeof(void*)*8<<",\"compiler\":\""<<__clang_version__<<"\",\"clock\":\"steady_clock nanoseconds\",\"clock_is_steady\":";json_bool(o,std::chrono::steady_clock::is_steady);o<<'}';}
 static void measure(std::ostream& o,const Panel& p,const std::string& slot) {
     identifier(slot);const Affinity affinity=pin_available_cpu();
-    const int batch=128,reps=21;bool first=true;o<<"{\"format\":\"p053-native-measurement-v1\",\"slot\":\""<<slot<<"\",\"affinity\":";affinity_json(o,affinity);o<<",\"environment\":";environment_json(o);o<<",\"samples\":[";
+    const int batch=16,reps=21;bool first=true;o<<"{\"format\":\"p053-native-measurement-v1\",\"slot\":\""<<slot<<"\",\"affinity\":";affinity_json(o,affinity);o<<",\"environment\":";environment_json(o);o<<",\"samples\":[";
     for(const auto& s:p.acc){auto q=prepare(s,true),u=prepare(s,false);for(int k=0;k<16;k++){sink=static_cast<std::uint64_t>(walk(s,q).edges);sink=static_cast<std::uint64_t>(walk(s,u).edges);}const auto frozen=walk(s,q);
         for(int rep=0;rep<reps;rep++){
             I qt=0,ut=0;bool qfirst=rep%2==1;for(int turn=0;turn<2;turn++){bool use=(turn==0)==qfirst;I t=timed(batch,[&](){auto g=walk(s,use?q:u);return static_cast<std::uint64_t>(g.edges+g.layers.back().states.size());});if(use)qt=t;else ut=t;}
             I qp=0,up=0;for(int turn=0;turn<2;turn++){bool use=(turn==0)==qfirst;I t=timed(batch,[&](){auto b=prepare(s,use);std::size_t total=0;for(const auto& v:b)total+=v.size();return static_cast<std::uint64_t>(total);});if(use)qp=t;else up=t;}
-            I ser=timed(batch,[&](){std::ostringstream x;certificate_json(x,s,q,frozen);return static_cast<std::uint64_t>(x.str().size());});
-            if(!first)o<<',';first=false;o<<"{\"kind\":\"accumulator\",\"case\":\""<<s.name<<"\",\"pair\":"<<rep<<",\"order\":\""<<(qfirst?"QU":"UQ")<<"\",\"batch\":"<<batch<<",\"quotient_ns\":"<<qt<<",\"baseline_ns\":"<<ut<<",\"quotient_prepare_ns\":"<<qp<<",\"baseline_prepare_ns\":"<<up<<",\"quotient_serialize_ns\":"<<ser<<'}';
+            I ser=0,stream_ser=0,fused=0,stream_fused=0;
+            for(int turn=0;turn<2;turn++){
+                bool buffered=(turn==0)==qfirst;
+                I elapsed=timed(batch,[&](){if(buffered)return static_cast<std::uint64_t>(certificate_bytes(s,q,frozen).size());std::ostringstream x;certificate_json(x,s,q,frozen);return static_cast<std::uint64_t>(x.str().size());});
+                if(buffered)ser=elapsed;else stream_ser=elapsed;
+                elapsed=timed(batch,[&](){auto branches=prepare(s,true);auto graph=walk(s,branches);if(buffered)return static_cast<std::uint64_t>(certificate_bytes(s,branches,graph).size());std::ostringstream x;certificate_json(x,s,branches,graph);return static_cast<std::uint64_t>(x.str().size());});
+                if(buffered)fused=elapsed;else stream_fused=elapsed;
+            }
+            if(!first)o<<',';first=false;o<<"{\"kind\":\"accumulator\",\"case\":\""<<s.name<<"\",\"pair\":"<<rep<<",\"order\":\""<<(qfirst?"QU":"UQ")<<"\",\"batch\":"<<batch<<",\"quotient_ns\":"<<qt<<",\"baseline_ns\":"<<ut<<",\"quotient_prepare_ns\":"<<qp<<",\"baseline_prepare_ns\":"<<up<<",\"quotient_serialize_ns\":"<<ser<<",\"stream_serialize_ns\":"<<stream_ser<<",\"quotient_fused_ns\":"<<fused<<",\"stream_fused_ns\":"<<stream_fused<<'}';
         }
     }
     for(const auto& d:p.dec){int c;if(!decoder_safe(d,c))continue;std::vector<std::uint32_t> words(1024,0);for(std::size_t k=0;k<words.size();k++)for(std::size_t i=0;i<d.maxima.size();i++)words[k]|=static_cast<std::uint32_t>((k*(2*i+1)+i)%static_cast<std::size_t>(d.maxima[i]+1))<<(8*i);

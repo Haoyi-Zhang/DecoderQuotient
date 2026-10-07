@@ -40,18 +40,20 @@ are not compiler proofs or independent peer review.
 The matched accumulator baseline uses the same walker and evidence storage,
 traversing every pair instead of each distinct product. Both precompute
 products. Ratios are baseline/optimized; original accumulator walker medians
-span 1.469--1.977 and preparation+walk component-sum medians 1.325--1.587.
-Unique-product controls preserve two slower walker cases and three slower
+span 1.483--1.979 and preparation+walk component-sum medians 1.346--1.598.
+Unique-product controls preserve three slower
 component-sum cases. All raw slower pairs and outliers remain present.
 
 Preparation+walk is the median of `(P_U+W_U)/(P_Q+W_Q)` from **separately
 timed phases**, not a timed fused end-to-end path. It includes neither JSON
-serialization nor Python checking. Quotient serialization on a frozen graph
-and separate Python replay costs can dominate the walker; baseline serialization
-and the full checking workflow are not timed. There is no whole-checker speedup
+serialization nor Python checking. Byte-identical buffered/ostream emission is
+timed on each frozen quotient graph (29.02--39.09 times faster on original
+cases), as is a fused prepare--walk--serialize call (19.91--26.55 times faster).
+Both emission arms include allocation and use the same quotient. Separate
+Python replay and disk I/O are excluded. There is no whole-checker speedup
 claim. Decoder timings cover only the 18 certified-safe boxes, using 1,024
 deterministic in-bounds words per call, and yield
-1.077--1.079. The 12 unsafe boxes remain correctness controls.
+1.075--1.080. The 12 unsafe boxes remain correctness controls.
 
 All timed decoder sequences are periodic: tiny boxes have four distinct
 words and full/alternating boxes sixteen. Both arms reuse warm memory and

@@ -93,13 +93,15 @@ Actual serial measurements on one Intel Core i7-12700KF Windows 11 host use
 Zig 0.15.2/Clang 20.1.2 and verified CPU-0 affinity `0x1`. All 2,037 native
 paired samples and 1,659 separate Python checker samples are retained in
 `results/native-cpu/`. Original accumulator median walker ratios span
-1.469--1.977; preparation+walk component-sum ratios span 1.325--1.587. Two
-walker controls and three component-sum controls favor the baseline. The latter
+1.483--1.979; preparation+walk component-sum ratios span 1.346--1.598. Three
+component-sum controls favor the baseline. The latter
 ratio uses separately measured phase times, excludes serialization/checking,
 and is not a timed end-to-end path. Original-case serialization/walk median
-ratios span 104.8--170.2; Python replay medians span 106.4--320.9 us. No
+ratios span 2.7--5.2; Python replay medians span 106.3--323.6 us. Byte-identical
+buffered emission improves by 29.02--39.09 over ostream; a matched fused
+prepare--walk--serialize call improves by 19.91--26.55. No
 whole-checking-workflow speedup is measured. The 18 safe packed decoder examples
-measure 1.077--1.079; unsafe boxes are not timed as equivalent optimizations.
+measure 1.075--1.080; unsafe boxes are not timed as equivalent optimizations.
 
 One compressed complete conformance output, raw samples, compact summaries,
 compiler-function excerpts and functional source/data bindings are public.

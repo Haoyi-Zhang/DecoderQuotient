@@ -1,0 +1,168 @@
+{
+  "binding_scope": "Integrity/lineage binding, not a compiler proof or independent authorship claim.",
+  "complete_native_output": {
+    "file": "native-conformance.json.gz",
+    "optimized_checked_json_equal": true,
+    "private_checked_output_sha256": "3500a8fba47ea19c81261bbd831371bd0578a81824295586b54e3a20acc3000f",
+    "private_optimized_output_sha256": "3500a8fba47ea19c81261bbd831371bd0578a81824295586b54e3a20acc3000f",
+    "uncompressed_bytes": 12088787,
+    "uncompressed_sha256": "3500a8fba47ea19c81261bbd831371bd0578a81824295586b54e3a20acc3000f"
+  },
+  "evidence_files": {
+    "analysis.json": {
+      "bytes": 135332,
+      "sha256": "690f1180adb6399bda57d5a3e843e07df6ea82b246698543c756d019f3f9bb8d"
+    },
+    "assembly-excerpts.txt": {
+      "bytes": 22209,
+      "sha256": "cff000f30baa1240ccd7d821259a2ea84b85e2a5ff7a74d58ba11bc2336e5e79"
+    },
+    "checker-samples.json": {
+      "bytes": 218359,
+      "sha256": "112b3a4a258291e7aee1ea94aff415e05e4db0953ce13f511832ab57fe871abf"
+    },
+    "checker-summary.json": {
+      "bytes": 14287,
+      "sha256": "069624a0fc38d3151597b22f7cc6e83cef8486c6501c4827ed3cab4eff1aca53"
+    },
+    "comparison.json": {
+      "bytes": 18662,
+      "sha256": "47934843c5a998d5d23e18199918677573c975fa4a146d5c3a76b9bfe1c75082"
+    },
+    "environment.json": {
+      "bytes": 2728,
+      "sha256": "1bcbc1a2750e9098f6986bd5f4d77a99c037257499c819557e50e68681d545f8"
+    },
+    "measurement-summary.json": {
+      "bytes": 56706,
+      "sha256": "f55be4ac8a6758bee2a5b48b5b6c25fe72302b2dd5ca13c7016c879f39cda0cd"
+    },
+    "native-conformance.json.gz": {
+      "bytes": 279889,
+      "sha256": "682bafb463c0c68018760e73e47aba05a35acbe50374f781c6620ae6fb85f90f"
+    },
+    "panel.json": {
+      "bytes": 161981,
+      "sha256": "98a0c42ae60ad45f62d6bdd3f9f4bf0ff83aa6f3148f7817741a8654a37f6e38"
+    },
+    "protocol.json": {
+      "bytes": 4193,
+      "sha256": "a320846a85ba3d095028b1eb7e19db3c3b3ad6e17a1aa331d06172c53ddacee7"
+    },
+    "raw-samples.json": {
+      "bytes": 550454,
+      "sha256": "3167c83cad92d586d5c1c8cbb335b6ad5a13098770465e3bbe11f9e60e1a262c"
+    }
+  },
+  "format": "p053-native-cpu-provenance-v1",
+  "original_result_aggregates_unchanged": true,
+  "raw_native_timer_bytes_unchanged": true,
+  "retained_certificate_files": {
+    "results/publication/main/certificates/final-range-unsound-00.json": "1b1749a62f3edbc4093fb2ff3f4d0cf721d6b08bc5356fc864767b6d7c5dc44d",
+    "results/publication/main/certificates/final-range-unsound-01.json": "51086a0754c3185805409d842a749411f5806a9161917a085491ffac21eb81f5",
+    "results/publication/main/certificates/final-range-unsound-02.json": "cf0eec60e8b88f3282cce1936006d038cc696c598f9ac6d433aac30eccfe041f",
+    "results/publication/main/certificates/final-range-unsound-03.json": "514e3ee8b6f4f00814c5aa82e45b6511b99899dca715482d7a61e73fe53e0138",
+    "results/publication/main/certificates/final-range-unsound-04.json": "9eb92f46c43c0a2633ed575d88b445b4351c4c174849138de62bb152280a4714",
+    "results/publication/main/certificates/final-range-unsound-05.json": "9a29917848f57c4470e5f0c78f1bdfa5ecd6c53aebdad51c3f91ec51055489c3",
+    "results/publication/main/certificates/final-range-unsound-06.json": "32120006b26c4ff6566d34bcaa8725451577f2d182f26f879e2bcfbcb1decf9d",
+    "results/publication/main/certificates/final-range-unsound-07.json": "99bcbebdcc064c9e5aa5dc24accdacb47b3de6011814ef3cf76077c19a2c94d7",
+    "results/publication/main/certificates/intermediate-observation-00.json": "d551d285904e976a7389bfe9f504cc3ed9ab761f8cc561918ce94498ea40e276",
+    "results/publication/main/certificates/intermediate-observation-01.json": "8985393b4c393636c7450630ad3872479f4a4a0eb5f7bba9aa8b470451e8b099",
+    "results/publication/main/certificates/intermediate-observation-02.json": "33907a4294bcd971a5be2aac720c7a2346a28c84ac54657e9fd513c8e9192d4a",
+    "results/publication/main/certificates/intermediate-observation-03.json": "14506476a9283a7efcdbbf0c91fb8d673486c4a2f0176d222c94a3dc3d6ae9a5",
+    "results/publication/main/certificates/intermediate-observation-04.json": "f98eaacd0b75ff0ea9c8ce6bc9b2a651640c0f6aeeb8f4205c17abd7fd4d5d8b",
+    "results/publication/main/certificates/intermediate-observation-05.json": "ac4c0ae42dfc12a682ce9f0f96fecfebbbeac4fbcf89d8d5c4b915a1ac34f7db",
+    "results/publication/main/certificates/intermediate-observation-06.json": "ef15b703c2cb9a192fac9c5d0d48db05b5a26a2005bc2018bfe9abf87867b62a",
+    "results/publication/main/certificates/intermediate-observation-07.json": "df94600c9b3ef052738faf78dcf3a7fc592c653428e36c28c51cdf28cda7c917",
+    "results/publication/main/certificates/mixed-product-domain-00.json": "c3ba436b98256d03863226d6c8175a4e4f0b1ad3e9c668e77804dac1d2179742",
+    "results/publication/main/certificates/mixed-product-domain-01.json": "4f1d421a1b2e9061287739b07e5607a864052735c3d8849f3e8478ad3cb4df43",
+    "results/publication/main/certificates/mixed-product-domain-02.json": "7c3b0bd41cbd8272b7c105695becf6a869fbaa579044c2eec795b2158d221f6c",
+    "results/publication/main/certificates/mixed-product-domain-03.json": "14edf4726b2ecca3d25cb27cdf991812c7b6dec3589c024b758c7c66c979de5b",
+    "results/publication/main/certificates/mixed-product-domain-04.json": "f9b1af09ad48bc99aeff4bffb98e5a08fcc24d9deda2b98803412270205270c2",
+    "results/publication/main/certificates/mixed-product-domain-05.json": "9267c04b928d19503f3a1dc90fba9f1e7db98288f8550295e5707bf75ac8b268",
+    "results/publication/main/certificates/mixed-product-domain-06.json": "f13b7e3ba79b38e1af211a2891a1c3510b1fce3d0bf262f832244b0c780d2e8d",
+    "results/publication/main/certificates/mixed-product-domain-07.json": "6972bb0b26e5b9fde1e76dcf9d6fc9e99b5e5795b4cfe277857b64c2e6a4f776",
+    "results/publication/main/certificates/safe-saturating-00.json": "677084e55938ab9d921c76cb2cd28c65b4ec2062e4494a9f6ba7c438b5e0bafd",
+    "results/publication/main/certificates/safe-saturating-01.json": "d86ed3b18608ba72b3920174f0847054f940c03eb3f8bf9317f133e855c58c52",
+    "results/publication/main/certificates/safe-saturating-02.json": "28b43ef7a3dddfae80a3381207791012499af023ae09cb098b467a71d09b8a76",
+    "results/publication/main/certificates/safe-saturating-03.json": "9bc2200821ba2699415ea933eeccc57ee6b62b2dad2638f25e1333477867b811",
+    "results/publication/main/certificates/safe-saturating-04.json": "005809ebe6f15406228181994bfefd970ba956d356d490947b124702da6ca069",
+    "results/publication/main/certificates/safe-saturating-05.json": "08ec02b2417e89c9831a388fedecb7dba00f652303eef1bd4b5242c2e933d8d7",
+    "results/publication/main/certificates/safe-saturating-06.json": "ef9df2eb76e0a7eea92510de2b0310f2e7cf7f9e7ba85c16a14633a6c75f8135",
+    "results/publication/main/certificates/safe-saturating-07.json": "c563e69d75c2b38adbb024e33512752b632ddacc3daf6493bf465692e9a268ff",
+    "results/publication/main/certificates/saturation-reconvergence-00.json": "3a4e09eed3607bbc9809dd10e35661c5fd81f42a8cf837abdf8dc49506970c7f",
+    "results/publication/main/certificates/saturation-reconvergence-01.json": "f3f8fa8ab6790fecd2e54b0ffb22709338a5661d5b6cd7bae54926e3d45e2d52",
+    "results/publication/main/certificates/saturation-reconvergence-02.json": "37591d7d3c82cfc5c5f1e54c093252c3a7f907b4872ad266ef3d4acbc0de8abf",
+    "results/publication/main/certificates/saturation-reconvergence-03.json": "95b44082656fafd21dc1e7f6bc9612dc5ce0648e23912bd6470df9641f6985b4",
+    "results/publication/main/certificates/saturation-reconvergence-04.json": "2043cdd9805edea1feb8e990bdbf05982dac2a6b678da5d27ecea1150e6e05ec",
+    "results/publication/main/certificates/saturation-reconvergence-05.json": "68a89d67fd508d51ffc01eea19ba71048f5016a4b1bb7aa85ce755c33c7154c6",
+    "results/publication/main/certificates/saturation-reconvergence-06.json": "0bf1ac5b2de296af5b24481b4e6a246cbb4fba005044fbcb91622dffd6131d8a",
+    "results/publication/main/certificates/saturation-reconvergence-07.json": "c2860f2798155d5d106776ef98ce31d7cebd48675516a5fcbaa4d5037c20b3bf",
+    "results/publication/main/certificates/term-narrowing-00.json": "b7d46632dffbd58516242234def90c87cc19ce9d2368eeb7cd3788cb44327e9d",
+    "results/publication/main/certificates/term-narrowing-01.json": "59b71609151bf33f119d0916f21d4bb0ce7278097ee280e8ace03a0a24172128",
+    "results/publication/main/certificates/term-narrowing-02.json": "0d615ed38bd4449da2fb3978b6fe48178e204f00c8af6084f9435485b9d9784d",
+    "results/publication/main/certificates/term-narrowing-03.json": "44fe0b93eff26634447471f5c0cea02aa4c953776181424343b84424935b4046",
+    "results/publication/main/certificates/term-narrowing-04.json": "bce19096fdce4bdc2de511d12b6c7ccf296aa60b5fe6cf1fadb7368b18c362c0",
+    "results/publication/main/certificates/term-narrowing-05.json": "0521d0c8770d9486f788e9dcf8976dc2a7cef4fd46ea4cd6948ddcc59452ae5d",
+    "results/publication/main/certificates/term-narrowing-06.json": "8695bc2172058c7e28409c01f06dad8df00cf9fcc7564ebd8ad8da91b4e512b9",
+    "results/publication/main/certificates/term-narrowing-07.json": "27c0f773887de1372101ad114a6dd5a099b6bfd53ff8db0c1f0ce2b2404d6068",
+    "results/publication/main/certificates/visible-saturation-00.json": "75447aa4d1e7a8499510382aae7789a4087d287f898404fbeabf4189f0c6828f",
+    "results/publication/main/certificates/visible-saturation-01.json": "282a51310dcb3ddf2715b144ff78d56475a1bf769323c2ccabd60f6913f94185",
+    "results/publication/main/certificates/visible-saturation-02.json": "ff2affeebd6eb7c9ee24ac7ddaba3d327e87905fa313afc5c468b2e127b71378",
+    "results/publication/main/certificates/visible-saturation-03.json": "89445059b2b3dd4b231e94d4d22739d916605bfffe2c1ee3188aec459f523a6e",
+    "results/publication/main/certificates/visible-saturation-04.json": "6ecda51c75218ff761f1ff245c947b3336a5db96caf2b8de0903bb50005d8b65",
+    "results/publication/main/certificates/visible-saturation-05.json": "8fafe37cc3e06595cad3a87710c01e87fded738b4bf424729b3c71f290928e76",
+    "results/publication/main/certificates/visible-saturation-06.json": "4638f0ea22ac60871c26c21b6e92431d839319155d0c5c6a899194d492b13041",
+    "results/publication/main/certificates/visible-saturation-07.json": "10bc7013a7b8df45b70818f565c9f32679c956c6d550e122653e633ec92e7306",
+    "results/publication/main/certificates/width-schedule-00.json": "7d8a203ca07b0f3f7fb74fd5e66b1ace25d81ed2375b5306b2cee367b9574f57",
+    "results/publication/main/certificates/width-schedule-01.json": "aa17438ccf519383d4925a8683f49dc5233037a0855b4920829e270a919fa9b8",
+    "results/publication/main/certificates/width-schedule-02.json": "1b500e300d2a7f93cea85b2a9639a79be6b389c66bd40141d3a09ba5f843dad5",
+    "results/publication/main/certificates/width-schedule-03.json": "219679b16c42ab360911e1b4e17bf431ba2e3401b578fe56e7973a1202a7fc55",
+    "results/publication/main/certificates/width-schedule-04.json": "5837c0b3ae0ec4c9d51399a06e64a413db99df3fef64f17dc5aa17c2db169eed",
+    "results/publication/main/certificates/width-schedule-05.json": "ac2cd1c0288357d63ae7fc826d6f3373b6df8098686ab13d68c82d6f94fd734a",
+    "results/publication/main/certificates/width-schedule-06.json": "c118d4ad853a37cf662f8ebc6ddd2f017b8561ca5d820dfc3c830f42885ade32",
+    "results/publication/main/certificates/width-schedule-07.json": "15ae50d441dc81bb70568d67002fcc562c9f004e3cfcf8fd69975f05af568de7",
+    "results/publication/main/decoder-certificates/decoder-alternating-lanes-001.json": "b447579a8b033edb20732fc955e71f4ad9709d1199ff5140c0013c78c84a8314",
+    "results/publication/main/decoder-certificates/decoder-alternating-lanes-007.json": "e41d8c7c2df28bd24c568258160f1abf2d676f8be6fe43a7c2a5b8118df4e5c8",
+    "results/publication/main/decoder-certificates/decoder-alternating-lanes-015.json": "4c2963cbfaf32ce6ab4e962e47b3afa2a0d7dd8c3cd04893d87414471800281e",
+    "results/publication/main/decoder-certificates/decoder-alternating-lanes-016.json": "7a12bc0bf618ced3ec7faa3503b2621dc46581f8efb9c37d86bc5bdfbefb4ac9",
+    "results/publication/main/decoder-certificates/decoder-alternating-lanes-017.json": "6ebd90d0f8a9e001f91cb44fec9b6e1cf8ce9e95dd554751e21980b5685cae68",
+    "results/publication/main/decoder-certificates/decoder-alternating-lanes-018.json": "6a8d817c3d7841d2277ebedf9d77a7fe47d1c5caf601981a2bcf8f5f9708dc83",
+    "results/publication/main/decoder-certificates/decoder-alternating-lanes-031.json": "6ead7db6551fc5fbced6e63ad5f9d1cae2e587ef5d47a886203603ffa1b39400",
+    "results/publication/main/decoder-certificates/decoder-alternating-lanes-063.json": "fd6016df32b3de619baeb27a8eb8ea3b745c4fc0f7b3b9b61d82272c0d09a66a",
+    "results/publication/main/decoder-certificates/decoder-alternating-lanes-127.json": "072cec587a8260df0b2b0dcfe54637b2ab634ef923771eb42b147321018def2c",
+    "results/publication/main/decoder-certificates/decoder-alternating-lanes-255.json": "fa9d57d8095a0ffd922f9796840cc7ab5260a53c0bece26c3772ae9d5446d062",
+    "results/publication/main/decoder-certificates/decoder-full-nibble-box-001.json": "e508344effdd77ec4d4b672e2666ca5b10a852b8f4a7be6e5628d765f80cff43",
+    "results/publication/main/decoder-certificates/decoder-full-nibble-box-007.json": "fddfbb646dd22444be1c26caa8a3da69e222f331d2e450a0961cd1f097ef70e7",
+    "results/publication/main/decoder-certificates/decoder-full-nibble-box-015.json": "e578a8a3b9b56525c5d5e77a49b0a3df5024edb1c838890b77266d4547a6923d",
+    "results/publication/main/decoder-certificates/decoder-full-nibble-box-016.json": "6d91c7fd18174924f57990fca8c432edf126f43f29c503f1c187682ef275a7a2",
+    "results/publication/main/decoder-certificates/decoder-full-nibble-box-017.json": "115ebdd9f5e7cfba362c06ffa84f73c76219058e73ec56070666692bcad90fb8",
+    "results/publication/main/decoder-certificates/decoder-full-nibble-box-018.json": "cdd9d3c13d635404417305a1d02fee4998e64ae8d2169ea60527acbc69268002",
+    "results/publication/main/decoder-certificates/decoder-full-nibble-box-031.json": "f5500dc278eb5a2f3db27557c325d2f1e1e8f20f19d2ae8fc098c8b3f3048cad",
+    "results/publication/main/decoder-certificates/decoder-full-nibble-box-063.json": "46bae79051c4ac3bcaecfacfba030754ea0d6f9cd2aae6cfcde539563ef74afd",
+    "results/publication/main/decoder-certificates/decoder-full-nibble-box-127.json": "dc68dc4f19c47c85f6d706c1a25bad48968a83206107a8c323320cd8bde8b664",
+    "results/publication/main/decoder-certificates/decoder-full-nibble-box-255.json": "90e02370663684e98f9d011d22afa81f967a303c0f8694bf8cf6b92a606e2d2f",
+    "results/publication/main/decoder-certificates/decoder-tiny-oracle-box-001.json": "10d203314e6e1028304a08108f2bc066197f34108a1fb7896d1ae080f4c62bfc",
+    "results/publication/main/decoder-certificates/decoder-tiny-oracle-box-007.json": "b13bd464fef6a5865e0f2a94f482d724a34a19cbef783e2ddeb460d1249ebe1e",
+    "results/publication/main/decoder-certificates/decoder-tiny-oracle-box-015.json": "bc405f9052fd823ec2cf7efdf0b39c631f1d866b7186aa52ed0b721fed73bcff",
+    "results/publication/main/decoder-certificates/decoder-tiny-oracle-box-016.json": "0c9dfafe10526a48656e773e5129e79822efba3127c400f9d24a8fc0cb0cc292",
+    "results/publication/main/decoder-certificates/decoder-tiny-oracle-box-017.json": "7694a4c8a2472fe20ef2408ac472d975b361a192fcab377f6fed97f93df5809b",
+    "results/publication/main/decoder-certificates/decoder-tiny-oracle-box-018.json": "14d03ffa5c411f3fda9a250d389356bf88483a5678896e08f8190256f84a6bd4",
+    "results/publication/main/decoder-certificates/decoder-tiny-oracle-box-031.json": "5a0fd4bcd012994a818b9aaad65b8d5f25b467ee7eeb69220606d6fa24b7c997",
+    "results/publication/main/decoder-certificates/decoder-tiny-oracle-box-063.json": "1bf84ca0c31085436c99ca6452492187d1051738266b726ced4b62462067f6e4",
+    "results/publication/main/decoder-certificates/decoder-tiny-oracle-box-127.json": "0c21db42d0187bedf378830d9af9aadb2dab2ea19411877905e988b8374561f8",
+    "results/publication/main/decoder-certificates/decoder-tiny-oracle-box-255.json": "29d5eef6d8165e94e9106ebd1dc86324ef1fcc6a506aa2e3b0c2158749890aa8"
+  },
+  "scientific_sources": {
+    "bptc/accumulator_checker.py": "108c49903e0ff86b99deeb81d76bde273a70b0c9a8bf36b136fc49815a5b9be4",
+    "bptc/accumulator_oracle.py": "ed678387300d784c36d2a61dc89ccdaa1163e82b6e6b5d406d800cdb2be21005",
+    "bptc/direct_state.py": "0b93a2681cd573ff5bafa71f0503201200fdde27f4503bf553976b8a27b9c1ab",
+    "bptc/exact_accumulator.py": "e11f154a1891efe1630a63bea5e49472895fb5f946ac3b18d810cc5e510c6a26",
+    "bptc/packed_decoder.py": "19d3f6cad36b89afa04ac56a7b6446c73af0f0d21a7f8346fa66b4b3eaffa25e",
+    "bptc/publication_cases.py": "a8a9979738e9d2364fc33408841cfb075f8a8b311842a87f7956e24dad1dea5c",
+    "native/bridge.py": "6a6b73c994aa6af408de505f810c3cac3e63def554e1379d1c961223ba8713c6",
+    "native/checker_cost.py": "9b3801d3feedc20bb5731b639ee41eb5247fd99db6e380628a80681a73ff9e92",
+    "native/native_bridge.cpp": "014e91616db7297052ad827350a16c870ea01bc7f98c49f3fb3051fca4ed6def",
+    "native/report.py": "4fec21b1890e56c27655504bff8b1f350efd3dcd2277bf9575f62b63f0af7027"
+  }
+}

@@ -7,11 +7,12 @@
   },
   "cost_components": {
     "decoder": "1024 deterministic in-bounds words per execution, whole-word multiply/correction versus lane-wise reference; dynamic scale/bias/lane inputs and observable checksum.",
+    "fused": "Preparation, quotient walk and complete serialization in one measured call; buffered versus ostream with the same quotient.",
     "matched_baseline": "Same native walk/state/evidence storage; all pair branches rather than distinct product branches. Both arms precompute products.",
     "native_walk": "Full frontier traversal including ordered map operations, allocation, complete retained layers/edges, and full least-prefix copying. Not pure arithmetic instruction latency.",
     "preparation": "Separate phase samples; reported preparation-plus-walk ratio sums paired phase times, not a timed fused end-to-end path. Serialization and Python checking excluded.",
-    "python_checker": "Delivered independent checker not included in native walk; separately measured only after slot permission, with its own continuing private charge record.",
-    "serialization": "Separate optimized full-certificate JSON serialization samples on a frozen graph, including stream allocation; no disk I/O in timed region."
+    "python_checker": "Separate Python replay timing includes semantic-work bookkeeping and is not included in native walk or fused preparation/traversal/serialization.",
+    "serialization": "Buffered integer JSON versus ostream; full byte-identical quotient certificate, per-call allocation and string materialization included; frozen graph, no disk I/O."
   },
   "format": "p053-native-measurement-protocol-v1",
   "host": {
@@ -38,12 +39,13 @@
   },
   "paired_design": {
     "anti_elimination": "Compiler memory barrier before each execution; volatile checksum after each execution; externally named noinline arithmetic functions.",
-    "order": "UQ on even pair numbers, QU on odd pair numbers; RP/PR for decoder. Preparation follows the same alternating order.",
+    "order": "UQ on even pair numbers, QU on odd pair numbers; RP/PR for decoder. Preparation follows the same alternating order. Buffered/stream emission and fused paths alternate in the same order.",
     "repetitions": 21,
     "slower_cases": "Retain and report every case with median paired ratio below one.",
     "statistic": "Median of per-pair baseline/optimized elapsed-time ratios; raw samples plus min/max retained for every case. No significance or population-generalization claim.",
-    "timed_executions_per_arm": 128,
-    "untimed_warmups_per_arm": 16
+    "timed_executions_per_arm": 16,
+    "untimed_warmups_per_arm": 16,
+    "warmup_scope": "Traversal and decoder arms only; emission and fused arms have no separate warmup calls. All 21 pairs are retained."
   },
   "panel": {
     "additional_native_control_cases": 15,
@@ -57,6 +59,6 @@
     "selection": "No outcome-dependent filtering. All accumulator cases included; decoder timing conditional only on pre-existing exact safe verdict.",
     "unsafe_decoder_cases_measured": 0
   },
-  "slot": "P053-20261007-serial-01",
-  "status": "predeclared-protocol-executed"
+  "slot": "P053-buffered-serial",
+  "status": "executed-protocol"
 }

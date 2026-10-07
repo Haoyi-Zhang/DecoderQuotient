@@ -47,7 +47,7 @@ def analyze(root):
     assert len(specs)==79 and len(safe)==18 and comparison['disagreements']==0
     groups=defaultdict(list)
     for sample in raw['samples']:
-        assert sample['batch']==128 and type(sample['pair']) is int and 0<=sample['pair']<21
+        assert sample['batch']==16 and type(sample['pair']) is int and 0<=sample['pair']<21
         groups[(sample['kind'],sample['case'])].append(sample)
     assert set(groups)=={('accumulator',n) for n in specs}|{('decoder',n) for n in safe}
     saved_rows={(r['kind'],r['case']):r for r in saved['rows']}
@@ -70,8 +70,8 @@ def analyze(root):
         assert row['median_paired_speedup']==statistics.median(ratios)
         assert row['min_paired_speedup']==min(ratios) and row['max_paired_speedup']==max(ratios)
         assert row['optimized_slower']==(statistics.median(ratios)<1)
-        assert row['optimized_median_ns_per_call']==statistics.median(s[q]/128 for s in samples)
-        assert row['baseline_median_ns_per_call']==statistics.median(s[u]/128 for s in samples)
+        assert row['optimized_median_ns_per_call']==statistics.median(s[q]/s['batch'] for s in samples)
+        assert row['baseline_median_ns_per_call']==statistics.median(s[u]/s['batch'] for s in samples)
         row['original_case']=not name.startswith('native-')
         row['slower_pair_count']=sum(r<1 for r in ratios)
         if kind=='accumulator':
@@ -82,8 +82,19 @@ def analyze(root):
             row['prepare_plus_walk_max_pair_ratio']=max(sums)
             row['quotient_edges']=graph[name]['quotient_edges'];row['baseline_edges']=graph[name]['baseline_edges']
             for key in ('quotient_prepare_ns','baseline_prepare_ns','quotient_serialize_ns'):
-                assert row[key+'_median_per_call']==statistics.median(s[key]/128 for s in samples)
+                assert row[key+'_median_per_call']==statistics.median(s[key]/s['batch'] for s in samples)
             row['median_paired_serialize_to_walk_ratio']=statistics.median(s['quotient_serialize_ns']/s[q] for s in samples)
+            for key in ('stream_serialize_ns','quotient_fused_ns','stream_fused_ns'):
+                assert all(type(s[key]) is int and s[key] > 0 for s in samples)
+                row[key+'_median_per_call']=statistics.median(s[key]/s['batch'] for s in samples)
+            for label,base,optimized in (
+                ('serialize','stream_serialize_ns','quotient_serialize_ns'),
+                ('fused','stream_fused_ns','quotient_fused_ns')):
+                values=[s[base]/s[optimized] for s in samples]
+                row[label+'_median_paired_speedup']=statistics.median(values)
+                row[label+'_min_paired_speedup']=min(values)
+                row[label+'_max_paired_speedup']=max(values)
+                row[label+'_slower_pairs']=sum(x < 1 for x in values)
             checks=check_groups[name]
             assert sorted(c['sample'] for c in checks)==list(range(21)) and all(c['checker_ns']>0 for c in checks)
             row['median_checker_ns']=statistics.median(c['checker_ns'] for c in checks)
@@ -102,10 +113,15 @@ def analyze(root):
              'walk_slower_cases':[r['case'] for r in rows if r['optimized_slower']],
              'prepare_plus_walk_slower_cases':[r['case'] for r in rows if r.get('prepare_plus_walk_slower')],
              'original_serialization_to_walk_ratio_range':span(original,'median_paired_serialize_to_walk_ratio'),
+             'original_serializer_speedup_range':span(original,'serialize_median_paired_speedup'),
+             'original_fused_speedup_range':span(original,'fused_median_paired_speedup'),
+             'serializer_slower_cases':[r['case'] for r in rows if r.get('serialize_median_paired_speedup',1)<1],
+             'fused_slower_cases':[r['case'] for r in rows if r.get('fused_median_paired_speedup',1)<1],
              'original_checker_median_ns_range':span(original,'median_checker_ns'),
              'affinity':raw['affinity'],
              'component_sum_definition':'Median over pairs of (baseline walk + baseline preparation)/(quotient walk + quotient preparation), with components timed separately; not a fused end-to-end measurement.',
-             'serialization_definition':'Generic ostream full quotient-certificate JSON serialization on a frozen graph; stream allocation included, disk I/O excluded. Baseline serialization not timed.',
+             'serialization_definition':'Buffered integer JSON versus ostream on the same frozen quotient graph; per-call buffer/stream allocation and output string materialization included, disk I/O excluded. Same field traversal and byte-identical output.',
+             'fused_definition':'Separately timed preparation, quotient walk and full JSON materialization in one call, buffered versus ostream; no disk I/O or Python checker. Same quotient algorithm in both arms.',
              'scope':'One local x86-64 CPU, reviewed synthetic finite declarations and packed decoder examples only; no GPU or production deployment benefit.',
              'checker_obligations':checker['budget']['events_used']}
     assert len(original)==64 and len(controls)==15 and len(decoder)==18 and len(raw['samples'])==2037
@@ -122,6 +138,8 @@ def tex_inputs(a):
     vals['NativeSerializeRatioMax']=f"{a['original_serialization_to_walk_ratio_range'][1]:.1f}"
     vals['NativeCheckerUsMin']=f"{a['original_checker_median_ns_range'][0]/1000:.1f}"
     vals['NativeCheckerUsMax']=f"{a['original_checker_median_ns_range'][1]/1000:.1f}"
+    for macro,key in [('NativeSerializer','original_serializer_speedup_range'),('NativeFused','original_fused_speedup_range')]:
+        vals[macro+'Min']=f'{a[key][0]:.2f}';vals[macro+'Max']=f'{a[key][1]:.2f}'
     macros='% Derived from separately retained CPU-native samples; original publication inputs unchanged.\n'
     macros+=''.join('\\newcommand{\\'+k+'}{'+str(v)+'}\n' for k,v in vals.items())
     table='\\begin{tabular}{lrrr}\n\\toprule\nPanel & Cases & Walk ratio & Prep.+walk ratio \\\\\n\\midrule\n'
@@ -220,7 +238,7 @@ def compact_public(args):
     (root/'environment.json').write_text(encoding(env),encoding='utf-8')
     protocol=load(src/'protocol.json')
     public_protocol={k:protocol[k] for k in ('format','implementation','host','panel','paired_design','cost_components','limits','checker_limits')}
-    public_protocol['status']='predeclared-protocol-executed'
+    public_protocol['status']='executed-protocol'
     public_protocol['slot']=a['slot']
     public_protocol['cost_components']['preparation']='Separate phase samples; reported preparation-plus-walk ratio sums paired phase times, not a timed fused end-to-end path. Serialization and Python checking excluded.'
     (root/'protocol.json').write_text(encoding(public_protocol),encoding='utf-8')

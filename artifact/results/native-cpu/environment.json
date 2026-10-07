@@ -1,0 +1,49 @@
+{
+  "affinity": {
+    "actual_mask_hex": "0x1",
+    "original_mask_hex": "0xfffff",
+    "selected_logical_cpu": 0,
+    "verified_single_cpu": true
+  },
+  "checked_flags": [
+    "-O0",
+    "-g",
+    "-ftrapv"
+  ],
+  "clock_frequency_controls": "Not modified; no fixed-frequency, thermal, or cross-host assumption.",
+  "compiler_backend": "20.1.2 (https://github.com/ziglang/zig-bootstrap 7ef74e656cf8ddbd6bf891a8475892aa1afa6891)",
+  "compiler_driver": "Zig 0.15.2",
+  "cpu": "12th Gen Intel(R) Core(TM) i7-12700KF",
+  "format": "p053-native-cpu-environment-v1",
+  "native_certificate_schema": "bptc-exact-accumulator-certificate-v1",
+  "native_target": "x86_64-windows-gnu",
+  "optimization_flags": [
+    "-O3",
+    "-DNDEBUG"
+  ],
+  "os": "Windows-11-10.0.28000-SP0",
+  "private_raw_samples_sha256": "3167c83cad92d586d5c1c8cbb335b6ad5a13098770465e3bbe11f9e60e1a262c",
+  "public_normalization": [
+    "Raw native timer bytes copied unchanged; all raw pairs retained.",
+    "Other JSON indentation/key order/newlines normalized without changing scientific values.",
+    "Complete native JSON compressed once with gzip; checked equal duplicate retained privately.",
+    "Python executable stored by basename; machine paths and actual commands retained privately."
+  ],
+  "python_version": "3.12.14",
+  "source_bindings": {
+    "assembly": "b887e14d7abeee71ff06cf770780b1d9ba205a09e07094233b7d90786cda7ca1",
+    "binary_checked": "6fe521ed93643f65c4ff65c43492c0f75ad38a12c2afa8ad58c80c3fddf54da8",
+    "binary_o3": "abb09ae4e602d04befe7d0b3d05bafc3c84bfbcea309f2c89932667c5f54853f",
+    "checker_cost_source": "9b3801d3feedc20bb5731b639ee41eb5247fd99db6e380628a80681a73ff9e92",
+    "harness": "6a6b73c994aa6af408de505f810c3cac3e63def554e1379d1c961223ba8713c6",
+    "native_source": "014e91616db7297052ad827350a16c870ea01bc7f98c49f3fb3051fca4ed6def",
+    "original:bptc/accumulator_checker.py": "108c49903e0ff86b99deeb81d76bde273a70b0c9a8bf36b136fc49815a5b9be4",
+    "original:bptc/accumulator_oracle.py": "ed678387300d784c36d2a61dc89ccdaa1163e82b6e6b5d406d800cdb2be21005",
+    "original:bptc/direct_state.py": "0b93a2681cd573ff5bafa71f0503201200fdde27f4503bf553976b8a27b9c1ab",
+    "original:bptc/exact_accumulator.py": "e11f154a1891efe1630a63bea5e49472895fb5f946ac3b18d810cc5e510c6a26",
+    "original:bptc/packed_decoder.py": "19d3f6cad36b89afa04ac56a7b6446c73af0f0d21a7f8346fa66b4b3eaffa25e",
+    "original:bptc/publication_cases.py": "a8a9979738e9d2364fc33408841cfb075f8a8b311842a87f7956e24dad1dea5c",
+    "panel_json": "98a0c42ae60ad45f62d6bdd3f9f4bf0ff83aa6f3148f7817741a8654a37f6e38",
+    "panel_text": "5545f62850e47a044e68c23b9bcba59ddc3326302ddfb0d514c63a03f22f5531"
+  }
+}

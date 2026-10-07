@@ -90,7 +90,8 @@ measurements to the conformance-checked executable and input panel.
 
 The measurement entry point is `python native/bridge.py measure --out <output>
 --slot <run-identifier>`. It uses 21 alternating-order paired runs
-with 128 executions per timed arm and 16 untimed warmups. It reports traversal
+with 16 executions per timed arm and 16 untimed traversal/decoder warmups.
+Emission and fused arms have no separate warmup calls. It reports traversal
 plus full in-memory evidence construction separately from product preparation
 and JSON serialization. The separate Python replay checker is outside the
 native traversal timing. The prepare+walk ratio is a sum of separately timed
@@ -119,18 +120,18 @@ There are 2,037 retained native pairs (79 accumulator cases and 18 safe decoder
 boxes, 21 pairs each) and 1,659 separate checker samples. No pairs are filtered.
 
 Ratios are baseline/optimized times. The original 64 accumulator cases have
-per-case median walker ratios 1.469--1.977. Their preparation+walk component-sum
-ratios are 1.325--1.587. The unique-product controls retain the negative results:
+per-case median walker ratios 1.483--1.979. Their preparation+walk component-sum
+ratios are 1.346--1.598. The unique-product controls retain the negative results:
 
 | Control | Walker ratio | Separately timed prep.+walk ratio |
 | --- | ---: | ---: |
-| 4 stages, unique products | 0.992 | 0.945 |
-| 8 stages, unique products | 1.001 | 0.974 |
-| 16 stages, unique products | 0.996 | 0.981 |
+| 4 stages, unique products | 1.001 | 0.953 |
+| 8 stages, unique products | 1.002 | 0.971 |
+| 16 stages, unique products | 1.000 | 0.985 |
 
-Two of 79 walker medians and three preparation+walk medians favor the baseline.
+Three preparation+walk medians favor the baseline; no walker median is below one.
 These near-unity walker medians are observations, not significance claims.
-The 18 certified-safe decoder boxes have median paired ratios 1.077--1.079;
+The 18 certified-safe decoder boxes have median paired ratios 1.075--1.080;
 each timed call uses 1,024 deterministic in-bounds words from a periodic
 sequence. Every timed box repeats: tiny boxes contain four distinct words;
 full and alternating boxes contain sixteen. Both arms use warm memory and
@@ -142,17 +143,20 @@ kernel benchmark.
 Preparation+walk is `median((P_U + W_U)/(P_Q + W_Q))`, with all four component
 times measured separately in each pair. It is not a fused timed end-to-end
 path. Walk includes full in-memory graph and witness construction, not only
-arithmetic. Quotient serialization is timed separately on a frozen graph,
-including stream allocation and excluding disk I/O; baseline serialization
-is not timed. On the original cases, median serialization/walk ratios span
-104.8--170.2. For `final-range-unsound-00`, serialization is about 114.9 us
-against a 0.679 us quotient walk. Separate Python checker medians span
-106.4--320.9 us. There is no measured full-workflow baseline/quotient speedup,
+arithmetic. Full-certificate emission uses buffer appends and `std::to_chars`;
+the same field traversal supplies an ostream comparator. Both serialize to
+identical bytes on all 79 cases. Frozen-graph serialization includes per-call
+buffer/stream allocation and string materialization, excluding disk I/O.
+Original-case buffered/stream paired speedups span 29.02--39.09. A separate
+fused prepare--quotient-walk--serialize comparison improves by 19.91--26.55;
+both arms use the same quotient algorithm. Buffered serialization/walk ratios
+span 2.7--5.2. Separate Python checker medians span 106.3--323.6 us.
+There is no measured full-workflow baseline/quotient speedup,
 and the walker ratios must not be described as that result.
 
 The public evidence retains one complete `native-conformance.json.gz`
 (including all native I/O traces), the checked/release equality and reference
-comparison record, all native/checker raw samples, the predeclared protocol,
+comparison record, all native/checker raw samples, the executed protocol,
 environment, and compiler-generated function excerpts. Full private build
 outputs and assembly are preserved separately, not duplicated in the package.
 `provenance.json` binds the compressed and uncompressed output, each data file,
