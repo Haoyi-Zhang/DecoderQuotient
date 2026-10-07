@@ -1,0 +1,110 @@
+{
+  "comparison": {
+    "accumulator_cases": 79,
+    "all_native_accumulator_words": 14658,
+    "all_native_decoder_words": 5140,
+    "decoder_cases": 30,
+    "disagreements": 0,
+    "format": "p053-native-semantic-comparison-v1",
+    "original_accumulator_cases": 64,
+    "original_baseline_edges": 1016,
+    "original_full_decoder_words": 5120,
+    "original_native_accumulator_words": 5576,
+    "original_quotient_edges": 416
+  },
+  "current_producer_budget": {
+    "categories": {
+      "current-producer:partition-pair": 1070,
+      "current-producer:transition": 2454
+    },
+    "events_used": 3524,
+    "format": "bptc-obligation-ledger-v1",
+    "limit": 100000,
+    "remaining": 96476,
+    "status": "within-limit"
+  },
+  "current_replay_budget": {
+    "categories": {
+      "native-baseline-independent-edge": 4409,
+      "native-certificate-replay:partition-pair": 1070,
+      "native-certificate-replay:schema": 79,
+      "native-certificate-replay:transition": 2454,
+      "native-decoder-reference-word": 5140,
+      "native-independent-concrete-oracle:assignment": 14652,
+      "native-reference-producer:partition-pair": 310,
+      "native-reference-producer:transition": 2038,
+      "native-trace-reference-word": 14658
+    },
+    "events_used": 44810,
+    "format": "bptc-obligation-ledger-v1",
+    "limit": 100000,
+    "remaining": 55190,
+    "status": "within-limit"
+  },
+  "current_sources": {
+    "bptc/accumulator_checker.py": "750d9f2f4e744d52f45321dc8f71d9c19b2bf59664f27f5772f605f2602e726e",
+    "bptc/accumulator_oracle.py": "ed678387300d784c36d2a61dc89ccdaa1163e82b6e6b5d406d800cdb2be21005",
+    "bptc/direct_state.py": "0b93a2681cd573ff5bafa71f0503201200fdde27f4503bf553976b8a27b9c1ab",
+    "bptc/exact_accumulator.py": "86710e85deca85e859a33ec01ed01f032b9979b76a135825a1386c626b928af5",
+    "bptc/packed_decoder.py": "19d3f6cad36b89afa04ac56a7b6446c73af0f0d21a7f8346fa66b4b3eaffa25e",
+    "bptc/publication_cases.py": "a8a9979738e9d2364fc33408841cfb075f8a8b311842a87f7956e24dad1dea5c",
+    "native/bridge.py": "6a6b73c994aa6af408de505f810c3cac3e63def554e1379d1c961223ba8713c6",
+    "native/checker_cost.py": "9b3801d3feedc20bb5731b639ee41eb5247fd99db6e380628a80681a73ff9e92",
+    "native/current_correctness.py": "ac4ba3e6d2132824ed70c68088f625354863cc2e0b27a7ede1ebb832d0066029",
+    "native/native_bridge.cpp": "014e91616db7297052ad827350a16c870ea01bc7f98c49f3fb3051fca4ed6def",
+    "native/report.py": "4fec21b1890e56c27655504bff8b1f350efd3dcd2277bf9575f62b63f0af7027",
+    "tests/hoisting_regression.py": "729a07690422095ab171c54281f92474fdb1c806852f217c5ec670c4b383f04c"
+  },
+  "format": "p053-current-accumulator-correctness-v1",
+  "historical_provenance_sha256": "43dc08f509138e14a02ed3414f8513181d2aa836ea9b4b08e13341e3619ed7c2",
+  "historical_sources": {
+    "bptc/accumulator_checker.py": {
+      "current": "750d9f2f4e744d52f45321dc8f71d9c19b2bf59664f27f5772f605f2602e726e",
+      "historical": "108c49903e0ff86b99deeb81d76bde273a70b0c9a8bf36b136fc49815a5b9be4"
+    },
+    "bptc/accumulator_oracle.py": {
+      "current": "ed678387300d784c36d2a61dc89ccdaa1163e82b6e6b5d406d800cdb2be21005",
+      "historical": "ed678387300d784c36d2a61dc89ccdaa1163e82b6e6b5d406d800cdb2be21005"
+    },
+    "bptc/direct_state.py": {
+      "current": "0b93a2681cd573ff5bafa71f0503201200fdde27f4503bf553976b8a27b9c1ab",
+      "historical": "0b93a2681cd573ff5bafa71f0503201200fdde27f4503bf553976b8a27b9c1ab"
+    },
+    "bptc/exact_accumulator.py": {
+      "current": "86710e85deca85e859a33ec01ed01f032b9979b76a135825a1386c626b928af5",
+      "historical": "e11f154a1891efe1630a63bea5e49472895fb5f946ac3b18d810cc5e510c6a26"
+    },
+    "bptc/packed_decoder.py": {
+      "current": "19d3f6cad36b89afa04ac56a7b6446c73af0f0d21a7f8346fa66b4b3eaffa25e",
+      "historical": "19d3f6cad36b89afa04ac56a7b6446c73af0f0d21a7f8346fa66b4b3eaffa25e"
+    },
+    "bptc/publication_cases.py": {
+      "current": "a8a9979738e9d2364fc33408841cfb075f8a8b311842a87f7956e24dad1dea5c",
+      "historical": "a8a9979738e9d2364fc33408841cfb075f8a8b311842a87f7956e24dad1dea5c"
+    },
+    "native/bridge.py": {
+      "current": "6a6b73c994aa6af408de505f810c3cac3e63def554e1379d1c961223ba8713c6",
+      "historical": "6a6b73c994aa6af408de505f810c3cac3e63def554e1379d1c961223ba8713c6"
+    },
+    "native/checker_cost.py": {
+      "current": "9b3801d3feedc20bb5731b639ee41eb5247fd99db6e380628a80681a73ff9e92",
+      "historical": "9b3801d3feedc20bb5731b639ee41eb5247fd99db6e380628a80681a73ff9e92"
+    },
+    "native/native_bridge.cpp": {
+      "current": "014e91616db7297052ad827350a16c870ea01bc7f98c49f3fb3051fca4ed6def",
+      "historical": "014e91616db7297052ad827350a16c870ea01bc7f98c49f3fb3051fca4ed6def"
+    },
+    "native/report.py": {
+      "current": "4fec21b1890e56c27655504bff8b1f350efd3dcd2277bf9575f62b63f0af7027",
+      "historical": "4fec21b1890e56c27655504bff8b1f350efd3dcd2277bf9575f62b63f0af7027"
+    }
+  },
+  "historical_verifier": "Unchanged native/report.py --check in an explicit original project; all original gates required.",
+  "limitations": [
+    "Not a full campaign, compiler proof, deployment test, or timing rerun.",
+    "Historical checker-cost samples do not measure these changed Python sources."
+  ],
+  "literal_regression_groups": 3,
+  "measured_sources_are_current": false,
+  "scope": "Current Python correctness against retained ordered native evidence; no fresh native execution or timing."
+}

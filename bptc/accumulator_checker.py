@@ -72,6 +72,14 @@ def _advance(
     lowered = _convert(target, prior_width, prior_policy) + error
     stage = stages[position]
     term = _convert(product, stage["term_bits"], stage["term_mode"])
+    return _advance_prepared(old, product, lowered, term, stages, position, final_observe)
+
+
+def _advance_prepared(old: StateTuple, product: int, lowered: int, term: int,
+                      stages: List[dict], position: int, final_observe: bool) -> StateTuple:
+    """Checker-local arithmetic; no producer helper or cross-call cache."""
+    target, error, already_bad, first_bad = old
+    stage = stages[position]
     lowered_new = _convert(lowered + term, stage["acc_bits"], stage["acc_mode"])
     target_new = target + product
     reference_new = _convert(target_new, stage["acc_bits"], stage["acc_mode"])
@@ -140,11 +148,20 @@ def check_certificate(certificate: dict, ledger: ObligationLedger,
         unquotiented += len(current) * len(stage["pairs"])
         following = {}
         edges = []
+        terms = {}
         for old_state, prefix in sorted(current.items(), key=lambda item:(item[0],item[1])):
+            lowered = None
             for product_class in classes[position]:
                 ledger.charge(f"{category_prefix}:transition")
                 transitions += 1
-                new_state = _advance(old_state, product_class["product"], stages, position, spec["initial"], spec["final_observe"])
+                if lowered is None:
+                    prior = stages[max(0, position - 1)]
+                    lowered = _convert(old_state[0], prior["acc_bits"], prior["acc_mode"]) + old_state[1]
+                product = product_class["product"]
+                if product not in terms:
+                    terms[product] = _convert(product, stage["term_bits"], stage["term_mode"])
+                new_state = _advance_prepared(old_state, product, lowered, terms[product],
+                                              stages, position, spec["final_observe"])
                 candidate = prefix + (product_class["representative_index"],)
                 if new_state not in following or candidate < following[new_state]:
                     following[new_state] = candidate

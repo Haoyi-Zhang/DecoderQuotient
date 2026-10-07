@@ -18,6 +18,14 @@ segregated in `archive/legacy-decoder/` and is not current evidence.
 minimal witnesses, decisions and metrics. `accumulator_oracle.py` enumerates
 concrete words. `direct_state.py` traverses all operand pairs without quotienting.
 The last three arithmetic routes do not invoke certificate production.
+Within each accumulator layer, the producer and separately coded checker now
+reuse a state's previous-width lowered value and each class's converted term.
+These are fresh invocation-local values, first prepared after the unchanged
+edge charge. Every original class edge, ordered layer/witness, diagnostic and
+semantic obligation remains; this does not reduce the scientific edge counts
+or establish a runtime improvement. `tests/hoisting_regression.py` supplies a
+separate concrete-prefix enumerator and is an explicit CI step in addition to
+the unchanged 47-method discovery suite.
 The source check is complete frozen-token equality, ignoring only comments and
 whitespace; it is not a general CUDA importer.
 
@@ -92,6 +100,28 @@ statistics/bindings without compilation or timing:
 ```sh
 python native/report.py --results-dir results/native-cpu --check
 ```
+
+That command retains its exact original-source contract: use it in the
+historical measured checkout. It intentionally rejects changed current
+arithmetic sources, rather than reinterpreting old checker timings as current.
+The distinct current correctness receipt is
+`evidence/current-accumulator-correctness.json`. Verify it in this project:
+
+```sh
+python -B tests/hoisting_regression.py
+python -B native/current_correctness.py --historical-project <original-project-checkout>
+```
+
+The explicit historical checkout must contain the original `artifact/` and
+`paper/`; no machine or private path is embedded. The current verifier runs the
+unchanged historical `report.py --check`, retains every source/data/statistic/
+TeX gate, binds current sources separately, then compares current complete
+producer packets and independent replay against all retained native layers,
+edges and concrete I/O traces. It also reruns the literal regressions. This is
+current Python conformance to retained evidence, not fresh native execution,
+a timing rerun, a new campaign, or a GPU/deployment result. `--emit` prints a
+fresh receipt without writing files; acceptance must retain the original
+measured checkout. Current checker runtime remains unmeasured.
 
 For fresh bounded correctness only, supply an already available Zig compiler:
 

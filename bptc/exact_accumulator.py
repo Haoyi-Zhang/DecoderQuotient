@@ -119,6 +119,13 @@ def _step(
     stage = spec.stages[stage_index]
     lower_before = _lowered_from_state(state, spec, stage_index)
     lower_term = cast_signed(product, stage.term_bits, stage.term_mode)
+    return _step_prepared(state, product, lower_before, lower_term, spec, stage_index)
+
+
+def _step_prepared(state: State, product: int, lower_before: int, lower_term: int,
+                   spec: AccumulatorSpec, stage_index: int) -> State:
+    """Apply an edge using values prepared locally after its ledger charge."""
+    stage = spec.stages[stage_index]
     lower_after = cast_signed(lower_before + lower_term, stage.acc_bits, stage.acc_mode)
     target_after = state.target + product
     reference_after = cast_signed(target_after, stage.acc_bits, stage.acc_mode)
@@ -188,11 +195,21 @@ def generate_certificate(
         quotient_prefixes *= len(classes)
         nxt: Dict[State, Witness] = {}
         edges = []
+        lower_terms: Dict[int, int] = {}
         for state, witness in sorted(current.items(), key=lambda item: (item[0], item[1])):
+            lower_before = None
             for product_class in classes:
                 ledger.charge(f"{category_prefix}:transition")
                 transition_count += 1
-                successor = _step(state, product_class["product"], spec, stage_index)
+                # Each preparation is covered by its first original edge charge.
+                # No preparation crosses a layer or a certificate invocation.
+                if lower_before is None:
+                    lower_before = _lowered_from_state(state, spec, stage_index)
+                product = product_class["product"]
+                if product not in lower_terms:
+                    lower_terms[product] = cast_signed(product, stage.term_bits, stage.term_mode)
+                successor = _step_prepared(state, product, lower_before,
+                                           lower_terms[product], spec, stage_index)
                 candidate = witness + (product_class["representative_index"],)
                 old = nxt.get(successor)
                 if old is None or candidate < old:

@@ -35,6 +35,7 @@ jobs:
           ulimit -f 1048576
           ulimit -n 128
           timeout --signal=TERM --kill-after=10s 240s bash -euo pipefail <<'CHECKS' > "$RAW/console.log" 2>&1
+          python -B tests/hoisting_regression.py
           python -B -m bptc.publication_campaign --root . --out "$RAW/main" --label main --ledger "$RAW/budget.json"
           python -B -m bptc.publication_campaign --root . --out "$RAW/reproduction" --label reproduction --ledger "$RAW/budget.json"
           python -B tools/validate_results.py --results-dir "$RAW/main" --compare-dir "$RAW/reproduction" --replay --ledger "$RAW/budget.json" --out "$RAW/semantic-replay.json"
@@ -49,6 +50,33 @@ jobs:
           path: ${{ runner.temp }}/p053-scientific
           if-no-files-found: warn
           retention-days: 14
+
+  retained-current-correctness:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: 2378684679c2ee51233af2b897ac9228e83a49da
+          path: measured-context
+          persist-credentials: false
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          path: project/artifact
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Check absent-only preparation and exact historical/current receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -B project/artifact/tests/context_regression.py
+          python -B project/artifact/native/prepare_current_context.py --historical-project measured-context
+          python -B project/artifact/native/current_correctness.py --historical-project measured-context
 
   native-correctness:
     runs-on: windows-2025
