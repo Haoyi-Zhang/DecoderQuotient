@@ -131,8 +131,11 @@ ratios are 1.325--1.587. The unique-product controls retain the negative results
 Two of 79 walker medians and three preparation+walk medians favor the baseline.
 These near-unity walker medians are observations, not significance claims.
 The 18 certified-safe decoder boxes have median paired ratios 1.077--1.079;
-each timed call uses 1,024 deterministic in-bounds words, possibly repeated in
-small boxes. The 12 unsafe boxes are retained correctness controls, not timed
+each timed call uses 1,024 deterministic in-bounds words from a periodic
+sequence. Every timed box repeats: tiny boxes contain four distinct words;
+full and alternating boxes contain sixteen. Both arms use warm memory and
+one function call per word. This is not representative input-distribution
+coverage. The 12 unsafe boxes are retained correctness controls, not timed
 as equivalent optimizations. This is a packed decoder example, not a serving
 kernel benchmark.
 

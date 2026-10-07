@@ -50,8 +50,13 @@ serialization nor Python checking. Quotient serialization on a frozen graph
 and separate Python replay costs can dominate the walker; baseline serialization
 and the full checking workflow are not timed. There is no whole-checker speedup
 claim. Decoder timings cover only the 18 certified-safe boxes, using 1,024
-deterministic in-bounds words per call (possible repetition), and yield
+deterministic in-bounds words per call, and yield
 1.077--1.079. The 12 unsafe boxes remain correctness controls.
+
+All timed decoder sequences are periodic: tiny boxes have four distinct
+words and full/alternating boxes sixteen. Both arms reuse warm memory and
+make one function call per word. These batches do not represent a deployment
+input distribution or broad randomized decoder workload.
 
 The result establishes only this local CPU-native verification/decoder example,
 not GPU speedup, production representativeness, deployment benefit, or
