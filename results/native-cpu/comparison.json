@@ -1,0 +1,647 @@
+{
+  "accumulator_cases": 79,
+  "all_native_accumulator_words": 14658,
+  "all_native_decoder_words": 5140,
+  "decoder_cases": 30,
+  "disagreements": 0,
+  "format": "p053-native-semantic-comparison-v1",
+  "original_accumulator_cases": 64,
+  "original_baseline_edges": 1016,
+  "original_full_decoder_words": 5120,
+  "original_native_accumulator_words": 5576,
+  "original_quotient_edges": 416,
+  "rows": [
+    {
+      "baseline_edges": 10,
+      "case": "safe-saturating-00",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 36,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "visible-saturation-00",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "saturation-reconvergence-00",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "final-range-unsound-00",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "term-narrowing-00",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "width-schedule-00",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "intermediate-observation-00",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 48,
+      "case": "mixed-product-domain-00",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 256,
+      "quotient_edges": 24,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 10,
+      "case": "safe-saturating-01",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 36,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "visible-saturation-01",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "saturation-reconvergence-01",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "final-range-unsound-01",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "term-narrowing-01",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "width-schedule-01",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "intermediate-observation-01",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 48,
+      "case": "mixed-product-domain-01",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 256,
+      "quotient_edges": 24,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 10,
+      "case": "safe-saturating-02",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 36,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "visible-saturation-02",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "saturation-reconvergence-02",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "final-range-unsound-02",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "term-narrowing-02",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "width-schedule-02",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "intermediate-observation-02",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 48,
+      "case": "mixed-product-domain-02",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 256,
+      "quotient_edges": 24,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 10,
+      "case": "safe-saturating-03",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 36,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "visible-saturation-03",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "saturation-reconvergence-03",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "final-range-unsound-03",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "term-narrowing-03",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "width-schedule-03",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "intermediate-observation-03",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 48,
+      "case": "mixed-product-domain-03",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 256,
+      "quotient_edges": 24,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 10,
+      "case": "safe-saturating-04",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 36,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "visible-saturation-04",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "saturation-reconvergence-04",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "final-range-unsound-04",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "term-narrowing-04",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "width-schedule-04",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "intermediate-observation-04",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 48,
+      "case": "mixed-product-domain-04",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 256,
+      "quotient_edges": 24,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 10,
+      "case": "safe-saturating-05",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 36,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "visible-saturation-05",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "saturation-reconvergence-05",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "final-range-unsound-05",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "term-narrowing-05",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "width-schedule-05",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "intermediate-observation-05",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 48,
+      "case": "mixed-product-domain-05",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 256,
+      "quotient_edges": 24,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 10,
+      "case": "safe-saturating-06",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 36,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "visible-saturation-06",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "saturation-reconvergence-06",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "final-range-unsound-06",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "term-narrowing-06",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "width-schedule-06",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "intermediate-observation-06",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 48,
+      "case": "mixed-product-domain-06",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 256,
+      "quotient_edges": 24,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 10,
+      "case": "safe-saturating-07",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 36,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "visible-saturation-07",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "saturation-reconvergence-07",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "final-range-unsound-07",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 12,
+      "case": "term-narrowing-07",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "width-schedule-07",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 11,
+      "case": "intermediate-observation-07",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 54,
+      "quotient_edges": 4,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 48,
+      "case": "mixed-product-domain-07",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 256,
+      "quotient_edges": 24,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 3,
+      "case": "native-initial-2-wrap--3",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 3,
+      "quotient_edges": 2,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 3,
+      "case": "native-initial-2-wrap-2",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 3,
+      "quotient_edges": 2,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 3,
+      "case": "native-initial-2-saturate--3",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 3,
+      "quotient_edges": 2,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 3,
+      "case": "native-initial-2-saturate-2",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 3,
+      "quotient_edges": 2,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 3,
+      "case": "native-initial-32-wrap--2147483649",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 3,
+      "quotient_edges": 2,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 3,
+      "case": "native-initial-32-wrap-2147483648",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 3,
+      "quotient_edges": 2,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 3,
+      "case": "native-initial-32-saturate--2147483649",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 3,
+      "quotient_edges": 2,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 3,
+      "case": "native-initial-32-saturate-2147483648",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 3,
+      "quotient_edges": 2,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 48,
+      "case": "native-scaling-4-unique",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 81,
+      "quotient_edges": 48,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 112,
+      "case": "native-scaling-4-duplicate",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 2401,
+      "quotient_edges": 48,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 192,
+      "case": "native-scaling-8-unique",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 6561,
+      "quotient_edges": 192,
+      "whole_box_enumerated": true
+    },
+    {
+      "baseline_edges": 448,
+      "case": "native-scaling-8-duplicate",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 2,
+      "quotient_edges": 192,
+      "whole_box_enumerated": false
+    },
+    {
+      "baseline_edges": 768,
+      "case": "native-scaling-16-unique",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 2,
+      "quotient_edges": 768,
+      "whole_box_enumerated": false
+    },
+    {
+      "baseline_edges": 1792,
+      "case": "native-scaling-16-duplicate",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 2,
+      "quotient_edges": 768,
+      "whole_box_enumerated": false
+    },
+    {
+      "baseline_edges": 9,
+      "case": "native-no-observation",
+      "complete_certificate_matches": true,
+      "concrete_native_words": 9,
+      "quotient_edges": 6,
+      "whole_box_enumerated": true
+    }
+  ]
+}

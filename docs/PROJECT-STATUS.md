@@ -15,7 +15,9 @@ unseen prior run. The corrected suite has 30 decoder configurations and 64
 accumulator schedules. The impossible requirement of three distinct factor
 pairs for products +1 and -1 was removed. The exporter now takes certified
 final-state counts from the decision and checks them against replay/direct
-state results. The supplied PDFs are newly compiled from these corrected files.
+state results. Historical PDF audits refer to that earlier repair stage.
+The current PDFs have additionally been rebuilt from the native-augmented
+sources; historical preview/contact sheets have not been relabeled as current.
 
 Strict consumer-side validation rejects empty or duplicate domains, invalid
 integer widths/types, unknown modes, non-Boolean observations, malformed
@@ -74,6 +76,41 @@ The actual pre-fix acceptance and post-fix rejection evidence is retained in
 experiment was invented. A final clean-extraction test/build is recorded there
 separately; it does not claim a new execution of the full campaign.
 
+## Separate native CPU realization and measurements
+
+`native/native_bridge.cpp` implements the same bounded mixed-width accumulator
+and unsigned packed decoder, with complete native certificates and I/O traces.
+Products, all exact-target prefix extrema and aggregate counts are checked
+against signed 64-bit bounds before traversal; the original arbitrary-precision
+proofs and schema are unchanged. Optimized and checked builds agree on complete
+output. The 64 original accumulator certificates match their retained records,
+including all 5,576 words and the 416/1,016 edge counts. All 79 accumulator
+certificates and every baseline edge are checked. The three oversized-product
+and prefix controls are rejected before output. Native controls remain separate
+from original publication aggregates.
+
+Actual serial measurements on one Intel Core i7-12700KF Windows 11 host use
+Zig 0.15.2/Clang 20.1.2 and verified CPU-0 affinity `0x1`. All 2,037 native
+paired samples and 1,659 separate Python checker samples are retained in
+`results/native-cpu/`. Original accumulator median walker ratios span
+1.469--1.977; preparation+walk component-sum ratios span 1.325--1.587. Two
+walker controls and three component-sum controls favor the baseline. The latter
+ratio uses separately measured phase times, excludes serialization/checking,
+and is not a timed end-to-end path. Original-case serialization/walk median
+ratios span 104.8--170.2; Python replay medians span 106.4--320.9 us. No
+whole-checking-workflow speedup is measured. The 18 safe packed decoder examples
+measure 1.077--1.079; unsafe boxes are not timed as equivalent optimizations.
+
+One compressed complete conformance output, raw samples, compact summaries,
+compiler-function excerpts and functional source/data bindings are public.
+Compiler binaries, PDBs, caches, absolute machine paths and actual commands
+are private. This addition provides local CPU-native realization and component
+cost evidence, not GPU/production/deployment benefit or a new general
+architecture principle. It does not retroactively change the historical
+campaign or its budget. No new full scientific campaign was run for the source
+integration. PDF construction and affected-page inspection were performed
+separately from native compilation, conformance and timing.
+
 ## Reference and citation checks
 
 All 68 retained entries are actually cited: 67 scholarly papers/books and one
@@ -123,9 +160,11 @@ preregistered. Several deliberately contain repeated products, so the observed
 edge reduction must not be represented as typical production compression.
 These are substantive research limits, not just pending submission forms.
 
-The current paper has 16 content pages plus four reference pages; the supplement
-has six pages. The original internal exactly-20-content-page target is not met,
-and no padding or class/margin/font alteration was used to force it. Live TACO
+The native-augmented main PDF has 22 total pages: 18 content plus four
+references; the supplement has nine pages. The main is below the brief's
+20-content-page maximum excluding references. The internal exactly-20
+planning target is not claimed as met. No padding or class/margin/font
+alteration was used to force it. Live TACO
 author-guideline and ACM authorship-policy fetches returned 403; the supplied
 class/style are unchanged, but current external submission compliance is not
 certified. Substantive AI assistance is disclosed; human authorship and

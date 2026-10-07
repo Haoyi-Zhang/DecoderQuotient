@@ -1,0 +1,62 @@
+{
+  "checker_limits": {
+    "obligation_cap": 200000,
+    "samples_per_case": 21,
+    "timeout_seconds": 60,
+    "warmups_per_case": 1
+  },
+  "cost_components": {
+    "decoder": "1024 deterministic in-bounds words per execution, whole-word multiply/correction versus lane-wise reference; dynamic scale/bias/lane inputs and observable checksum.",
+    "matched_baseline": "Same native walk/state/evidence storage; all pair branches rather than distinct product branches. Both arms precompute products.",
+    "native_walk": "Full frontier traversal including ordered map operations, allocation, complete retained layers/edges, and full least-prefix copying. Not pure arithmetic instruction latency.",
+    "preparation": "Separate phase samples; reported preparation-plus-walk ratio sums paired phase times, not a timed fused end-to-end path. Serialization and Python checking excluded.",
+    "python_checker": "Delivered independent checker not included in native walk; separately measured only after slot permission, with its own continuing private charge record.",
+    "serialization": "Separate optimized full-certificate JSON serialization samples on a frozen graph, including stream allocation; no disk I/O in timed region."
+  },
+  "format": "p053-native-measurement-protocol-v1",
+  "host": {
+    "affinity": "Native process pinned before any warmup or timing to lowest currently allowed logical CPU; actual one-bit mask queried and verified. Correctness preparations pinned to CPU 0, mask 0x1, original allowed mask 0xfffff. Python replay pinned to same selected CPU.",
+    "clock_power_thermal_controls": "Not modified; no controlled-frequency or cross-host claim",
+    "cpu": "Intel Core i7-12700KF",
+    "gpu_used": false,
+    "os": "Windows 11 Pro 10.0.28000 x64"
+  },
+  "implementation": "C++17 compiled by coordinator-provided Zig 0.15.2/Clang for x86_64-windows-gnu, -O3 -DNDEBUG",
+  "limits": {
+    "allowed_claim": "Local CPU-native execution and performance only",
+    "forbidden_extrapolations": [
+      "GPU speedup",
+      "production representativeness",
+      "deployment benefit",
+      "whole-kernel equivalence",
+      "general compiler/backend correctness"
+    ],
+    "native_measurement_wall_timeout_seconds": 180,
+    "network_targets": "none",
+    "scientific_scope": "Reviewed benign local synthetic workloads only",
+    "workers": 1
+  },
+  "paired_design": {
+    "anti_elimination": "Compiler memory barrier before each execution; volatile checksum after each execution; externally named noinline arithmetic functions.",
+    "order": "UQ on even pair numbers, QU on odd pair numbers; RP/PR for decoder. Preparation follows the same alternating order.",
+    "repetitions": 21,
+    "slower_cases": "Retain and report every case with median paired ratio below one.",
+    "statistic": "Median of per-pair baseline/optimized elapsed-time ratios; raw samples plus min/max retained for every case. No significance or population-generalization claim.",
+    "timed_executions_per_arm": 128,
+    "untimed_warmups_per_arm": 16
+  },
+  "panel": {
+    "additional_native_control_cases": 15,
+    "all_accumulator_cases_measured": 79,
+    "controls": "Eight signed-width/initialization controls, six unique/duplicate product controls at 4/8/16 stages, one no-observation control. Not part of original result aggregates.",
+    "decoder_cases_conformance": 30,
+    "file": "panel.json",
+    "native_input": "panel.txt",
+    "original_accumulator_cases": 64,
+    "safe_decoder_cases_measured": 18,
+    "selection": "No outcome-dependent filtering. All accumulator cases included; decoder timing conditional only on pre-existing exact safe verdict.",
+    "unsafe_decoder_cases_measured": 0
+  },
+  "slot": "P053-20261007-serial-01",
+  "status": "predeclared-protocol-executed"
+}

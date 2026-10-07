@@ -1,9 +1,13 @@
 # Exact Quotient Certificates for Packed-Integer Decoders and Mixed-Width Accumulators
 
-This is the active artifact for `paper/main.tex` and `paper/main.pdf` in the
-one-package delivery. It is a finite-semantics study, not
+This is the active artifact for `paper/main.tex` in the
+one-package delivery. It is a finite-semantics study with a bounded CPU-native
+realization, not
 an externally accepted paper or the previous decoder-only negative report.
-The active results are in `results/publication/`. Archived exploration is
+The original finite results are in `results/publication/`; separate local CPU
+evidence is in `results/native-cpu/`. The rebuilt PDFs include this native
+addition (18 content pages plus four reference pages; nine-page supplement);
+see `../paper/README.md`. Archived exploration is
 segregated in `archive/legacy-decoder/` and is not current evidence.
 
 ## What is implemented
@@ -16,6 +20,14 @@ concrete words. `direct_state.py` traverses all operand pairs without quotientin
 The last three arithmetic routes do not invoke certificate production.
 The source check is complete frozen-token equality, ignoring only comments and
 whitespace; it is not a general CUDA importer.
+
+`native/native_bridge.cpp` is the C++17 realization of the same accumulator
+and packed decoder semantics. `native/bridge.py` compiles and checks it against
+the retained certificates, separately coded replay and concrete reference
+paths. Its matched baseline uses the same full native graph/witness walker
+without product grouping; both arms precompute products. Accepted exact
+products, target prefixes and counts must fit signed 64 bits, checked using
+128-bit arithmetic before traversal. It does not import or execute CUDA.
 
 The active code requires Python >=3.11 and only the standard library. The
 campaign command requires Linux/POSIX `resource` support to impose its 120-second
@@ -42,6 +54,53 @@ oracle records, two case CSVs, detailed mutation outcomes, summary and per-run
 accounting. There are 40 accumulator, 20 decoder and 22 source campaign
 mutations. No metadata from the old 142-case campaign is used to fill these
 records.
+
+## Separate CPU-native evidence
+
+The original publication evidence and its schema are unchanged. The native
+panel adds 15 clearly named controls to the 64 original accumulators and checks
+all 30 decoders. Optimized and checked builds agree on complete native output;
+all original accumulator certificates match, including 416/1,016 edges and
+5,576 concrete words. Three oversized-product/prefix controls fail before
+semantic traversal and output creation.
+
+One Intel Core i7-12700KF Windows host, Zig 0.15.2/Clang 20.1.2, and verified
+CPU-0 affinity `0x1` produced 2,037 native paired samples and 1,659 separate
+checker samples. Original accumulator per-case median walker ratios are
+1.469--1.977 and preparation+walk component-sum ratios are 1.325--1.587.
+The latter adds **separately timed phases**, not a timed end-to-end path,
+and excludes JSON serialization and Python checking. Two unique-product
+controls are slower for walk and three for preparation+walk. All raw slower
+pairs and outliers remain in the records. The 18 safe decoder examples measure
+1.077--1.079 against lane-wise native evaluation; unsafe boxes are not timed.
+
+Serialization and replay can dominate these small walkers: original-case
+serialization/walk median ratios span 104.8--170.2 and separate Python replay
+medians span 106.4--320.9 us. There is no measured whole-checker speedup, GPU
+performance, or production/deployment benefit. See `native/README.md` for the
+complete baseline, phase definitions, bounds, negative controls, and proof/code
+mapping.
+
+Public `results/native-cpu/` contains all raw timing samples, compact summaries,
+a single functional gzip of the complete native output, source/data bindings,
+and small compiler-function excerpts. Private compiler binaries, PDBs,
+caches, commands and absolute host paths are not published. Check the retained
+statistics/bindings without compilation or timing:
+
+```sh
+python native/report.py --results-dir results/native-cpu --check
+```
+
+For fresh bounded correctness only, supply an already available Zig compiler:
+
+```sh
+python native/bridge.py prepare
+# Or: python native/bridge.py prepare --zig <zig-executable> --out <new-directory>
+```
+
+The default output is `results/native-reproduction`; no private path is
+hardcoded. Preparation never starts performance measurements. Timing remains
+a separate caller-authorized serial operation.
 
 ## Check the supplied records (no new semantic execution)
 
@@ -107,7 +166,8 @@ This additionally requires the actual two PDFs, every TeX input and figure,
 aligned README titles, the exact current case sets and all citation mappings.
 It is an offline file/record consistency check, not an online bibliographic
 lookup or an independent peer review. The paper builds using `sh paper/build.sh`
-from the project root. See `paper/README.md` for TeX dependencies.
+from the project root. See `../paper/README.md` for TeX dependencies and the
+separate native saved-data check and current build information.
 
 ## Budget and interpretation
 
