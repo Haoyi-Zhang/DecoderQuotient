@@ -35,6 +35,7 @@ jobs:
           ulimit -f 1048576
           ulimit -n 128
           timeout --signal=TERM --kill-after=10s 240s bash -euo pipefail <<'CHECKS' > "$RAW/console.log" 2>&1
+          python -B tests/compiler_cache_regression.py
           python -B tests/hoisting_regression.py
           python -B -m bptc.publication_campaign --root . --out "$RAW/main" --label main --ledger "$RAW/budget.json"
           python -B -m bptc.publication_campaign --root . --out "$RAW/reproduction" --label reproduction --ledger "$RAW/budget.json"
@@ -109,13 +110,19 @@ jobs:
           import os
           import subprocess
           from pathlib import Path
+          from native.bridge import environment
           root = Path.cwd()
-          output = Path(os.environ['RUNNER_TEMP']) / 'p053-cold-native.exe'
+          # Warm the exact isolated cache, cwd and output used by prepare.
+          # The original 600-second cold-build and 120-second warm-build caps remain.
+          out = Path(os.environ['RUNNER_TEMP']) / 'p053-native'
+          out.mkdir(parents=True, exist_ok=True)
+          output = out / 'native-o3.exe'
           command = [os.environ['ZIG_EXE'], 'c++', '-std=c++17', '-target',
                      'x86_64-windows-gnu', '-Wall', '-Wextra', '-Wconversion',
                      '-Wno-sign-conversion', '-O3', '-DNDEBUG',
                      str(root / 'native' / 'native_bridge.cpp'), '-o', str(output)]
-          subprocess.run(command, check=True, timeout=600)
+          subprocess.run(command, check=True, timeout=600,
+                         env=environment(out), cwd=out)
           '@ | python -B -
           if ($LASTEXITCODE -ne 0) { throw 'Cold native compilation failed' }
       - name: Compile both native modes and check all declared semantics
