@@ -176,32 +176,30 @@ paths remain in the private execution report. The sources and interface above
 support a fresh caller-owned run, but the retained measurements establish only
 this Windows CPU execution, not tested portability to every target.
 
-The current Python layer-local preparation change has its own source/correctness
-receipt in `../evidence/current-accumulator-correctness.json`; the measured
-provenance, raw samples and this exact original verifier are unchanged. Run
-`python -B native/current_correctness.py --historical-project <original-project-checkout>`
-from the current artifact. It requires an original project checkout, executes
-the unchanged original `report.py --check` there, verifies unchanged current
-native/evidence bindings, and replays retained complete native certificates,
-baseline edges and concrete traces with the current Python routes. The separate
-literal-prefix regression has no historical source dependency. The receipt is
-neither a new native execution nor a measurement of the changed Python checker;
-it cannot attribute historical checker-cost samples to current sources.
+The current Python implementation has its own correctness receipt in
+`../evidence/current-accumulator-correctness.json`. The measured provenance and
+raw samples remain bound to the kernels used for measurement.
+`data/measured_context.zip` contains those two kernels and the three generated
+TeX inputs. It supplies a self-contained measurement context; no private
+repository or historical Git checkout is required. From the artifact root,
+choose a new destination outside the project:
 
-The exact measured post-triad/pre-hoist context is recoverable at immutable
-commit `2378684679c2ee51233af2b897ac9228e83a49da` in this repository. It has the
-project layout `artifact/` plus the three original `paper/generated/` native
-inputs; it is not a full manuscript build. Current artifact-root CI checks out
-that commit separately, and checks out current code into `project/artifact/`.
-`prepare_current_context.py --historical-project <measured-context-checkout>`
-copies only those three size/SHA-256-checked inputs into absent current sibling
-`paper/generated/` files (or an explicit `--paper-dir`). It refuses existing
-inputs and does not execute historical code. The unchanged correctness verifier
-then requires every original historical gate and the exact current receipt.
-The original finite campaign and native-conformance CI jobs are retained.
-Portable copy-admission tests run explicitly as
-`python -B tests/context_regression.py`; they are separate from the unchanged
-47-method discovery/retained accounting, and make no new runtime claim.
+```sh
+python -B native/materialize_measured_context.py --out /tmp/decoder-measured-context
+python -B native/current_correctness.py --historical-project /tmp/decoder-measured-context
+```
+
+The verifier runs the measurement report check in that context, verifies the
+unchanged native and evidence bindings, and compares complete retained native
+certificates, baseline edges and concrete traces with the current Python
+implementation. The receipt covers correctness against retained evidence;
+it does not measure the current Python checker's runtime.
+
+Artifact-root CI materializes this context from the supplied fixture. It then
+uses `prepare_current_context.py` to supply the three generated inputs to the
+current verification layout. The finite-campaign and native-conformance jobs
+are unchanged. Run the seven copy-admission regressions separately with
+`python -B tests/context_regression.py`.
 
 ## Proof and implementation mapping
 

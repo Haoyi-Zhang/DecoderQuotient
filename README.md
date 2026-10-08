@@ -1,14 +1,9 @@
 # Exact Quotient Certificates for Packed-Integer Decoders and Mixed-Width Accumulators
 
-This is the active artifact for `paper/main.tex` in the
-one-package delivery. It is a finite-semantics study with a bounded CPU-native
-realization, not
-an externally accepted paper or the previous decoder-only negative report.
-The original finite results are in `results/publication/`; separate local CPU
-evidence is in `results/native-cpu/`. The rebuilt PDFs include this native
-addition (18 content pages plus four reference pages; nine-page supplement);
-see `../paper/README.md`. Archived exploration is
-segregated in `archive/legacy-decoder/` and is not current evidence.
+This artifact implements finite-semantics certificates and their CPU-native
+realization. Finite results are in `results/publication/`; CPU measurements
+are in `results/native-cpu/`. The manuscript sources are provided separately
+in the project delivery's `paper/` directory.
 
 ## What is implemented
 
@@ -101,27 +96,27 @@ statistics/bindings without compilation or timing:
 python native/report.py --results-dir results/native-cpu --check
 ```
 
-That command retains its exact original-source contract: use it in the
-historical measured checkout. It intentionally rejects changed current
-arithmetic sources, rather than reinterpreting old checker timings as current.
-The distinct current correctness receipt is
-`evidence/current-accumulator-correctness.json`. Verify it in this project:
+Saved timings are bound to the measured sources. The supplied
+`data/measured_context.zip` restores those inputs in a separate directory, so
+the public artifact does not require access to a private Git revision. The
+current correctness receipt is `evidence/current-accumulator-correctness.json`.
+Run from this artifact directory and choose a new destination:
 
 ```sh
 python -B tests/hoisting_regression.py
-python -B native/current_correctness.py --historical-project <original-project-checkout>
+python -B native/materialize_measured_context.py --out <new-context-directory>
+python -B native/current_correctness.py --historical-project <new-context-directory>
 ```
 
-The explicit historical checkout must contain the original `artifact/` and
-`paper/`; no machine or private path is embedded. The current verifier runs the
+The restored context contains the measured `artifact/` inputs and generated
+`paper/` tables. The current verifier runs the
 unchanged historical `report.py --check`, retains every source/data/statistic/
 TeX gate, binds current sources separately, then compares current complete
 producer packets and independent replay against all retained native layers,
 edges and concrete I/O traces. It also reruns the literal regressions. This is
 current Python conformance to retained evidence, not fresh native execution,
 a timing rerun, a new campaign, or a GPU/deployment result. `--emit` prints a
-fresh receipt without writing files; acceptance must retain the original
-measured checkout. Current checker runtime remains unmeasured.
+receipt without writing files. Current checker runtime remains unmeasured.
 
 For fresh bounded correctness only, supply an already available Zig compiler:
 
