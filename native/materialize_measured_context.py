@@ -23,17 +23,11 @@ TEX_INPUTS = {
 }
 
 
-def materialize(destination: Path) -> Path:
-    destination = destination.absolute()
-    for part in (destination, *destination.parents):
-        if part.is_symlink() or getattr(part, 'is_junction', lambda: False)():
-            raise ValueError('Use an unlinked destination')
-    destination = destination.resolve()
-    if destination.exists() or destination.is_relative_to(ARTIFACT.parent):
-        raise ValueError('Use a fresh destination outside the current project')
-    provenance = json.loads((ARTIFACT/'results/native-cpu/provenance.json').read_text(encoding='utf-8'))
+def measured_fixture(artifact: Path = ARTIFACT) -> dict[str, bytes]:
+    """Read and validate the exact measured fixture without extracting it."""
+    provenance = json.loads((artifact/'results/native-cpu/provenance.json').read_text(encoding='utf-8'))
     expected = {'artifact/'+p for p in KERNELS} | {'paper/generated/'+p for p in TEX_INPUTS}
-    with zipfile.ZipFile(ARTIFACT/'data/measured_context.zip') as archive:
+    with zipfile.ZipFile(artifact/'data/measured_context.zip') as archive:
         if len(archive.infolist()) != 5 or set(archive.namelist()) != expected:
             raise ValueError('Measured fixture membership differs')
         prepared = {name: archive.read(name) for name in sorted(expected)}
@@ -44,6 +38,19 @@ def materialize(destination: Path) -> Path:
         body = prepared['paper/generated/'+name]
         if len(body) != size or hashlib.sha256(body).hexdigest() != digest:
             raise ValueError('Measured generated input differs: '+name)
+    return prepared
+
+
+def materialize(destination: Path) -> Path:
+    destination = destination.absolute()
+    for part in (destination, *destination.parents):
+        if part.is_symlink() or getattr(part, 'is_junction', lambda: False)():
+            raise ValueError('Use an unlinked destination')
+    destination = destination.resolve()
+    if destination.exists() or destination.is_relative_to(ARTIFACT.parent):
+        raise ValueError('Use a fresh destination outside the current project')
+    prepared = measured_fixture()
+    provenance = json.loads((ARTIFACT/'results/native-cpu/provenance.json').read_text(encoding='utf-8'))
     shutil.copytree(ARTIFACT, destination/'artifact',
                     ignore=shutil.ignore_patterns('.git', '.venv', '__pycache__', '.pytest_cache'))
     for name, body in prepared.items():

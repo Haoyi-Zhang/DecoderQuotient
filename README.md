@@ -89,12 +89,9 @@ mapping.
 Public `results/native-cpu/` contains all raw timing samples, compact summaries,
 a single functional gzip of the complete native output, source/data bindings,
 and small compiler-function excerpts. Private compiler binaries, PDBs,
-caches, commands and absolute host paths are not published. Check the retained
-statistics/bindings without compilation or timing:
-
-```sh
-python native/report.py --results-dir results/native-cpu --check
-```
+caches, commands and absolute host paths are not published. The retained
+statistics and source bindings are checked in the measured context described
+below, not by substituting changed sources into that historical measurement.
 
 Saved timings are bound to the measured sources. The supplied
 `data/measured_context.zip` restores those inputs in a separate directory, so

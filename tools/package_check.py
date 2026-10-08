@@ -5,6 +5,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from tools.generate_paper import generate
 from tools.validate_results import validate_run,compare_runs
 from tools.reference_check import check as check_references
+from native.materialize_measured_context import measured_fixture
 
 TITLE='Exact Quotient Certificates for Packed-Integer Decoders and Mixed-Width Accumulators'
 def require(ok,message):
@@ -20,6 +21,16 @@ def check_tex_inputs(paper,doc):
         include=paper/rel
         if not include.suffix:include=include.with_suffix('.tex')
         require(include.is_file(),'missing TeX include '+rel)
+
+def check_package_assets(root):
+    required = root/'artifact/data/measured_context.zip'
+    for f in root.rglob('*'):
+        require(f.name not in ('.git','__pycache__'),'unexpected cache/version directory')
+        require(f.suffix != '.pyc','bytecode in package')
+        if f.suffix == '.zip':
+            require(f == required,'unexpected nested archive: '+str(f.relative_to(root)))
+    require(required.is_file(),'missing measured-source fixture')
+    measured_fixture(root/'artifact')
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--project-root',type=Path,required=True);p.add_argument('--out',type=Path,required=True);args=p.parse_args();root=args.project_root.resolve();steps=[]
@@ -62,9 +73,7 @@ def main():
                 require(label in label_choices,'invalid documented campaign label: '+label)
         steps.append('documented campaign labels agree with the actual CLI choices')
         require('ymin=0' in (paper/'figures/edge-counts.tex').read_text(),'bar plot must start at zero')
-        for f in root.rglob('*'):
-            require(f.name not in ('.git','__pycache__'),'unexpected cache/version directory')
-            require(f.suffix not in ('.pyc','.zip'),'bytecode or nested archive')
+        check_package_assets(root)
         ledger=json.loads((a/'results/repair-budget.json').read_text())
         require(sum(ledger['categories'].values())==ledger['events_used']<=ledger['limit'],'repair ledger totals')
         report={'status':'pass','meaning':'File/evidence consistency only; not a guarantee of novelty, general correctness or journal readiness.','checks':steps,'reference_check':ref,'scientific_file_comparison':comparison,'active_python_files':len(sources),'repair_events':ledger['events_used'],'historical_budget_overrun_remains':True}
