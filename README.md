@@ -29,8 +29,10 @@ and packed decoder semantics. `native/bridge.py` compiles and checks it against
 the retained certificates, separately coded replay and concrete reference
 paths. Its matched baseline uses the same full native graph/witness walker
 without product grouping; both arms precompute products. Accepted exact
-products, target prefixes and counts must fit signed 64 bits, checked using
-128-bit arithmetic before traversal. It does not import or execute CUDA.
+products, target prefixes and counts must fit signed 64 bits. Products and
+target-prefix extrema are checked with 128-bit arithmetic during parsing;
+assignment and product-sequence counts are checked at each traversal stage.
+It does not import or execute CUDA.
 
 The active code requires Python >=3.11 and only the standard library. The
 campaign command requires Linux/POSIX `resource` support to impose its 120-second
