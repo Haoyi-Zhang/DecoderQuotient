@@ -28,10 +28,11 @@ whitespace; it is not a general CUDA importer.
 and packed decoder semantics. `native/bridge.py` compiles and checks it against
 the retained certificates, separately coded replay and concrete reference
 paths. Its matched baseline uses the same full native graph/witness walker
-without product grouping; both arms precompute products. Accepted exact
-products, target prefixes and counts must fit signed 64 bits. Products and
-target-prefix extrema are checked with 128-bit arithmetic during parsing;
-assignment and product-sequence counts are checked at each traversal stage.
+without product grouping; both arms precompute products. The initial value
+and both operand components must fit signed 64 bits. Products, target-prefix
+extrema, assignment counts and product-sequence counts must also fit signed
+64 bits; these are checked with 128-bit arithmetic before traversal or output
+staging. Walk-time count checks remain in place.
 It does not import or execute CUDA.
 
 The active code requires Python >=3.11 and only the standard library. The
@@ -104,18 +105,19 @@ Run from this artifact directory and choose a new destination:
 ```sh
 python -B tests/hoisting_regression.py
 python -B native/materialize_measured_context.py --out <new-context-directory>
-python -B native/current_correctness.py --historical-project <new-context-directory>
+python -B native/bridge.py prepare --zig <zig-executable> --out <new-native-directory>
+python -B native/current_correctness.py --historical-project <new-context-directory> --native-results <new-native-directory>
 ```
 
 The restored context contains the measured `artifact/` inputs and generated
-`paper/` tables. The current verifier runs the
-unchanged historical `report.py --check`, retains every source/data/statistic/
-TeX gate, binds current sources separately, then compares current complete
-producer packets and independent replay against all retained native layers,
-edges and concrete I/O traces. It also reruns the literal regressions. This is
-current Python conformance to retained evidence, not fresh native execution,
-a timing rerun, a new campaign, or a GPU/deployment result. `--emit` prints a
-receipt without writing files. Current checker runtime remains unmeasured.
+`paper/` tables. The current verifier checks the unchanged historical
+`report.py --check` gates, then runs both freshly compiled native executables,
+their complete conformance and admission controls. It compares complete
+producer packets, independent replay, layers, edges and concrete I/O traces,
+with separate bindings for current source and historical measurements. It
+also reruns the literal regressions. `--emit` prints a functional receipt
+without writing files. No timing or GPU/deployment experiment runs in this
+procedure; current checker runtime remains unmeasured.
 
 For fresh bounded correctness only, supply an already available Zig compiler:
 

@@ -12,6 +12,190 @@
     "original_native_accumulator_words": 5576,
     "original_quotient_edges": 416
   },
+  "current_native": {
+    "admission_controls": [
+      {
+        "build": 0,
+        "control": "wide-zero",
+        "final_output": false,
+        "rejected": true
+      },
+      {
+        "build": 0,
+        "control": "wide-zero-right",
+        "final_output": false,
+        "rejected": true
+      },
+      {
+        "build": 0,
+        "control": "duplicate-count",
+        "final_output": false,
+        "rejected": true
+      },
+      {
+        "build": 0,
+        "control": "unique-count",
+        "final_output": false,
+        "rejected": true
+      },
+      {
+        "accepted": true,
+        "build": 0,
+        "certificate_matches": true,
+        "control": "component-endpoints"
+      },
+      {
+        "accepted": true,
+        "build": 0,
+        "certificate_matches": true,
+        "control": "product-endpoints"
+      },
+      {
+        "accepted": true,
+        "build": 0,
+        "certificate_matches": true,
+        "control": "initial-low"
+      },
+      {
+        "accepted": true,
+        "build": 0,
+        "certificate_matches": true,
+        "control": "initial-high"
+      },
+      {
+        "accepted": true,
+        "build": 0,
+        "certificate_matches": true,
+        "control": "duplicate-count-fit"
+      },
+      {
+        "accepted": true,
+        "build": 0,
+        "certificate_matches": true,
+        "control": "unique-count-fit"
+      },
+      {
+        "build": 0,
+        "control": "graph-cap",
+        "final_output": false,
+        "rejected": true
+      },
+      {
+        "build": 0,
+        "control": "no-overwrite",
+        "existing_result_unchanged": true
+      },
+      {
+        "build": 0,
+        "control": "existing-staging",
+        "existing_staging_unchanged": true
+      },
+      {
+        "build": 1,
+        "control": "wide-zero",
+        "final_output": false,
+        "rejected": true
+      },
+      {
+        "build": 1,
+        "control": "wide-zero-right",
+        "final_output": false,
+        "rejected": true
+      },
+      {
+        "build": 1,
+        "control": "duplicate-count",
+        "final_output": false,
+        "rejected": true
+      },
+      {
+        "build": 1,
+        "control": "unique-count",
+        "final_output": false,
+        "rejected": true
+      },
+      {
+        "accepted": true,
+        "build": 1,
+        "certificate_matches": true,
+        "control": "component-endpoints"
+      },
+      {
+        "accepted": true,
+        "build": 1,
+        "certificate_matches": true,
+        "control": "product-endpoints"
+      },
+      {
+        "accepted": true,
+        "build": 1,
+        "certificate_matches": true,
+        "control": "initial-low"
+      },
+      {
+        "accepted": true,
+        "build": 1,
+        "certificate_matches": true,
+        "control": "initial-high"
+      },
+      {
+        "accepted": true,
+        "build": 1,
+        "certificate_matches": true,
+        "control": "duplicate-count-fit"
+      },
+      {
+        "accepted": true,
+        "build": 1,
+        "certificate_matches": true,
+        "control": "unique-count-fit"
+      },
+      {
+        "build": 1,
+        "control": "graph-cap",
+        "final_output": false,
+        "rejected": true
+      },
+      {
+        "build": 1,
+        "control": "no-overwrite",
+        "existing_result_unchanged": true
+      },
+      {
+        "build": 1,
+        "control": "existing-staging",
+        "existing_staging_unchanged": true
+      },
+      {
+        "accumulator_certificates": 79,
+        "complete_baselines": 79,
+        "control": "retained-scientific-output",
+        "decoder_configurations": 30,
+        "unchanged": true
+      },
+      {
+        "accumulator_certificates": 79,
+        "complete_baselines": 79,
+        "control": "retained-scientific-output",
+        "decoder_configurations": 30,
+        "unchanged": true
+      }
+    ],
+    "comparison": {
+      "accumulator_cases": 79,
+      "all_native_accumulator_words": 14658,
+      "all_native_decoder_words": 5140,
+      "decoder_cases": 30,
+      "disagreements": 0,
+      "format": "p053-native-semantic-comparison-v1",
+      "original_accumulator_cases": 64,
+      "original_baseline_edges": 1016,
+      "original_full_decoder_words": 5120,
+      "original_native_accumulator_words": 5576,
+      "original_quotient_edges": 416
+    },
+    "scope": "Fresh execution of current source-bound native binaries, complete retained scientific-output equality and benign boundary controls; no timing."
+  },
   "current_producer_budget": {
     "categories": {
       "current-producer:partition-pair": 1070,
@@ -48,12 +232,15 @@
     "bptc/exact_accumulator.py": "86710e85deca85e859a33ec01ed01f032b9979b76a135825a1386c626b928af5",
     "bptc/packed_decoder.py": "19d3f6cad36b89afa04ac56a7b6446c73af0f0d21a7f8346fa66b4b3eaffa25e",
     "bptc/publication_cases.py": "a8a9979738e9d2364fc33408841cfb075f8a8b311842a87f7956e24dad1dea5c",
-    "native/bridge.py": "6a6b73c994aa6af408de505f810c3cac3e63def554e1379d1c961223ba8713c6",
+    "native/bridge.py": "369ee330fa7621c287b42f416b9d4e1ba53e513f87e597feb21acb709aae05d1",
     "native/checker_cost.py": "9b3801d3feedc20bb5731b639ee41eb5247fd99db6e380628a80681a73ff9e92",
-    "native/current_correctness.py": "ac4ba3e6d2132824ed70c68088f625354863cc2e0b27a7ede1ebb832d0066029",
-    "native/native_bridge.cpp": "014e91616db7297052ad827350a16c870ea01bc7f98c49f3fb3051fca4ed6def",
+    "native/current_correctness.py": "30c7269b99090cc61466157269d9d97a4931abeb40f3f779a78b93cf377b2761",
+    "native/materialize_measured_context.py": "dc57ba4e749ae691a08d75d23b7b4537a0ef91a17292f4cdd4a54d941400b4e6",
+    "native/measured_native_sources.py": "670b4685bf305f43c735334dbd8d7b77bafaaff1f309675955595942b6181b2f",
+    "native/native_bridge.cpp": "5217ec07fbbb8e666eeb7631b42178cb9d83809ea566e1e97c9c5984ec9aeec8",
     "native/report.py": "4fec21b1890e56c27655504bff8b1f350efd3dcd2277bf9575f62b63f0af7027",
-    "tests/hoisting_regression.py": "729a07690422095ab171c54281f92474fdb1c806852f217c5ec670c4b383f04c"
+    "tests/hoisting_regression.py": "729a07690422095ab171c54281f92474fdb1c806852f217c5ec670c4b383f04c",
+    "tests/native_admission_regression.py": "0b2fef6bf28214a8474f61e47db70d3d2172e8a5b8ab284d393bd8bd76139c73"
   },
   "format": "p053-current-accumulator-correctness-v1",
   "historical_provenance_sha256": "43dc08f509138e14a02ed3414f8513181d2aa836ea9b4b08e13341e3619ed7c2",
@@ -83,7 +270,7 @@
       "historical": "a8a9979738e9d2364fc33408841cfb075f8a8b311842a87f7956e24dad1dea5c"
     },
     "native/bridge.py": {
-      "current": "6a6b73c994aa6af408de505f810c3cac3e63def554e1379d1c961223ba8713c6",
+      "current": "369ee330fa7621c287b42f416b9d4e1ba53e513f87e597feb21acb709aae05d1",
       "historical": "6a6b73c994aa6af408de505f810c3cac3e63def554e1379d1c961223ba8713c6"
     },
     "native/checker_cost.py": {
@@ -91,7 +278,7 @@
       "historical": "9b3801d3feedc20bb5731b639ee41eb5247fd99db6e380628a80681a73ff9e92"
     },
     "native/native_bridge.cpp": {
-      "current": "014e91616db7297052ad827350a16c870ea01bc7f98c49f3fb3051fca4ed6def",
+      "current": "5217ec07fbbb8e666eeb7631b42178cb9d83809ea566e1e97c9c5984ec9aeec8",
       "historical": "014e91616db7297052ad827350a16c870ea01bc7f98c49f3fb3051fca4ed6def"
     },
     "native/report.py": {
@@ -106,5 +293,5 @@
   ],
   "literal_regression_groups": 3,
   "measured_sources_are_current": false,
-  "scope": "Current Python correctness against retained ordered native evidence; no fresh native execution or timing."
+  "scope": "Current Python replay and fresh source-bound native conformance/admission; original measurement sources and timings remain historical."
 }

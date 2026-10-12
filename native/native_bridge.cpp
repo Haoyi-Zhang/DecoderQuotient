@@ -34,6 +34,11 @@ static volatile std::uint64_t sink=0;
 static void require(bool ok,const char* why) {if(!ok)throw std::runtime_error(why);}
 static void charge(I n=1) {require(n>=0&&n<=cap-charged,"native conformance event cap");charged+=n;}
 static I narrow(__int128 z) {require(z>=std::numeric_limits<I>::min()&&z<=std::numeric_limits<I>::max(),"outside int64 native subset");return static_cast<I>(z);}
+static I count_product(I total,std::size_t size,const char* why) {
+    const __int128 next=static_cast<__int128>(total)*size;
+    require(next<=std::numeric_limits<I>::max(),why);
+    return static_cast<I>(next);
+}
 struct Affinity {std::string original_mask,actual_mask;int cpu;};
 static std::string mask_hex(const std::vector<int>& cpus) {
     int highest=cpus.empty()?0:*std::max_element(cpus.begin(),cpus.end());
@@ -79,12 +84,14 @@ static Panel read_panel(const std::string& path) {
     for(int k=0;k<na;k++) {
         char tag;int n,fin;Spec s;f>>tag>>s.name>>s.provenance>>s.initial>>fin>>n;
         require(tag=='A'&&n>=1&&n<=64,"accumulator declaration");identifier(s.name);identifier(s.provenance);require(names.insert(s.name).second,"duplicate case");s.final=flag(fin);
-        __int128 lo=s.initial,hi=lo;
+        __int128 lo=s.initial,hi=lo;I words=1,sequences=1;
         for(int i=0;i<n;i++) {
             Stage st;int obs,np;std::string tm,am;f>>tag>>st.tw>>tm>>st.aw>>am>>obs>>np;
             require(tag=='S'&&st.tw>=2&&st.tw<=32&&st.aw>=2&&st.aw<=32&&np>=1&&np<=4096,"stage declaration");st.ts=mode(tm);st.as=mode(am);st.observe=flag(obs);
-            std::set<std::array<I,2>> seen;I mn=0,mx=0;
-            for(int j=0;j<np;j++){std::array<I,2> a;f>>tag>>a[0]>>a[1];require(tag=='P'&&bool(f)&&seen.insert(a).second,"operand pair declaration");I prod=narrow(static_cast<__int128>(a[0])*a[1]);if(j==0){mn=mx=prod;}mn=std::min(mn,prod);mx=std::max(mx,prod);st.pairs.push_back(a);}
+            std::set<std::array<I,2>> seen;std::set<I> products;I mn=0,mx=0;
+            for(int j=0;j<np;j++){std::array<I,2> a;f>>tag>>a[0]>>a[1];require(tag=='P'&&bool(f)&&seen.insert(a).second,"operand pair declaration (signed int64 components required)");I prod=narrow(static_cast<__int128>(a[0])*a[1]);products.insert(prod);if(j==0){mn=mx=prod;}mn=std::min(mn,prod);mx=std::max(mx,prod);st.pairs.push_back(a);}
+            words=count_product(words,st.pairs.size(),"native assignment count exceeds int64");
+            sequences=count_product(sequences,products.size(),"native product-sequence count exceeds int64");
             lo+=mn;hi+=mx;narrow(lo);narrow(hi);s.stages.push_back(st);
         }require(bool(f),"truncated accumulator");p.acc.push_back(s);
     }
@@ -261,11 +268,30 @@ static void measure(std::ostream& o,const Panel& p,const std::string& slot) {
         for(int k=0;k<16;k++){sink=kernel(true);sink=kernel(false);}for(int rep=0;rep<reps;rep++){I pn=0,rn=0;bool pf=rep%2==1;for(int turn=0;turn<2;turn++){bool use=(turn==0)==pf;I t=timed(batch,[&](){return kernel(use);});if(use)pn=t;else rn=t;}if(!first)o<<',';first=false;o<<"{\"kind\":\"decoder\",\"case\":\""<<d.name<<"\",\"pair\":"<<rep<<",\"order\":\""<<(pf?"PR":"RP")<<"\",\"batch\":"<<batch<<",\"words_per_batch\":1024,\"packed_ns\":"<<pn<<",\"reference_ns\":"<<rn<<'}';}
     }o<<"],\"sink\":"<<sink<<"}\n";
 }
+// Publish a completed sibling file without replacing any existing result.
+// Exceptions remove only this invocation's exclusively owned staging paths.
+// Abrupt termination can leave .partial, never an incomplete final JSON file.
+struct StagedOutput {
+    std::filesystem::path destination,directory,file;
+    explicit StagedOutput(const std::filesystem::path& target)
+        :destination(target),directory(target.string()+".partial"),file(directory/"output.tmp") {
+        require(!std::filesystem::exists(destination),"refuse output overwrite");
+        require(std::filesystem::create_directory(directory),"refuse staging overwrite");
+    }
+    ~StagedOutput() {
+        std::error_code ignored;
+        std::filesystem::remove(file,ignored);
+        std::filesystem::remove(directory,ignored);
+    }
+    void publish() {std::filesystem::create_hard_link(file,destination);}
+};
 int main(int argc,char** argv) {
     try {
         require(argc==4||argc==5,"conform|measure panel.txt output.json [reserved-slot]");std::string command=argv[1];require((command=="conform"&&argc==4)||(command=="measure"&&argc==5),"mode/slot mismatch");
         require(!std::filesystem::exists(argv[3]),"refuse output overwrite");const Panel p=read_panel(argv[2]);
-        std::ofstream out(argv[3]);require(bool(out),"cannot create output");
-        if(command=="conform")conform(out,p);else measure(out,p,argv[4]);require(bool(out),"output failure");return 0;
+        StagedOutput staged(argv[3]);std::ofstream out(staged.file);require(bool(out),"cannot create output");
+        if(command=="conform")conform(out,p);else measure(out,p,argv[4]);
+        out.flush();require(bool(out),"output failure");out.close();require(bool(out),"output close failure");
+        staged.publish();return 0;
     }catch(const std::exception& e){std::cerr<<e.what()<<'\n';return 2;}
 }

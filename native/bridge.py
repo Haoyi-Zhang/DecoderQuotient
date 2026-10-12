@@ -70,7 +70,22 @@ def panel():
             'decoders': [decoder_dict(s) for s in decoder_specs()]}
 
 
+def validate_native_operands(spec):
+    """The text adapter represents the initial value and pair components as int64."""
+    validate_spec(spec)
+    low, high = -(2**63), 2**63-1
+    if not low <= spec['initial'] <= high:
+        raise ValueError('native initial value must fit signed int64')
+    for i, stage in enumerate(spec['stages']):
+        for j, pair in enumerate(stage['pairs']):
+            for value in pair:
+                if not low <= value <= high:
+                    raise ValueError(f'native operand component must fit signed int64: stage {i}, pair {j}')
+
+
 def panel_text(p):
+    for spec in p['accumulators']:
+        validate_native_operands(spec)
     lines = [f"p053-native-panel-v1 {len(p['accumulators'])} {len(p['decoders'])}"]
     for s in p['accumulators']:
         lines.append(f"A {s['name']} {s['provenance']} {s['initial']} {int(s['final_observe'])} {len(s['stages'])}")
@@ -249,7 +264,8 @@ def negative_inputs(out, exe, p):
 def prepare(args):
     out=args.out.resolve();out.mkdir(parents=True,exist_ok=True)
     assert not (out/'conformance.json').exists(), 'refuse overwriting prior conformance'
-    p=panel();dump(out/'panel.json',p);(out/'panel.txt').write_text(panel_text(p),encoding='utf-8')
+    p=panel();text=panel_text(p)
+    dump(out/'panel.json',p);(out/'panel.txt').write_text(text,encoding='utf-8')
     compiler_version=run([args.zig,'version'],out,'compiler-version').strip()
     commands=[]
     source=ARTIFACT/'native/native_bridge.cpp'

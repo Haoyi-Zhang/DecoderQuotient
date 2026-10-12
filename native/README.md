@@ -38,11 +38,12 @@ correctness controls, not claimed equivalent optimizations.
 ## Bounds and evidence
 
 The bridge is a finite native subset, not an implementation of arbitrary-size
-integer arithmetic. Products and all extrema of exact target prefixes must fit
-signed 64-bit integers. These extrema are checked using compiler-supported
-128-bit arithmetic before traversal. Aggregate assignment/product-sequence
-counts must also fit signed 64-bit; otherwise the bridge fails rather than
-emitting a wrapped metric. Widths remain 2--32, schedules 1--64 stages, domains
+integer arithmetic. The initial value and both components of every operand pair
+must fit signed 64-bit integers; the Python adapter checks these before
+serialization. Products, exact-target prefix extrema and assignment/product-
+sequence counts must also fit signed 64-bit. The native reader checks these
+with 128-bit arithmetic before traversal or output staging. Widths remain
+2--32, schedules 1--64 stages, domains
 1--4096 unique pairs, and decoder lanes 1--4 with the original nibble/byte bounds.
 The actual predeclared panel is far within these limits. Frontier states and
 edges have additional explicit operational caps. These are native applicability
@@ -56,6 +57,13 @@ with retained certificates, replays all native certificates with the separately
 coded checker, checks every baseline edge with a reference transition, and
 checks every retained concrete native I/O trace. The three overflow controls
 are rejected before output creation.
+
+Native output uses a sibling `.partial` directory and is published only after
+successful completion and close, using a same-filesystem hard link that cannot
+replace an existing result. Ordinary failures remove the owned staging file;
+abrupt termination may leave `.partial`, not incomplete final JSON. Existing
+result and staging paths are not overwritten. An output filesystem without
+hard-link support is rejected without publishing a final result.
 
 The retained CPU experiment is separate in `../results/native-cpu/`; fresh
 outputs use the caller-selected reproduction path.
@@ -163,7 +171,8 @@ outputs and assembly are preserved separately, not duplicated in the package.
 the exact native/harness/checker/reference sources, and the 94 original
 certificates. No compiler executable, PDB, cache or machine command is included.
 
-From `artifact/`, inspect the retained evidence without compiling or timing:
+From the restored measured-source context, inspect the retained evidence without
+compiling or timing. This check intentionally rejects changed source bindings:
 
 ```sh
 python native/report.py --results-dir results/native-cpu --check
@@ -176,29 +185,35 @@ paths remain in the private execution report. The sources and interface above
 support a fresh caller-owned run, but the retained measurements establish only
 this Windows CPU execution, not tested portability to every target.
 
-The current Python implementation has its own correctness receipt in
+The current implementation has its own correctness receipt in
 `../evidence/current-accumulator-correctness.json`. The measured provenance and
 raw samples remain bound to the kernels used for measurement.
 `data/measured_context.zip` contains those two kernels and the three generated
-TeX inputs. It supplies a self-contained measurement context; no private
+TeX inputs; `measured_native_sources.py` preserves the original native source
+and adapter bytes, checked against the same historical provenance. Together
+they supply the measurement context; no private
 repository or historical Git checkout is required. From the artifact root,
 choose a new destination outside the project:
 
 ```sh
 python -B native/materialize_measured_context.py --out /tmp/decoder-measured-context
-python -B native/current_correctness.py --historical-project /tmp/decoder-measured-context
+python -B native/bridge.py prepare --out /tmp/decoder-current-native --zig <zig-executable>
+python -B native/current_correctness.py --historical-project /tmp/decoder-measured-context --native-results /tmp/decoder-current-native
 ```
 
 The verifier runs the measurement report check in that context, verifies the
 unchanged native and evidence bindings, and compares complete retained native
 certificates, baseline edges and concrete traces with the current Python
-implementation. The receipt covers correctness against retained evidence;
-it does not measure the current Python checker's runtime.
+implementation. It also verifies fresh native preparation's source/binary
+bindings, reruns both native builds, checks all 79 retained scientific packets
+and baselines unchanged, and runs operand/count/publication boundary controls.
+The receipt covers current correctness, not current or historical timing.
 
 Artifact-root CI materializes this context from the supplied fixture. It then
 uses `prepare_current_context.py` to supply the three generated inputs to the
-current verification layout. The finite-campaign and native-conformance jobs
-are unchanged. Run the seven copy-admission regressions separately with
+current verification layout. The native CI job checks the current receipt only
+after real compilation/conformance; the historical job retains its original
+measurement gates. Run the seven copy-admission regressions separately with
 `python -B tests/context_regression.py`.
 
 ## Proof and implementation mapping

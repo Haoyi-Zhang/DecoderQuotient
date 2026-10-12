@@ -37,6 +37,7 @@ jobs:
           timeout --signal=TERM --kill-after=10s 240s bash -euo pipefail <<'CHECKS' > "$RAW/console.log" 2>&1
           python -B tests/compiler_cache_regression.py
           python -B tests/hoisting_regression.py
+          python -B tests/native_admission_regression.py
           python -B -m bptc.publication_campaign --root . --out "$RAW/main" --label main --ledger "$RAW/budget.json"
           python -B -m bptc.publication_campaign --root . --out "$RAW/reproduction" --label reproduction --ledger "$RAW/budget.json"
           python -B tools/validate_results.py --results-dir "$RAW/main" --compare-dir "$RAW/reproduction" --replay --ledger "$RAW/budget.json" --out "$RAW/semantic-replay.json"
@@ -66,7 +67,7 @@ jobs:
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.12'
-      - name: Materialize measured inputs and check the exact source receipt
+      - name: Restore and check the unchanged measured-source context
         shell: bash
         run: |
           set -euo pipefail
@@ -74,7 +75,7 @@ jobs:
           python -B project/artifact/native/materialize_measured_context.py --out "$measured"
           python -B project/artifact/tests/context_regression.py
           python -B project/artifact/native/prepare_current_context.py --historical-project "$measured"
-          python -B project/artifact/native/current_correctness.py --historical-project "$measured"
+          python -B "$measured/artifact/native/report.py" --results-dir "$measured/artifact/results/native-cpu" --paper-dir "$measured/paper" --check
 
   native-correctness:
     runs-on: windows-2025
@@ -128,6 +129,22 @@ jobs:
           $ErrorActionPreference = 'Stop'
           python -B native/bridge.py prepare --out "$env:RUNNER_TEMP/p053-native" --zig "$env:ZIG_EXE"
           if ($LASTEXITCODE -ne 0) { throw 'Native conformance failed' }
+      - name: Run admission and publication controls on both real native builds
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          python -B tests/native_admission_regression.py --exe "$env:RUNNER_TEMP/p053-native/native-o3.exe" --exe "$env:RUNNER_TEMP/p053-native/native-checked.exe" --conformance "$env:RUNNER_TEMP/p053-native/native-o3.json" --conformance "$env:RUNNER_TEMP/p053-native/native-checked.json" --out "$env:RUNNER_TEMP/p053-native/admission-ci"
+          if ($LASTEXITCODE -ne 0) { throw 'Native admission/publication controls failed' }
+      - name: Check current admission and the separate historical measurement bindings
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          python -B native/materialize_measured_context.py --out "$env:RUNNER_TEMP/p053-measured-native"
+          if ($LASTEXITCODE -ne 0) { throw 'Measured context restoration failed' }
+          python -B native/prepare_current_context.py --historical-project "$env:RUNNER_TEMP/p053-measured-native"
+          if ($LASTEXITCODE -ne 0) { throw 'Measured TeX input preparation failed' }
+          python -B native/current_correctness.py --historical-project "$env:RUNNER_TEMP/p053-measured-native" --native-results "$env:RUNNER_TEMP/p053-native"
+          if ($LASTEXITCODE -ne 0) { throw 'Current native admission/source receipt failed' }
       - name: Retain correctness evidence; do not benchmark shared runners
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

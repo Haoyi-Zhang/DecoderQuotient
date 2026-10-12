@@ -1,7 +1,8 @@
 """Materialize the recorded measurement's source context without a private repository.
 
 The five-file fixture contains two measured Python kernels and three generated
-TeX inputs. Timings and the remaining measured sources are copied unchanged.
+TeX inputs. Separate literal snapshots preserve the measured native source and
+adapter. Timings and the remaining measured sources are copied unchanged.
 Only a fresh destination outside the current artifact is accepted.
 SPDX-License-Identifier: MIT
 """
@@ -13,6 +14,11 @@ import json
 from pathlib import Path
 import shutil
 import zipfile
+
+if __package__:
+    from .measured_native_sources import source_bytes
+else:
+    from measured_native_sources import source_bytes
 
 ARTIFACT = Path(__file__).resolve().parents[1]
 KERNELS = ('bptc/accumulator_checker.py', 'bptc/exact_accumulator.py')
@@ -51,6 +57,11 @@ def materialize(destination: Path) -> Path:
         raise ValueError('Use a fresh destination outside the current project')
     prepared = measured_fixture()
     provenance = json.loads((ARTIFACT/'results/native-cpu/provenance.json').read_text(encoding='utf-8'))
+    native_sources = source_bytes()
+    for name, body in native_sources.items():
+        if hashlib.sha256(body).hexdigest() != provenance['scientific_sources'][name]:
+            raise ValueError('Measured native source differs: '+name)
+        prepared['artifact/'+name] = body
     shutil.copytree(ARTIFACT, destination/'artifact',
                     ignore=shutil.ignore_patterns('.git', '.venv', '__pycache__', '.pytest_cache'))
     for name, body in prepared.items():
