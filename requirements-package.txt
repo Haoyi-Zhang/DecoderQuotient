@@ -1,0 +1,3 @@
+# Dependency of paper/figures/draw_evaluation.py loaded by tools/package_check.py.
+# Arithmetic generation/replay remains standard-library-only.
+reportlab==4.4.9

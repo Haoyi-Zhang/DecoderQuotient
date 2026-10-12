@@ -35,7 +35,7 @@ extrema, assignment counts and product-sequence counts must also fit signed
 staging. Walk-time count checks remain in place.
 It does not import or execute CUDA.
 
-The active code requires Python >=3.11 and only the standard library. The
+The active arithmetic code requires Python >=3.11 and only the standard library. The
 campaign command requires Linux/POSIX `resource` support to impose its 120-second
 CPU and 2.5-GiB address-space limits; it fails before semantic execution when
 these limits cannot be installed. Semantic functions can be imported on other
@@ -186,12 +186,30 @@ reading or independently checking the proof.
 From this directory:
 
 ```sh
+python -m pip install -r requirements-package.txt
 python tools/package_check.py --project-root .. \
   --out results/package-check.json
 ```
 
 This additionally requires the actual two PDFs, every TeX input and figure,
 aligned README titles, the exact current case sets and all citation mappings.
+The current edge-count figure check also requires ReportLab, the existing
+Python renderer's dependency, declared in `requirements-package.txt` and
+installed by the finite-semantics CI job before its explicit package-generation
+regressions. It checks the actual CSV, retained evidence and
+generated macros, then records the renderer's bar rectangles to verify the
+linear zero baseline and heights. It does not rerender a PDF, require TeX fonts,
+or establish retained-PDF freshness. Its focused positive/negative controls run
+with `python -B tests/package_figure_regression.py`; they are separate from the
+arithmetic discovery suite.
+Decoder profile display names are explicitly mapped in `tools/generate_paper.py`
+to the three declared provenance families; the complete generated-text check
+still binds every label and numeric cell. Run
+`python -B tests/package_generation_regression.py` for its mutation controls.
+The flat artifact CI checkout has no sibling paper, so it tests generation and
+the package command's generated-input gate using private table fixtures. The
+full package command and figure regressions additionally require the supplied
+two-folder project; CI is not described as checking those absent paper files.
 It is an offline file/record consistency check, not an online bibliographic
 lookup or an independent peer review. The paper builds using `sh paper/build.sh`
 from the project root. See `../paper/README.md` for TeX dependencies and the

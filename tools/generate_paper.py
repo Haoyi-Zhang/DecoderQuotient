@@ -5,8 +5,19 @@ from collections import defaultdict
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from tools.validate_results import validate_run,compare_runs
 
+# Display names for the three domains declared by publication_cases.decoder_specs.
+# These preserve the manuscript's existing human-readable profile names; they
+# do not rename provenance identifiers or change any evidence-derived count.
+DECODER_PROFILE_LABELS={
+    'full-nibble-box':'Full nibble domain',
+    'tiny-oracle-box':'Small enumerated domain',
+    'alternating-lanes':'Alternating lanes',
+}
+
 def read(p):return json.loads(p.read_text())
-def table_rows(p):return list(csv.DictReader(p.open(newline='')))
+def table_rows(p):
+    with p.open(newline='') as stream:
+        return list(csv.DictReader(stream))
 def esc(x):return str(x).replace('_',r'\_').replace('&',r'\&').replace('%',r'\%')
 def generate(artifact):
     base=artifact/'results/publication';left=base/'main';right=base/'reproduction'
@@ -33,9 +44,13 @@ def generate(artifact):
         return g
     dr=table_rows(left/'decoder-cases.csv');ar=table_rows(left/'accumulator-cases.csv')
     dt=[r'\begin{tabular}{lrrrr}',r'\toprule',r'Profile & Cases & Equal & Unequal & Oracle inputs \\',r'\midrule']
-    for family,rr in grouped(dr).items():
+    decoder_groups=grouped(dr)
+    if set(decoder_groups)!=set(DECODER_PROFILE_LABELS):
+        raise ValueError('decoder profile/display mapping differs from declared suite')
+    for family,label in DECODER_PROFILE_LABELS.items():
+        rr=decoder_groups[family]
         eq=sum(r['equivalent']=='True' for r in rr);n=sum(int(r['concrete_assignments']) for r in rr if r['oracle_run']=='True')
-        dt.append(f'{esc(family)} & {len(rr)} & {eq} & {len(rr)-eq} & {n} '+r'\\')
+        dt.append(f'{esc(label)} & {len(rr)} & {eq} & {len(rr)-eq} & {n} '+r'\\')
     dt += [r'\bottomrule',r'\end{tabular}'];out['decoder_families.tex']='\n'.join(dt)+'\n'
     at=[r'\begin{tabular}{lrrrrrr}',r'\toprule',r'Family & Cases & Equal & Suff. FR & Final FA & Term-fit FA & Edges saved \\',r'\midrule']
     labels={'safe-control':'Safe control','adversarial-overflow':'Visible saturation','cancellation-control':'Reconvergence','final-range-counterexample':'Final-range failure','mixed-width-term':'Term narrowing','mixed-width-schedule':'Width schedule','observation-schedule':'Observation schedule','systematic-product-box':'Mixed products'}
