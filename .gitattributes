@@ -1,0 +1,3 @@
+# Preserve exact Git-blob bytes for measured evidence and current source bindings.
+# Disable checkout newline conversion; do not normalize or relax any hash gate.
+* -text
