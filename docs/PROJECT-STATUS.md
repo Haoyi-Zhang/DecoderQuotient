@@ -20,8 +20,8 @@ extrema and aggregate counts before traversal. Every declaration read is
 checked before its fields are inspected. Optimized and checked builds agree
 on all 79 accumulator cases and 30 decoder configurations; both reject all
 proper token prefixes of the admission regression panel before staging an
-output. The original 61-method Python suite passes in ordinary and optimized modes;
-the additional portable GPU consumer tests are reported separately.
+output. The complete 69-method Python suite, including portable GPU-record
+controls, passes in ordinary and optimized modes.
 The current correctness receipt binds these executions separately from the
 retained component measurements.
 

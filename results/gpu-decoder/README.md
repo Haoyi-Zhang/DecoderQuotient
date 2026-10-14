@@ -50,6 +50,11 @@ To run fresh actual-device measurements on an available compute-capability
 python -B native/gpu_decoder_study.py run --out <new-results-directory>
 ```
 
+Instruction and API semantics follow NVIDIA's [PTX ISA](https://docs.nvidia.com/cuda/parallel-thread-execution/index.html)
+and [CUDA Driver API event documentation](https://docs.nvidia.com/cuda/cuda-driver-api/group__CUDA__EVENT.html).
+The reported driver and emitted PTX target identify the executed environment;
+the linked documentation is not an assertion that newer driver features were used.
+
 The run command requires the real driver/device and fails if unavailable.
 Portable CI consumes these saved records and exercises corrupt-record controls;
 it does not claim to rerun a GPU on hosted CPU runners. The PTX is an arithmetic
