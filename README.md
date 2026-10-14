@@ -320,8 +320,8 @@ python -m tools.reference_regressions --paper-dir ../paper \
 ```
 
 These two commands require the sibling `paper/` because they inspect citations;
-arithmetic tests and result replay do not. See `docs/核实结果.md` for the Chinese
-summary of completed repairs and substantive remaining research limitations.
+arithmetic tests and result replay do not. `docs/核实结果.md` describes the
+scientific evidence and reference-reading scope.
 
 The retained continuing repair ledger after those clean-extraction regressions is
 187,881 / 200,000 declared units. The earlier full saved-result semantic replay
