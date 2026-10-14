@@ -117,7 +117,8 @@ producer packets, independent replay, layers, edges and concrete I/O traces,
 with separate bindings for current source and historical measurements. It
 also reruns the literal regressions. `--emit` prints a functional receipt
 without writing files. No timing or GPU/deployment experiment runs in this
-procedure; current checker runtime remains unmeasured.
+procedure. A separate current complete-call experiment is described below;
+it does not reinterpret historical checker timings.
 
 For fresh bounded correctness only, supply an already available Zig compiler:
 
@@ -130,7 +131,57 @@ The default output is `results/native-reproduction`; no private path is
 hardcoded. Preparation never starts performance measurements. Timing remains
 a separate caller-authorized serial operation.
 
+## Complete same-contract workflow
+
+`results/workflow-cost/` compares identity pair branches with product branches
+using the same native walker, complete state/witness/edge representation,
+serializer, publication mechanism and strict consumer guarantees. The distinct
+identity format is `bptc-pair-accumulator-certificate-v1`; its shared metric keys
+count identity branches, not distinct products. The proof explains why both
+partitions preserve the same least-state witnesses and decision.
+
+All 79 schedules have one warmup per arm and seven alternating-order measured
+pairs: 553 pairs, 1,106 timed calls and 158 warmup calls. Complete-call timing
+includes ledger construction, native startup/input admission/preparation/full
+evidence/serialization/file close/publication, parent wait/read, strict JSON
+parsing, declaration binding and full replay. One-off builds, fixture creation,
+warmup, logging, statistics and post-call equality are excluded. The original
+64 case medians span 0.872--1.211, with median 1.021; 20 favor ordinary pair
+traversal. The 4/8/16-stage unique-product controls have ratios
+1.037/1.033/0.964. These variable process/file
+measurements do not establish stable whole-checker or deployment speedup.
+
+The native parser checks every complete declaration read before validating
+its fields. Both optimized and checked native builds reject all proper token
+prefixes of a mixed accumulator/decoder regression panel before staging output.
+The complete-call record was measured using these current parser sources.
+
+The public scientific record contains 79 exact text inputs, 158 complete
+deterministic packet bodies, all raw samples, environment, one-off build costs
+and functional bindings. The actual 1,264 outputs (10,150,160 logical bytes)
+remain private, including every warmup and slower sample. Historical result
+directories and ledgers are unchanged. Physical allocated disk bytes, peak RSS,
+energy, hardware counters, GPU and representative deployment remain unmeasured.
+
+```sh
+python -B -O native/workflow_cost.py --out <fresh-results> --native-dir <prepared-native> --pairs 7
+python -B -O native/workflow_cost.py --out results/workflow-cost --check
+python -B native/workflow_report.py --results-dir results/workflow-cost --paper-dir ../paper --check
+```
+
+The native comparison/admission/reporting consumers use executable conditions,
+not removable Python assertions. `tests/test_native_consumer.py` checks wrong
+native evidence and incomplete measurements in normal and optimized Python;
+`tests/test_pair_replay.py` checks the identity consumer against literal prefixes.
+The immutable `data/measured_reporting_sources.json` fixture restores the two
+original reporting sources against unchanged measured provenance. It is a
+scientific source context, not a fallback verifier or an authorship approval.
+The current correctness command launches its historical report with Python
+environment options disabled, then checks current native sources separately.
+
 ## Check the supplied records (no new semantic execution)
+
+The original command below audits retained records, not new timing.
 
 Run from this directory:
 
@@ -172,7 +223,7 @@ these boundaries.
 
 The same ledger is carried into every command. A fresh counter describes the
 new local reproduction only; it does not reset the historical project budget.
-The runner discovers all 47 current tests, including the continuing-ledger CLI
+The runner currently discovers 61 tests, including the continuing-ledger CLI
 controls, rather than loading only one test module. Tests include schema,
 initialization, minimum-witness, extra-layer, source-token, budget-atomicity,
 missing-file, new-output-tampering, canonical JSON byte, reproduction-path and

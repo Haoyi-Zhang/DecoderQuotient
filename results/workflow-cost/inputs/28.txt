@@ -1,0 +1,18 @@
+p053-native-panel-v1 1 0
+A term-narrowing-03 mixed-width-term 0 1 4
+S 7 wrap 11 wrap 0 3
+P -8 -8
+P 8 8
+P -16 -4
+S 7 wrap 11 wrap 0 3
+P 0 0
+P -1 0
+P 0 -1
+S 7 wrap 11 wrap 0 3
+P 0 0
+P -1 0
+P 0 -1
+S 7 wrap 11 wrap 0 3
+P 0 0
+P -1 0
+P 0 -1

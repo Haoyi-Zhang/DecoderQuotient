@@ -1,0 +1,17 @@
+p053-native-panel-v1 1 0
+A intermediate-observation-06 observation-schedule 0 1 4
+S 10 saturate 6 saturate 0 3
+P -8 -4
+P -4 -8
+P 4 8
+S 10 saturate 6 saturate 1 2
+P -1 1
+P 1 -1
+S 10 saturate 6 saturate 0 3
+P -31 4
+P -4 31
+P 4 -31
+S 10 saturate 6 saturate 0 3
+P 0 0
+P -1 0
+P 0 -1

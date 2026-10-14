@@ -178,3 +178,36 @@ history. Equal product is not a valid quotient for per-operand operations.
 The pure final-range rule and the term-fit/final-range rule are separately
 implemented. The latter cannot accept a term-narrowing counterexample; it can
 still accept a schedule whose intermediate accumulator loses information.
+
+## 8. Equal-guarantee identity-partition comparison
+
+Let a stage partition refine equality of mathematical products: every member
+of a block has the same product, but distinct blocks may share a product.
+Store the least declared index of each block. Lemma 1 applies to each block
+without requiring the partition to be the coarsest such partition. The
+reachability and least-witness inductions therefore apply unchanged to every
+refinement, including the identity partition with one block per original pair.
+Both traversals have identical reachable state sets and least concrete prefix
+at every layer, hence identical full decision objects and first failed stages.
+Their edge lists and branch tables differ intentionally. Identity replay must
+check every original pair edge, including equal-product edges; silently
+deduplicating that evidence would change the cost contract.
+
+`check_pair_certificate` reconstructs this singleton partition independently of
+the native producer, using the same strict consumer schema and independently
+coded transition arithmetic as product replay. The separate format identifier
+prevents the consumers from treating one partition as the other. The metric
+keys are shared with the existing packet schema: for the identity format,
+`quotient_product_sequences` counts identity-branch words and equals
+`concrete_assignments`; `quotient_frontier_edges` counts identity edges. These
+are not counts of distinct mathematical products in that format.
+
+This is the identity-versus-product instance of the existing congruence
+argument, not a new quotient algorithm, optimality result, or arbitrary
+compiler theorem. The measured workflow includes declaration admission,
+native generation, full evidence retention, serialization, file close and
+non-replacing publication, reading, strict JSON parsing and independent
+semantic replay. Its wall time is not obtained by summing isolated phase
+timings. One-off compilation, fixture construction, warmup, logging and
+statistics are separate. Neither file close nor hard-link publication provides
+an fsync/power-loss durability guarantee.

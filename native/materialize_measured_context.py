@@ -14,6 +14,8 @@ import json
 from pathlib import Path
 import shutil
 import zipfile
+import base64
+import zlib
 
 if __package__:
     from .measured_native_sources import source_bytes
@@ -58,6 +60,11 @@ def materialize(destination: Path) -> Path:
     prepared = measured_fixture()
     provenance = json.loads((ARTIFACT/'results/native-cpu/provenance.json').read_text(encoding='utf-8'))
     native_sources = source_bytes()
+    reporting = json.loads((ARTIFACT/'data/measured_reporting_sources.json').read_text(encoding='utf-8'))
+    if set(reporting) != {'native/report.py','native/checker_cost.py'}:
+        raise ValueError('Measured reporting source membership differs')
+    native_sources.update({name:zlib.decompress(base64.b64decode(body,validate=True))
+                           for name,body in reporting.items()})
     for name, body in native_sources.items():
         if hashlib.sha256(body).hexdigest() != provenance['scientific_sources'][name]:
             raise ValueError('Measured native source differs: '+name)

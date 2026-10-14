@@ -125,16 +125,38 @@ def validate_spec(spec: dict) -> None:
 
 def check_certificate(certificate: dict, ledger: ObligationLedger,
                       category_prefix: str = "accumulator-checker") -> dict:
+    return _check(certificate, ledger, category_prefix, False)
+
+
+def check_pair_certificate(certificate: dict, ledger: ObligationLedger,
+                           category_prefix: str = "pair-checker") -> dict:
+    """Replay the identity partition: every declared pair is a separate branch.
+
+    Same state, observation, ordering and evidence guarantees as product replay;
+    neither consumer calls the producer or trusts its reported frontier.
+    """
+    return _check(certificate, ledger, category_prefix, True)
+
+
+def _check(certificate, ledger, category_prefix, identity_partition):
     ledger.charge(f"{category_prefix}:schema")
     keys(certificate, {"format","spec","product_classes","layers","decision","metrics"}, "certificate")
-    exact(certificate["format"], "bptc-exact-accumulator-certificate-v1", "format")
+    format_name = ("bptc-pair-accumulator-certificate-v1" if identity_partition
+                   else "bptc-exact-accumulator-certificate-v1")
+    exact(certificate["format"], format_name, "format")
     spec = certificate["spec"]
     validate_spec(spec)
     stages = spec["stages"]
     classes = []
     for stage in stages:
         ledger.charge(f"{category_prefix}:partition-pair", len(stage["pairs"]))
-        classes.append(_stage_classes(stage))
+        if identity_partition:
+            classes.append([
+                dict(product=x*y, representative_index=j, representative_pair=[x,y],
+                     member_indices=[j], member_pairs=[[x,y]])
+                for j, (x,y) in enumerate(stage["pairs"])])
+        else:
+            classes.append(_stage_classes(stage))
     initial = (spec["initial"], 0, False, -1)
     current = {initial: ()}
     reconstructed_layers = [{"index":0, "states":[{"state":list(initial), "least_witness_indices":[], "least_witness_pairs":[]}]}]
@@ -184,7 +206,7 @@ def check_certificate(certificate: dict, ledger: ObligationLedger,
     metrics = {"concrete_assignments":concrete_assignments, "quotient_product_sequences":product_sequences,
                "producer_transitions":transitions, "unquotiented_frontier_edges":unquotiented,
                "quotient_frontier_edges":transitions}
-    expected = {"format":"bptc-exact-accumulator-certificate-v1", "spec":spec, "product_classes":classes,
+    expected = {"format":format_name, "spec":spec, "product_classes":classes,
                 "layers":reconstructed_layers,"decision":decision,"metrics":metrics}
     exact(certificate, expected)
     return {"accepted":True,"equivalent":least is None,"checked_transitions":transitions,

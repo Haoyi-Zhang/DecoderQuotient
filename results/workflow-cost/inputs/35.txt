@@ -1,0 +1,18 @@
+p053-native-panel-v1 1 0
+A final-range-unsound-04 final-range-counterexample 0 1 4
+S 8 saturate 4 saturate 0 3
+P -4 -2
+P -2 -4
+P 2 4
+S 8 saturate 4 saturate 0 3
+P -4 2
+P -2 4
+P 2 -4
+S 8 saturate 4 saturate 0 3
+P 0 0
+P -1 0
+P 0 -1
+S 8 saturate 4 saturate 0 3
+P 0 0
+P -1 0
+P 0 -1

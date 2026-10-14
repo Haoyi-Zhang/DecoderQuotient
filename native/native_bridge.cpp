@@ -80,25 +80,29 @@ struct Decoder {std::string name,provenance;int scale;std::vector<int> maxima,bi
 struct Panel {std::vector<Spec> acc;std::vector<Decoder> dec;};
 static Panel read_panel(const std::string& path) {
     std::ifstream f(path);require(bool(f),"cannot open panel");std::string header;int na=0,nd=0;f>>header>>na>>nd;
+    require(bool(f),"truncated panel header");
     require(header=="p053-native-panel-v1"&&na>=1&&na<=128&&nd>=0&&nd<=64,"panel header/counts");Panel p;std::set<std::string> names;
     for(int k=0;k<na;k++) {
-        char tag;int n,fin;Spec s;f>>tag>>s.name>>s.provenance>>s.initial>>fin>>n;
+        char tag=0;int n=0,fin=0;Spec s{};f>>tag>>s.name>>s.provenance>>s.initial>>fin>>n;
+        require(bool(f),"truncated accumulator declaration");
         require(tag=='A'&&n>=1&&n<=64,"accumulator declaration");identifier(s.name);identifier(s.provenance);require(names.insert(s.name).second,"duplicate case");s.final=flag(fin);
         __int128 lo=s.initial,hi=lo;I words=1,sequences=1;
         for(int i=0;i<n;i++) {
-            Stage st;int obs,np;std::string tm,am;f>>tag>>st.tw>>tm>>st.aw>>am>>obs>>np;
+            Stage st{};int obs=0,np=0;std::string tm,am;f>>tag>>st.tw>>tm>>st.aw>>am>>obs>>np;
+            require(bool(f),"truncated stage declaration");
             require(tag=='S'&&st.tw>=2&&st.tw<=32&&st.aw>=2&&st.aw<=32&&np>=1&&np<=4096,"stage declaration");st.ts=mode(tm);st.as=mode(am);st.observe=flag(obs);
             std::set<std::array<I,2>> seen;std::set<I> products;I mn=0,mx=0;
-            for(int j=0;j<np;j++){std::array<I,2> a;f>>tag>>a[0]>>a[1];require(tag=='P'&&bool(f)&&seen.insert(a).second,"operand pair declaration (signed int64 components required)");I prod=narrow(static_cast<__int128>(a[0])*a[1]);products.insert(prod);if(j==0){mn=mx=prod;}mn=std::min(mn,prod);mx=std::max(mx,prod);st.pairs.push_back(a);}
+            for(int j=0;j<np;j++){std::array<I,2> a{};f>>tag>>a[0]>>a[1];require(bool(f),"truncated operand pair declaration (signed int64 components required)");require(tag=='P'&&seen.insert(a).second,"operand pair declaration (signed int64 components required)");I prod=narrow(static_cast<__int128>(a[0])*a[1]);products.insert(prod);if(j==0){mn=mx=prod;}mn=std::min(mn,prod);mx=std::max(mx,prod);st.pairs.push_back(a);}
             words=count_product(words,st.pairs.size(),"native assignment count exceeds int64");
             sequences=count_product(sequences,products.size(),"native product-sequence count exceeds int64");
             lo+=mn;hi+=mx;narrow(lo);narrow(hi);s.stages.push_back(st);
         }require(bool(f),"truncated accumulator");p.acc.push_back(s);
     }
     for(int k=0;k<nd;k++) {
-        char tag;int n;Decoder d;f>>tag>>d.name>>d.provenance>>d.scale>>n;
+        char tag=0;int n=0;Decoder d{};f>>tag>>d.name>>d.provenance>>d.scale>>n;
+        require(bool(f),"truncated decoder declaration");
         require(tag=='D'&&n>=1&&n<=4&&d.scale>=0&&d.scale<=255,"decoder declaration");identifier(d.name);identifier(d.provenance);require(names.insert(d.name).second,"duplicate case");
-        for(int i=0;i<n;i++){int mx,b;f>>mx>>b;require(mx>=0&&mx<=15&&b>=0&&b<=255,"decoder bounds");d.maxima.push_back(mx);d.biases.push_back(b);}require(bool(f),"truncated decoder");p.dec.push_back(d);
+        for(int i=0;i<n;i++){int mx=0,b=0;f>>mx>>b;require(bool(f),"truncated decoder lane declaration");require(mx>=0&&mx<=15&&b>=0&&b<=255,"decoder bounds");d.maxima.push_back(mx);d.biases.push_back(b);}require(bool(f),"truncated decoder");p.dec.push_back(d);
     }
     std::string trailing;require(!(f>>trailing),"trailing panel tokens");return p;
 }
@@ -189,8 +193,8 @@ template<class O> static void decision_json(O& o,const Spec& s,const Graph& g) {
     o<<"{\"equivalent\":";json_bool(o,bad==0);o<<",\"reachable_final_states\":"<<final.size()<<",\"bad_final_states\":"<<bad<<",\"least_counterexample\":";
     if(!least)o<<"null";else {o<<"{\"indices\":";word(o,*least);o<<",\"pairs\":";pairs(o,s,*least);o<<",\"first_bad_stage\":"<<ls.first<<",\"final_state\":";state(o,ls);o<<'}';}o<<'}';
 }
-template<class O> static void certificate_json(O& o,const Spec& s,const Branches& b,const Graph& g) {
-    o<<"{\"format\":\"bptc-exact-accumulator-certificate-v1\",\"spec\":";spec_json(o,s);o<<",\"product_classes\":[";
+template<class O> static void certificate_json(O& o,const Spec& s,const Branches& b,const Graph& g,bool identity=false) {
+    o<<"{\"format\":\""<<(identity?"bptc-pair-accumulator-certificate-v1":"bptc-exact-accumulator-certificate-v1")<<"\",\"spec\":";spec_json(o,s);o<<",\"product_classes\":[";
     for(std::size_t i=0;i<b.size();i++){if(i)o<<',';o<<'[';for(std::size_t j=0;j<b[i].size();j++){if(j)o<<',';const auto& c=b[i][j];o<<"{\"product\":"<<c.product<<",\"representative_index\":"<<c.rep<<",\"representative_pair\":";pair(o,s.stages[i].pairs[static_cast<std::size_t>(c.rep)]);o<<",\"member_indices\":";word(o,c.members);o<<",\"member_pairs\":[";for(std::size_t k=0;k<c.members.size();k++){if(k)o<<',';pair(o,s.stages[i].pairs[static_cast<std::size_t>(c.members[k])]);}o<<"]}";}o<<']';}
     o<<"],\"layers\":";layers_json(o,s,g);o<<",\"decision\":";decision_json(o,s,g);o<<",\"metrics\":{\"concrete_assignments\":"<<g.words<<",\"quotient_product_sequences\":"<<g.sequences<<",\"producer_transitions\":"<<g.edges<<",\"unquotiented_frontier_edges\":"<<g.u<<",\"quotient_frontier_edges\":"<<g.edges<<"}}";
 }
@@ -287,10 +291,19 @@ struct StagedOutput {
 };
 int main(int argc,char** argv) {
     try {
-        require(argc==4||argc==5,"conform|measure panel.txt output.json [reserved-slot]");std::string command=argv[1];require((command=="conform"&&argc==4)||(command=="measure"&&argc==5),"mode/slot mismatch");
+        require(argc==4||argc==5,"conform|emit-quotient|emit-pairs|measure panel.txt output.json [reserved-slot]");std::string command=argv[1];require(((command=="conform"||command=="emit-quotient"||command=="emit-pairs")&&argc==4)||(command=="measure"&&argc==5),"mode/slot mismatch");
         require(!std::filesystem::exists(argv[3]),"refuse output overwrite");const Panel p=read_panel(argv[2]);
         StagedOutput staged(argv[3]);std::ofstream out(staged.file);require(bool(out),"cannot create output");
-        if(command=="conform")conform(out,p);else measure(out,p,argv[4]);
+        if(command=="conform")conform(out,p);
+        else if(command=="emit-quotient"||command=="emit-pairs"){
+            require(p.acc.size()==1&&p.dec.empty(),"single accumulator certificate required");
+            pin_available_cpu();
+            const bool identity=command=="emit-pairs";
+            const auto branches=prepare(p.acc[0],!identity,true);
+            const auto graph=walk(p.acc[0],branches,true);
+            JsonBuffer buffer;certificate_json(buffer,p.acc[0],branches,graph,identity);
+            out<<buffer.bytes<<'\n';
+        }else measure(out,p,argv[4]);
         out.flush();require(bool(out),"output failure");out.close();require(bool(out),"output close failure");
         staged.publish();return 0;
     }catch(const std::exception& e){std::cerr<<e.what()<<'\n';return 2;}

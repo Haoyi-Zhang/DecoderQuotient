@@ -30,6 +30,13 @@ from bptc.packed_decoder import spec_to_dict as decoder_dict
 from bptc.accumulator_checker import check_certificate, validate_spec
 from bptc.accumulator_oracle import run_oracle
 from bptc.publication_budget import ObligationLedger
+from bptc.certificate_format import exact
+
+
+def require(condition, message):
+    """Scientific admission remains active with Python optimization enabled."""
+    if not condition:
+        raise ValueError(message)
 
 
 def dump(path, value):
@@ -154,10 +161,11 @@ def compare(native, p, ledger):
     original = {s.name for s in accumulator_specs()}
     original_q = original_u = original_words = all_words = decoder_words = 0
     rows = []
-    assert native['format']=='p053-native-conformance-v1' and not native['performance_measured']
-    assert len(native['accumulators']) == len(p['accumulators'])
+    exact(native['format'], 'p053-native-conformance-v1', 'native format')
+    exact(native['performance_measured'], False, 'correctness-only packet')
+    require(len(native['accumulators']) == len(p['accumulators']), 'native evidence condition failed')
     for entry, s in zip(native['accumulators'], p['accumulators']):
-        assert entry['name'] == s['name']
+        require(entry['name'] == s['name'], 'native evidence condition failed')
         cert = entry['quotient_certificate']
         validate_spec(s)
         if s['name'] in original:
@@ -167,12 +175,13 @@ def compare(native, p, ledger):
                                      st['acc_bits'], st['acc_mode'], st['observe']) for st in s['stages'])
             expected = generate_certificate(AccumulatorSpec(s['name'], s['initial'], stages,
                                             s['final_observe'], s['provenance']), ledger, 'native-reference-producer')
-        assert cert == expected, s['name'] + ': complete native certificate differs'
+        exact(cert, expected, s['name'] + ': complete native certificate')
         check_certificate(cert, ledger, 'native-certificate-replay')
-        assert entry['baseline_decision'] == cert['decision']
-        assert len(entry['baseline_layers']) == len(cert['layers'])
+        exact(entry['baseline_decision'], cert['decision'], 'baseline decision')
+        require(len(entry['baseline_layers']) == len(cert['layers']), 'native evidence condition failed')
         for baseline, qlayer in zip(entry['baseline_layers'], cert['layers']):
-            assert baseline['states'] == qlayer['states'] and baseline['index'] == qlayer['index']
+            exact(baseline['states'], qlayer['states'], 'baseline states')
+            exact(baseline['index'], qlayer['index'], 'baseline layer index')
         # Independently verify *every* pair edge of the matched native baseline.
         expected_count = 0
         for i, st in enumerate(s['stages']):
@@ -190,20 +199,23 @@ def compare(native, p, ledger):
                     fail = (st['observe'] or (s['final_observe'] and i+1==len(s['stages']))) and error != 0
                     to = [target, error, old[2] or fail, i if fail and not old[2] else old[3]]
                     edges.append({'from': old, 'product': exact_product, 'representative_index': j, 'to': to})
-            assert entry['baseline_layers'][i+1]['edges'] == edges
+            exact(entry['baseline_layers'][i + 1]['edges'], edges, 'baseline edges')
             expected_count += len(edges)
-        assert entry['baseline_edges'] == expected_count == cert['metrics']['unquotiented_frontier_edges']
+        exact(entry['baseline_edges'], expected_count, 'baseline edge count')
+        exact(expected_count, cert['metrics']['unquotiented_frontier_edges'], 'baseline metric')
         words = entry['concrete']['traces']
+        count = cert['metrics']['concrete_assignments']
+        exact(entry['concrete']['whole_box_enumerated'], count <= 10000, 'native concrete scope')
         if entry['concrete']['whole_box_enumerated']:
-            assert [w['indices'] for w in words] == [list(w) for w in product(*(range(len(st['pairs'])) for st in s['stages']))]
+            require([w['indices'] for w in words] == [list(w) for w in product(*(range(len(st['pairs'])) for st in s['stages']))], 'native evidence condition failed')
             oracle = run_oracle(s, ledger, 'native-independent-concrete-oracle')
-            assert oracle['equivalent'] == cert['decision']['equivalent']
+            require(oracle['equivalent'] == cert['decision']['equivalent'], 'native evidence condition failed')
             cex=cert['decision']['least_counterexample']
             oc=oracle['least_counterexample']
-            assert (None if cex is None else {k: cex[k] for k in ('indices','pairs','first_bad_stage')}) == oc
+            require((None if cex is None else {k: cex[k] for k in ('indices', 'pairs', 'first_bad_stage')}) == oc, 'native evidence condition failed')
         for w in words:
             ledger.charge('native-trace-reference-word')
-            assert w['steps'] == trace(s,w['indices']), s['name'] + ': concrete native trace differs'
+            exact(w['steps'], trace(s, w['indices']), s['name'] + ': concrete native trace')
         all_words += len(words)
         if s['name'] in original:
             original_q += cert['metrics']['quotient_frontier_edges']
@@ -213,16 +225,17 @@ def compare(native, p, ledger):
                      'baseline_edges': entry['baseline_edges'], 'concrete_native_words': len(words),
                      'whole_box_enumerated': entry['concrete']['whole_box_enumerated'],
                      'complete_certificate_matches': True})
-    assert (original_q, original_u, original_words)==(416,1016,5576)
-    assert len(native['decoders'])==len(p['decoders'])
+    require((original_q, original_u, original_words) == (416, 1016, 5576), 'native evidence condition failed')
+    require(len(native['decoders']) == len(p['decoders']), 'native evidence condition failed')
     full_dec_words = 0
     for e, d in zip(native['decoders'], p['decoders']):
-        assert e['name']==d['name']
+        require(e['name'] == d['name'], 'native evidence condition failed')
         cert=json.loads((ARTIFACT/'results/publication/main/decoder-certificates'/f"{d['name']}.json").read_text(encoding='utf-8'))
-        assert e['equivalent']==cert['decision']['equivalent']
-        assert e['max_carry_after_last_lane']==cert['closed_form']['max_carry_after_last_lane']
+        exact(e['equivalent'], cert['decision']['equivalent'], 'native decoder decision')
+        exact(e['max_carry_after_last_lane'], cert['closed_form']['max_carry_after_last_lane'], 'native decoder carry')
+        exact(e['whole_box_enumerated'], cert['metrics']['concrete_assignments'] <= 4096, 'native decoder scope')
         if e['whole_box_enumerated']:
-            assert [t['digits'] for t in e['traces']]==[list(t) for t in product(*(range(x+1) for x in d['maxima']))]
+            require([t['digits'] for t in e['traces']] == [list(t) for t in product(*(range(x + 1) for x in d['maxima']))], 'native evidence condition failed')
             full_dec_words += len(e['traces'])
         for t in e['traces']:
             ledger.charge('native-decoder-reference-word')
@@ -230,9 +243,9 @@ def compare(native, p, ledger):
             multiplied = (w*d['scale']) % (256**len(d['maxima']))
             packed = sum((((multiplied >> (8*i)) & 255)+d['biases'][i]) % 256 << (8*i) for i in range(len(d['maxima'])))
             ref = sum((x*d['scale']+d['biases'][i]) % 256 << (8*i) for i,x in enumerate(t['digits']))
-            assert (t['input_word'],t['packed_output'],t['reference_output']) == (w,packed,ref)
+            exact([t['input_word'], t['packed_output'], t['reference_output']], [w, packed, ref], 'native decoder word')
         decoder_words += len(e['traces'])
-    assert full_dec_words==5120
+    require(full_dec_words == 5120, 'native evidence condition failed')
     return {'format':'p053-native-semantic-comparison-v1', 'accumulator_cases':len(rows),
             'original_accumulator_cases':64, 'original_quotient_edges':original_q,
             'original_baseline_edges':original_u, 'original_native_accumulator_words':original_words,
@@ -256,14 +269,14 @@ def negative_inputs(out, exe, p):
         target=out/f'reject-{name}.json'
         r=subprocess.run([str(exe),'conform',str(source),str(target)],capture_output=True,text=True,
                          env=environment(out),cwd=out,timeout=10)
-        assert r.returncode==2 and 'outside int64 native subset' in r.stderr and not target.exists()
+        require(r.returncode == 2 and 'outside int64 native subset' in r.stderr and (not target.exists()), 'native evidence condition failed')
         records.append({'control':name,'exit_code':r.returncode,'stderr':r.stderr.strip(),'output_created':False})
     return records
 
 
 def prepare(args):
     out=args.out.resolve();out.mkdir(parents=True,exist_ok=True)
-    assert not (out/'conformance.json').exists(), 'refuse overwriting prior conformance'
+    require(not (out / 'conformance.json').exists(), 'refuse overwriting prior conformance')
     p=panel();text=panel_text(p)
     dump(out/'panel.json',p);(out/'panel.txt').write_text(text,encoding='utf-8')
     compiler_version=run([args.zig,'version'],out,'compiler-version').strip()
@@ -279,8 +292,8 @@ def prepare(args):
     ledger=ObligationLedger(100000)
     native=json.loads((out/'native-o3.json').read_text(encoding='utf-8'))
     checked=json.loads((out/'native-checked.json').read_text(encoding='utf-8'))
-    assert native==checked, 'O3 and checked native executions differ'
-    assert native['affinity']['verified_single_cpu'] and native['affinity']==checked['affinity']
+    require(native == checked, 'O3 and checked native executions differ')
+    require(native['affinity']['verified_single_cpu'] and native['affinity'] == checked['affinity'], 'native evidence condition failed')
     comparison=compare(native,p,ledger)
     negative=negative_inputs(out,out/'native-o3.exe',p)
     dump(out/'comparison.json',comparison);dump(out/'semantic-budget.json',ledger.to_dict())
@@ -313,20 +326,20 @@ def prepare(args):
 def measure(args):
     out=args.out.resolve()
     readiness=json.loads((out/'conformance.json').read_text(encoding='utf-8'))
-    assert args.slot and args.slot!='COORDINATOR_RESERVED_SLOT', 'actual assigned slot required'
-    assert readiness['status']=='READY_FOR_MEASUREMENT' and not readiness['performance_measured']
+    require(args.slot and args.slot != 'COORDINATOR_RESERVED_SLOT', 'actual assigned slot required')
+    require(readiness['status'] == 'READY_FOR_MEASUREMENT' and (not readiness['performance_measured']), 'native evidence condition failed')
     for key,path in [('native_source',ARTIFACT/'native/native_bridge.cpp'),('harness',Path(__file__)),
                      ('panel_json',out/'panel.json'),('panel_text',out/'panel.txt'),('binary_o3',out/'native-o3.exe')]:
-        assert digest(path)==readiness['hashes'][key], f'conformance binding changed: {key}'
+        require(digest(path) == readiness['hashes'][key], f'conformance binding changed: {key}')
     # Only the human/coordinator should invoke this mode after assigning the slot.
     run([out/'native-o3.exe','measure',out/'panel.txt',out/'raw-samples.json',args.slot],out,'measurement',timeout=180)
     raw=json.loads((out/'raw-samples.json').read_text(encoding='utf-8'))
-    assert raw['affinity']['verified_single_cpu'] and raw['affinity']['actual_mask_hex']==readiness['affinity']['actual_mask_hex']
+    require(raw['affinity']['verified_single_cpu'] and raw['affinity']['actual_mask_hex'] == readiness['affinity']['actual_mask_hex'], 'native evidence condition failed')
     grouped=defaultdict(list)
     for s in raw['samples']:grouped[(s['kind'],s['case'])].append(s)
     rows=[]
     for (kind,case),samples in sorted(grouped.items()):
-        assert len(samples)==21 and sorted(s['pair'] for s in samples)==list(range(21))
+        require(len(samples) == 21 and sorted((s['pair'] for s in samples)) == list(range(21)), 'native evidence condition failed')
         if kind=='accumulator':
             q='quotient_ns';u='baseline_ns'
         else:q='packed_ns';u='reference_ns'

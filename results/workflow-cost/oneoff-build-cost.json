@@ -1,0 +1,63 @@
+{
+  "cache": "Fresh isolated cache before release, reused for checked and assembly.",
+  "coexecution": "This one-off build was not a fixed-frequency isolated benchmark; current conformance checks also ran on the host. No compiler-speed or amortized break-even claim.",
+  "logical_cache_bytes": 126206943,
+  "rows": [
+    {
+      "command_flags": [
+        "c++",
+        "-std=c++17",
+        "-target",
+        "x86_64-windows-gnu",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Wno-sign-conversion",
+        "-O3",
+        "-DNDEBUG"
+      ],
+      "output_bytes": 942592,
+      "returncode": 0,
+      "wall_ns": 13754891900
+    },
+    {
+      "command_flags": [
+        "c++",
+        "-std=c++17",
+        "-target",
+        "x86_64-windows-gnu",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Wno-sign-conversion",
+        "-O0",
+        "-g",
+        "-ftrapv"
+      ],
+      "output_bytes": 2062336,
+      "returncode": 0,
+      "wall_ns": 4067869600
+    },
+    {
+      "command_flags": [
+        "c++",
+        "-std=c++17",
+        "-target",
+        "x86_64-windows-gnu",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Wno-sign-conversion",
+        "-O3",
+        "-DNDEBUG",
+        "-S",
+        "-masm=intel"
+      ],
+      "output_bytes": 21481470,
+      "returncode": 0,
+      "wall_ns": 3026604400
+    }
+  ],
+  "scope": "One-off compile/link/assembly costs, not per-certificate inference or a compiler comparison.",
+  "source_sha256": "b96db8f7038eee45ffc902406d11da5a30dcc15c68b1f37372d79d0853ebec42"
+}

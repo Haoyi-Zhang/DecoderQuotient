@@ -1,0 +1,27 @@
+{
+  "binary_sha256": "e3c0ac7f9c2dd3d3bd2fef1d0ecfb1b0b6e10f69c2b7aa7f72c39f6e22c77efc",
+  "cases": 79,
+  "complete_measured_output_files": 1106,
+  "environment_normalization": "Only absolute interpreter path and compiler command arrays omitted publicly; original environment retained privately. Scientific samples, source bindings and packets unchanged.",
+  "environment_sha256": "e28ca0cbc568ec53d11ac0a611eb47c64c9f6bc43649d12ab6ead261425bc62f",
+  "excluded": "Compiler build, declaration file creation, environment collection, correctness warmups, result statistics, sample logging and post-call cross-arm equality. No persistent-service, cold-cache, fsync or hardware-counter claim.",
+  "format": "p053-complete-workflow-v1",
+  "packets_sha256": "252ca800cbdbd38a800891e666420d05167585c2a85fc17f467416b773e4d0f2",
+  "panel_sha256": "7a8d0d8e363a1d13142e4bbdd0b4dae3e8549310972232b9b8af59b107a862e0",
+  "private_environment_sha256": "16ecae335700387e0d2cf4ec6bbb39eea1a69e540d90d00ebb186c9063d25cb6",
+  "repetitions": 7,
+  "retained_warmup_and_timed_output_files": 1264,
+  "samples": 553,
+  "samples_sha256": "de0faa7f8aac46784b1053dffd2ed089aba91a4fb91ba3452add9da566848a87",
+  "source_sha256": {
+    "bptc/accumulator_checker.py": "afd1469d559375e88a3c0d8248baacac61a6f478e896debad4eaf371e3107fef",
+    "bptc/certificate_format.py": "7f3e8d2b24debda51520f00c1b83115813ef261911314b3dbcc33125434e28f6",
+    "bptc/publication_budget.py": "581af47b2cc5461bb0900b4d46bd944f576c90c85b6304c10f27b8b807654870",
+    "bptc/publication_cases.py": "a8a9979738e9d2364fc33408841cfb075f8a8b311842a87f7956e24dad1dea5c",
+    "native/bridge.py": "a822639810254986bf847e5e5a8d35bd809612fe1ba0968e65a1d90dd49a5b7e",
+    "native/native_bridge.cpp": "8738ca88997ecb9633ddc97e39d509370d933c3e98814fe93ad8b9740b720528",
+    "native/workflow_cost.py": "77fa968ac7bd40692715e9ca15af6ff0e53ffa651d98cdc1584814ed6b49d96b"
+  },
+  "timed": "Per-arm ledger creation, native process startup/input admission/product preparation/full evidence construction/serialization/file close/publication, parent wait/read/strict JSON parsing/input binding and complete semantic replay.",
+  "warmups_per_arm": 1
+}

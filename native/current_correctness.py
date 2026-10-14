@@ -25,7 +25,8 @@ from tests.hoisting_regression import as_spec
 from tests.native_admission_regression import check_native
 
 CHANGED = {'bptc/exact_accumulator.py', 'bptc/accumulator_checker.py',
-           'native/native_bridge.cpp', 'native/bridge.py'}
+           'native/native_bridge.cpp', 'native/bridge.py', 'native/report.py',
+           'native/checker_cost.py'}
 
 
 def require(condition, message):
@@ -91,7 +92,7 @@ def receipt(historical_project, native_results):
     # Run the unchanged, exact original verifier in its original source context.
     # No ignored hash, fallback verifier, or patched report module is used.
     checked = subprocess.run(
-        [sys.executable, '-B', str(historical/'native/report.py'), '--results-dir',
+        [sys.executable, '-B', '-E', str(historical/'native/report.py'), '--results-dir',
          str(old_root), '--paper-dir', str(historical_project.resolve()/'paper'), '--check'],
         capture_output=True, text=True, timeout=60,
         env=dict(os.environ, PYTHONDONTWRITEBYTECODE='1'))
@@ -137,7 +138,9 @@ def receipt(historical_project, native_results):
     require(reg.returncode == 0, 'literal regression failed: '+reg.stderr)
     sources = sorted(set(bindings) | {'native/current_correctness.py','tests/hoisting_regression.py',
         'native/materialize_measured_context.py','native/measured_native_sources.py',
-        'tests/native_admission_regression.py'})
+        'tests/native_admission_regression.py', 'data/measured_reporting_sources.json',
+        'native/workflow_cost.py', 'native/workflow_report.py',
+        'tests/test_native_consumer.py', 'tests/test_pair_replay.py'})
     return {
         'format':'p053-current-accumulator-correctness-v1',
         'scope':'Current Python replay and fresh source-bound native conformance/admission; original measurement sources and timings remain historical.',

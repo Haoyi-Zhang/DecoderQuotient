@@ -16,6 +16,11 @@ import statistics
 ARTIFACT=Path(__file__).resolve().parents[1]
 
 
+def require(condition, message):
+    if not condition:
+        raise ValueError(message)
+
+
 def load(path):
     def pairs(items):
         d={}
@@ -39,53 +44,53 @@ def analyze(root):
     raw=load(root/'raw-samples.json');saved=load(root/'measurement-summary.json')
     checker=load(root/'checker-samples.json');cs=load(root/'checker-summary.json')
     comparison=load(root/'comparison.json')
-    assert checker['status']=='complete' and raw['slot']==saved['slot']==checker['slot']==cs['slot']
-    assert raw['affinity']['actual_mask_hex']==checker['affinity']['actual_mask_hex']==native['affinity']['actual_mask_hex']
-    assert raw['affinity']['verified_single_cpu'] and checker['affinity']['verified_single_cpu']
+    require(checker['status'] == 'complete' and raw['slot'] == saved['slot'] == checker['slot'] == cs['slot'], 'native measurement admission failed')
+    require(raw['affinity']['actual_mask_hex'] == checker['affinity']['actual_mask_hex'] == native['affinity']['actual_mask_hex'], 'native measurement admission failed')
+    require(raw['affinity']['verified_single_cpu'] and checker['affinity']['verified_single_cpu'], 'native measurement admission failed')
     specs={s['name']:s for s in panel['accumulators']}
     safe={d['name'] for d in native['decoders'] if d['equivalent']}
-    assert len(specs)==79 and len(safe)==18 and comparison['disagreements']==0
+    require(len(specs) == 79 and len(safe) == 18 and (comparison['disagreements'] == 0), 'native measurement admission failed')
     groups=defaultdict(list)
     for sample in raw['samples']:
-        assert sample['batch']==16 and type(sample['pair']) is int and 0<=sample['pair']<21
+        require(sample['batch'] == 16 and type(sample['pair']) is int and (0 <= sample['pair'] < 21), 'native measurement admission failed')
         groups[(sample['kind'],sample['case'])].append(sample)
-    assert set(groups)=={('accumulator',n) for n in specs}|{('decoder',n) for n in safe}
+    require(set(groups) == {('accumulator', n) for n in specs} | {('decoder', n) for n in safe}, 'native measurement admission failed')
     saved_rows={(r['kind'],r['case']):r for r in saved['rows']}
     check_groups=defaultdict(list)
     for r in checker['samples']:check_groups[r['case']].append(r)
-    assert set(check_groups)==set(specs)
+    require(set(check_groups) == set(specs), 'native measurement admission failed')
     graph={r['case']:r for r in comparison['rows']}
     rows=[]
     for (kind,name),samples in sorted(groups.items()):
         samples.sort(key=lambda s:s['pair'])
-        assert [s['pair'] for s in samples]==list(range(21))
+        require([s['pair'] for s in samples] == list(range(21)), 'native measurement admission failed')
         for s in samples:
             expected=('UQ','QU') if kind=='accumulator' else ('RP','PR')
-            assert s['order']==expected[s['pair']%2]
-            if kind=='decoder':assert s['words_per_batch']==1024
+            require(s['order'] == expected[s['pair'] % 2], 'native measurement admission failed')
+            if kind=='decoder':require(s['words_per_batch'] == 1024, 'native measurement admission failed')
         q,u=('quotient_ns','baseline_ns') if kind=='accumulator' else ('packed_ns','reference_ns')
-        assert all(type(s[q]) is int and type(s[u]) is int and s[q]>0 and s[u]>0 for s in samples)
+        require(all((type(s[q]) is int and type(s[u]) is int and (s[q] > 0) and (s[u] > 0) for s in samples)), 'native measurement admission failed')
         ratios=[s[u]/s[q] for s in samples]
         row=deepcopy(saved_rows[(kind,name)])
-        assert row['median_paired_speedup']==statistics.median(ratios)
-        assert row['min_paired_speedup']==min(ratios) and row['max_paired_speedup']==max(ratios)
-        assert row['optimized_slower']==(statistics.median(ratios)<1)
-        assert row['optimized_median_ns_per_call']==statistics.median(s[q]/s['batch'] for s in samples)
-        assert row['baseline_median_ns_per_call']==statistics.median(s[u]/s['batch'] for s in samples)
+        require(row['median_paired_speedup'] == statistics.median(ratios), 'native measurement admission failed')
+        require(row['min_paired_speedup'] == min(ratios) and row['max_paired_speedup'] == max(ratios), 'native measurement admission failed')
+        require(row['optimized_slower'] == (statistics.median(ratios) < 1), 'native measurement admission failed')
+        require(row['optimized_median_ns_per_call'] == statistics.median((s[q] / s['batch'] for s in samples)), 'native measurement admission failed')
+        require(row['baseline_median_ns_per_call'] == statistics.median((s[u] / s['batch'] for s in samples)), 'native measurement admission failed')
         row['original_case']=not name.startswith('native-')
         row['slower_pair_count']=sum(r<1 for r in ratios)
         if kind=='accumulator':
             sums=[(s[u]+s['baseline_prepare_ns'])/(s[q]+s['quotient_prepare_ns']) for s in samples]
-            assert row['median_paired_prepare_plus_walk_speedup']==statistics.median(sums)
+            require(row['median_paired_prepare_plus_walk_speedup'] == statistics.median(sums), 'native measurement admission failed')
             row['prepare_plus_walk_slower']=statistics.median(sums)<1
             row['prepare_plus_walk_min_pair_ratio']=min(sums)
             row['prepare_plus_walk_max_pair_ratio']=max(sums)
             row['quotient_edges']=graph[name]['quotient_edges'];row['baseline_edges']=graph[name]['baseline_edges']
             for key in ('quotient_prepare_ns','baseline_prepare_ns','quotient_serialize_ns'):
-                assert row[key+'_median_per_call']==statistics.median(s[key]/s['batch'] for s in samples)
+                require(row[key + '_median_per_call'] == statistics.median((s[key] / s['batch'] for s in samples)), 'native measurement admission failed')
             row['median_paired_serialize_to_walk_ratio']=statistics.median(s['quotient_serialize_ns']/s[q] for s in samples)
             for key in ('stream_serialize_ns','quotient_fused_ns','stream_fused_ns'):
-                assert all(type(s[key]) is int and s[key] > 0 for s in samples)
+                require(all((type(s[key]) is int and s[key] > 0 for s in samples)), 'native measurement admission failed')
                 row[key+'_median_per_call']=statistics.median(s[key]/s['batch'] for s in samples)
             for label,base,optimized in (
                 ('serialize','stream_serialize_ns','quotient_serialize_ns'),
@@ -96,9 +101,9 @@ def analyze(root):
                 row[label+'_max_paired_speedup']=max(values)
                 row[label+'_slower_pairs']=sum(x < 1 for x in values)
             checks=check_groups[name]
-            assert sorted(c['sample'] for c in checks)==list(range(21)) and all(c['checker_ns']>0 for c in checks)
+            require(sorted((c['sample'] for c in checks)) == list(range(21)) and all((c['checker_ns'] > 0 for c in checks)), 'native measurement admission failed')
             row['median_checker_ns']=statistics.median(c['checker_ns'] for c in checks)
-            assert row['median_checker_ns']==next(r['median_checker_ns'] for r in cs['rows'] if r['case']==name)
+            require(row['median_checker_ns'] == next((r['median_checker_ns'] for r in cs['rows'] if r['case'] == name)), 'native measurement admission failed')
         rows.append(row)
     original=[r for r in rows if r['kind']=='accumulator' and r['original_case']]
     controls=[r for r in rows if r['kind']=='accumulator' and not r['original_case']]
@@ -124,8 +129,8 @@ def analyze(root):
              'fused_definition':'Separately timed preparation, quotient walk and full JSON materialization in one call, buffered versus ostream; no disk I/O or Python checker. Same quotient algorithm in both arms.',
              'scope':'One local x86-64 CPU, reviewed synthetic finite declarations and packed decoder examples only; no GPU or production deployment benefit.',
              'checker_obligations':checker['budget']['events_used']}
-    assert len(original)==64 and len(controls)==15 and len(decoder)==18 and len(raw['samples'])==2037
-    assert len(checker['samples'])==1659 and checker['budget']['events_used']==79266
+    require(len(original) == 64 and len(controls) == 15 and (len(decoder) == 18) and (len(raw['samples']) == 2037), 'native measurement admission failed')
+    require(len(checker['samples']) == 1659 and checker['budget']['events_used'] == 79266, 'native measurement admission failed')
     return summary
 
 
@@ -159,10 +164,10 @@ def tex_inputs(a):
 
 def export(args):
     src=args.results_dir.resolve();dst=args.out.resolve();paper=args.paper_dir.resolve()
-    assert not dst.exists(),'refuse existing public evidence directory'
+    require(not dst.exists(), 'refuse existing public evidence directory')
     a=analyze(src);conf=load(src/'conformance.json');private=load(src/'result.json')
-    assert sha(ARTIFACT/'native/native_bridge.cpp')==conf['hashes']['native_source']
-    assert sha(ARTIFACT/'native/bridge.py')==conf['hashes']['harness']
+    require(sha(ARTIFACT / 'native/native_bridge.cpp') == conf['hashes']['native_source'], 'native measurement admission failed')
+    require(sha(ARTIFACT / 'native/bridge.py') == conf['hashes']['harness'], 'native measurement admission failed')
     dst.mkdir(parents=True)
     for name in ('panel.json','comparison.json','raw-samples.json','measurement-summary.json','checker-summary.json'):
         (dst/name).write_text(encoding(load(src/name)),encoding='utf-8')
@@ -200,12 +205,12 @@ def export(args):
             if active and '.seh_endproc' in line:
                 active=False;done.add(current)
                 if done==wanted:break
-    assert done==wanted
+    require(done == wanted, 'native measurement admission failed')
     (dst/'assembly-excerpts.txt').write_text('# Compiler-generated x86-64 function excerpts, not a standalone assembly unit.\n# CodeView debug/path directives omitted; executable instructions retained.\n'+''.join(captured),encoding='utf-8')
     a['public_raw_samples_sha256']=sha(dst/'raw-samples.json')
     (dst/'analysis.json').write_text(encoding(a),encoding='utf-8')
     for name,content in tex_inputs(a).items():
-        target=paper/'generated'/name;assert not target.exists(),'refuse existing TeX input';target.write_text(content,encoding='utf-8')
+        target=paper/'generated'/name;require(not target.exists(), 'refuse existing TeX input');target.write_text(content,encoding='utf-8')
     print(json.dumps({k:a[k] for k in ('native_pairs','checker_samples','walk_slower_cases','prepare_plus_walk_slower_cases','original_serialization_to_walk_ratio_range','original_checker_median_ns_range')},indent=2))
 
 
@@ -216,11 +221,11 @@ def compact_public(args):
     not summarized away; raw timer bytes are copied unchanged. No execution.
     """
     root=args.results_dir.resolve();src=args.private_records.resolve()
-    assert not (root/'provenance.json').exists(),'refuse a second compaction'
+    require(not (root / 'provenance.json').exists(), 'refuse a second compaction')
     a=analyze(root)
-    assert load(root/'raw-samples.json')==load(src/'raw-samples.json')
+    require(load(root / 'raw-samples.json') == load(src / 'raw-samples.json'), 'native measurement admission failed')
     native=load(root/'native-conformance.json')
-    assert native==load(src/'native-o3.json')==load(src/'native-checked.json')
+    require(native == load(src / 'native-o3.json') == load(src / 'native-checked.json'), 'native measurement admission failed')
     (root/'raw-samples.json').write_bytes((src/'raw-samples.json').read_bytes())
     summary=load(root/'measurement-summary.json');summary['raw_samples_sha256']=sha(root/'raw-samples.json')
     (root/'measurement-summary.json').write_text(encoding(summary),encoding='utf-8')
@@ -228,7 +233,7 @@ def compact_public(args):
     (root/'analysis.json').write_text(encoding(a),encoding='utf-8')
     env=load(root/'environment.json')
     checked_hash=load(src/'result.json')['hashes']['checker_cost_source']
-    assert checked_hash==sha(ARTIFACT/'native/checker_cost.py')
+    require(checked_hash == sha(ARTIFACT / 'native/checker_cost.py'), 'native measurement admission failed')
     env['source_bindings']['checker_cost_source']=checked_hash
     env['public_normalization']=[
         'Raw native timer bytes copied unchanged; all raw pairs retained.',
@@ -244,24 +249,24 @@ def compact_public(args):
     (root/'protocol.json').write_text(encoding(public_protocol),encoding='utf-8')
     plain=root/'native-conformance.json';body=plain.read_bytes()
     packed=gzip.compress(body,compresslevel=6,mtime=0)
-    assert gzip.decompress(packed)==body
+    require(gzip.decompress(packed) == body, 'native measurement admission failed')
     (root/'native-conformance.json.gz').write_bytes(packed)
-    assert plain.resolve().parent==root
+    require(plain.resolve().parent == root, 'native measurement admission failed')
     plain.unlink()  # Only the public duplicate; neither private build output is changed.
     sources={'native/native_bridge.cpp':env['source_bindings']['native_source'],
              'native/bridge.py':env['source_bindings']['harness'],
              'native/checker_cost.py':checked_hash,'native/report.py':sha(ARTIFACT/'native/report.py')}
     sources.update({k.split(':',1)[1]:v for k,v in env['source_bindings'].items() if k.startswith('original:')})
-    assert all(sha(ARTIFACT/k)==v for k,v in sources.items())
+    require(all((sha(ARTIFACT / k) == v for k, v in sources.items())), 'native measurement admission failed')
     certs={}
     for entry in native['accumulators']:
         if not entry['name'].startswith('native-'):
             rel='results/publication/main/certificates/'+entry['name']+'.json'
-            assert entry['quotient_certificate']==load(ARTIFACT/rel)
+            require(entry['quotient_certificate'] == load(ARTIFACT / rel), 'native measurement admission failed')
             certs[rel]=sha(ARTIFACT/rel)
     for entry in native['decoders']:
         rel='results/publication/main/decoder-certificates/'+entry['name']+'.json'
-        assert entry['equivalent']==load(ARTIFACT/rel)['decision']['equivalent']
+        require(entry['equivalent'] == load(ARTIFACT / rel)['decision']['equivalent'], 'native measurement admission failed')
         certs[rel]=sha(ARTIFACT/rel)
     evidence={p.name:{'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(root.iterdir()) if p.is_file() and p.name!='README.md'}
     provenance={'format':'p053-native-cpu-provenance-v1','scientific_sources':sources,
@@ -287,26 +292,26 @@ def main():
     p.add_argument('--compact-retained',action='store_true');p.add_argument('--private-records',type=Path)
     args=p.parse_args()
     if args.compact_retained:
-        assert not args.check and args.private_records is not None
+        require(not args.check and args.private_records is not None, 'native measurement admission failed')
         compact_public(args);return
     if args.check:
         a=analyze(args.results_dir)
         retained=load(args.results_dir/'analysis.json')
         env=load(args.results_dir/'environment.json')
         provenance=load(args.results_dir/'provenance.json')
-        assert all(sha(ARTIFACT/k)==v for k,v in provenance['scientific_sources'].items())
-        assert all(sha(ARTIFACT/k)==v for k,v in provenance['retained_certificate_files'].items())
+        require(all((sha(ARTIFACT / k) == v for k, v in provenance['scientific_sources'].items())), 'native measurement admission failed')
+        require(all((sha(ARTIFACT / k) == v for k, v in provenance['retained_certificate_files'].items())), 'native measurement admission failed')
         for name,meta in provenance['evidence_files'].items():
             file=args.results_dir/name
-            assert file.stat().st_size==meta['bytes'] and sha(file)==meta['sha256'],name
+            require(file.stat().st_size == meta['bytes'] and sha(file) == meta['sha256'], name)
         body=gzip.decompress((args.results_dir/'native-conformance.json.gz').read_bytes())
-        assert len(body)==provenance['complete_native_output']['uncompressed_bytes']
-        assert hashlib.sha256(body).hexdigest()==provenance['complete_native_output']['uncompressed_sha256']
-        assert sha(ARTIFACT/'native/native_bridge.cpp')==env['source_bindings']['native_source']
-        assert sha(ARTIFACT/'native/bridge.py')==env['source_bindings']['harness']
-        assert retained['rows']==a['rows'] and retained['public_raw_samples_sha256']==sha(args.results_dir/'raw-samples.json')
-        assert load(args.results_dir/'measurement-summary.json')['raw_samples_sha256']==sha(args.results_dir/'raw-samples.json')
-        for name,content in tex_inputs(a).items():assert (args.paper_dir/'generated'/name).read_text(encoding='utf-8')==content
+        require(len(body) == provenance['complete_native_output']['uncompressed_bytes'], 'native measurement admission failed')
+        require(hashlib.sha256(body).hexdigest() == provenance['complete_native_output']['uncompressed_sha256'], 'native measurement admission failed')
+        require(sha(ARTIFACT / 'native/native_bridge.cpp') == env['source_bindings']['native_source'], 'native measurement admission failed')
+        require(sha(ARTIFACT / 'native/bridge.py') == env['source_bindings']['harness'], 'native measurement admission failed')
+        require(retained['rows'] == a['rows'] and retained['public_raw_samples_sha256'] == sha(args.results_dir / 'raw-samples.json'), 'native measurement admission failed')
+        require(load(args.results_dir / 'measurement-summary.json')['raw_samples_sha256'] == sha(args.results_dir / 'raw-samples.json'), 'native measurement admission failed')
+        for name,content in tex_inputs(a).items():require((args.paper_dir / 'generated' / name).read_text(encoding='utf-8') == content, 'native measurement admission failed')
         print('97 case statistics, 2037 raw pairs, 1659 checker samples, native source binding and TeX inputs checked; no performance rerun.')
     else:export(args)
 

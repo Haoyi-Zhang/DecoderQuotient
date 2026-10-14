@@ -159,8 +159,22 @@ Original-case buffered/stream paired speedups span 29.02--39.09. A separate
 fused prepare--quotient-walk--serialize comparison improves by 19.91--26.55;
 both arms use the same quotient algorithm. Buffered serialization/walk ratios
 span 2.7--5.2. Separate Python checker medians span 106.3--323.6 us.
-There is no measured full-workflow baseline/quotient speedup,
-and the walker ratios must not be described as that result.
+These historical records contain no full-workflow timing, and the walker
+ratios must not be described as that result. The separate current study in
+`../results/workflow-cost/` times native generation/file handling and complete
+Python parsing/replay. Its 553 raw pairs retain 30 quotient-slower case medians
+among the original 64 cases, whose median paired ratio is 1.002. All three
+unique-product controls are slower. No stable whole-workflow speedup follows.
+
+`emit-quotient` and `emit-pairs` each accept a single accumulator panel and
+publish complete evidence. The latter uses singleton identity branches and
+`check_pair_certificate` reconstructs every original pair edge. Casts,
+preparation opportunity, state map, witnesses, serializer and publication are
+shared. `workflow_cost.py --check` replays all 158 packet bodies and binds every
+timed output to its exact bytes; `workflow_report.py` checks all 79 declaration
+files and generates the manuscript's unfiltered vector plot. The artifact
+README gives the complete interval and all exclusions. Neither file close nor
+hard-link publication is an fsync or power-loss durability guarantee.
 
 The public evidence retains one complete `native-conformance.json.gz`
 (including all native I/O traces), the checked/release equality and reference

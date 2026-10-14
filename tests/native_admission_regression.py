@@ -18,6 +18,7 @@ sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from native import bridge
+from native.bridge import require
 from bptc.exact_accumulator import AccumulatorSpec, StageSpec, generate_certificate, spec_to_dict
 from bptc.accumulator_checker import check_certificate
 from bptc.certificate_format import exact
@@ -127,39 +128,62 @@ def check_native(executables, work, conformance=()):
                 capture_output=True,text=True,encoding='utf-8',cwd=folder,timeout=30)
             return result,target
 
+        # Every proper token prefix is an incomplete declared panel. Test the
+        # native parser directly, before a serializer can reject the input.
+        complete = (
+            'p053-native-panel-v1 1 1\n'
+            'A prefix native-admission-regression 0 1 1\n'
+            'S 8 wrap 8 wrap 1 1\nP 1 1\n'
+            'D decoder native-admission-regression 1 1 1 0\n'
+        ).split()
+        for end in range(len(complete)):
+            source = folder/f'truncated-{end}.txt'
+            source.write_text(' '.join(complete[:end])+'\n', encoding='utf-8')
+            target = folder/f'truncated-{end}.json'
+            result = subprocess.run(
+                [str(executable), 'conform', str(source), str(target)],
+                capture_output=True, text=True, encoding='utf-8', cwd=folder,
+                timeout=10)
+            require(result.returncode == 2 and 'truncated' in result.stderr,
+                    ('truncated panel prefix', end, result.returncode, result.stderr))
+            require(not target.exists() and not Path(str(target)+'.partial').exists(),
+                    'truncated panel must fail before result staging')
+            records.append(dict(build=number, control=f'truncated-prefix-{end}',
+                                rejected=True, final_output=False))
+
         for name,spec,diagnostic in invalid:
             result,target=execute(spec)
-            assert result.returncode==2 and diagnostic in result.stderr,(name,result.stderr)
-            assert not target.exists() and not Path(str(target)+'.partial').exists(),name
+            require(result.returncode == 2 and diagnostic in result.stderr, (name, result.stderr))
+            require(not target.exists() and (not Path(str(target) + '.partial').exists()), name)
             records.append(dict(build=number,control=name,rejected=True,final_output=False))
         for spec in valid:
             result,target=execute(spec)
-            assert result.returncode==0,result.stderr
+            require(result.returncode == 0, result.stderr)
             actual=json.loads(target.read_text(encoding='utf-8'))['accumulators'][0]
             certificate=generate_certificate(as_spec(spec),ObligationLedger(200000))
             exact(actual['quotient_certificate'],certificate)
             check_certificate(actual['quotient_certificate'],ObligationLedger(200000))
             exact(actual['baseline_decision'],certificate['decision'])
-            assert actual['baseline_edges']==certificate['metrics']['unquotiented_frontier_edges']
-            assert not Path(str(target)+'.partial').exists()
+            require(actual['baseline_edges'] == certificate['metrics']['unquotiented_frontier_edges'], 'native evidence condition failed')
+            require(not Path(str(target) + '.partial').exists(), 'native evidence condition failed')
             records.append(dict(build=number,control=spec['name'],accepted=True,certificate_matches=True))
         result,target=execute(growing)
-        assert result.returncode==2 and 'per-graph size cap' in result.stderr,result.stderr
-        assert not target.exists() and not Path(str(target)+'.partial').exists()
+        require(result.returncode == 2 and 'per-graph size cap' in result.stderr, result.stderr)
+        require(not target.exists() and (not Path(str(target) + '.partial').exists()), 'native evidence condition failed')
         records.append(dict(build=number,control='graph-cap',rejected=True,final_output=False))
         small=valid[0]
         result,target=execute(small,'no-overwrite')
-        assert result.returncode==0,result.stderr
+        require(result.returncode == 0, result.stderr)
         original=target.read_bytes()
         result,again=execute(small,'no-overwrite')
-        assert result.returncode==2 and 'refuse output overwrite' in result.stderr
-        assert again.read_bytes()==original
+        require(result.returncode == 2 and 'refuse output overwrite' in result.stderr, 'native evidence condition failed')
+        require(again.read_bytes() == original, 'native evidence condition failed')
         records.append(dict(build=number,control='no-overwrite',existing_result_unchanged=True))
         staging=folder/'existing-staging.json.partial';staging.mkdir()
         marker=staging/'owned-by-earlier-run';marker.write_bytes(b'preserve')
         result,target=execute(small,'existing-staging')
-        assert result.returncode==2 and 'refuse staging overwrite' in result.stderr
-        assert not target.exists() and marker.read_bytes()==b'preserve'
+        require(result.returncode == 2 and 'refuse staging overwrite' in result.stderr, 'native evidence condition failed')
+        require(not target.exists() and marker.read_bytes() == b'preserve', 'native evidence condition failed')
         records.append(dict(build=number,control='existing-staging',existing_staging_unchanged=True))
 
     retained=json.loads(gzip.decompress((ROOT/'results/native-cpu/native-conformance.json.gz').read_bytes()))

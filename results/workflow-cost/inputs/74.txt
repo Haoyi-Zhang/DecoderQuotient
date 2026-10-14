@@ -1,0 +1,34 @@
+p053-native-panel-v1 1 0
+A native-scaling-8-unique native-scaling-control 0 1 8
+S 8 wrap 8 wrap 0 3
+P 0 0
+P 1 1
+P 1 -1
+S 8 wrap 8 wrap 0 3
+P 0 0
+P 1 1
+P 1 -1
+S 8 wrap 8 wrap 0 3
+P 0 0
+P 1 1
+P 1 -1
+S 8 wrap 8 wrap 0 3
+P 0 0
+P 1 1
+P 1 -1
+S 8 wrap 8 wrap 0 3
+P 0 0
+P 1 1
+P 1 -1
+S 8 wrap 8 wrap 0 3
+P 0 0
+P 1 1
+P 1 -1
+S 8 wrap 8 wrap 0 3
+P 0 0
+P 1 1
+P 1 -1
+S 8 wrap 8 wrap 0 3
+P 0 0
+P 1 1
+P 1 -1

@@ -1,0 +1,30 @@
+{
+  "affinity": {
+    "actual_mask": "0x1",
+    "original_mask": "0xfffff"
+  },
+  "clock": {
+    "implementation": "QueryPerformanceCounter()",
+    "monotonic": true,
+    "resolution_seconds": 1e-07
+  },
+  "compiler_version": "0.15.2",
+  "disk_durability": "close and same-filesystem hard-link publication; no fsync/power-loss guarantee",
+  "frequency_and_thermals": "uncontrolled",
+  "machine": {
+    "cpu": {
+      "Name": "12th Gen Intel(R) Core(TM) i7-12700KF",
+      "NumberOfCores": 12,
+      "NumberOfLogicalProcessors": 20
+    },
+    "os": {
+      "Caption": "Microsoft Windows 11 \u4e13\u4e1a\u7248",
+      "OSArchitecture": "64 \u4f4d",
+      "Version": "10.0.28000"
+    }
+  },
+  "physical_memory_peak": null,
+  "python": "3.12.14",
+  "python_optimization": 1,
+  "target": "x86_64-windows-gnu"
+}

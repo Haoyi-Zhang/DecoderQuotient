@@ -1,0 +1,79 @@
+{
+  "schema": "current-bibliographic-identity-followup-v1",
+  "checked_on": "2026-10-14",
+  "selected_identity_count": 1,
+  "full_text_read_complete": false,
+  "citation_entailment_validated": false,
+  "scope": "One selected NeurIPS publisher header/identity correction only; the other67 bibliography records retain historical access scopes and offline binding. No new fulltext, novelty, scientific or submission validation.",
+  "source_bindings": {
+    "references.bib": "6ee885668baa5176251d84a4437bcbfbff373b80ab624f3905f0158991f51548",
+    "evidence/reference-audit.json": "d3c63907b0667a89ebd35fb6db879819af5dec1ed3fd046c34a5b578a981a32e",
+    "evidence/reference-reverification.json": "7ab47ee37ee9c68a7db771771d344d19e640dbdbca922e9805c7fdabf365452a"
+  },
+  "records": {
+    "quarot": {
+      "historical_bibliographic_record": {
+        "type": "inproceedings",
+        "key": "quarot",
+        "author": "Ashkboos, Saleh and Mohtashami, Amirkeivan and Croci, Maximilian L. and Li, Bo and Cameron, Pashmina and Jaggi, Martin and Alistarh, Dan and Hoefler, Torsten and Hensman, James",
+        "title": "{QuaRot}: Outlier-Free 4-Bit Inference in Rotated {LLMs}",
+        "booktitle": "Advances in Neural Information Processing Systems",
+        "year": "2024",
+        "volume": "37",
+        "eprint": "2404.00456",
+        "archiveprefix": "arXiv",
+        "doi": "10.5555/3737916.3741096"
+      },
+      "current_bibliographic_record": {
+        "type": "inproceedings",
+        "key": "quarot",
+        "author": "Ashkboos, Saleh and Mohtashami, Amirkeivan and Croci, Maximilian L. and Li, Bo and Cameron, Pashmina and Jaggi, Martin and Alistarh, Dan and Hoefler, Torsten and Hensman, James",
+        "title": "{QuaRot}: Outlier-Free 4-Bit Inference in Rotated {LLMs}",
+        "booktitle": "Advances in Neural Information Processing Systems",
+        "year": "2024",
+        "volume": "37",
+        "eprint": "2404.00456",
+        "archiveprefix": "arXiv",
+        "doi": "10.52202/079017-3180",
+        "url": "https://papers.nips.cc/paper_files/paper/2024/hash/b5b939436789f76f08b9d0da5e81af7c-Abstract-Conference.html"
+      },
+      "changed_fields": [
+        "doi",
+        "url"
+      ],
+      "primary_identity": {
+        "title": "QuaRot: Outlier-Free 4-Bit Inference in Rotated LLMs",
+        "authors": [
+          "Saleh Ashkboos",
+          "Amirkeivan Mohtashami",
+          "Maximilian L. Croci",
+          "Bo Li",
+          "Pashmina Cameron",
+          "Martin Jaggi",
+          "Dan Alistarh",
+          "Torsten Hoefler",
+          "James Hensman"
+        ],
+        "year": 2024,
+        "doi": "10.52202/079017-3180",
+        "venue": "Advances in Neural Information Processing Systems37",
+        "pages": "100213--100240",
+        "canonical_url": "https://papers.nips.cc/paper_files/paper/2024/hash/b5b939436789f76f08b9d0da5e81af7c-Abstract-Conference.html"
+      },
+      "primary_sources": [
+        {
+          "url": "https://papers.nips.cc/paper_files/paper/2024/hash/b5b939436789f76f08b9d0da5e81af7c-Abstract-Conference.html",
+          "read_scope": "Publishertitle/all9authors/year/venue/DOIsection",
+          "observation": "NeurIPS explicitly assigns10.52202/079017-3180. All9currentauthors match; Croci's L. is retained."
+        },
+        {
+          "url": "https://api.crossref.org/works/10.52202%2F079017-3180",
+          "read_scope": "Publisher-deposited DOI/title/all authors/venue/date/pages/aliases fields personally read",
+          "observation": "Retrieved exact publisher DOI 10.52202/079017-3180; no alias to the wrong requested value appears in this record."
+        }
+      ],
+      "read_scope": "NeurIPS current title/all9authorheader,37(2024), DOI10.52202/079017-3180; fresh header/DOI read2026-10-14. No full paper or empirical claims verified.",
+      "historical_source_reading_not_extended": true
+    }
+  }
+}

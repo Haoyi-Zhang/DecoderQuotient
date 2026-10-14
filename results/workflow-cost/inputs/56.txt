@@ -1,0 +1,16 @@
+p053-native-panel-v1 1 0
+A safe-saturating-07 safe-control 0 1 4
+S 11 saturate 11 saturate 0 2
+P -1 -1
+P 1 1
+S 11 saturate 11 saturate 0 2
+P -1 1
+P 1 -1
+S 11 saturate 11 saturate 0 3
+P -2 -1
+P -1 -2
+P 1 2
+S 11 saturate 11 saturate 0 3
+P -2 1
+P -1 2
+P 1 -2

@@ -1,9 +1,41 @@
 """Offline citation/bibliography consistency, with explicit provenance limits."""
-import argparse,csv,json,re,sys
+import argparse,csv,hashlib,json,re,sys
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from bptc.certificate_format import strict_json_loads
 from tools.bib_records import parse
+
+def current_metadata_followup(paper,artifact,records):
+    """Keep historical reading receipts, bind exactly one new publisher identity."""
+    data=strict_json_loads((artifact/'evidence/current-metadata-followup.json').read_text())
+    if (data.get('schema')!='current-bibliographic-identity-followup-v1'
+            or type(data.get('selected_identity_count')) is not int
+            or data['selected_identity_count']!=1
+            or data.get('full_text_read_complete') is not False
+            or data.get('citation_entailment_validated') is not False
+            or set(data.get('records',{}))!={'quarot'}):
+        raise ValueError('invalid current metadata followup scope')
+    bindings=data.get('source_bindings',{})
+    if set(bindings)!={'references.bib','evidence/reference-audit.json','evidence/reference-reverification.json'}:
+        raise ValueError('current metadata source coverage mismatch')
+    for relative,expected in bindings.items():
+        path=paper/relative if relative=='references.bib' else artifact/relative
+        if hashlib.sha256(path.read_bytes()).hexdigest()!=expected:
+            raise ValueError('current metadata source changed: '+relative)
+    record=data['records']['quarot']
+    historical=records['quarot']['bibliographic_record']
+    if record.get('historical_bibliographic_record')!=historical or historical.get('doi')!='10.5555/3737916.3741096':
+        raise ValueError('QuaRot historical identity binding mismatch')
+    expected=dict(historical)
+    expected.update(doi='10.52202/079017-3180',url='https://papers.nips.cc/paper_files/paper/2024/hash/b5b939436789f76f08b9d0da5e81af7c-Abstract-Conference.html')
+    if (record.get('current_bibliographic_record')!=expected
+            or record.get('changed_fields')!=['doi','url']
+            or record.get('historical_source_reading_not_extended') is not True):
+        raise ValueError('QuaRot current identity binding mismatch')
+    sources=record.get('primary_sources',[])
+    if not sources or not record.get('read_scope') or not all(item.get('url','').startswith('https://') and item.get('read_scope') for item in sources):
+        raise ValueError('QuaRot primary metadata source scope missing')
+    return data
 
 def check(paper,artifact):
     entries=parse((paper/'references.bib').read_text());keys=[e['key'] for e in entries]
@@ -41,10 +73,13 @@ def check(paper,artifact):
     records=reviewed.get('records',{})
     if len(records)!=len(entries) or set(records)!=set(keys):
         raise ValueError('fresh reference audit coverage mismatch')
+    followup=current_metadata_followup(paper,artifact,records)
     frozen=records
     for entry in entries:
         item=frozen[entry['key']]
-        if item.get('bibliographic_record')!=entry:
+        current=followup['records'].get(entry['key'])
+        expected=current['current_bibliographic_record'] if current else item.get('bibliographic_record')
+        if expected!=entry:
             raise ValueError('bibliography changed after source review: '+entry['key'])
         if not item.get('access_scope') or not item.get('primary_source'):
             raise ValueError('source-review scope missing: '+entry['key'])
@@ -55,7 +90,7 @@ def check(paper,artifact):
         while start>0 and lines[start-1].strip():start-=1
         while end<len(lines) and lines[end].strip():end+=1
         o['paragraph']=' '.join(lines[start:end]);o['stated_citation_purpose']=audit['entries'][o['key']]['citation_purpose']
-    return {'status':'pass','entries':len(entries),'cited_unique':len(cited),'citation_occurrences':len(occurrences),'missing_keys':[],'uncited_keys':[], 'scope':'Offline coverage and identity-field consistency. Primary-source reading is recorded in reference-audit.json, including partial-access and date-convention qualifications. This check does not establish full-text reading or universal accuracy.'},occurrences
+    return {'status':'pass','entries':len(entries),'cited_unique':len(cited),'citation_occurrences':len(occurrences),'missing_keys':[],'uncited_keys':[], 'current_metadata_followup_keys':sorted(followup['records']),'current_metadata_followup_count':followup['selected_identity_count'],'current_metadata_followup_scope':followup['scope'],'full_text_read_by_this_check':False,'citation_entailment_validated_by_this_check':False,'scope':'Offline coverage and identity-field consistency. Historical source-reading receipts are retained unchanged; the current metadata followup binds only the selected publisher identity. This check does not establish full-text reading or universal accuracy.'},occurrences
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--paper-dir',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--contexts',type=Path);args=p.parse_args();artifact=Path(__file__).resolve().parents[1]

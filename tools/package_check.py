@@ -9,6 +9,7 @@ from tools.generate_paper import generate
 from tools.validate_results import validate_run,compare_runs
 from tools.reference_check import check as check_references
 from native.materialize_measured_context import measured_fixture
+from native.workflow_report import inputs as workflow_inputs
 
 TITLE='Exact Quotient Certificates for Packed-Integer Decoders and Mixed-Width Accumulators'
 def require(ok,message):
@@ -127,6 +128,16 @@ def main():
         comparison=compare_runs(a/'results/publication/main',a/'results/publication/reproduction');steps.append('complete 64+30 evidence sets for each run and independent-run byte comparison')
         check_generated_inputs(paper,a)
         steps.append('all six generated TeX inputs equal regenerated evidence-derived text')
+        _,workflow_macros,workflow_csv=workflow_inputs(a/'results/workflow-cost')
+        require((paper/'generated/workflow_macros.tex').read_text()==workflow_macros,
+                'stale complete-workflow macros')
+        require((paper/'figures/workflow-cost.csv').read_text()==workflow_csv,
+                'stale complete-workflow plot data')
+        require((paper/'figures/workflow-cost.pdf').read_bytes().startswith(b'%PDF-'),
+                'missing complete-workflow vector figure')
+        require(r'\includegraphics{figures/workflow-cost.pdf}' in (paper/'main.tex').read_text(),
+                'main must consume complete-workflow figure')
+        steps.append('complete workflow declarations, raw sample/packet bindings, both semantic consumers, derived macros/CSV and figure consumer; retained PDF freshness requires separate render review')
         ref,contexts=check_references(paper,a);steps.append(str(ref['entries'])+'-record bibliography/citation mapping and source-audit coverage')
         sources=list((a/'bptc').glob('*.py'))+list((a/'tools').glob('*.py'))+list((a/'tests').glob('*.py'))
         for f in sources:ast.parse(f.read_text(),filename=f.name)

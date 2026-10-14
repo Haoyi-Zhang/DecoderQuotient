@@ -1,0 +1,8357 @@
+{
+  "accumulators": [
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "safe-saturating-00",
+      "provenance": "safe-control",
+      "stages": [
+        {
+          "acc_bits": 8,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -2,
+              -1
+            ],
+            [
+              -1,
+              -2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              1,
+              -2
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "visible-saturation-00",
+      "provenance": "adversarial-overflow",
+      "stages": [
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -7,
+              -1
+            ],
+            [
+              -1,
+              -7
+            ],
+            [
+              1,
+              7
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -2,
+              -1
+            ],
+            [
+              -1,
+              -2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "saturation-reconvergence-00",
+      "provenance": "cancellation-control",
+      "stages": [
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              -2
+            ],
+            [
+              -2,
+              -4
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -7,
+              4
+            ],
+            [
+              -4,
+              7
+            ],
+            [
+              4,
+              -7
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "final-range-unsound-00",
+      "provenance": "final-range-counterexample",
+      "stages": [
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              -2
+            ],
+            [
+              -2,
+              -4
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              2
+            ],
+            [
+              -2,
+              4
+            ],
+            [
+              2,
+              -4
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "term-narrowing-00",
+      "provenance": "mixed-width-term",
+      "stages": [
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              -2
+            ],
+            [
+              -2,
+              -4
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "term_bits": 4,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 4,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 4,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 4,
+          "term_mode": "wrap"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "width-schedule-00",
+      "provenance": "mixed-width-schedule",
+      "stages": [
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              -2
+            ],
+            [
+              -2,
+              -4
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              1,
+              -2
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "intermediate-observation-00",
+      "provenance": "observation-schedule",
+      "stages": [
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              -2
+            ],
+            [
+              -2,
+              -4
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -7,
+              4
+            ],
+            [
+              -4,
+              7
+            ],
+            [
+              4,
+              -7
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "mixed-product-domain-00",
+      "provenance": "systematic-product-box",
+      "stages": [
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -7,
+              -1
+            ],
+            [
+              -1,
+              -7
+            ],
+            [
+              -4,
+              -2
+            ],
+            [
+              -2,
+              -4
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -7,
+              1
+            ],
+            [
+              -1,
+              7
+            ],
+            [
+              -4,
+              2
+            ],
+            [
+              -2,
+              4
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "safe-saturating-01",
+      "provenance": "safe-control",
+      "stages": [
+        {
+          "acc_bits": 9,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 9,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 9,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -2,
+              -1
+            ],
+            [
+              -1,
+              -2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 9,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              1,
+              -2
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "visible-saturation-01",
+      "provenance": "adversarial-overflow",
+      "stages": [
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -5,
+              -3
+            ],
+            [
+              -3,
+              -5
+            ],
+            [
+              3,
+              5
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -2,
+              -1
+            ],
+            [
+              -1,
+              -2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "saturation-reconvergence-01",
+      "provenance": "cancellation-control",
+      "stages": [
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              -4
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              -8,
+              -2
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -10,
+              6
+            ],
+            [
+              -6,
+              10
+            ],
+            [
+              6,
+              -10
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "final-range-unsound-01",
+      "provenance": "final-range-counterexample",
+      "stages": [
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              -4
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              -8,
+              -2
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              4
+            ],
+            [
+              4,
+              -4
+            ],
+            [
+              -8,
+              2
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "term-narrowing-01",
+      "provenance": "mixed-width-term",
+      "stages": [
+        {
+          "acc_bits": 9,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              -4
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              -8,
+              -2
+            ]
+          ],
+          "term_bits": 5,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 9,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 5,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 9,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 5,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 9,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 5,
+          "term_mode": "wrap"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "width-schedule-01",
+      "provenance": "mixed-width-schedule",
+      "stages": [
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              -4
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              -8,
+              -2
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 9,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              1,
+              -2
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 9,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "intermediate-observation-01",
+      "provenance": "observation-schedule",
+      "stages": [
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              -4
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              -8,
+              -2
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -10,
+              6
+            ],
+            [
+              -6,
+              10
+            ],
+            [
+              6,
+              -10
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "mixed-product-domain-01",
+      "provenance": "systematic-product-box",
+      "stages": [
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -5,
+              -3
+            ],
+            [
+              -3,
+              -5
+            ],
+            [
+              -4,
+              -4
+            ],
+            [
+              4,
+              4
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -5,
+              3
+            ],
+            [
+              -3,
+              5
+            ],
+            [
+              -4,
+              4
+            ],
+            [
+              4,
+              -4
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "safe-saturating-02",
+      "provenance": "safe-control",
+      "stages": [
+        {
+          "acc_bits": 10,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 10,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 10,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -2,
+              -1
+            ],
+            [
+              -1,
+              -2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 10,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              1,
+              -2
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "visible-saturation-02",
+      "provenance": "adversarial-overflow",
+      "stages": [
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -31,
+              -1
+            ],
+            [
+              -1,
+              -31
+            ],
+            [
+              1,
+              31
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -2,
+              -1
+            ],
+            [
+              -1,
+              -2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "saturation-reconvergence-02",
+      "provenance": "cancellation-control",
+      "stages": [
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              -4
+            ],
+            [
+              -4,
+              -8
+            ],
+            [
+              4,
+              8
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -31,
+              4
+            ],
+            [
+              -4,
+              31
+            ],
+            [
+              4,
+              -31
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "final-range-unsound-02",
+      "provenance": "final-range-counterexample",
+      "stages": [
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              -4
+            ],
+            [
+              -4,
+              -8
+            ],
+            [
+              4,
+              8
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              4
+            ],
+            [
+              -4,
+              8
+            ],
+            [
+              4,
+              -8
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "term-narrowing-02",
+      "provenance": "mixed-width-term",
+      "stages": [
+        {
+          "acc_bits": 10,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              -4
+            ],
+            [
+              -4,
+              -8
+            ],
+            [
+              4,
+              8
+            ]
+          ],
+          "term_bits": 6,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 10,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 6,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 10,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 6,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 10,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 6,
+          "term_mode": "wrap"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "width-schedule-02",
+      "provenance": "mixed-width-schedule",
+      "stages": [
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              -4
+            ],
+            [
+              -4,
+              -8
+            ],
+            [
+              4,
+              8
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 10,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              1,
+              -2
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 10,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "intermediate-observation-02",
+      "provenance": "observation-schedule",
+      "stages": [
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              -4
+            ],
+            [
+              -4,
+              -8
+            ],
+            [
+              4,
+              8
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -31,
+              4
+            ],
+            [
+              -4,
+              31
+            ],
+            [
+              4,
+              -31
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "mixed-product-domain-02",
+      "provenance": "systematic-product-box",
+      "stages": [
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -31,
+              -1
+            ],
+            [
+              -1,
+              -31
+            ],
+            [
+              -8,
+              -4
+            ],
+            [
+              -4,
+              -8
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -31,
+              1
+            ],
+            [
+              -1,
+              31
+            ],
+            [
+              -8,
+              4
+            ],
+            [
+              -4,
+              8
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "safe-saturating-03",
+      "provenance": "safe-control",
+      "stages": [
+        {
+          "acc_bits": 11,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 11,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 11,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -2,
+              -1
+            ],
+            [
+              -1,
+              -2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 11,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              1,
+              -2
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "visible-saturation-03",
+      "provenance": "adversarial-overflow",
+      "stages": [
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -9,
+              -7
+            ],
+            [
+              -7,
+              -9
+            ],
+            [
+              7,
+              9
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -2,
+              -1
+            ],
+            [
+              -1,
+              -2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "saturation-reconvergence-03",
+      "provenance": "cancellation-control",
+      "stages": [
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              -8
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              -16,
+              -4
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -18,
+              14
+            ],
+            [
+              -14,
+              18
+            ],
+            [
+              14,
+              -18
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "final-range-unsound-03",
+      "provenance": "final-range-counterexample",
+      "stages": [
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              -8
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              -16,
+              -4
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              8
+            ],
+            [
+              8,
+              -8
+            ],
+            [
+              -16,
+              4
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "term-narrowing-03",
+      "provenance": "mixed-width-term",
+      "stages": [
+        {
+          "acc_bits": 11,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              -8
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              -16,
+              -4
+            ]
+          ],
+          "term_bits": 7,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 11,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 7,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 11,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 7,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 11,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 7,
+          "term_mode": "wrap"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "width-schedule-03",
+      "provenance": "mixed-width-schedule",
+      "stages": [
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              -8
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              -16,
+              -4
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 11,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              1,
+              -2
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 11,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "intermediate-observation-03",
+      "provenance": "observation-schedule",
+      "stages": [
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              -8
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              -16,
+              -4
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -18,
+              14
+            ],
+            [
+              -14,
+              18
+            ],
+            [
+              14,
+              -18
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "mixed-product-domain-03",
+      "provenance": "systematic-product-box",
+      "stages": [
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -9,
+              -7
+            ],
+            [
+              -7,
+              -9
+            ],
+            [
+              -8,
+              -8
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -9,
+              7
+            ],
+            [
+              -7,
+              9
+            ],
+            [
+              -8,
+              8
+            ],
+            [
+              8,
+              -8
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "safe-saturating-04",
+      "provenance": "safe-control",
+      "stages": [
+        {
+          "acc_bits": 8,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -2,
+              -1
+            ],
+            [
+              -1,
+              -2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              1,
+              -2
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "visible-saturation-04",
+      "provenance": "adversarial-overflow",
+      "stages": [
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -7,
+              -1
+            ],
+            [
+              -1,
+              -7
+            ],
+            [
+              1,
+              7
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -2,
+              -1
+            ],
+            [
+              -1,
+              -2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "saturation-reconvergence-04",
+      "provenance": "cancellation-control",
+      "stages": [
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              -2
+            ],
+            [
+              -2,
+              -4
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -7,
+              4
+            ],
+            [
+              -4,
+              7
+            ],
+            [
+              4,
+              -7
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "final-range-unsound-04",
+      "provenance": "final-range-counterexample",
+      "stages": [
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              -2
+            ],
+            [
+              -2,
+              -4
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              2
+            ],
+            [
+              -2,
+              4
+            ],
+            [
+              2,
+              -4
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "term-narrowing-04",
+      "provenance": "mixed-width-term",
+      "stages": [
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              -2
+            ],
+            [
+              -2,
+              -4
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "term_bits": 4,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 4,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 4,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 4,
+          "term_mode": "wrap"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "width-schedule-04",
+      "provenance": "mixed-width-schedule",
+      "stages": [
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              -2
+            ],
+            [
+              -2,
+              -4
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              1,
+              -2
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "intermediate-observation-04",
+      "provenance": "observation-schedule",
+      "stages": [
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              -2
+            ],
+            [
+              -2,
+              -4
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -7,
+              4
+            ],
+            [
+              -4,
+              7
+            ],
+            [
+              4,
+              -7
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "mixed-product-domain-04",
+      "provenance": "systematic-product-box",
+      "stages": [
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -7,
+              -1
+            ],
+            [
+              -1,
+              -7
+            ],
+            [
+              -4,
+              -2
+            ],
+            [
+              -2,
+              -4
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -7,
+              1
+            ],
+            [
+              -1,
+              7
+            ],
+            [
+              -4,
+              2
+            ],
+            [
+              -2,
+              4
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 4,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "safe-saturating-05",
+      "provenance": "safe-control",
+      "stages": [
+        {
+          "acc_bits": 9,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 9,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 9,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -2,
+              -1
+            ],
+            [
+              -1,
+              -2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 9,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              1,
+              -2
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "visible-saturation-05",
+      "provenance": "adversarial-overflow",
+      "stages": [
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -5,
+              -3
+            ],
+            [
+              -3,
+              -5
+            ],
+            [
+              3,
+              5
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -2,
+              -1
+            ],
+            [
+              -1,
+              -2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "saturation-reconvergence-05",
+      "provenance": "cancellation-control",
+      "stages": [
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              -4
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              -8,
+              -2
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -10,
+              6
+            ],
+            [
+              -6,
+              10
+            ],
+            [
+              6,
+              -10
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "final-range-unsound-05",
+      "provenance": "final-range-counterexample",
+      "stages": [
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              -4
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              -8,
+              -2
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              4
+            ],
+            [
+              4,
+              -4
+            ],
+            [
+              -8,
+              2
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "term-narrowing-05",
+      "provenance": "mixed-width-term",
+      "stages": [
+        {
+          "acc_bits": 9,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              -4
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              -8,
+              -2
+            ]
+          ],
+          "term_bits": 5,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 9,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 5,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 9,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 5,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 9,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 5,
+          "term_mode": "wrap"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "width-schedule-05",
+      "provenance": "mixed-width-schedule",
+      "stages": [
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              -4
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              -8,
+              -2
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 9,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              1,
+              -2
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 9,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "intermediate-observation-05",
+      "provenance": "observation-schedule",
+      "stages": [
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -4,
+              -4
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              -8,
+              -2
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -10,
+              6
+            ],
+            [
+              -6,
+              10
+            ],
+            [
+              6,
+              -10
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "mixed-product-domain-05",
+      "provenance": "systematic-product-box",
+      "stages": [
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -5,
+              -3
+            ],
+            [
+              -3,
+              -5
+            ],
+            [
+              -4,
+              -4
+            ],
+            [
+              4,
+              4
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -5,
+              3
+            ],
+            [
+              -3,
+              5
+            ],
+            [
+              -4,
+              4
+            ],
+            [
+              4,
+              -4
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 5,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 9,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "safe-saturating-06",
+      "provenance": "safe-control",
+      "stages": [
+        {
+          "acc_bits": 10,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 10,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 10,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -2,
+              -1
+            ],
+            [
+              -1,
+              -2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 10,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              1,
+              -2
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "visible-saturation-06",
+      "provenance": "adversarial-overflow",
+      "stages": [
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -31,
+              -1
+            ],
+            [
+              -1,
+              -31
+            ],
+            [
+              1,
+              31
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -2,
+              -1
+            ],
+            [
+              -1,
+              -2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "saturation-reconvergence-06",
+      "provenance": "cancellation-control",
+      "stages": [
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              -4
+            ],
+            [
+              -4,
+              -8
+            ],
+            [
+              4,
+              8
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -31,
+              4
+            ],
+            [
+              -4,
+              31
+            ],
+            [
+              4,
+              -31
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "final-range-unsound-06",
+      "provenance": "final-range-counterexample",
+      "stages": [
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              -4
+            ],
+            [
+              -4,
+              -8
+            ],
+            [
+              4,
+              8
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              4
+            ],
+            [
+              -4,
+              8
+            ],
+            [
+              4,
+              -8
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "term-narrowing-06",
+      "provenance": "mixed-width-term",
+      "stages": [
+        {
+          "acc_bits": 10,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              -4
+            ],
+            [
+              -4,
+              -8
+            ],
+            [
+              4,
+              8
+            ]
+          ],
+          "term_bits": 6,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 10,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 6,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 10,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 6,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 10,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 6,
+          "term_mode": "wrap"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "width-schedule-06",
+      "provenance": "mixed-width-schedule",
+      "stages": [
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              -4
+            ],
+            [
+              -4,
+              -8
+            ],
+            [
+              4,
+              8
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 10,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              1,
+              -2
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 10,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "intermediate-observation-06",
+      "provenance": "observation-schedule",
+      "stages": [
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              -4
+            ],
+            [
+              -4,
+              -8
+            ],
+            [
+              4,
+              8
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -31,
+              4
+            ],
+            [
+              -4,
+              31
+            ],
+            [
+              4,
+              -31
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "mixed-product-domain-06",
+      "provenance": "systematic-product-box",
+      "stages": [
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -31,
+              -1
+            ],
+            [
+              -1,
+              -31
+            ],
+            [
+              -8,
+              -4
+            ],
+            [
+              -4,
+              -8
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -31,
+              1
+            ],
+            [
+              -1,
+              31
+            ],
+            [
+              -8,
+              4
+            ],
+            [
+              -4,
+              8
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 6,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 10,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "safe-saturating-07",
+      "provenance": "safe-control",
+      "stages": [
+        {
+          "acc_bits": 11,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 11,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 11,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -2,
+              -1
+            ],
+            [
+              -1,
+              -2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 11,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              1,
+              -2
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "visible-saturation-07",
+      "provenance": "adversarial-overflow",
+      "stages": [
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -9,
+              -7
+            ],
+            [
+              -7,
+              -9
+            ],
+            [
+              7,
+              9
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -2,
+              -1
+            ],
+            [
+              -1,
+              -2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "saturation-reconvergence-07",
+      "provenance": "cancellation-control",
+      "stages": [
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              -8
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              -16,
+              -4
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -18,
+              14
+            ],
+            [
+              -14,
+              18
+            ],
+            [
+              14,
+              -18
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "final-range-unsound-07",
+      "provenance": "final-range-counterexample",
+      "stages": [
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              -8
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              -16,
+              -4
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              8
+            ],
+            [
+              8,
+              -8
+            ],
+            [
+              -16,
+              4
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "term-narrowing-07",
+      "provenance": "mixed-width-term",
+      "stages": [
+        {
+          "acc_bits": 11,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              -8
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              -16,
+              -4
+            ]
+          ],
+          "term_bits": 7,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 11,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 7,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 11,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 7,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 11,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 7,
+          "term_mode": "wrap"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "width-schedule-07",
+      "provenance": "mixed-width-schedule",
+      "stages": [
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              -8
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              -16,
+              -4
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 11,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              1,
+              -2
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 11,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "intermediate-observation-07",
+      "provenance": "observation-schedule",
+      "stages": [
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -8,
+              -8
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              -16,
+              -4
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              -1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -18,
+              14
+            ],
+            [
+              -14,
+              18
+            ],
+            [
+              14,
+              -18
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "mixed-product-domain-07",
+      "provenance": "systematic-product-box",
+      "stages": [
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -9,
+              -7
+            ],
+            [
+              -7,
+              -9
+            ],
+            [
+              -8,
+              -8
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              -9,
+              7
+            ],
+            [
+              -7,
+              9
+            ],
+            [
+              -8,
+              8
+            ],
+            [
+              8,
+              -8
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        },
+        {
+          "acc_bits": 7,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "term_bits": 11,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": -3,
+      "name": "native-initial-2-wrap--3",
+      "provenance": "native-boundary-control",
+      "stages": [
+        {
+          "acc_bits": 2,
+          "acc_mode": "wrap",
+          "observe": true,
+          "pairs": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "term_bits": 2,
+          "term_mode": "wrap"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 2,
+      "name": "native-initial-2-wrap-2",
+      "provenance": "native-boundary-control",
+      "stages": [
+        {
+          "acc_bits": 2,
+          "acc_mode": "wrap",
+          "observe": true,
+          "pairs": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "term_bits": 2,
+          "term_mode": "wrap"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": -3,
+      "name": "native-initial-2-saturate--3",
+      "provenance": "native-boundary-control",
+      "stages": [
+        {
+          "acc_bits": 2,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "term_bits": 2,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 2,
+      "name": "native-initial-2-saturate-2",
+      "provenance": "native-boundary-control",
+      "stages": [
+        {
+          "acc_bits": 2,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "term_bits": 2,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": -2147483649,
+      "name": "native-initial-32-wrap--2147483649",
+      "provenance": "native-boundary-control",
+      "stages": [
+        {
+          "acc_bits": 32,
+          "acc_mode": "wrap",
+          "observe": true,
+          "pairs": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "term_bits": 32,
+          "term_mode": "wrap"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 2147483648,
+      "name": "native-initial-32-wrap-2147483648",
+      "provenance": "native-boundary-control",
+      "stages": [
+        {
+          "acc_bits": 32,
+          "acc_mode": "wrap",
+          "observe": true,
+          "pairs": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "term_bits": 32,
+          "term_mode": "wrap"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": -2147483649,
+      "name": "native-initial-32-saturate--2147483649",
+      "provenance": "native-boundary-control",
+      "stages": [
+        {
+          "acc_bits": 32,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "term_bits": 32,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 2147483648,
+      "name": "native-initial-32-saturate-2147483648",
+      "provenance": "native-boundary-control",
+      "stages": [
+        {
+          "acc_bits": 32,
+          "acc_mode": "saturate",
+          "observe": true,
+          "pairs": [
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "term_bits": 32,
+          "term_mode": "saturate"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "native-scaling-4-unique",
+      "provenance": "native-scaling-control",
+      "stages": [
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "native-scaling-4-duplicate",
+      "provenance": "native-scaling-control",
+      "stages": [
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "native-scaling-8-unique",
+      "provenance": "native-scaling-control",
+      "stages": [
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "native-scaling-8-duplicate",
+      "provenance": "native-scaling-control",
+      "stages": [
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "native-scaling-16-unique",
+      "provenance": "native-scaling-control",
+      "stages": [
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              -1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        }
+      ]
+    },
+    {
+      "final_observe": true,
+      "initial": 0,
+      "name": "native-scaling-16-duplicate",
+      "provenance": "native-scaling-control",
+      "stages": [
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "wrap",
+          "observe": false,
+          "pairs": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              -1,
+              -1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              -1,
+              1
+            ]
+          ],
+          "term_bits": 8,
+          "term_mode": "wrap"
+        }
+      ]
+    },
+    {
+      "final_observe": false,
+      "initial": 8,
+      "name": "native-no-observation",
+      "provenance": "native-boundary-control",
+      "stages": [
+        {
+          "acc_bits": 8,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              2,
+              4
+            ],
+            [
+              -2,
+              -4
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "term_bits": 4,
+          "term_mode": "wrap"
+        },
+        {
+          "acc_bits": 8,
+          "acc_mode": "saturate",
+          "observe": false,
+          "pairs": [
+            [
+              2,
+              4
+            ],
+            [
+              -2,
+              -4
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "term_bits": 4,
+          "term_mode": "wrap"
+        }
+      ]
+    }
+  ],
+  "decoders": [
+    {
+      "biases": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "name": "decoder-full-nibble-box-001",
+      "provenance": "full-nibble-box",
+      "scale": 1
+    },
+    {
+      "biases": [
+        7,
+        14,
+        21,
+        28
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "name": "decoder-full-nibble-box-007",
+      "provenance": "full-nibble-box",
+      "scale": 7
+    },
+    {
+      "biases": [
+        15,
+        30,
+        45,
+        60
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "name": "decoder-full-nibble-box-015",
+      "provenance": "full-nibble-box",
+      "scale": 15
+    },
+    {
+      "biases": [
+        16,
+        32,
+        48,
+        64
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "name": "decoder-full-nibble-box-016",
+      "provenance": "full-nibble-box",
+      "scale": 16
+    },
+    {
+      "biases": [
+        17,
+        34,
+        51,
+        68
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "name": "decoder-full-nibble-box-017",
+      "provenance": "full-nibble-box",
+      "scale": 17
+    },
+    {
+      "biases": [
+        18,
+        36,
+        54,
+        72
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "name": "decoder-full-nibble-box-018",
+      "provenance": "full-nibble-box",
+      "scale": 18
+    },
+    {
+      "biases": [
+        31,
+        62,
+        93,
+        124
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "name": "decoder-full-nibble-box-031",
+      "provenance": "full-nibble-box",
+      "scale": 31
+    },
+    {
+      "biases": [
+        63,
+        126,
+        189,
+        252
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "name": "decoder-full-nibble-box-063",
+      "provenance": "full-nibble-box",
+      "scale": 63
+    },
+    {
+      "biases": [
+        127,
+        254,
+        125,
+        252
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "name": "decoder-full-nibble-box-127",
+      "provenance": "full-nibble-box",
+      "scale": 127
+    },
+    {
+      "biases": [
+        255,
+        254,
+        253,
+        252
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "name": "decoder-full-nibble-box-255",
+      "provenance": "full-nibble-box",
+      "scale": 255
+    },
+    {
+      "biases": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "name": "decoder-tiny-oracle-box-001",
+      "provenance": "tiny-oracle-box",
+      "scale": 1
+    },
+    {
+      "biases": [
+        8,
+        15,
+        22,
+        29
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "name": "decoder-tiny-oracle-box-007",
+      "provenance": "tiny-oracle-box",
+      "scale": 7
+    },
+    {
+      "biases": [
+        16,
+        31,
+        46,
+        61
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "name": "decoder-tiny-oracle-box-015",
+      "provenance": "tiny-oracle-box",
+      "scale": 15
+    },
+    {
+      "biases": [
+        17,
+        33,
+        49,
+        65
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "name": "decoder-tiny-oracle-box-016",
+      "provenance": "tiny-oracle-box",
+      "scale": 16
+    },
+    {
+      "biases": [
+        18,
+        35,
+        52,
+        69
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "name": "decoder-tiny-oracle-box-017",
+      "provenance": "tiny-oracle-box",
+      "scale": 17
+    },
+    {
+      "biases": [
+        19,
+        37,
+        55,
+        73
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "name": "decoder-tiny-oracle-box-018",
+      "provenance": "tiny-oracle-box",
+      "scale": 18
+    },
+    {
+      "biases": [
+        32,
+        63,
+        94,
+        125
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "name": "decoder-tiny-oracle-box-031",
+      "provenance": "tiny-oracle-box",
+      "scale": 31
+    },
+    {
+      "biases": [
+        64,
+        127,
+        190,
+        253
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "name": "decoder-tiny-oracle-box-063",
+      "provenance": "tiny-oracle-box",
+      "scale": 63
+    },
+    {
+      "biases": [
+        128,
+        255,
+        126,
+        253
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "name": "decoder-tiny-oracle-box-127",
+      "provenance": "tiny-oracle-box",
+      "scale": 127
+    },
+    {
+      "biases": [
+        0,
+        255,
+        254,
+        253
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "name": "decoder-tiny-oracle-box-255",
+      "provenance": "tiny-oracle-box",
+      "scale": 255
+    },
+    {
+      "biases": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        15,
+        0,
+        15,
+        0
+      ],
+      "name": "decoder-alternating-lanes-001",
+      "provenance": "alternating-lanes",
+      "scale": 1
+    },
+    {
+      "biases": [
+        9,
+        16,
+        23,
+        30
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        15,
+        0,
+        15,
+        0
+      ],
+      "name": "decoder-alternating-lanes-007",
+      "provenance": "alternating-lanes",
+      "scale": 7
+    },
+    {
+      "biases": [
+        17,
+        32,
+        47,
+        62
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        15,
+        0,
+        15,
+        0
+      ],
+      "name": "decoder-alternating-lanes-015",
+      "provenance": "alternating-lanes",
+      "scale": 15
+    },
+    {
+      "biases": [
+        18,
+        34,
+        50,
+        66
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        15,
+        0,
+        15,
+        0
+      ],
+      "name": "decoder-alternating-lanes-016",
+      "provenance": "alternating-lanes",
+      "scale": 16
+    },
+    {
+      "biases": [
+        19,
+        36,
+        53,
+        70
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        15,
+        0,
+        15,
+        0
+      ],
+      "name": "decoder-alternating-lanes-017",
+      "provenance": "alternating-lanes",
+      "scale": 17
+    },
+    {
+      "biases": [
+        20,
+        38,
+        56,
+        74
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        15,
+        0,
+        15,
+        0
+      ],
+      "name": "decoder-alternating-lanes-018",
+      "provenance": "alternating-lanes",
+      "scale": 18
+    },
+    {
+      "biases": [
+        33,
+        64,
+        95,
+        126
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        15,
+        0,
+        15,
+        0
+      ],
+      "name": "decoder-alternating-lanes-031",
+      "provenance": "alternating-lanes",
+      "scale": 31
+    },
+    {
+      "biases": [
+        65,
+        128,
+        191,
+        254
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        15,
+        0,
+        15,
+        0
+      ],
+      "name": "decoder-alternating-lanes-063",
+      "provenance": "alternating-lanes",
+      "scale": 63
+    },
+    {
+      "biases": [
+        129,
+        0,
+        127,
+        254
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        15,
+        0,
+        15,
+        0
+      ],
+      "name": "decoder-alternating-lanes-127",
+      "provenance": "alternating-lanes",
+      "scale": 127
+    },
+    {
+      "biases": [
+        1,
+        0,
+        255,
+        254
+      ],
+      "lane_bits": 8,
+      "maxima": [
+        15,
+        0,
+        15,
+        0
+      ],
+      "name": "decoder-alternating-lanes-255",
+      "provenance": "alternating-lanes",
+      "scale": 255
+    }
+  ],
+  "format": "p053-native-panel-v1"
+}

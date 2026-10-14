@@ -1,0 +1,22 @@
+p053-native-panel-v1 1 0
+A mixed-product-domain-01 systematic-product-box 0 1 4
+S 9 saturate 5 saturate 0 4
+P 0 0
+P -1 0
+P -1 -1
+P 1 1
+S 9 saturate 5 saturate 0 4
+P -5 -3
+P -3 -5
+P -4 -4
+P 4 4
+S 9 saturate 5 saturate 0 4
+P -5 3
+P -3 5
+P -4 4
+P 4 -4
+S 9 saturate 5 saturate 0 4
+P 0 0
+P -1 0
+P -1 -1
+P 1 1
