@@ -1,8 +1,9 @@
 # Exact Quotient Certificates for Packed-Integer Decoders and Mixed-Width Accumulators
 
-This artifact implements finite-semantics certificates and their CPU-native
-realization. Finite results are in `results/publication/`; CPU measurements
-are in `results/native-cpu/`. The manuscript sources are provided separately
+This artifact implements finite-semantics certificates, CPU-native realization,
+and a CUDA-driver realization of decoder arithmetic. Finite results are in
+`results/publication/`; CPU measurements are in `results/native-cpu/`, and GPU
+decoder records are in `results/gpu-decoder/`. Manuscript sources are provided separately
 in the project delivery's `paper/` directory.
 
 ## What is implemented
@@ -84,8 +85,8 @@ Buffered integer JSON preserves complete certificate bytes while improving
 emission by 29.02--39.09 over ostream on original cases. The matched fused
 prepare--walk--serialize call improves by 19.91--26.55, with the same quotient
 in both arms. Serialization/walk median ratios span 2.7--5.2; separate Python
-replay medians span 106.3--323.6 us. There is no measured whole-checker speedup, GPU
-performance, or production/deployment benefit. See `native/README.md` for the
+replay medians span 106.3--323.6 us. These CPU component records do not measure
+the complete checker or a GPU. See `native/README.md` for the
 complete baseline, phase definitions, bounds, negative controls, and proof/code
 mapping.
 
@@ -161,7 +162,7 @@ deterministic packet bodies, all raw samples, environment, one-off build costs
 and functional bindings. The actual 1,264 outputs (10,150,160 logical bytes)
 remain private, including every warmup and slower sample. Historical result
 directories and ledgers are unchanged. Physical allocated disk bytes, peak RSS,
-energy, hardware counters, GPU and representative deployment remain unmeasured.
+energy, hardware counters and representative deployment remain unmeasured.
 
 ```sh
 python -B -O native/workflow_cost.py --out <fresh-results> --native-dir <prepared-native> --pairs 7
@@ -223,7 +224,8 @@ these boundaries.
 
 The same ledger is carried into every command. A fresh counter describes the
 new local reproduction only; it does not reset the historical project budget.
-The runner currently discovers 61 tests, including the continuing-ledger CLI
+The runner currently discovers 69 tests, including the portable GPU consumer
+and continuing-ledger CLI
 controls, rather than loading only one test module. Tests include schema,
 initialization, minimum-witness, extra-layer, source-token, budget-atomicity,
 missing-file, new-output-tampering, canonical JSON byte, reproduction-path and
@@ -279,9 +281,11 @@ The archived exploration already has a corrected lower bound of 209,282, above
 its original 200,000 cap. Bounded repair work does not make the project's entire
 history compliant. The current code uses exact integer arithmetic, but its
 proofs are handwritten and its state space may grow exponentially. Complete
-witness storage can be quadratic even on one-state chains. There is no general
-CUDA frontend, floating-point or GPU performance evidence, representative
-production benchmark, or established new general quotient principle.
+witness storage can be quadratic even on one-state chains. The separate GPU
+study executes the declared decoder arithmetic with matched event and
+transfer-call measurements. A general CUDA frontend, floating-point semantics,
+representative production benchmark and new general quotient principle remain
+separate research obligations.
 
 For the current self-audit and unresolved research-readiness limits, read `docs/PROJECT-STATUS.md`. Prior PASS-labelled reports in the inherited input are not treated as evidence that current files exist or that novelty has been established.
 
@@ -337,5 +341,21 @@ finite runs, replays their certificates and interval baselines, compares their
 discovered regressions. The Ubuntu 24.04 job bounds the complete command block
 to 240 seconds of wall time, applies per-process CPU/address-space/file limits,
 retains failure exit codes, and uploads raw outputs even when a gate fails.
-It does not build the sibling paper or establish mathematical correctness from
-test agreement. Adding the workflow is not evidence that a remote run occurred.
+It also consumes complete GPU conformance records and exercises strict record
+controls under ordinary and optimized Python. It does not rerun hardware
+timings on hosted CPU runners, build the sibling paper, or establish
+mathematical correctness from test agreement. Remote run status is separate.
+
+## GPU decoder arithmetic
+
+The CUDA driver JIT executes two PTX arms with identical bounded buffers and
+byte corrections. Both are checked on all 660,480 words of the 30 declared
+decoder boxes, preserving the 18 equivalent and 12 inequivalent decisions and
+their least witnesses. The 540 alternating-order pairs retain all slower and
+faster observations; aggregate costs are near parity. Full output words,
+raw intervals, host/device identity and one-time setup costs are public.
+`results/gpu-decoder/README.md` defines the event and transfer-call intervals,
+source context, input counts and reproduction commands. Portable CI validates
+saved records without requiring CUDA; fresh runs require an actual device.
+This connects the selected arithmetic idiom to GPU execution, not to the
+surrounding kernel's indexing/MMA or serving performance.

@@ -20,7 +20,8 @@ extrema and aggregate counts before traversal. Every declaration read is
 checked before its fields are inspected. Optimized and checked builds agree
 on all 79 accumulator cases and 30 decoder configurations; both reject all
 proper token prefixes of the admission regression panel before staging an
-output. The 61-method Python suite passes in ordinary and optimized modes.
+output. The original 61-method Python suite passes in ordinary and optimized modes;
+the additional portable GPU consumer tests are reported separately.
 The current correctness receipt binds these executions separately from the
 retained component measurements.
 
@@ -41,13 +42,17 @@ the complete-call intervals.
 The integer domains and selected cases determine these results. Complete
 witness storage and state exploration have the costs stated in the proof;
 edge counts and component ratios are different quantities from end-to-end
-runtime. CPU measurements concern this finite realization. GPU throughput,
-representative kernel deployment, energy, physical disk allocation and hardware
-counters have no measured result in this panel.
+runtime. CPU measurements concern this finite realization. The separate GPU
+decoder panel executes all 660,480 declared words and retains 540 paired
+observations, with matched event and transfer-call aggregate costs near parity.
+Representative kernel deployment, energy, physical disk allocation and hardware
+counters have no measured result in these panels.
 
 The bibliography has 68 cited entries with purpose and access records in the
 reference evidence files. Seven records have partial indexed-primary-source
-coverage, and the MIX-PC year/byline discrepancy requires the version of record.
+coverage. MIX-PC identity and the current broad citation were checked against
+the live ACM-deposited publisher record and abstract; its full method text
+remains unread.
 Full-text entailment and unread official TACO submission fields remain separate
 verification tasks. The supplied template has not been altered to force a page
 count. Earlier campaign accounting remains in its own records, including the

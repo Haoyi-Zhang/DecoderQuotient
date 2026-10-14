@@ -1,0 +1,81 @@
+.version 6.0
+.target sm_61
+.address_size 64
+
+// Both kernels accept the same four-byte word and byte-wise correction.
+// The packed arm uses the selected source arithmetic idiom. The lane arm
+// computes each digit's product independently before the same correction.
+.visible .entry packed_decoder(.param .u64 input, .param .u64 output,
+ .param .u32 count, .param .u32 scale, .param .u32 bias) {
+ .reg .b64 %d<5>;
+ .reg .b32 %r<12>;
+ .reg .pred %p;
+ ld.param.u64 %d0, [input];
+ ld.param.u64 %d1, [output];
+ ld.param.u32 %r0, [count];
+ ld.param.u32 %r1, [scale];
+ ld.param.u32 %r2, [bias];
+ mov.u32 %r3, %tid.x;
+ mov.u32 %r4, %ctaid.x;
+ mov.u32 %r5, %ntid.x;
+ mad.lo.u32 %r6, %r4, %r5, %r3;
+ setp.ge.u32 %p, %r6, %r0;
+ @%p bra done;
+ mul.wide.u32 %d2, %r6, 4;
+ add.u64 %d3, %d0, %d2;
+ add.u64 %d4, %d1, %d2;
+ ld.global.u32 %r7, [%d3];
+ mul.lo.u32 %r8, %r7, %r1;
+ mov.u32 %r10, 0;
+ vadd4.u32.u32.u32 %r9, %r8, %r2, %r10;
+ st.global.u32 [%d4], %r9;
+done:
+ ret;
+}
+
+.visible .entry lane_decoder(.param .u64 input, .param .u64 output,
+ .param .u32 count, .param .u32 scale, .param .u32 bias) {
+ .reg .b64 %d<5>;
+ .reg .b32 %r<24>;
+ .reg .pred %p;
+ ld.param.u64 %d0, [input];
+ ld.param.u64 %d1, [output];
+ ld.param.u32 %r0, [count];
+ ld.param.u32 %r1, [scale];
+ ld.param.u32 %r2, [bias];
+ mov.u32 %r3, %tid.x;
+ mov.u32 %r4, %ctaid.x;
+ mov.u32 %r5, %ntid.x;
+ mad.lo.u32 %r6, %r4, %r5, %r3;
+ setp.ge.u32 %p, %r6, %r0;
+ @%p bra done;
+ mul.wide.u32 %d2, %r6, 4;
+ add.u64 %d3, %d0, %d2;
+ add.u64 %d4, %d1, %d2;
+ ld.global.u32 %r7, [%d3];
+ and.b32 %r8, %r7, 255;
+ mul.lo.u32 %r8, %r8, %r1;
+ and.b32 %r8, %r8, 255;
+ shr.u32 %r9, %r7, 8;
+ and.b32 %r9, %r9, 255;
+ mul.lo.u32 %r9, %r9, %r1;
+ and.b32 %r9, %r9, 255;
+ shl.b32 %r9, %r9, 8;
+ shr.u32 %r10, %r7, 16;
+ and.b32 %r10, %r10, 255;
+ mul.lo.u32 %r10, %r10, %r1;
+ and.b32 %r10, %r10, 255;
+ shl.b32 %r10, %r10, 16;
+ shr.u32 %r11, %r7, 24;
+ mul.lo.u32 %r11, %r11, %r1;
+ and.b32 %r11, %r11, 255;
+ shl.b32 %r11, %r11, 24;
+ or.b32 %r12, %r8, %r9;
+ or.b32 %r12, %r12, %r10;
+ or.b32 %r12, %r12, %r11;
+ mov.u32 %r13, 0;
+ vadd4.u32.u32.u32 %r14, %r12, %r2, %r13;
+ st.global.u32 [%d4], %r14;
+done:
+ ret;
+}

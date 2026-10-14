@@ -247,4 +247,6 @@ measurement gates. Run the seven copy-admission regressions separately with
 The handwritten arguments remain in `../proofs/exact-accumulator-certificates.md`
 and `../proofs/packed-decoder-closed-form.md`. Native conformance does not
 mechanize those proofs, validate the frozen CUDA block's memory/control
-assumptions, or establish GPU, production, whole-kernel, or deployment results.
+assumptions, or establish production, whole-kernel, or deployment results.
+The separate GPU arithmetic study is documented in `../results/gpu-decoder/README.md`;
+it preserves its own full outputs, source context and matched cost definitions.

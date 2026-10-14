@@ -41,6 +41,7 @@ jobs:
           python -B tests/compiler_cache_regression.py
           python -B tests/hoisting_regression.py
           python -B tests/native_admission_regression.py
+          python -B -O -m unittest tests.test_gpu_decoder_consumer
           python -B -m bptc.publication_campaign --root . --out "$RAW/main" --label main --ledger "$RAW/budget.json"
           python -B -m bptc.publication_campaign --root . --out "$RAW/reproduction" --label reproduction --ledger "$RAW/budget.json"
           python -B tools/validate_results.py --results-dir "$RAW/main" --compare-dir "$RAW/reproduction" --replay --ledger "$RAW/budget.json" --out "$RAW/semantic-replay.json"
