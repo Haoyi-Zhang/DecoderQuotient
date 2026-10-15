@@ -5,6 +5,11 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from bptc.certificate_format import strict_json_loads
 from tools.bib_records import parse
 
+def _strip_comments(text):
+    """Remove ordinary TeX comments, preserving line endings and escaped percent."""
+    # Only an even run of immediately preceding backslashes starts a comment.
+    return re.sub(r"(?<!\\)((?:\\\\)*)%[^\r\n]*", r"\1", text)
+
 def current_metadata_followup(paper,artifact,records):
     """Keep historical reading receipts, bind exactly one new publisher identity."""
     data=strict_json_loads((artifact/'evidence/current-metadata-followup.json').read_text())
@@ -48,11 +53,12 @@ def check(paper,artifact):
             if not e.get(f):raise ValueError('missing identity field '+e['key']+':'+f)
         if not any(e.get(f) for f in ('doi','eprint','isbn','url')):raise ValueError('no scholarly identifier '+e['key'])
         if re.search(r'and others|TODO|placeholder|unknown author',e['author'],re.I):raise ValueError('incomplete author '+e['key'])
-    macrotext=(paper/'generated/citations.tex').read_text()
+    macrotext=_strip_comments((paper/'generated/citations.tex').read_text())
     mapping=dict(re.findall(r'\\newcommand\{\\([A-Za-z]+)\}\{\\cite\{([^}]+)\}\}',macrotext))
     if mapping.get('CiteCompCert')!='compcert':raise ValueError('CompCert macro points at the wrong work')
     text=(paper/'main.tex').read_text()
     if '\\nocite' in text:raise ValueError('uncited bibliography inclusion')
+    text=_strip_comments(text)
     for name,value in sorted(mapping.items(),key=lambda x:-len(x[0])):
         text=re.sub(r'\\'+name+r'\b',lambda m:'\\cite{'+value+'}',text)
     occurrences=[];cited=set();current_section='Front matter'

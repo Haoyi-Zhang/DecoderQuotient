@@ -230,6 +230,11 @@ controls, rather than loading only one test module. Tests include schema,
 initialization, minimum-witness, extra-layer, source-token, budget-atomicity,
 missing-file, new-output-tampering, canonical JSON byte, reproduction-path and
 retained source-attribution cases.
+Ten separate citation-comment tests cover the existing generated-macro scope,
+active citation contexts and escaped percent signs. Run them with
+`python -B -m unittest tools.test_reference_comments` and repeat with `-O`;
+scientific CI runs both modes. These parser tests are separate from the
+69-method discovery inventory and its semantic-work ledger.
 Generic unittest discovery can run them, but the supplied runner additionally
 persists the semantic-work charges. An acceptance report cannot replace
 reading or independently checking the proof.
