@@ -84,7 +84,9 @@ class ContextRegression(unittest.TestCase):
         with patch.object(helper, 'preflight', return_value=prepared), patch.object(helper, 'plain_path'):
             result = helper.install_inputs(None, None)
             self.assertEqual(store, {'a': b'abc', 'b': b'', 'c': b'\x00\xff\n'})
-            self.assertEqual([r['bytes'] for r in result], [3, 0, 3])
+            self.assertEqual(result, [{'file': 'a', 'bytes': 3},
+                                      {'file': 'b', 'bytes': 0},
+                                      {'file': 'c', 'bytes': 3}])
             self.assertEqual([op[2] for op in operations if op[0]=='open'], ['xb']*3)
             snapshot = dict(store)
             with self.assertRaises(FileExistsError):

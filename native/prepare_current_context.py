@@ -71,8 +71,7 @@ def install_inputs(historical_project, paper_dir):
         plain_path(destination)
         with destination.open('xb') as target:  # Exclusive creation; never overwrite.
             target.write(body)
-        copied.append({'file': destination.name, 'bytes': len(body),
-                       'sha256': hashlib.sha256(body).hexdigest()})
+        copied.append({'file': destination.name, 'bytes': len(body)})
     return copied
 
 
