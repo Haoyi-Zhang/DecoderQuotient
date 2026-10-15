@@ -59,6 +59,4 @@ count. Earlier campaign accounting remains in its own records, including the
 declared-budget overrun; fresh bounded execution does not reset that ledger.
 
 Original code uses the included MIT license. Third-party publications retain
-their own rights and are cited rather than relicensed. Substantive AI assistance
-covered research development and editing; author accountability and applicable
-disclosure requirements remain with the human authors.
+their own rights and are cited rather than relicensed.
