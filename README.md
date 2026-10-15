@@ -187,13 +187,15 @@ The original command below audits retained records, not new timing.
 Run from this directory:
 
 ```sh
-export PYTHONDONTWRITEBYTECODE=1
-export PYTHONPATH=.
-python tools/validate_results.py \
+python -B tools/validate_results.py \
   --results-dir results/publication/main \
   --compare-dir results/publication/reproduction \
-  --out results/record-check.json
+  --out ../decoder-checks/record-check.json
 ```
+
+Choose a fresh writable `../decoder-checks` directory outside the checkout,
+or replace that output path. No shell-specific environment setup is needed;
+on PowerShell, put this command on one line instead of using `\` continuations.
 
 Without `--replay`, this checks record structure, completeness, suite binding,
 aggregates, strict JSON/CSV parsing and byte equality, not a new arithmetic proof. It requires the exact
@@ -246,7 +248,7 @@ From this directory:
 ```sh
 python -m pip install -r requirements-package.txt
 python tools/package_check.py --project-root .. \
-  --out results/package-check.json
+  --out ../decoder-checks/package-check.json
 ```
 
 This additionally requires the actual two PDFs, every TeX input and figure,
