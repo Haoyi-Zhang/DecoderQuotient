@@ -1,525 +1,105 @@
 {
-  "comparison": {
-    "accumulator_cases": 79,
-    "all_native_accumulator_words": 14658,
-    "all_native_decoder_words": 5140,
-    "decoder_cases": 30,
-    "disagreements": 0,
-    "format": "p053-native-semantic-comparison-v1",
-    "original_accumulator_cases": 64,
-    "original_baseline_edges": 1016,
-    "original_full_decoder_words": 5120,
-    "original_native_accumulator_words": 5576,
-    "original_quotient_edges": 416
-  },
-  "current_native": {
-    "admission_controls": [
-      {
-        "build": 0,
-        "control": "truncated-prefix-0",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-1",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-2",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-3",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-4",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-5",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-6",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-7",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-8",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-9",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-10",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-11",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-12",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-13",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-14",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-15",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-16",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-17",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-18",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-19",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-20",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-21",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-22",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-23",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-24",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "truncated-prefix-25",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "wide-zero",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "wide-zero-right",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "duplicate-count",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "unique-count",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "accepted": true,
-        "build": 0,
-        "certificate_matches": true,
-        "control": "component-endpoints"
-      },
-      {
-        "accepted": true,
-        "build": 0,
-        "certificate_matches": true,
-        "control": "product-endpoints"
-      },
-      {
-        "accepted": true,
-        "build": 0,
-        "certificate_matches": true,
-        "control": "initial-low"
-      },
-      {
-        "accepted": true,
-        "build": 0,
-        "certificate_matches": true,
-        "control": "initial-high"
-      },
-      {
-        "accepted": true,
-        "build": 0,
-        "certificate_matches": true,
-        "control": "duplicate-count-fit"
-      },
-      {
-        "accepted": true,
-        "build": 0,
-        "certificate_matches": true,
-        "control": "unique-count-fit"
-      },
-      {
-        "build": 0,
-        "control": "graph-cap",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 0,
-        "control": "no-overwrite",
-        "existing_result_unchanged": true
-      },
-      {
-        "build": 0,
-        "control": "existing-staging",
-        "existing_staging_unchanged": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-0",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-1",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-2",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-3",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-4",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-5",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-6",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-7",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-8",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-9",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-10",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-11",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-12",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-13",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-14",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-15",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-16",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-17",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-18",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-19",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-20",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-21",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-22",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-23",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-24",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "truncated-prefix-25",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "wide-zero",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "wide-zero-right",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "duplicate-count",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "unique-count",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "accepted": true,
-        "build": 1,
-        "certificate_matches": true,
-        "control": "component-endpoints"
-      },
-      {
-        "accepted": true,
-        "build": 1,
-        "certificate_matches": true,
-        "control": "product-endpoints"
-      },
-      {
-        "accepted": true,
-        "build": 1,
-        "certificate_matches": true,
-        "control": "initial-low"
-      },
-      {
-        "accepted": true,
-        "build": 1,
-        "certificate_matches": true,
-        "control": "initial-high"
-      },
-      {
-        "accepted": true,
-        "build": 1,
-        "certificate_matches": true,
-        "control": "duplicate-count-fit"
-      },
-      {
-        "accepted": true,
-        "build": 1,
-        "certificate_matches": true,
-        "control": "unique-count-fit"
-      },
-      {
-        "build": 1,
-        "control": "graph-cap",
-        "final_output": false,
-        "rejected": true
-      },
-      {
-        "build": 1,
-        "control": "no-overwrite",
-        "existing_result_unchanged": true
-      },
-      {
-        "build": 1,
-        "control": "existing-staging",
-        "existing_staging_unchanged": true
-      },
-      {
-        "accumulator_certificates": 79,
-        "complete_baselines": 79,
-        "control": "retained-scientific-output",
-        "decoder_configurations": 30,
-        "unchanged": true
-      },
-      {
-        "accumulator_certificates": 79,
-        "complete_baselines": 79,
-        "control": "retained-scientific-output",
-        "decoder_configurations": 30,
-        "unchanged": true
-      }
-    ],
-    "comparison": {
-      "accumulator_cases": 79,
-      "all_native_accumulator_words": 14658,
-      "all_native_decoder_words": 5140,
-      "decoder_cases": 30,
-      "disagreements": 0,
-      "format": "p053-native-semantic-comparison-v1",
-      "original_accumulator_cases": 64,
-      "original_baseline_edges": 1016,
-      "original_full_decoder_words": 5120,
-      "original_native_accumulator_words": 5576,
-      "original_quotient_edges": 416
+  "format": "p053-current-accumulator-correctness-v1",
+  "scope": "Current Python replay and fresh source-bound native conformance/admission; original measurement sources and timings remain historical.",
+  "historical_verifier": "Unchanged native/report.py --check in an explicit original project; all original gates required.",
+  "historical_provenance_sha256": "43dc08f509138e14a02ed3414f8513181d2aa836ea9b4b08e13341e3619ed7c2",
+  "historical_sources": {
+    "bptc/accumulator_checker.py": {
+      "historical": "108c49903e0ff86b99deeb81d76bde273a70b0c9a8bf36b136fc49815a5b9be4",
+      "current": "afd1469d559375e88a3c0d8248baacac61a6f478e896debad4eaf371e3107fef"
     },
-    "scope": "Fresh execution of current source-bound native binaries, complete retained scientific-output equality and benign boundary controls; no timing."
+    "bptc/accumulator_oracle.py": {
+      "historical": "ed678387300d784c36d2a61dc89ccdaa1163e82b6e6b5d406d800cdb2be21005",
+      "current": "ed678387300d784c36d2a61dc89ccdaa1163e82b6e6b5d406d800cdb2be21005"
+    },
+    "bptc/direct_state.py": {
+      "historical": "0b93a2681cd573ff5bafa71f0503201200fdde27f4503bf553976b8a27b9c1ab",
+      "current": "0b93a2681cd573ff5bafa71f0503201200fdde27f4503bf553976b8a27b9c1ab"
+    },
+    "bptc/exact_accumulator.py": {
+      "historical": "e11f154a1891efe1630a63bea5e49472895fb5f946ac3b18d810cc5e510c6a26",
+      "current": "afed187c2a135ebf7b21005e3ee84ae78b0552ab5dcf0abee9a971b7995e8ddc"
+    },
+    "bptc/packed_decoder.py": {
+      "historical": "19d3f6cad36b89afa04ac56a7b6446c73af0f0d21a7f8346fa66b4b3eaffa25e",
+      "current": "19d3f6cad36b89afa04ac56a7b6446c73af0f0d21a7f8346fa66b4b3eaffa25e"
+    },
+    "bptc/publication_cases.py": {
+      "historical": "a8a9979738e9d2364fc33408841cfb075f8a8b311842a87f7956e24dad1dea5c",
+      "current": "a8a9979738e9d2364fc33408841cfb075f8a8b311842a87f7956e24dad1dea5c"
+    },
+    "native/bridge.py": {
+      "historical": "6a6b73c994aa6af408de505f810c3cac3e63def554e1379d1c961223ba8713c6",
+      "current": "26f3f1bad1829544684454b283b9bf65b0b924a173b3e675a933bf97b4649d39"
+    },
+    "native/checker_cost.py": {
+      "historical": "9b3801d3feedc20bb5731b639ee41eb5247fd99db6e380628a80681a73ff9e92",
+      "current": "ccc0d24ad9d38b9e52f4f5da54d42271efd9c3786e4b68fff9adf31dd1c0a643"
+    },
+    "native/native_bridge.cpp": {
+      "historical": "014e91616db7297052ad827350a16c870ea01bc7f98c49f3fb3051fca4ed6def",
+      "current": "8738ca88997ecb9633ddc97e39d509370d933c3e98814fe93ad8b9740b720528"
+    },
+    "native/report.py": {
+      "historical": "4fec21b1890e56c27655504bff8b1f350efd3dcd2277bf9575f62b63f0af7027",
+      "current": "8d336991e5acfa5ef0637014efd6c7a3a241c60d11435f74e03dc2705e9f5199"
+    }
+  },
+  "current_sources": {
+    "bptc/accumulator_checker.py": "afd1469d559375e88a3c0d8248baacac61a6f478e896debad4eaf371e3107fef",
+    "bptc/accumulator_oracle.py": "ed678387300d784c36d2a61dc89ccdaa1163e82b6e6b5d406d800cdb2be21005",
+    "bptc/direct_state.py": "0b93a2681cd573ff5bafa71f0503201200fdde27f4503bf553976b8a27b9c1ab",
+    "bptc/exact_accumulator.py": "afed187c2a135ebf7b21005e3ee84ae78b0552ab5dcf0abee9a971b7995e8ddc",
+    "bptc/packed_decoder.py": "19d3f6cad36b89afa04ac56a7b6446c73af0f0d21a7f8346fa66b4b3eaffa25e",
+    "bptc/publication_cases.py": "a8a9979738e9d2364fc33408841cfb075f8a8b311842a87f7956e24dad1dea5c",
+    "data/measured_reporting_sources.json": "c843cc5fe86814ed996e57b06a497d9c7020abdbe71e68034f2a5598e5419d97",
+    "data/workflow_measured_sources.json": "f3569d732458d73cbb85a2e1be6b0c5f8fddce3f9d3ba299dea0d04dd224502a",
+    "native/bridge.py": "26f3f1bad1829544684454b283b9bf65b0b924a173b3e675a933bf97b4649d39",
+    "native/checker_cost.py": "ccc0d24ad9d38b9e52f4f5da54d42271efd9c3786e4b68fff9adf31dd1c0a643",
+    "native/current_correctness.py": "22bf1ac3a405f74bff6759153fa7e6f2e8f96432e2ea7716bde2961e3d0a3f41",
+    "native/materialize_measured_context.py": "caf9c185bac3ed70ddb57b3587b3e40a6643ae30d658adc2f95479e4c48acc12",
+    "native/measured_native_sources.py": "670b4685bf305f43c735334dbd8d7b77bafaaff1f309675955595942b6181b2f",
+    "native/native_bridge.cpp": "8738ca88997ecb9633ddc97e39d509370d933c3e98814fe93ad8b9740b720528",
+    "native/report.py": "8d336991e5acfa5ef0637014efd6c7a3a241c60d11435f74e03dc2705e9f5199",
+    "native/workflow_context.py": "709bded36945d86636ca0af267e707fd9cc986011fbdc1dad0961be26b205759",
+    "native/workflow_cost.py": "c340ae838b0deaac31b4babd930b6cee8e581a891ead1f19fc7aa1889a3422a1",
+    "native/workflow_report.py": "5a9a24ec4a7e2fbf001c568cc23084ce91f90bab8ca741d0e4c0c357e487c917",
+    "tests/hoisting_regression.py": "729a07690422095ab171c54281f92474fdb1c806852f217c5ec670c4b383f04c",
+    "tests/native_admission_regression.py": "fd88eefaa44b96cdf9e65bd97677584ca13c22717a2c25995b80a442a8b5b704",
+    "tests/test_native_consumer.py": "6e1b546c9973b2bebc0fd8b9b99d58eb0cd1b2a436dc1d032deec2b9d90ce53e",
+    "tests/test_pair_replay.py": "664fb4c259f0c39e49964fcf90cfacfcb482381d3e58484e216398ed3aded41f",
+    "tests/test_workflow_context.py": "fb2c73c401cc136c7856781ed388db37b931b88b6ffe7a8f3c6a4538c28564f1"
+  },
+  "literal_regression_groups": 3,
+  "comparison": {
+    "format": "p053-native-semantic-comparison-v1",
+    "accumulator_cases": 79,
+    "original_accumulator_cases": 64,
+    "original_quotient_edges": 416,
+    "original_baseline_edges": 1016,
+    "original_native_accumulator_words": 5576,
+    "all_native_accumulator_words": 14658,
+    "decoder_cases": 30,
+    "original_full_decoder_words": 5120,
+    "all_native_decoder_words": 5140,
+    "disagreements": 0
   },
   "current_producer_budget": {
+    "format": "bptc-obligation-ledger-v1",
+    "limit": 100000,
+    "events_used": 3524,
+    "remaining": 96476,
     "categories": {
       "current-producer:partition-pair": 1070,
       "current-producer:transition": 2454
     },
-    "events_used": 3524,
-    "format": "bptc-obligation-ledger-v1",
-    "limit": 100000,
-    "remaining": 96476,
     "status": "within-limit"
   },
   "current_replay_budget": {
+    "format": "bptc-obligation-ledger-v1",
+    "limit": 100000,
+    "events_used": 44810,
+    "remaining": 55190,
     "categories": {
       "native-baseline-independent-edge": 4409,
       "native-certificate-replay:partition-pair": 1070,
@@ -531,84 +111,507 @@
       "native-reference-producer:transition": 2038,
       "native-trace-reference-word": 14658
     },
-    "events_used": 44810,
-    "format": "bptc-obligation-ledger-v1",
-    "limit": 100000,
-    "remaining": 55190,
     "status": "within-limit"
   },
-  "current_sources": {
-    "bptc/accumulator_checker.py": "afd1469d559375e88a3c0d8248baacac61a6f478e896debad4eaf371e3107fef",
-    "bptc/accumulator_oracle.py": "ed678387300d784c36d2a61dc89ccdaa1163e82b6e6b5d406d800cdb2be21005",
-    "bptc/direct_state.py": "0b93a2681cd573ff5bafa71f0503201200fdde27f4503bf553976b8a27b9c1ab",
-    "bptc/exact_accumulator.py": "86710e85deca85e859a33ec01ed01f032b9979b76a135825a1386c626b928af5",
-    "bptc/packed_decoder.py": "19d3f6cad36b89afa04ac56a7b6446c73af0f0d21a7f8346fa66b4b3eaffa25e",
-    "bptc/publication_cases.py": "a8a9979738e9d2364fc33408841cfb075f8a8b311842a87f7956e24dad1dea5c",
-    "data/measured_reporting_sources.json": "c843cc5fe86814ed996e57b06a497d9c7020abdbe71e68034f2a5598e5419d97",
-    "native/bridge.py": "a822639810254986bf847e5e5a8d35bd809612fe1ba0968e65a1d90dd49a5b7e",
-    "native/checker_cost.py": "ccc0d24ad9d38b9e52f4f5da54d42271efd9c3786e4b68fff9adf31dd1c0a643",
-    "native/current_correctness.py": "19410eaf21827e4cb680e938693f6dbaad2ae97c0659661d977a409c0c202c82",
-    "native/materialize_measured_context.py": "caf9c185bac3ed70ddb57b3587b3e40a6643ae30d658adc2f95479e4c48acc12",
-    "native/measured_native_sources.py": "670b4685bf305f43c735334dbd8d7b77bafaaff1f309675955595942b6181b2f",
-    "native/native_bridge.cpp": "8738ca88997ecb9633ddc97e39d509370d933c3e98814fe93ad8b9740b720528",
-    "native/report.py": "8d336991e5acfa5ef0637014efd6c7a3a241c60d11435f74e03dc2705e9f5199",
-    "native/workflow_cost.py": "77fa968ac7bd40692715e9ca15af6ff0e53ffa651d98cdc1584814ed6b49d96b",
-    "native/workflow_report.py": "5a9a24ec4a7e2fbf001c568cc23084ce91f90bab8ca741d0e4c0c357e487c917",
-    "tests/hoisting_regression.py": "729a07690422095ab171c54281f92474fdb1c806852f217c5ec670c4b383f04c",
-    "tests/native_admission_regression.py": "fd88eefaa44b96cdf9e65bd97677584ca13c22717a2c25995b80a442a8b5b704",
-    "tests/test_native_consumer.py": "a0f56356f7722c4d95366bc1d006b4a181ca83aaa19637b355e05a9d9f9616fd",
-    "tests/test_pair_replay.py": "664fb4c259f0c39e49964fcf90cfacfcb482381d3e58484e216398ed3aded41f"
+  "current_native": {
+    "comparison": {
+      "format": "p053-native-semantic-comparison-v1",
+      "accumulator_cases": 79,
+      "original_accumulator_cases": 64,
+      "original_quotient_edges": 416,
+      "original_baseline_edges": 1016,
+      "original_native_accumulator_words": 5576,
+      "all_native_accumulator_words": 14658,
+      "decoder_cases": 30,
+      "original_full_decoder_words": 5120,
+      "all_native_decoder_words": 5140,
+      "disagreements": 0
+    },
+    "admission_controls": [
+      {
+        "build": 0,
+        "control": "truncated-prefix-0",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-1",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-2",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-3",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-4",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-5",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-6",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-7",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-8",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-9",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-10",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-11",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-12",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-13",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-14",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-15",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-16",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-17",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-18",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-19",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-20",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-21",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-22",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-23",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-24",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "truncated-prefix-25",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "wide-zero",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "wide-zero-right",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "duplicate-count",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "unique-count",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "component-endpoints",
+        "accepted": true,
+        "certificate_matches": true
+      },
+      {
+        "build": 0,
+        "control": "product-endpoints",
+        "accepted": true,
+        "certificate_matches": true
+      },
+      {
+        "build": 0,
+        "control": "initial-low",
+        "accepted": true,
+        "certificate_matches": true
+      },
+      {
+        "build": 0,
+        "control": "initial-high",
+        "accepted": true,
+        "certificate_matches": true
+      },
+      {
+        "build": 0,
+        "control": "duplicate-count-fit",
+        "accepted": true,
+        "certificate_matches": true
+      },
+      {
+        "build": 0,
+        "control": "unique-count-fit",
+        "accepted": true,
+        "certificate_matches": true
+      },
+      {
+        "build": 0,
+        "control": "graph-cap",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 0,
+        "control": "no-overwrite",
+        "existing_result_unchanged": true
+      },
+      {
+        "build": 0,
+        "control": "existing-staging",
+        "existing_staging_unchanged": true
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-0",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-1",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-2",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-3",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-4",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-5",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-6",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-7",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-8",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-9",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-10",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-11",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-12",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-13",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-14",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-15",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-16",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-17",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-18",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-19",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-20",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-21",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-22",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-23",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-24",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "truncated-prefix-25",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "wide-zero",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "wide-zero-right",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "duplicate-count",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "unique-count",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "component-endpoints",
+        "accepted": true,
+        "certificate_matches": true
+      },
+      {
+        "build": 1,
+        "control": "product-endpoints",
+        "accepted": true,
+        "certificate_matches": true
+      },
+      {
+        "build": 1,
+        "control": "initial-low",
+        "accepted": true,
+        "certificate_matches": true
+      },
+      {
+        "build": 1,
+        "control": "initial-high",
+        "accepted": true,
+        "certificate_matches": true
+      },
+      {
+        "build": 1,
+        "control": "duplicate-count-fit",
+        "accepted": true,
+        "certificate_matches": true
+      },
+      {
+        "build": 1,
+        "control": "unique-count-fit",
+        "accepted": true,
+        "certificate_matches": true
+      },
+      {
+        "build": 1,
+        "control": "graph-cap",
+        "rejected": true,
+        "final_output": false
+      },
+      {
+        "build": 1,
+        "control": "no-overwrite",
+        "existing_result_unchanged": true
+      },
+      {
+        "build": 1,
+        "control": "existing-staging",
+        "existing_staging_unchanged": true
+      },
+      {
+        "control": "retained-scientific-output",
+        "accumulator_certificates": 79,
+        "complete_baselines": 79,
+        "decoder_configurations": 30,
+        "unchanged": true
+      },
+      {
+        "control": "retained-scientific-output",
+        "accumulator_certificates": 79,
+        "complete_baselines": 79,
+        "decoder_configurations": 30,
+        "unchanged": true
+      }
+    ],
+    "scope": "Fresh execution of current source-bound native binaries, complete retained scientific-output equality and benign boundary controls; no timing."
   },
-  "format": "p053-current-accumulator-correctness-v1",
-  "historical_provenance_sha256": "43dc08f509138e14a02ed3414f8513181d2aa836ea9b4b08e13341e3619ed7c2",
-  "historical_sources": {
-    "bptc/accumulator_checker.py": {
-      "current": "afd1469d559375e88a3c0d8248baacac61a6f478e896debad4eaf371e3107fef",
-      "historical": "108c49903e0ff86b99deeb81d76bde273a70b0c9a8bf36b136fc49815a5b9be4"
-    },
-    "bptc/accumulator_oracle.py": {
-      "current": "ed678387300d784c36d2a61dc89ccdaa1163e82b6e6b5d406d800cdb2be21005",
-      "historical": "ed678387300d784c36d2a61dc89ccdaa1163e82b6e6b5d406d800cdb2be21005"
-    },
-    "bptc/direct_state.py": {
-      "current": "0b93a2681cd573ff5bafa71f0503201200fdde27f4503bf553976b8a27b9c1ab",
-      "historical": "0b93a2681cd573ff5bafa71f0503201200fdde27f4503bf553976b8a27b9c1ab"
-    },
-    "bptc/exact_accumulator.py": {
-      "current": "86710e85deca85e859a33ec01ed01f032b9979b76a135825a1386c626b928af5",
-      "historical": "e11f154a1891efe1630a63bea5e49472895fb5f946ac3b18d810cc5e510c6a26"
-    },
-    "bptc/packed_decoder.py": {
-      "current": "19d3f6cad36b89afa04ac56a7b6446c73af0f0d21a7f8346fa66b4b3eaffa25e",
-      "historical": "19d3f6cad36b89afa04ac56a7b6446c73af0f0d21a7f8346fa66b4b3eaffa25e"
-    },
-    "bptc/publication_cases.py": {
-      "current": "a8a9979738e9d2364fc33408841cfb075f8a8b311842a87f7956e24dad1dea5c",
-      "historical": "a8a9979738e9d2364fc33408841cfb075f8a8b311842a87f7956e24dad1dea5c"
-    },
-    "native/bridge.py": {
-      "current": "a822639810254986bf847e5e5a8d35bd809612fe1ba0968e65a1d90dd49a5b7e",
-      "historical": "6a6b73c994aa6af408de505f810c3cac3e63def554e1379d1c961223ba8713c6"
-    },
-    "native/checker_cost.py": {
-      "current": "ccc0d24ad9d38b9e52f4f5da54d42271efd9c3786e4b68fff9adf31dd1c0a643",
-      "historical": "9b3801d3feedc20bb5731b639ee41eb5247fd99db6e380628a80681a73ff9e92"
-    },
-    "native/native_bridge.cpp": {
-      "current": "8738ca88997ecb9633ddc97e39d509370d933c3e98814fe93ad8b9740b720528",
-      "historical": "014e91616db7297052ad827350a16c870ea01bc7f98c49f3fb3051fca4ed6def"
-    },
-    "native/report.py": {
-      "current": "8d336991e5acfa5ef0637014efd6c7a3a241c60d11435f74e03dc2705e9f5199",
-      "historical": "4fec21b1890e56c27655504bff8b1f350efd3dcd2277bf9575f62b63f0af7027"
-    }
-  },
-  "historical_verifier": "Unchanged native/report.py --check in an explicit original project; all original gates required.",
+  "measured_sources_are_current": false,
   "limitations": [
     "Not a full campaign, compiler proof, deployment test, or timing rerun.",
     "Historical checker-cost samples do not measure these changed Python sources."
-  ],
-  "literal_regression_groups": 3,
-  "measured_sources_are_current": false,
-  "scope": "Current Python replay and fresh source-bound native conformance/admission; original measurement sources and timings remain historical."
+  ]
 }

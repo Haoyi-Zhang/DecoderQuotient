@@ -38,6 +38,8 @@ jobs:
           ulimit -n 128
           timeout --signal=TERM --kill-after=10s 240s bash -euo pipefail <<'CHECKS' > "$RAW/console.log" 2>&1
           python -B tests/package_generation_regression.py
+          python -B tests/schematic_regression.py
+          python -B -m unittest tests.test_workflow_context
           python -B tests/compiler_cache_regression.py
           python -B tests/hoisting_regression.py
           python -B tests/native_admission_regression.py

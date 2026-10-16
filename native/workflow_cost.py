@@ -24,6 +24,7 @@ from native import bridge
 from bptc.accumulator_checker import check_certificate, check_pair_certificate
 from bptc.certificate_format import exact, strict_json_loads
 from bptc.publication_budget import ObligationLedger
+from native.workflow_context import measured_sources
 
 require = bridge.require
 SOURCES = ('native/workflow_cost.py', 'native/native_bridge.cpp', 'native/bridge.py',
@@ -191,8 +192,7 @@ def run(args):
 
 def check(out):
     p = strict_json_loads((out/'protocol.json').read_text(encoding='utf-8'))
-    for rel, digest in p['source_sha256'].items():
-        exact(sha(ROOT/rel), digest, 'workflow current source binding')
+    context = measured_sources(ROOT, p['source_sha256'], SOURCES)
     for name in ('panel','samples','packets','environment'):
         suffix = '.json.gz' if name == 'packets' else '.json'
         exact(sha(out/(name+suffix)), p[name+'_sha256'], 'workflow '+name+' binding')
@@ -217,6 +217,8 @@ def check(out):
                 exact(sample[key[1]]['sha256'], digest, 'sample packet binding')
                 exact(sample[key[1]]['bytes'], len(body), 'sample serialized byte count')
     print('workflow checked:',len(rows),'cases;',len(samples),'paired samples;',len(packets),'complete packets')
+    print('Measured sources current:', context['measured_sources_are_current'])
+    return context
 
 
 def main():

@@ -140,6 +140,8 @@ def receipt(historical_project, native_results):
         'native/materialize_measured_context.py','native/measured_native_sources.py',
         'tests/native_admission_regression.py', 'data/measured_reporting_sources.json',
         'native/workflow_cost.py', 'native/workflow_report.py',
+        'native/workflow_context.py', 'data/workflow_measured_sources.json',
+        'tests/test_workflow_context.py',
         'tests/test_native_consumer.py', 'tests/test_pair_replay.py'})
     return {
         'format':'p053-current-accumulator-correctness-v1',

@@ -65,6 +65,14 @@ class DomainTests(unittest.TestCase):
             with self.assertRaises(ValueError):StageSpec(((1,1),),width,"wrap",4,"wrap")
         with self.assertRaises(ValueError):StageSpec(((True,1),),4,"wrap",4,"wrap")
         with self.assertRaises(ValueError):DecoderSpec("x",1,(1,),(0,),lane_bits=4)
+
+    def test_producer_mode_types_match_direct_replay(self):
+        from enum import Enum
+        class Mode(str, Enum):
+            WRAP = 'wrap'
+        for term, acc in ((Mode.WRAP, 'wrap'), ('wrap', Mode.WRAP)):
+            with self.subTest(term=term, acc=acc), self.assertRaises(ValueError):
+                StageSpec(((0,0),), 2, term, 2, acc)
     def test_accumulator_empty_vacuity(self):
         c=acc();c["spec"]["stages"][0]["pairs"]=[];c["spec"]["stages"][0]["term_mode"]="invalid"
         c["product_classes"]=[[]];c["layers"][1]["states"]=[];c["layers"][1]["edges"]=[]

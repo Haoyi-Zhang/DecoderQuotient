@@ -33,7 +33,9 @@ class StageSpec:
             raise ValueError("operand pairs must be unique")
         if any(type(w) is not int or not 2 <= w <= 32 for w in (self.term_bits, self.acc_bits)):
             raise ValueError("bit widths must be integers in 2..32")
-        if self.term_mode not in {"wrap", "saturate"} or self.acc_mode not in {"wrap", "saturate"}:
+        if (type(self.term_mode) is not str or type(self.acc_mode) is not str
+                or self.term_mode not in {"wrap", "saturate"}
+                or self.acc_mode not in {"wrap", "saturate"}):
             raise ValueError("unknown conversion mode")
         if type(self.observe) is not bool:
             raise ValueError("observation must be Boolean")

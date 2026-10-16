@@ -68,6 +68,42 @@ class NativeConsumerTests(unittest.TestCase):
         with self.assertRaises((ValueError, AssertionError)):
             bridge.compare(changed, self.panel, ObligationLedger(100000))
 
+    def test_sampled_endpoint_coverage(self):
+        for kind in ('accumulators', 'decoders'):
+            for damage in ('empty', 'missing', 'duplicate', 'reordered'):
+                changed = deepcopy(self.packet)
+                entry = next(e for e in changed[kind] if not
+                             (e['concrete']['whole_box_enumerated'] if kind == 'accumulators' else e['whole_box_enumerated']))
+                owner = entry['concrete'] if kind == 'accumulators' else entry
+                words = owner['traces']
+                if damage == 'empty': owner['traces'] = []
+                elif damage == 'missing': owner['traces'] = words[:1]
+                elif damage == 'duplicate': owner['traces'] = [words[0], words[0]]
+                else: owner['traces'] = words[::-1]
+                with self.subTest(kind=kind, damage=damage), self.assertRaises(ValueError):
+                    bridge.compare(changed, self.panel, ObligationLedger(100000))
+
+    def test_trace_input_types_are_strict(self):
+        for kind, field in (('accumulators','indices'), ('decoders','digits')):
+            for replacement in (False, 0.0):
+                changed = deepcopy(self.packet)
+                entry = changed[kind][0]
+                owner = entry['concrete'] if kind == 'accumulators' else entry
+                owner['traces'][0][field][0] = replacement
+                with self.subTest(kind=kind, value=replacement), self.assertRaises(ValueError):
+                    bridge.compare(changed, self.panel, ObligationLedger(100000))
+
+    def test_native_decoder_declarations_are_checked_before_serialization(self):
+        for field, replacement in (('lane_bits',4), ('lane_bits',8.0),
+                                   ('biases',[0]*5), ('scale',False),
+                                   ('maxima',[0.0]), ('name','two tokens')):
+            changed = deepcopy(self.panel)
+            changed['decoders'][0][field] = replacement
+            with self.subTest(field=field, value=replacement):
+                with self.assertRaises(ValueError): bridge.panel_text(changed)
+                with self.assertRaises(ValueError):
+                    bridge.compare(self.packet, changed, ObligationLedger(100000))
+
     def test_retained_analysis_requires_complete_valid_measurements(self):
         from native import report
         original_load = report.load

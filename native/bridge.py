@@ -30,7 +30,7 @@ from bptc.packed_decoder import spec_to_dict as decoder_dict
 from bptc.accumulator_checker import check_certificate, validate_spec
 from bptc.accumulator_oracle import run_oracle
 from bptc.publication_budget import ObligationLedger
-from bptc.certificate_format import exact
+from bptc.certificate_format import exact, keys, integer, text
 
 
 def require(condition, message):
@@ -90,9 +90,35 @@ def validate_native_operands(spec):
                     raise ValueError(f'native operand component must fit signed int64: stage {i}, pair {j}')
 
 
-def panel_text(p):
+def validate_native_panel(p):
+    """Reject declarations that cannot be represented by the native text format."""
+    require(type(p) is dict, 'native panel must be an object')
+    keys(p, {'accumulators', 'decoders'} | ({'format'} if 'format' in p else set()), 'native panel')
+    if 'format' in p:
+        exact(p['format'], 'p053-native-panel-v1', 'native panel format')
+    for kind in ('accumulators', 'decoders'):
+        require(type(p[kind]) is list, 'native panel cases must be lists')
     for spec in p['accumulators']:
         validate_native_operands(spec)
+    for d in p['decoders']:
+        keys(d, {'name', 'provenance', 'lane_bits', 'scale', 'maxima', 'biases'}, 'decoder declaration')
+        text(d['name'], 'decoder name'); text(d['provenance'], 'decoder provenance')
+        integer(d['lane_bits'], 'decoder lane_bits', 8, 8)
+        integer(d['scale'], 'decoder scale', 0, 255)
+        require(type(d['maxima']) is list and 1 <= len(d['maxima']) <= 4,
+                'decoder requires 1..4 maxima')
+        require(type(d['biases']) is list and len(d['biases']) == len(d['maxima']),
+                'decoder bias count mismatch')
+        for value in d['maxima']: integer(value, 'decoder maximum', 0, 15)
+        for value in d['biases']: integer(value, 'decoder bias', 0, 255)
+    for s in p['accumulators'] + p['decoders']:
+        for field in ('name', 'provenance'):
+            require(not any(c.isspace() for c in s[field]),
+                    'native text '+field+' must be one token')
+
+
+def panel_text(p):
+    validate_native_panel(p)
     lines = [f"p053-native-panel-v1 {len(p['accumulators'])} {len(p['decoders'])}"]
     for s in p['accumulators']:
         lines.append(f"A {s['name']} {s['provenance']} {s['initial']} {int(s['final_observe'])} {len(s['stages'])}")
@@ -158,6 +184,7 @@ def trace(s, indices):
 
 
 def compare(native, p, ledger):
+    validate_native_panel(p)
     original = {s.name for s in accumulator_specs()}
     original_q = original_u = original_words = all_words = decoder_words = 0
     rows = []
@@ -168,6 +195,7 @@ def compare(native, p, ledger):
         require(entry['name'] == s['name'], 'native evidence condition failed')
         cert = entry['quotient_certificate']
         validate_spec(s)
+        exact(cert['spec'], s, 'native accumulator declaration')
         if s['name'] in original:
             expected = json.loads((ARTIFACT/'results/publication/main/certificates'/f"{s['name']}.json").read_text(encoding='utf-8'))
         else:
@@ -206,8 +234,11 @@ def compare(native, p, ledger):
         words = entry['concrete']['traces']
         count = cert['metrics']['concrete_assignments']
         exact(entry['concrete']['whole_box_enumerated'], count <= 10000, 'native concrete scope')
+        expected_indices = ([list(w) for w in product(*(range(len(st['pairs'])) for st in s['stages']))]
+                            if count <= 10000 else [[0]*len(s['stages']),
+                                                    [len(st['pairs'])-1 for st in s['stages']]])
+        exact([w['indices'] for w in words], expected_indices, 'native concrete input coverage')
         if entry['concrete']['whole_box_enumerated']:
-            require([w['indices'] for w in words] == [list(w) for w in product(*(range(len(st['pairs'])) for st in s['stages']))], 'native evidence condition failed')
             oracle = run_oracle(s, ledger, 'native-independent-concrete-oracle')
             require(oracle['equivalent'] == cert['decision']['equivalent'], 'native evidence condition failed')
             cex=cert['decision']['least_counterexample']
@@ -231,11 +262,14 @@ def compare(native, p, ledger):
     for e, d in zip(native['decoders'], p['decoders']):
         require(e['name'] == d['name'], 'native evidence condition failed')
         cert=json.loads((ARTIFACT/'results/publication/main/decoder-certificates'/f"{d['name']}.json").read_text(encoding='utf-8'))
+        exact(d, cert['spec'], 'native decoder declaration')
         exact(e['equivalent'], cert['decision']['equivalent'], 'native decoder decision')
         exact(e['max_carry_after_last_lane'], cert['closed_form']['max_carry_after_last_lane'], 'native decoder carry')
         exact(e['whole_box_enumerated'], cert['metrics']['concrete_assignments'] <= 4096, 'native decoder scope')
+        expected_digits = ([list(t) for t in product(*(range(x+1) for x in d['maxima']))]
+                           if e['whole_box_enumerated'] else [[0]*len(d['maxima']), d['maxima']])
+        exact([t['digits'] for t in e['traces']], expected_digits, 'native decoder input coverage')
         if e['whole_box_enumerated']:
-            require([t['digits'] for t in e['traces']] == [list(t) for t in product(*(range(x + 1) for x in d['maxima']))], 'native evidence condition failed')
             full_dec_words += len(e['traces'])
         for t in e['traces']:
             ledger.charge('native-decoder-reference-word')

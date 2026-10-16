@@ -10,6 +10,7 @@ from tools.validate_results import validate_run,compare_runs
 from tools.reference_check import check as check_references
 from native.materialize_measured_context import measured_fixture
 from native.workflow_report import inputs as workflow_inputs
+from tools.schematic_assets import check_schematics
 
 TITLE='Exact Quotient Certificates for Packed-Integer Decoders and Mixed-Width Accumulators'
 def require(ok,message):
@@ -166,6 +167,8 @@ def main():
                 require(label in label_choices,'invalid documented campaign label: '+label)
         steps.append('documented campaign labels agree with the actual CLI choices')
         figure=check_edge_figure(paper,a)
+        check_schematics(paper,a)
+        steps.append('both current Python schematic assets and exact manuscript consumers')
         steps.append('current edge-count consumer, retained CSV/macros and executed zero-baseline bar geometry (not PDF freshness)')
         check_package_assets(root)
         ledger=json.loads((a/'results/repair-budget.json').read_text())

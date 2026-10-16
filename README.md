@@ -118,7 +118,7 @@ producer packets, independent replay, layers, edges and concrete I/O traces,
 with separate bindings for current source and historical measurements. It
 also reruns the literal regressions. `--emit` prints a functional receipt
 without writing files. No timing or GPU/deployment experiment runs in this
-procedure. A separate current complete-call experiment is described below;
+procedure. A separately source-bound complete-call experiment is described below;
 it does not reinterpret historical checker timings.
 
 For fresh bounded correctness only, supply an already available Zig compiler:
@@ -133,6 +133,14 @@ hardcoded. Preparation never starts performance measurements. Timing remains
 a separate caller-authorized serial operation.
 
 ## Complete same-contract workflow
+
+The retained timings bind the exact measured source text in
+`data/workflow_measured_sources.json` and the unchanged protocol. The current
+consumer additionally requires complete sampled endpoint traces, strict trace
+indices, and complete decoder declaration admission. Saved-data checking
+verifies the measured source bytes separately and replays every packet with
+the current consumer. These correctness repairs are not timed by the retained
+samples.
 
 `results/workflow-cost/` compares identity pair branches with product branches
 using the same native walker, complete state/witness/edge representation,
@@ -226,7 +234,7 @@ these boundaries.
 
 The same ledger is carried into every command. A fresh counter describes the
 new local reproduction only; it does not reset the historical project budget.
-The runner currently discovers 69 tests, including the portable GPU consumer
+The runner currently discovers 75 tests, including the portable GPU consumer
 and continuing-ledger CLI
 controls, rather than loading only one test module. Tests include schema,
 initialization, minimum-witness, extra-layer, source-token, budget-atomicity,
@@ -236,12 +244,21 @@ Ten separate citation-comment tests cover the existing generated-macro scope,
 active citation contexts and escaped percent signs. Run them with
 `python -B -m unittest tools.test_reference_comments` and repeat with `-O`;
 scientific CI runs both modes. These parser tests are separate from the
-69-method discovery inventory and its semantic-work ledger.
+75-method discovery inventory and its semantic-work ledger.
 Generic unittest discovery can run them, but the supplied runner additionally
 persists the semantic-work charges. An acceptance report cannot replace
 reading or independently checking the proof.
 
 ## One-package consistency checks
+
+The two conceptual manuscript diagrams are generated directly by
+`figures/draw_schematics.py`. Run it to regenerate the PDFs, or add `--check`
+to verify byte-identical freshness in the declared renderer environment.
+`tests/schematic_regression.py` checks the directed scientific relations,
+deterministic generation, and both real manuscript consumers. The package
+check rejects a missing schematic or a wrapper pointing to a different PDF.
+The flat-repository CI runs the graph and consumer controls using private
+two-folder fixtures; it does not claim to build an absent sibling manuscript.
 
 From this directory:
 
