@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT. Original DecoderQuotient material; see ../LICENSE.
+// SPDX-License-Identifier: MIT. Original P053 material; see ../LICENSE.
 // Native realization of the declared finite language, not a CUDA frontend.
 #include <algorithm>
 #include <array>
