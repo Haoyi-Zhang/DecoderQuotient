@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""P053-only compiler/conformance harness. Measurements require an explicit slot.
+"""DecoderQuotient-only compiler/conformance harness. Measurements require an explicit slot.
 
 SPDX-License-Identifier: MIT; original material covered by ../LICENSE.
 No old campaign CLI, network, GPU, or global ledger is invoked.
