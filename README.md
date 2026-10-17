@@ -311,7 +311,9 @@ transfer-call measurements. A general CUDA frontend, floating-point semantics,
 representative production benchmark and new general quotient principle remain
 separate research obligations.
 
-For the current self-audit and unresolved research-readiness limits, read `docs/PROJECT-STATUS.md`. Prior PASS-labelled reports in the inherited input are not treated as evidence that current files exist or that novelty has been established.
+The arithmetic contract and complete-call observations are documented above.
+`results/workflow-cost/` retains the paired inputs, packet bodies, samples and
+measured environment; each earlier report identifies its own source context.
 
 ## Execution from a clean extracted package
 
@@ -336,8 +338,10 @@ The bibliography contains 68 actual references (67 scholarly papers/books and
 one software source). `evidence/reference-reverification.json` records each
 exact BibTeX record, source, access scope, citation purpose and qualification;
 `evidence/citation-context.tsv` contains its actual manuscript context.
-Primary records/abstracts and partial indexed records are distinguished;
-no all-full-text or 100-percent-accuracy claim is made. From this directory:
+The records distinguish primary metadata, abstracts, partial indexed material
+and complete texts. For MIX-PC, the deposited publisher record verifies its
+title, author order and locator, and the abstract supports the cited
+mixed-precision optimization topic. From this directory:
 
 ```sh
 python tools/reference_check.py --paper-dir ../paper \
@@ -347,9 +351,9 @@ python -m tools.reference_regressions --paper-dir ../paper \
   --out results/reverification/reference-controls.json
 ```
 
-These two commands require the sibling `paper/` because they inspect citations;
-arithmetic tests and result replay do not. `docs/核实结果.md` describes the
-scientific evidence and reference-reading scope.
+These two commands inspect the sibling `paper/` citation sources. Arithmetic
+tests and result replay operate on the artifact records alone. Reading depths
+and checked clauses remain recorded per reference in `evidence/`.
 
 The retained continuing repair ledger after those clean-extraction regressions is
 187,881 / 200,000 declared units. The earlier full saved-result semantic replay
