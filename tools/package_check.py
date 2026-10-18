@@ -33,6 +33,12 @@ def check_generated_inputs(paper,artifact):
         target=paper/'generated'/name
         require(target.is_file() and target.read_text()==text,'missing/stale generated TeX: '+name)
 
+def check_workflow_figure_consumer(paper):
+    """Require the actual workflow asset, allowing ordinary graphicx sizing."""
+    text=re.sub(r'(?<!\\)%[^\n]*','',(paper/'main.tex').read_text())
+    require(re.search(r'\\includegraphics\*?(?:\s*\[[^\]]*\])?\s*\{figures/workflow-cost\.pdf\}',text),
+            'main must consume complete-workflow figure')
+
 def check_edge_figure(paper,artifact):
     """Check the current consumer, data and executed bar geometry, without writing a PDF.
 
@@ -136,8 +142,7 @@ def main():
                 'stale complete-workflow plot data')
         require((paper/'figures/workflow-cost.pdf').read_bytes().startswith(b'%PDF-'),
                 'missing complete-workflow vector figure')
-        require(r'\includegraphics{figures/workflow-cost.pdf}' in (paper/'main.tex').read_text(),
-                'main must consume complete-workflow figure')
+        check_workflow_figure_consumer(paper)
         steps.append('complete workflow declarations, raw sample/packet bindings, both semantic consumers, derived macros/CSV and figure consumer; retained PDF freshness requires separate render review')
         ref,contexts=check_references(paper,a);steps.append(str(ref['entries'])+'-record bibliography/citation mapping and source-audit coverage')
         sources=list((a/'bptc').glob('*.py'))+list((a/'tools').glob('*.py'))+list((a/'tests').glob('*.py'))
