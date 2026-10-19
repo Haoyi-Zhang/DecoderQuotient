@@ -21,7 +21,7 @@ edge charge. Every original class edge, ordered layer/witness, diagnostic and
 semantic obligation remains; this does not reduce the scientific edge counts
 or establish a runtime improvement. `tests/hoisting_regression.py` supplies a
 separate concrete-prefix enumerator and is an explicit CI step in addition to
-the unchanged 47-method discovery suite.
+the current 79-method discovery suite.
 The source check is complete frozen-token equality, ignoring only comments and
 whitespace; it is not a general CUDA importer.
 
@@ -234,7 +234,7 @@ these boundaries.
 
 The same ledger is carried into every command. A fresh counter describes the
 new local reproduction only; it does not reset the historical project budget.
-The runner currently discovers 75 tests, including the portable GPU consumer
+The runner currently discovers 79 test methods, including the portable GPU consumer
 and continuing-ledger CLI
 controls, rather than loading only one test module. Tests include schema,
 initialization, minimum-witness, extra-layer, source-token, budget-atomicity,
@@ -244,7 +244,7 @@ Ten separate citation-comment tests cover the existing generated-macro scope,
 active citation contexts and escaped percent signs. Run them with
 `python -B -m unittest tools.test_reference_comments` and repeat with `-O`;
 scientific CI runs both modes. These parser tests are separate from the
-75-method discovery inventory and its semantic-work ledger.
+79-method discovery inventory and its semantic-work ledger.
 Generic unittest discovery can run them, but the supplied runner additionally
 persists the semantic-work charges. An acceptance report cannot replace
 reading or independently checking the proof.
