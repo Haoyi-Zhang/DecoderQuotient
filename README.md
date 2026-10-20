@@ -387,3 +387,7 @@ source context, input counts and reproduction commands. Portable CI validates
 saved records without requiring CUDA; fresh runs require an actual device.
 This connects the selected arithmetic idiom to GPU execution, not to the
 surrounding kernel's indexing/MMA or serving performance.
+
+## Source repository
+
+[DecoderQuotient](https://github.com/Haoyi-Zhang/DecoderQuotient)
