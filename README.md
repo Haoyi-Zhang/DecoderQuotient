@@ -321,8 +321,9 @@ measured environment; each earlier report identifies its own source context.
 candidate ZIP. It is not an additional workload or part of the two-run paper
 budget. `results/clean-checks/` preserves the actual campaign, replay, unit-test,
 package-check and build logs. Its 246 scientific files match the retained main
-run. Both PDFs rebuilt from that extraction are byte-identical to the supplied
-PDFs. That earlier clean regeneration consumed budget recorded in the same continuing ledger;
+run. Both PDFs rebuilt from that extraction matched the paper files in the
+then-reviewed package byte for byte; that check does not certify later manuscript
+edits. That earlier clean regeneration consumed budget recorded in the same continuing ledger;
 the historical overrun and scientific-readiness limitations remain unchanged.
 
 ## Historical re-verification records
