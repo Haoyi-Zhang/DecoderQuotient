@@ -11,14 +11,14 @@ def _strip_comments(text):
     return re.sub(r"(?<!\\)((?:\\\\)*)%[^\r\n]*", r"\1", text)
 
 def current_metadata_followup(paper,artifact,records):
-    """Keep historical reading receipts, bind exactly one new publisher identity."""
+    """Keep historical reading receipts and bind selected publisher corrections."""
     data=strict_json_loads((artifact/'evidence/current-metadata-followup.json').read_text())
     if (data.get('schema')!='current-bibliographic-identity-followup-v1'
             or type(data.get('selected_identity_count')) is not int
-            or data['selected_identity_count']!=1
+            or data['selected_identity_count']!=2
             or data.get('full_text_read_complete') is not False
             or data.get('citation_entailment_validated') is not False
-            or set(data.get('records',{}))!={'quarot'}):
+            or set(data.get('records',{}))!={'quarot','klee'}):
         raise ValueError('invalid current metadata followup scope')
     bindings=data.get('source_bindings',{})
     if set(bindings)!={'references.bib','evidence/reference-audit.json','evidence/reference-reverification.json'}:
@@ -40,6 +40,21 @@ def current_metadata_followup(paper,artifact,records):
     sources=record.get('primary_sources',[])
     if not sources or not record.get('read_scope') or not all(item.get('url','').startswith('https://') and item.get('read_scope') for item in sources):
         raise ValueError('QuaRot primary metadata source scope missing')
+    record=data['records']['klee']
+    historical=records['klee']['bibliographic_record']
+    expected=dict(historical)
+    if expected.pop('doi',None)!='10.5555/1855741.1855756':
+        raise ValueError('KLEE historical identity binding mismatch')
+    canonical='https://www.usenix.org/conference/osdi-08/klee-unassisted-and-automatic-generation-high-coverage-tests-complex-systems'
+    if (record.get('historical_bibliographic_record')!=historical
+            or record.get('current_bibliographic_record')!=expected
+            or expected.get('url')!=canonical
+            or record.get('changed_fields')!=['doi']
+            or record.get('historical_source_reading_not_extended') is not True):
+        raise ValueError('KLEE current publisher identity binding mismatch')
+    sources=record.get('primary_sources',[])
+    if not sources or not record.get('read_scope') or not all(item.get('url','').startswith('https://') and item.get('read_scope') for item in sources):
+        raise ValueError('KLEE primary metadata source scope missing')
     return data
 
 def check(paper,artifact):

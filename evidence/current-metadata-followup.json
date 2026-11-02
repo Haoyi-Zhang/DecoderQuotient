@@ -1,12 +1,12 @@
 {
   "schema": "current-bibliographic-identity-followup-v1",
-  "checked_on": "2026-10-14",
-  "selected_identity_count": 1,
+  "checked_on": "2026-11-02",
+  "selected_identity_count": 2,
   "full_text_read_complete": false,
   "citation_entailment_validated": false,
-  "scope": "One selected NeurIPS publisher header/identity correction only; the other67 bibliography records retain historical access scopes and offline binding. No new fulltext, novelty, scientific or submission validation.",
+  "scope": "Two selected publisher identity corrections; the other66 records retain historical access scopes and offline binding. No new fulltext or scientific validation.",
   "source_bindings": {
-    "references.bib": "6ee885668baa5176251d84a4437bcbfbff373b80ab624f3905f0158991f51548",
+    "references.bib": "ace3b5834b42a8d41610a8612e6e60320970292d518e481fd64638233d2dcfe2",
     "evidence/reference-audit.json": "d3c63907b0667a89ebd35fb6db879819af5dec1ed3fd046c34a5b578a981a32e",
     "evidence/reference-reverification.json": "7ab47ee37ee9c68a7db771771d344d19e640dbdbca922e9805c7fdabf365452a"
   },
@@ -73,6 +73,41 @@
         }
       ],
       "read_scope": "NeurIPS current title/all9authorheader,37(2024), DOI10.52202/079017-3180; fresh header/DOI read2026-10-14. No full paper or empirical claims verified.",
+      "historical_source_reading_not_extended": true
+    },
+    "klee": {
+      "historical_bibliographic_record": {
+        "type": "inproceedings",
+        "key": "klee",
+        "author": "Cadar, Cristian and Dunbar, Daniel and Engler, Dawson",
+        "title": "{KLEE}: Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs",
+        "booktitle": "8th USENIX Symposium on Operating Systems Design and Implementation",
+        "year": "2008",
+        "pages": "209--224",
+        "doi": "10.5555/1855741.1855756",
+        "url": "https://www.usenix.org/conference/osdi-08/klee-unassisted-and-automatic-generation-high-coverage-tests-complex-systems"
+      },
+      "current_bibliographic_record": {
+        "type": "inproceedings",
+        "key": "klee",
+        "author": "Cadar, Cristian and Dunbar, Daniel and Engler, Dawson",
+        "title": "{KLEE}: Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs",
+        "booktitle": "8th USENIX Symposium on Operating Systems Design and Implementation",
+        "year": "2008",
+        "pages": "209--224",
+        "url": "https://www.usenix.org/conference/osdi-08/klee-unassisted-and-automatic-generation-high-coverage-tests-complex-systems"
+      },
+      "changed_fields": [
+        "doi"
+      ],
+      "primary_sources": [
+        {
+          "url": "https://www.usenix.org/conference/osdi-08/klee-unassisted-and-automatic-generation-high-coverage-tests-complex-systems",
+          "read_scope": "USENIX publisher title and all three authors",
+          "observation": "Keep the formal OSDI publisher entry; remove the nonresolving legacy catalog DOI-like field."
+        }
+      ],
+      "read_scope": "Publisher header/identity only; no extension of historical full-text reading.",
       "historical_source_reading_not_extended": true
     }
   }
