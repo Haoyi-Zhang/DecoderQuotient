@@ -17,14 +17,18 @@ class ReferenceCommentTests(unittest.TestCase):
         self.paper, self.artifact = root / "paper", root / "artifact"
         (self.paper / "generated").mkdir(parents=True)
         (self.artifact / "evidence").mkdir(parents=True)
-        self.keys = ["compcert", "quarot", "aarch64tv"] + [f"ref{i:02d}" for i in range(57)]
+        self.keys = ["compcert", "quarot", "aarch64tv", "klee"] + [f"ref{i:02d}" for i in range(56)]
         entries = [dict(type="article", key=key, author="A. Author", title="Reference " + key,
                         year="2024", doi="10.1000/" + key) for key in self.keys]
         current = next(entry for entry in entries if entry["key"] == "quarot")
         current.update(doi="10.52202/079017-3180", url="https://papers.nips.cc/paper_files/paper/2024/hash/b5b939436789f76f08b9d0da5e81af7c-Abstract-Conference.html")
         historical = dict(current, doi="10.5555/3737916.3741096", url="https://example.invalid/historical")
+        klee = next(entry for entry in entries if entry["key"] == "klee")
+        klee.pop("doi")
+        klee["url"] = "https://www.usenix.org/conference/osdi-08/klee-unassisted-and-automatic-generation-high-coverage-tests-complex-systems"
+        klee_historical = dict(klee, doi="10.5555/1855741.1855756")
         (self.paper / "references.bib").write_text(dump(entries), encoding="utf-8")
-        records = {entry["key"]: dict(bibliographic_record=historical if entry["key"] == "quarot" else entry,
+        records = {entry["key"]: dict(bibliographic_record=historical if entry["key"] == "quarot" else klee_historical if entry["key"] == "klee" else entry,
                                      access_scope="fixture metadata only", primary_source="fixture") for entry in entries}
         self.write_json(self.artifact / "evidence/reference-audit.json", {
             "entries": {key: dict(primary_source="fixture", verification="fixture", citation_purpose="context") for key in self.keys}})
@@ -34,13 +38,18 @@ class ReferenceCommentTests(unittest.TestCase):
             path = (self.paper if relative == "references.bib" else self.artifact) / relative
             bindings[relative] = hashlib.sha256(path.read_bytes()).hexdigest()
         self.write_json(self.artifact / "evidence/current-metadata-followup.json", {
-            "schema": "current-bibliographic-identity-followup-v1", "selected_identity_count": 1,
+            "schema": "current-bibliographic-identity-followup-v1", "selected_identity_count": 2,
             "full_text_read_complete": False, "citation_entailment_validated": False,
             "source_bindings": bindings, "scope": "synthetic parser regression fixture",
             "records": {"quarot": {
                 "historical_bibliographic_record": historical, "current_bibliographic_record": current,
                 "changed_fields": ["doi", "url"], "historical_source_reading_not_extended": True,
                 "primary_sources": [{"url": "https://example.invalid/fixture", "read_scope": "fixture"}],
+                "read_scope": "fixture metadata only"},
+                "klee": {
+                "historical_bibliographic_record": klee_historical, "current_bibliographic_record": klee,
+                "changed_fields": ["doi"], "historical_source_reading_not_extended": True,
+                "primary_sources": [{"url": klee["url"], "read_scope": "fixture"}],
                 "read_scope": "fixture metadata only"}}})
         self.macros = r"\newcommand{\CiteCompCert}{\cite{compcert}}" + "\n"
         self.text = "\n".join(r"\CiteCompCert" if key == "compcert" else r"\cite{" + key + "}" for key in self.keys) + "\n"
@@ -128,6 +137,22 @@ class ReferenceCommentTests(unittest.TestCase):
     def test_existing_raw_nocite_gate_is_unchanged(self):
         with self.assertRaisesRegex(ValueError, "uncited bibliography inclusion"):
             self.check(self.text + r"% \nocite{compcert}")
+
+    def test_current_publisher_entry_cannot_restore_the_retired_doi(self):
+        path = self.artifact / "evidence/current-metadata-followup.json"
+        record = json.loads(path.read_text())
+        record["records"]["klee"]["current_bibliographic_record"]["doi"] = "10.5555/1855741.1855756"
+        self.write_json(path, record)
+        with self.assertRaisesRegex(ValueError, "KLEE current publisher identity"):
+            self.check()
+
+    def test_current_publisher_entry_cannot_change_the_author_list(self):
+        path = self.artifact / "evidence/current-metadata-followup.json"
+        record = json.loads(path.read_text())
+        record["records"]["klee"]["current_bibliographic_record"]["author"] = "Other Author"
+        self.write_json(path, record)
+        with self.assertRaisesRegex(ValueError, "KLEE current publisher identity"):
+            self.check()
 
 
 if __name__ == "__main__":
